@@ -11,13 +11,16 @@ def main(argv):
     [dbHandle,conn] = connectToDb()
 
     oss_projects = ['https://api.github.com/repos/django/django',
-                    'https://api.github.com/repos/angular/angular.js',
-                    'https://api.github.com/repos/twbs/bootstrap',
-                    'https://api.github.com/repos/nodejs/node']
+					'https://api.github.com/repos/angular/angular.js',
+					'https://api.github.com/repos/twbs/bootstrap',
+                    'https://api.github.com/repos/bower/bower',
+					'https://api.github.com/repos/gulpjs/gulp',
+                    'https://api.github.com/repos/rails/rails'] #,'https://api.github.com/repos/nodejs/node'
+
 
     for project in oss_projects:
-        getIssues(project,dbHandle, conn, token)
-
+        #getIssues(project,dbHandle, conn, token)
+        getBugs(project,dbHandle, conn, token)
 
 
 def connectToDb():
@@ -99,6 +102,20 @@ def getBugs(projectUri,dbHandle,conn,token):
             #convert labels to comma-separated string
             labelsList= [label['name'] for label in issue['labels']]
             labelsString = "; ".join(labelsList)
+
+            #don't save
+            #if django issue title doesn't refer to some bug number using #number format
+            if(projectName=='django' and '#' not in issue['title']):
+                continue;
+            #if bootstrap issue isn't flagged as chosen
+            if (projectName == 'bootstrap' and not any(lbl in labelsString for lbl in ['v3','v4','css','browser bug'])):
+                continue;
+            # if angular issue isn't flagged as bug
+            if (projectName == 'angular.js' and not any(lbl in labelsString for lbl in ['type: bug'])):
+                continue;
+            # if angular issue isn't flagged as bug
+            if ((projectName == 'gulp' or projectName == 'bower') and not any(lbl in labelsString for lbl in ['bug'])):
+                continue;
 
             dbHandle.execute(
                 """INSERT INTO oss_issues.just_bugs (title,number,created,closed,description,labels,project) VALUES (%s,%s,%s,%s,%s,%s,%s)""",

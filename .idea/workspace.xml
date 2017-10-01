@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" line="20" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" line="23" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitMining/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitMining/issues/db_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gitMining/releases/angular.js.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gitMining/releases/bootstrap.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gitMining/releases/django.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gitMining/releases/django_withDates.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gitMining/releases/node.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gitMining/getReleaseDates.py" afterPath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gitMining/requestsLibrary.py" afterPath="$PROJECT_DIR$/gitMining/releases/requestsLibrary.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" afterPath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" afterPath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,13 +20,13 @@
       <file leaf-file-name="getClosedIssues.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
-                <element signature="e#605#1000#0" expanded="false" />
-                <element signature="e#1053#1451#0" expanded="false" />
-                <element signature="e#1504#3128#0" expanded="false" />
+                <element signature="e#781#1176#0" expanded="false" />
+                <element signature="e#1229#1627#0" expanded="false" />
+                <element signature="e#1680#3304#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,8 +35,8 @@
       <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="65" />
+            <state relative-caret-position="144">
+              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -85,8 +76,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/gitMining/releases/releaseDates/getClosedIssues.py" />
-        <option value="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
         <option value="$PROJECT_DIR$/gitMining/issues/db_test.py" />
+        <option value="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
         <option value="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
       </list>
     </option>
@@ -228,8 +219,8 @@
     <recent_temporary>
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-        <item index="1" class="java.lang.String" itemvalue="Python.db_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.getReleaseDates" />
+        <item index="1" class="java.lang.String" itemvalue="Python.getReleaseDates" />
+        <item index="2" class="java.lang.String" itemvalue="Python.db_test" />
       </list>
     </recent_temporary>
   </component>
@@ -286,9 +277,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#605#1000#0" expanded="false" />
-            <element signature="e#1053#1451#0" expanded="false" />
-            <element signature="e#1504#3128#0" expanded="false" />
+            <element signature="e#781#1176#0" expanded="false" />
+            <element signature="e#1229#1627#0" expanded="false" />
+            <element signature="e#1680#3304#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -307,9 +298,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#605#1000#0" expanded="false" />
-            <element signature="e#1053#1451#0" expanded="false" />
-            <element signature="e#1504#3128#0" expanded="false" />
+            <element signature="e#781#1176#0" expanded="false" />
+            <element signature="e#1229#1627#0" expanded="false" />
+            <element signature="e#1680#3304#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -348,21 +339,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="65" />
+        <state relative-caret-position="144">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#605#1000#0" expanded="false" />
-            <element signature="e#1053#1451#0" expanded="false" />
-            <element signature="e#1504#3128#0" expanded="false" />
+            <element signature="e#781#1176#0" expanded="false" />
+            <element signature="e#1229#1627#0" expanded="false" />
+            <element signature="e#1680#3304#0" expanded="false" />
           </folding>
         </state>
       </provider>
