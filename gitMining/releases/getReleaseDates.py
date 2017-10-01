@@ -1,5 +1,4 @@
 from urllib2 import urlopen, Request
-from github import Github
 import json
 import sys
 
@@ -8,7 +7,10 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 def main(argv):
-	oss_projects = ['https://api.github.com/repos/django/django','https://api.github.com/repos/angluar/angular.js']
+	oss_projects = ['https://api.github.com/repos/django/django',
+					'https://api.github.com/repos/angular/angular.js',
+					'https://api.github.com/repos/twbs/bootstrap',
+					'https://api.github.com/repos/nodejs/node']
 	token = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 
 	for projectUri in oss_projects:

@@ -1,0 +1,19 @@
+﻿Getting list of bugs for several OSS projects was next part of my thesis. After searching for bug tracking systems utilized by projects I've chosen, I found out almost all sources always led me back to git. For each project, there is a list of known issues which can be nicely accessed with Git Api v3 with the endpoint “issues”. I decided to store all bugs in a database table with following structure.
+
+
+Altogether I've parsed and saved more than 63 thousand issues. Since git issues are of several natures and not all are considered software bugs of the particular repository, I decided to filter out just the issues flagged with label “bug” or similar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As expected, structure of returned data differs among the projects. This destroyed the plan to have a general script to get the list of issues for all projects – similar to what has been done before with release dates. Instead, several different, yet very similar scripts were written to get issues with some additional information for each project. Part of getting the bugs lists was a necessary and also obvious step of grouping all the bug descriptions under one defined structure. This has made the future work much more efficient since the need to write code separately for each project(repository) will not be necessary again. 
