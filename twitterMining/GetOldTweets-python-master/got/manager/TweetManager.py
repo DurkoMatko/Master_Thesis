@@ -96,6 +96,9 @@ class TweetManager:
 			
 		if hasattr(tweetCriteria, 'until'):
 			urlGetData += ' until:' + tweetCriteria.until
+
+		if hasattr(tweetCriteria, 'lang'):
+			urlGetData += ' lang:' + tweetCriteria.lang
 		
 
 		if hasattr(tweetCriteria, 'topTweets'):

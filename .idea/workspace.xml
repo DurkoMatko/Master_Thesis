@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" afterPath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" afterPath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/callingTerminalTask.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/jquery.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/Social media.odt" afterPath="$PROJECT_DIR$/thesisText/Social media.odt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/databaseScripts/schemaCreation.sql" afterPath="$PROJECT_DIR$/databaseScripts/schemaCreation.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/.gitignore" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,36 +24,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="getClosedIssues.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
+      <file leaf-file-name="stackApiTry.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+            <state relative-caret-position="306">
+              <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
-                <element signature="e#781#1176#0" expanded="false" />
-                <element signature="e#1229#1627#0" expanded="false" />
-                <element signature="e#1680#3304#0" expanded="false" />
+                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#1971#2366#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+      <file leaf-file-name="get_Tweets_Between_Release_Dates.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
+            <state relative-caret-position="174">
+              <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exporter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-648">
+              <caret line="21" column="139" lean-forward="false" selection-start-line="21" selection-start-column="129" selection-end-line="21" selection-end-column="139" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gitMining/issues/db_test.py">
+      <file leaf-file-name="TweetManager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="107" />
+            <state relative-caret-position="147">
+              <caret line="100" column="32" lean-forward="false" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TweetCriteria.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -67,6 +96,12 @@
       <find>got_object</find>
       <find>pull</find>
       <find>lab</find>
+      <find>No module named six</find>
+      <find>Django, convert</find>
+      <find>receiveBuffer</find>
+      <find>tweetCriteria</find>
+      <find>lang</find>
+      <find>getopt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,6 +114,13 @@
         <option value="$PROJECT_DIR$/gitMining/issues/db_test.py" />
         <option value="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
         <option value="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
+        <option value="$PROJECT_DIR$/databaseScripts/schemaCreation.sql" />
+        <option value="$PROJECT_DIR$/stackOverflowMining/stackApiTry.py" />
+        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/.gitignore" />
+        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py" />
+        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py" />
+        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py" />
+        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" />
       </list>
     </option>
   </component>
@@ -106,12 +148,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
               <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="databaseScripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
@@ -130,12 +179,46 @@
               <item name="gitMining" type="462c0819:PsiDirectoryNode" />
               <item name="releases" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="stackOverflowMining" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="thesisText" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="twitterMining" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="twitterMining" type="462c0819:PsiDirectoryNode" />
+              <item name="GetOldTweets-python-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="twitterMining" type="462c0819:PsiDirectoryNode" />
+              <item name="GetOldTweets-python-master" type="462c0819:PsiDirectoryNode" />
+              <item name="got" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="twitterMining" type="462c0819:PsiDirectoryNode" />
+              <item name="GetOldTweets-python-master" type="462c0819:PsiDirectoryNode" />
+              <item name="got" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="RecentsManager">
@@ -159,20 +242,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.getClosedIssues">
-    <configuration name="db_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.get_Tweets_Between_Release_Dates">
+    <configuration name="Exporter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gitMining/issues" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Master_Thesis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gitMining/issues/db_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -211,16 +294,54 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="3">
+    <configuration name="get_Tweets_Between_Release_Dates" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Master_Thesis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="stackApiTry" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stackOverflowMining" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Master_Thesis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stackOverflowMining/stackApiTry.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.getReleaseDates" />
       <item index="1" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-      <item index="2" class="java.lang.String" itemvalue="Python.db_test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.stackApiTry" />
+      <item index="3" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Exporter" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-        <item index="1" class="java.lang.String" itemvalue="Python.getReleaseDates" />
-        <item index="2" class="java.lang.String" itemvalue="Python.db_test" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Exporter" />
+        <item index="2" class="java.lang.String" itemvalue="Python.stackApiTry" />
+        <item index="3" class="java.lang.String" itemvalue="Python.getClosedIssues" />
+        <item index="4" class="java.lang.String" itemvalue="Python.getReleaseDates" />
       </list>
     </recent_temporary>
   </component>
@@ -238,27 +359,34 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
+    <frame x="610" y="36" width="1602" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32957393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39974937" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -266,7 +394,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -277,7 +405,104 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#781#1176#0" expanded="false" />
+            <element signature="e#1229#1627#0" expanded="false" />
+            <element signature="e#1680#3304#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#1971#2366#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#1229#1627#0" expanded="false" />
+            <element signature="e#1680#3304#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/issues/db_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="34" column="72" lean-forward="true" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#1971#2366#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#1229#1627#0" expanded="false" />
+            <element signature="e#1680#3304#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/issues/db_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
             <element signature="e#1229#1627#0" expanded="false" />
             <element signature="e#1680#3304#0" expanded="false" />
           </folding>
@@ -298,7 +523,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#781#1176#0" expanded="false" />
             <element signature="e#1229#1627#0" expanded="false" />
             <element signature="e#1680#3304#0" expanded="false" />
           </folding>
@@ -329,31 +553,116 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/issues/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/gitMining/issues/db_test.py">
+    <entry file="file:///usr/lib/python2.7/json/decoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="107" />
+        <state relative-caret-position="149">
+          <caret line="363" column="0" lean-forward="false" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseScripts/schemaCreation.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+    <entry file="file://$PROJECT_DIR$/gitMining/issues/db_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/TwitterTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="93" column="4" lean-forward="false" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+        <state relative-caret-position="90">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#781#1176#0" expanded="false" />
             <element signature="e#1229#1627#0" expanded="false" />
             <element signature="e#1680#3304#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/callingTerminalTask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="100" column="32" lean-forward="false" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="21" column="139" lean-forward="false" selection-start-line="21" selection-start-column="129" selection-end-line="21" selection-end-column="139" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#1971#2366#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
