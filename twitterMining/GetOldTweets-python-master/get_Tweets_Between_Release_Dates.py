@@ -4,10 +4,9 @@ import os
 import datetime
 
 DAY_INTERVAL = 2
-TWEETS_PER_RELEASE = 50
+TWEETS_PER_RELEASE = 30
 
 #set where to find release dates files
-print(os.path.dirname(__file__))
 mypath = os.path.join(os.path.dirname(__file__), 'releaseDates')
 releaseDatefiles = [f for f in os.listdir(mypath) if os.path.isfile(os.path.join(mypath, f))]
 
@@ -28,10 +27,9 @@ for oneFile in releaseDatefiles:
 
 			#strip the line to get releaseDate and version
 			releaseDate = line.split(" ",1)[0]
-			nextRelease = content[lineNum + 1].split(" ",1)[0]
-
-			#break loop if already reached last release
-			if(nextRelease == ''):
+			try:
+				nextRelease = content[lineNum + 1].split(" ",1)[0]
+			except: #break loop if already reached last release
 				break;
 
 			#find mid-point date between 2 releases
@@ -51,4 +49,4 @@ for oneFile in releaseDatefiles:
 			system(miningConsoleCommand)
 			lineNum = lineNum + 1
 
-print("done")
+print("Finished")
