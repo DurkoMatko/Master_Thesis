@@ -15,17 +15,17 @@ def main(argv):
 
     #define vectorizer parameters for models creation
     vectorizer = TfidfVectorizer(min_df=5, max_df=0.8, sublinear_tf=True, use_idf=True, stop_words='english')
-    execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
-    model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
+    #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
+    #model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
     # set where to find release dates files
     mypath = os.path.dirname(__file__)
-    tweetFiles = [f for f in os.listdir(mypath) if os.path.isfile(os.path.join(mypath, f))]
+    tweetFilesPath = os.path.join(mypath, 'tweets_To_Analyze')
+    tweetFiles = [f for f in os.listdir(tweetFilesPath) if os.path.isfile(os.path.join(tweetFilesPath, f))]
 
     # analyze each tweets file
     for file in tweetFiles:
-        if file.endswith(".csv"):
-            csvFile = open(file, 'r')
+        with open(os.path.join(tweetFilesPath,file)) as csvFile:
             reader = csv.reader(csvFile, delimiter=';')
 
 def make_Corpus_From_Tweets(root_dir):

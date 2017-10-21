@@ -11,12 +11,12 @@ sys.setdefaultencoding('utf8')
 def main(argv):
     #set where to find release dates files
     mypath = os.path.dirname(__file__)
-    tweetFiles = [f for f in os.listdir(mypath) if os.path.isfile(os.path.join(mypath, f))]
+    tweetFilesPath = os.path.join(mypath, 'tweets_To_Analyze')
+    tweetFiles = [f for f in os.listdir(tweetFilesPath) if os.path.isfile(os.path.join(tweetFilesPath, f))]
 
     #analyze each tweets file
     for file in tweetFiles:
-       if file.endswith(".csv"):
-           csvFile=open(file, 'r')
+        with open(os.path.join(tweetFilesPath,file)) as csvFile:
            reader = csv.reader(csvFile, delimiter=';')
 
            dates,scores, flooredDates, flooredScores = getDatesAndScores1(reader)
