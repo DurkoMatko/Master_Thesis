@@ -1,10 +1,15 @@
 import os, csv, sys
 import numpy as np
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import confusion_matrix
-from sklearn.svm import LinearSVC
+from dateutil import parser
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import MultinomialNB, BernoulliNB,BaseNB,GaussianNB
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
+from sklearn.svm import LinearSVC, SVC
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold, train_test_split
+from sklearn.model_selection import GridSearchCV
+from matplotlib import pyplot
+from matplotlib import pylab
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -12,11 +17,16 @@ sys.setdefaultencoding('utf8')
 def main(argv):
     # Create a corpus from training data
     corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
+    #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
 
-    #define vectorizer parameters for models creation
+    #define vectorizer for corpus vectorization
     vectorizer = TfidfVectorizer(min_df=5, max_df=0.8, sublinear_tf=True, use_idf=True, stop_words='english')
-    #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
-    #model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
+
+    #find best parameters for classifiers
+    #tuneParameters(corpus=corpus,labels=labels,vectorizer=vectorizer)
+
+    execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
+    '''model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
     # set where to find release dates files
     mypath = os.path.dirname(__file__)
@@ -27,8 +37,17 @@ def main(argv):
     for file in tweetFiles:
         with open(os.path.join(tweetFilesPath,file)) as csvFile:
             reader = csv.reader(csvFile, delimiter=';')
+            dates, scores, flooredDates, flooredScores = getDatesAndScores(reader=reader, vectorizer=vectorizer, scikitModel=model2_multinomNB)
+            dates = convertDatesToPassedDays(dates)
+            plotPolynomials(dates=dates, scores=scores, projectName=file)
+            flooredDates = convertDatesToPassedDays(dates=flooredDates)
+            plotPolynomials(dates=flooredDates, scores=flooredScores, projectName=file)
+
+            csvFile.close()
+'''
 
 def make_Corpus_From_Tweets(root_dir):
+    print "Creating training corpus from training tweets"
     mypath = os.path.dirname(__file__)
     trainDataPath = os.path.join(mypath, root_dir)
     trainDataFiles = [f for f in os.listdir(trainDataPath) if os.path.isfile(os.path.join(trainDataPath, f))]
@@ -58,6 +77,7 @@ def make_Corpus_From_Tweets(root_dir):
     return corpus,labels
 
 def make_Corpus_From_Movies(root_dir):
+    print "Creating training corpus from movie reviews"
     polarity_dirs = [os.path.join(os.path.join(os.path.dirname(__file__), root_dir),f) for f in os.listdir(os.path.join(os.path.dirname(__file__), root_dir))]
     #polarity_dirs = [os.path.join(root_dir, f) for f in os.listdir(root_dir)]
     corpus = []
@@ -72,18 +92,27 @@ def make_Corpus_From_Movies(root_dir):
                 corpus = [doc_string]
             else:
                 corpus.append(doc_string)
-    return corpus
+
+    labels = np.zeros(2000);
+    labels[1000:]=1
+    return corpus, labels
 
 
 def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
     kf = StratifiedKFold(n_splits=fold_splits)
 
-    totalsvm = 0  # Accuracy measure on 2000 files
-    totalNB = 0
-    totalMatSvm = np.zeros((2, 2));  # Confusion matrix on 2000 files
-    totalMatNB = np.zeros((2, 2));
-
+    #choose classifiers to evaluate
     iter=1;
+    classifiers = [LogisticRegression()]
+    names = ['LogisticRegression']
+
+    #performance metrics initialization
+    crossValidationAccuracy = dict()
+    confusionMetrices = dict()
+    for name in names:
+        crossValidationAccuracy[name] = []
+        confusionMetrices[name] = np.zeros((2, 2));  #confusion matrix
+
     print "Starting n-fold training with number of folds:"+str(fold_splits)
     for train_index, test_index in kf.split(corpus, labels):
         #create arrays and corpuses according to current fold
@@ -93,36 +122,29 @@ def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
         train_corpus_tf_idf = vectorizer.fit_transform(X_train)
         test_corpus_tf_idf = vectorizer.transform(X_test)
 
-        #define and fit(train) models
-        model1_linearSVC = LinearSVC()
-        model2_multinomNB = MultinomialNB()
-        model1_linearSVC.fit(train_corpus_tf_idf, y_train)
-        model2_multinomNB.fit(train_corpus_tf_idf, y_train)
+        #fit(train) models and check performance on testing part of data
+        for name,clf in zip(names, classifiers):
+            clf.fit(train_corpus_tf_idf, y_train)
+            result = clf.predict(test_corpus_tf_idf)
+            crossValidationAccuracy[name].append(accuracy_score(y_test,result))
+            confusionMetrices[name] = confusionMetrices[name] + confusion_matrix(y_test, result)
 
         print "Models succesfully trained, number of iteration:" + str(iter)
-
-        #make prediction on test data
-        result1 = model1_linearSVC.predict(test_corpus_tf_idf)
-        result2 = model2_multinomNB.predict(test_corpus_tf_idf)
-
-        #add partial results of current iteration to global results for all folds
-        totalMatSvm = totalMatSvm + confusion_matrix(y_test, result1)
-        totalMatNB = totalMatNB + confusion_matrix(y_test, result2)
-
-        totalsvm = totalsvm + sum(y_test == result1)
-        totalNB = totalNB + sum(y_test == result2)
 
         #iterator for logging messages
         iter = iter+1
 
     print str(fold_splits) + "-fold cross validation done, confusion matrices:"
 
-    print totalMatSvm
-    print totalsvm / len(labels)
-    print totalMatNB
-    print totalNB / len(labels)
+    for name in names:
+        print name
+        print "Cross validation results: ",
+        for item in crossValidationAccuracy[name]: print item,
+        print "Cross validation average:" + str(sum(crossValidationAccuracy[name]) / len(crossValidationAccuracy[name]))
+
 
 def create_Models(corpus, labels, vectorizer):
+    print "Vectorizing training corpus"
     train_corpus_tf_idf = vectorizer.fit_transform(corpus)
 
     # define and fit(train) models
@@ -130,8 +152,147 @@ def create_Models(corpus, labels, vectorizer):
     model2_multinomNB = MultinomialNB()
     model1_linearSVC.fit(train_corpus_tf_idf, labels)
     model2_multinomNB.fit(train_corpus_tf_idf, labels)
+    print "SciKit models trained and being returned"
 
     return model1_linearSVC, model2_multinomNB
+
+def getDatesAndScores(reader,vectorizer,scikitModel):
+    #create corpus of tweets to be analyzed
+    tweetsCorpus = []
+    dates = []
+
+    print "Creating a corpus from tweets to be analyzed"
+    for row in reader:
+        if (row[4] == 'text'):
+            continue;
+        #create arrays of tweets to analyze
+        tweetsCorpus.append(unicode(row[4], errors='ignore'))
+        dates.append(parser.parse(row[1].split(' ', 1)[0]).date())
+
+    #make prediction
+    print "Predicting sentiment scores for tweets corpus"
+    vectorizedTweetsCorpus = vectorizer.transform(tweetsCorpus)
+    scores = scikitModel.predict(vectorizedTweetsCorpus)
+
+    print "Number of analyzed tweets:" + str(len(scores))
+    print "Number of positive tweets" + str(sum(scores == 1))
+    print "Number of negative tweets" + str(sum(scores == 0))
+
+    #process sentimentData scores
+    sentimentScoresDict = dict()
+    flooredSentimentScoresDict = dict()
+    dateCounts = dict()
+    flooredDateCounts = dict()
+    averageScores = dict()
+    flooredAverageScores = dict()
+
+    print "Processing sentiment scores returned for tweets corpus"
+    for idx, score in enumerate(scores):
+        correspondingDate = dates[idx]
+        if (correspondingDate in sentimentScoresDict):
+            sentimentScoresDict[correspondingDate] = sentimentScoresDict[correspondingDate] + score
+            dateCounts[correspondingDate] = dateCounts[correspondingDate] + 1;
+            correspondingDate = correspondingDate.replace(day=1)
+            flooredSentimentScoresDict[correspondingDate] = flooredSentimentScoresDict[correspondingDate] + score
+            flooredDateCounts[correspondingDate] = flooredDateCounts[correspondingDate] + 1;
+        else:
+            sentimentScoresDict[correspondingDate] = score
+            dateCounts[correspondingDate] = 1;
+            correspondingDate = correspondingDate.replace(day=1)
+            flooredSentimentScoresDict[correspondingDate] = score
+            flooredDateCounts[correspondingDate] = 1
+
+    #calculate average scores for every day
+    print "Calculating average scores for every day"
+    for date, scoreSum in sentimentScoresDict.iteritems():
+        averageScores[date] = scoreSum / dateCounts[date]
+
+    #calculate average scores for each year-month
+    print "Calculating average scores for year-month combinations"
+    for flooredDate, scoreSum in flooredSentimentScoresDict.iteritems():
+        flooredAverageScores[flooredDate] = scoreSum / flooredDateCounts[flooredDate]
+
+    return averageScores.keys(), averageScores.values(), flooredAverageScores.keys(), flooredAverageScores.values()
+
+
+def plotPolynomials(dates,scores,projectName):
+    x = dates
+    y = scores
+
+    # calculate polynomial
+    z2 = np.polyfit(x, y, 2)
+    z3 = np.polyfit(x, y, 3)
+    z4 = np.polyfit(x, y, 4)
+    f2 = np.poly1d(z2)
+    f3 = np.poly1d(z3)
+    f4 = np.poly1d(z4)
+
+    # calculate new x's and y's
+    x_new = np.linspace(0, max(x), 200)
+    y_new2 = f2(x_new)
+    y_new3 = f3(x_new)
+    y_new4 = f4(x_new)
+
+
+    pyplot.plot(x, y, 'o', x_new, y_new2, '.', x_new, y_new3, '-', x_new,y_new4, '--')
+    pylab.title(projectName)
+    pyplot.show()
+
+
+
+def convertDatesToPassedDays(dates):
+    minDate = min(dates)
+    passedDays = []
+
+    for date in dates:
+        passedDays.append(abs((date - minDate).days))
+    return passedDays
+
+def tuneParameters(corpus,labels,vectorizer):
+    kf = StratifiedKFold(n_splits=2)
+
+    for train_index, test_index in kf.split(corpus, labels):
+        #create arrays and corpuses according to current fold
+        X_train = [corpus[i] for i in train_index]
+        X_test = [corpus[i] for i in test_index]
+        y_train, y_test = labels[train_index], labels[test_index]
+        train_corpus_tf_idf = vectorizer.fit_transform(X_train)
+        test_corpus_tf_idf = vectorizer.transform(X_test)
+
+        scores = ['accuracy']
+        # Set the parameters by to combine
+        SVC_parameters = [{'C': [1,10,100,1000],
+                             #'loss': ['hinge','squared_hinge'],
+                             #'multi_class': ['ovr','crammer_singer'],
+                             'fit_intercept': [True,False]
+                             }]
+        MultiNB_parameters = [{'alpha': [1.0, 2.0, 5.0, 10.0],
+                             'fit_prior': [True, False]
+                             }]
+        BernoulliNB_parameters = [{'alpha': [1.0, 2.0, 5.0, 10.0],
+                                   'binarize': [0.0, 2.0, 5.0, 10.0],
+                                 'fit_prior': [True, False]
+                                 }]
+
+        for score in scores:
+            print("Tuning hyper-parameters for %s" % score)
+
+            clf = GridSearchCV(LinearSVC(), SVC_parameters, cv=5,scoring='%s' % score)
+            clf.fit(train_corpus_tf_idf, y_train)
+
+            print("Best parameters set found:")
+            print(clf.best_params_)
+            print("Performance for all combinations:")
+            means = clf.cv_results_['mean_test_score']
+            stds = clf.cv_results_['std_test_score']
+            for mean, std, params in zip(means, stds, clf.cv_results_['params']):
+                print("%0.3f (+/-%0.03f) for %r"
+                      % (mean, std * 2, params))
+
+            print("Detailed classification report of model trained and evaluated on full dev/eval sets:")
+            y_true, y_pred = y_test, clf.predict(test_corpus_tf_idf)
+            print(classification_report(y_true, y_pred))
+
 
 if __name__ == "__main__":
     main(sys.argv)

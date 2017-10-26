@@ -1,6 +1,6 @@
 import os, csv, sys
 from textblob import TextBlob
-import matplotlib.pyplot as plt
+from matplotlib import pyplot
 from matplotlib import pylab
 from dateutil import parser
 import numpy as np
@@ -14,6 +14,8 @@ def main(argv):
     tweetFilesPath = os.path.join(mypath, 'tweets_To_Analyze')
     tweetFiles = [f for f in os.listdir(tweetFilesPath) if os.path.isfile(os.path.join(tweetFilesPath, f))]
 
+    execute_crossValidation(dir='datasets/Sentiment140')
+
     #analyze each tweets file
     for file in tweetFiles:
         with open(os.path.join(tweetFilesPath,file)) as csvFile:
@@ -21,9 +23,9 @@ def main(argv):
 
            dates,scores, flooredDates, flooredScores = getDatesAndScores1(reader)
            dates = convertDatesToPassedDays(dates)
-           plotPolynomials(dates,scores,csvFile)
+           plotPolynomials(dates,scores,file)
            flooredDates = convertDatesToPassedDays(flooredDates)
-           plotPolynomials(flooredDates, flooredScores,csvFile)
+           plotPolynomials(flooredDates, flooredScores,file)
 
            csvFile.close()
 
@@ -39,14 +41,12 @@ def getDatesAndScores1(reader):
     averageScores = dict()
     flooredAverageScores = dict()
 
-    separator = ' '
-
     for row in reader:
         rowScore = sentiment1(row, included_cols);
         if (rowScore == 0 or row[4] == 'text'):
             continue;
 
-        date = parser.parse(row[1].split(separator, 1)[0]).date()
+        date = parser.parse(row[1].split(' ', 1)[0]).date()
 
         if (date in sentimentScoresDict):
             sentimentScoresDict[date] = sentimentScoresDict[date] + rowScore
@@ -99,9 +99,9 @@ def plotPolynomials(dates,scores,projectName):
     y_new4 = f4(x_new)
 
 
-    plt.plot(x, y, 'o', x_new, y_new2, '.', x_new, y_new3, '-', x_new,y_new4, '--')
-    pylab.title(projectName.name)
-    plt.show()
+    pyplot.plot(x, y, 'o', x_new, y_new2, '.', x_new, y_new3, '-', x_new,y_new4, '--')
+    pylab.title(projectName)
+    pyplot.show()
 
 
 def convertDatesToPassedDays(dates):
@@ -112,6 +112,44 @@ def convertDatesToPassedDays(dates):
         passedDays.append(abs((date - minDate).days))
     return passedDays
 
+def execute_crossValidation(dir):
+    mypath = os.path.dirname(__file__)
+    trainDataPath = os.path.join(mypath, dir)
+    trainDataFiles = [f for f in os.listdir(trainDataPath) if os.path.isfile(os.path.join(trainDataPath, f))]
+
+    labels = []
+    scores = []
+    for file in trainDataFiles:
+        with open(os.path.join(mypath, dir+'/') + file) as trainingFile:
+            reader = csv.reader(trainingFile, delimiter=',')
+            i = 0
+            #for each tweet in file
+            for row in reader:
+                #if it's either positive or negative
+                    #add the tweet to corpus
+                    score = TextBlob(unicode(row[5], errors='ignore')).sentiment.polarity
+
+                    if(score>0):
+                        scores.append(1)
+                    elif(score==0.0):scores.append(2)
+                    else:
+                        scores.append(0)
+                    #add positive or negative label
+                    if (row[0] == "0"):
+                        labels.append(0)
+                    elif(row[0] == "2"):labels.append(2)
+                    elif (row[0] == "4"):
+                        labels.append(1)
+
+                    i = i + 1
+                    if (i % 10000 == 0):
+                        print i;
+
+        trainingFile.close()
+
+    labels = np.array(labels)
+    scores = np.array(scores)
+    print "Accuracy of Textblob sentiment is: " + str((sum(labels == scores)*1.0)/len(scores))
 
 if __name__ == "__main__":
     main(sys.argv)
