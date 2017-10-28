@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/GridSearchTuning.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/Scikit_comparison.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/My tasks.odt" afterPath="$PROJECT_DIR$/thesisText/My tasks.odt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/.~lock.My tasks.odt#" afterPath="$PROJECT_DIR$/thesisText/.~lock.My tasks.odt#" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,12 +22,18 @@
       <file leaf-file-name="SciKit_sentimentAnalysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="125" column="16" lean-forward="false" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="16" />
+            <state relative-caret-position="208">
+              <caret line="344" column="39" lean-forward="false" selection-start-line="344" selection-start-column="39" selection-end-line="344" selection-end-column="39" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#2246#3520#0" expanded="false" />
-                <element signature="e#3565#4376#0" expanded="false" />
+                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#3916#4727#0" expanded="false" />
+                <element signature="e#4804#6688#0" expanded="false" />
+                <element signature="e#6774#8181#0" expanded="false" />
+                <element signature="e#8234#8649#0" expanded="false" />
+                <element signature="e#8776#11334#0" expanded="false" />
+                <element signature="e#11387#11873#0" expanded="false" />
+                <element signature="e#11916#12056#0" expanded="false" />
+                <element signature="e#12113#14180#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -63,8 +66,8 @@
       <file leaf-file-name="NaiveBayes_sentimentAnalysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/NaiveBayes_sentimentAnalysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="24" column="105" lean-forward="false" selection-start-line="24" selection-start-column="105" selection-end-line="24" selection-end-column="105" />
+            <state relative-caret-position="-156">
+              <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="36" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -106,6 +109,7 @@
       <find>convertDatesToPassedDays</find>
       <find>confusion_matrix</find>
       <find>score</find>
+      <find>append</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,6 +138,7 @@
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/Scikit_comparison.py" />
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/cross_Validation.py" />
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/GridSearchTuning.py" />
+        <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/preprocessTweets.py" />
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
       </list>
     </option>
@@ -366,7 +371,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
-          <line>38</line>
+          <line>47</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -376,7 +381,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
-          <line>152</line>
+          <line>194</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -391,7 +396,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
-          <line>120</line>
+          <line>129</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -420,18 +425,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="78" />
+      <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="139" lean-forward="false" selection-start-line="21" selection-start-column="129" selection-end-line="21" selection-end-column="139" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1764">
@@ -715,16 +713,6 @@
     <entry file="file://$PROJECT_DIR$/semanticAnalysis_betweenReleases/try.py" />
     <entry file="file://$PROJECT_DIR$/semanticAnalysis_betweenReleases/scikit_sentiment_classifiers.py" />
     <entry file="file://$PROJECT_DIR$/semanticAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py" />
-    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/NaiveBayes_sentimentAnalysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="24" column="105" lean-forward="false" selection-start-line="24" selection-start-column="105" selection-end-line="24" selection-end-column="105" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/Scikit_comparison.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-648">
@@ -738,16 +726,6 @@
         <state relative-caret-position="846">
           <caret line="652" column="0" lean-forward="true" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1692">
-          <caret line="139" column="23" lean-forward="false" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,14 +747,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
+    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="125" column="16" lean-forward="false" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="16" />
+        <state relative-caret-position="1692">
+          <caret line="139" column="23" lean-forward="false" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#2246#3520#0" expanded="false" />
-            <element signature="e#3565#4376#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/NaiveBayes_sentimentAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/preprocessTweets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="344" column="39" lean-forward="false" selection-start-line="344" selection-start-column="39" selection-end-line="344" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#3916#4727#0" expanded="false" />
+            <element signature="e#4804#6688#0" expanded="false" />
+            <element signature="e#6774#8181#0" expanded="false" />
+            <element signature="e#8234#8649#0" expanded="false" />
+            <element signature="e#8776#11334#0" expanded="false" />
+            <element signature="e#11387#11873#0" expanded="false" />
+            <element signature="e#11916#12056#0" expanded="false" />
+            <element signature="e#12113#14180#0" expanded="false" />
           </folding>
         </state>
       </provider>

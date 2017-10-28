@@ -1,10 +1,12 @@
-import os, csv, sys
+import os, csv, sys, re
 import numpy as np
 from dateutil import parser
 from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import MultinomialNB, BernoulliNB,BaseNB,GaussianNB
+from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
-from sklearn.svm import LinearSVC, SVC
+from sklearn.svm import LinearSVC
+from sklearn.pipeline import Pipeline
+from sklearn.multiclass import OneVsRestClassifier, OneVsOneClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.model_selection import GridSearchCV
@@ -19,13 +21,20 @@ def main(argv):
     corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
     #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
 
+    #find best performing vectorizer for feature extraction
+    tuneVectorizerParameters(corpus=corpus,labels=labels)
+
     #define vectorizer for corpus vectorization
-    vectorizer = TfidfVectorizer(min_df=5, max_df=0.8, sublinear_tf=True, use_idf=True, stop_words='english')
+    #vectorizer = TfidfVectorizer(min_df=5, max_df=0.9, sublinear_tf=True, stop_words='english')
+    #vectorizer = TfidfVectorizer()
 
     #find best parameters for classifiers
-    #tuneParameters(corpus=corpus,labels=labels,vectorizer=vectorizer)
+    #tuneModelParameters(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
-    execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
+
+    #train on movies, evaluate tweets
+    #train1_test2(corpus2,labels2,corpus1,labels1,vectorizer)
+    #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
     '''model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
     # set where to find release dates files
@@ -66,7 +75,7 @@ def make_Corpus_From_Tweets(root_dir):
                     #increase index because we're adding to corpus
                     iterator = iterator + 1
                     #add the tweet to corpus
-                    corpus.append(unicode(row[5], errors='ignore'))
+                    corpus.append(unicode(preprocess(row[5]), errors='ignore'))
                     #add positive or negative label
                     if (row[0] == "0"):
                         labels[iterator] = 0
@@ -103,8 +112,8 @@ def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
 
     #choose classifiers to evaluate
     iter=1;
-    classifiers = [LogisticRegression()]
-    names = ['LogisticRegression']
+    classifiers = [LinearSVC(), MultinomialNB(), BernoulliNB(),LogisticRegression()]
+    names = ['LinearSVC', 'MultinomialNB', 'BernoulliNB','LogisticRegression']
 
     #performance metrics initialization
     crossValidationAccuracy = dict()
@@ -142,6 +151,39 @@ def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
         for item in crossValidationAccuracy[name]: print item,
         print "Cross validation average:" + str(sum(crossValidationAccuracy[name]) / len(crossValidationAccuracy[name]))
 
+def train1_test2(trainCorpus, trainLabels, testCorpus, testLabels, vectorizer):
+    #choose classifiers to evaluate
+    classifiers = [LinearSVC(), MultinomialNB(), BernoulliNB(),LogisticRegression()]
+    names = ['LinearSVC', 'MultinomialNB', 'BernoulliNB','LogisticRegression']
+
+    #performance metrics initialization
+    crossValidationAccuracy = dict()
+    confusionMetrices = dict()
+    for name in names:
+        crossValidationAccuracy[name] = []
+        confusionMetrices[name] = np.zeros((2, 2));  #confusion matrix
+
+    print "Vectorizing data corpuses"
+
+    train_corpus_tf_idf = vectorizer.fit_transform(trainCorpus)
+    test_corpus_tf_idf = vectorizer.transform(testCorpus)
+
+    #fit(train) models and check performance on testing part of data
+    for name,clf in zip(names, classifiers):
+        print "Currently being trained:" + name
+        clf.fit(train_corpus_tf_idf, trainLabels)
+        print "Currently predicting on testing data:" + name
+        result = clf.predict(test_corpus_tf_idf)
+        crossValidationAccuracy[name].append(accuracy_score(testLabels,result))
+        confusionMetrices[name] = confusionMetrices[name] + confusion_matrix(testLabels, result)
+
+    print "Confusion matrices:"
+
+    for name in names:
+        print name
+        print "Cross validation results: ",
+        for item in crossValidationAccuracy[name]: print item,
+        print "Cross validation average:" + str(sum(crossValidationAccuracy[name]) / len(crossValidationAccuracy[name]))
 
 def create_Models(corpus, labels, vectorizer):
     print "Vectorizing training corpus"
@@ -156,6 +198,7 @@ def create_Models(corpus, labels, vectorizer):
 
     return model1_linearSVC, model2_multinomNB
 
+##################### PLOTTING ###################################
 def getDatesAndScores(reader,vectorizer,scikitModel):
     #create corpus of tweets to be analyzed
     tweetsCorpus = []
@@ -214,7 +257,6 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
 
     return averageScores.keys(), averageScores.values(), flooredAverageScores.keys(), flooredAverageScores.values()
 
-
 def plotPolynomials(dates,scores,projectName):
     x = dates
     y = scores
@@ -238,8 +280,6 @@ def plotPolynomials(dates,scores,projectName):
     pylab.title(projectName)
     pyplot.show()
 
-
-
 def convertDatesToPassedDays(dates):
     minDate = min(dates)
     passedDays = []
@@ -248,7 +288,7 @@ def convertDatesToPassedDays(dates):
         passedDays.append(abs((date - minDate).days))
     return passedDays
 
-def tuneParameters(corpus,labels,vectorizer):
+def tuneModelParameters(corpus,labels,vectorizer):
     kf = StratifiedKFold(n_splits=2)
 
     for train_index, test_index in kf.split(corpus, labels):
@@ -293,6 +333,30 @@ def tuneParameters(corpus,labels,vectorizer):
             y_true, y_pred = y_test, clf.predict(test_corpus_tf_idf)
             print(classification_report(y_true, y_pred))
 
+def tuneVectorizerParameters(corpus,labels):
+    pipeline = Pipeline([
+        ('tfidf', TfidfVectorizer(stop_words='english')),
+        ('clf', LinearSVC()),
+    ])
+    parameters = {
+        'tfidf__max_df': (0.75, 0.9),
+        'tfidf__ngram_range': [(1, 1), (1, 2), (1, 3)],
+        'tfidf__sublinear_tf': (True, False),
+        'tfidf__stop_words':['english']
+    }
+
+    grid_search_tune = GridSearchCV(pipeline, parameters, cv=2, n_jobs=2, verbose=3)
+    print("Searching best parameters combination:")
+    grid_search_tune.fit(corpus, labels)
+
+    print("Best parameters set:")
+    print grid_search_tune.best_estimator_.steps
+
+
+def preprocess(raw_text):
+    #letters_only_text = re.sub("[^a-zA-Z]", " ", raw_text)  # keep only words
+    letters_only_text = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",raw_text).split())
+    return letters_only_text
 
 if __name__ == "__main__":
     main(sys.argv)
