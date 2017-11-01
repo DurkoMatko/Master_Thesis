@@ -36,5 +36,5 @@ CREATE TABLE `oss_issues`.`so_questions` (
   `creation_date` DATE NULL,
   `tags` VARCHAR(450) NULL,
   `body` VARCHAR(4000) NULL,
-  `nouns` VARCHAR(450) NULL,
+  `project` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));

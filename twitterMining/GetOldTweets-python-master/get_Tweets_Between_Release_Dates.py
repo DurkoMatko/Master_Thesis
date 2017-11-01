@@ -14,7 +14,10 @@ releaseDatefiles = [f for f in os.listdir(mypath) if os.path.isfile(os.path.join
 for oneFile in releaseDatefiles:
 
 	#get framework name
-	frameworkName = oneFile.replace(".txt","")
+	if "ethereum" in oneFile:
+		frameworkName = "ethereum"
+	else:
+		frameworkName = oneFile.replace(".txt","")
 	print frameworkName
 
 	with open(os.path.join(os.path.dirname(__file__), 'releaseDates/') + oneFile) as releaseDatesFile:

@@ -13,7 +13,8 @@ def main(argv):
 					'https://api.github.com/repos/nodejs/node',
 					'https://api.github.com/repos/bower/bower',
 					'https://api.github.com/repos/gulpjs/gulp',
-					'https://api.github.com/repos/rails/rails']
+					'https://api.github.com/repos/rails/rails',
+					'https://api.github.com/repos/ethereum/go-ethereum']
 	token = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 
 	for projectUri in oss_projects:

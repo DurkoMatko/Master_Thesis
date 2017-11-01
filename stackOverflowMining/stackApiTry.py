@@ -18,7 +18,7 @@ def main(argv):
                         'questions',
                         fromdate=date(2012, 5, 8),  # year,month,day
                         todate=date(2016, 4, 15),
-                        tagged='django',
+                        tagged='angularjs',
                         filter='withbody',
                         sort='creation'
                     )
@@ -27,24 +27,9 @@ def main(argv):
         print len(questions['items'])
         #while(questions['has_more']):
         for question in questions['items']:
-            print question['title']
-            print datetime.fromtimestamp(int(question['creation_date'])).strftime('%Y-%m-%d')
-            #print question['body']
-
-            #nouns = extractNouns(question['body'] + question['title'])
-            #saveQuestion()
-
-            '''questions = SITE.fetch(
-                'questions',
-                fromdate=date(2012, 5, 8),  # year,month,day
-                todate=date(2016, 4, 15),
-                tagged='django',
-                filter='withbody'
-            )
-    j = j +1
-    print 'pages' + str(j)
-    print 'questions' + str(i)'''
-
+            #print question['title']
+            #print datetime.fromtimestamp(int(question['creation_date'])).strftime('%Y-%m-%d')
+            saveQuestion(dbHandle=dbHandle, conn=conn, question=question)
 
     except StackAPIError as e:
         print("   Error URL: {}".format(e.url))
@@ -52,7 +37,17 @@ def main(argv):
         print("   Error Error: {}".format(e.error))
         print("   Error Message: {}".format(e.message))
 
-def saveQuestion():
+def saveQuestion(dbHandle, conn, question):
+    dbHandle.execute(
+        """INSERT INTO oss_issues.so_questions (question_id,title,creation_date,tags,body,project) VALUES (%s,%s,from_unixtime(%s),%s,%s,%s)""",
+        (question['question_id'],
+         question['title'],
+         question['creation_date'],
+         ';'.join(question['tags']),
+         question['body'],
+         'angularjs'
+         ))
+    conn.commit()
     print 'saved'
 
 def extractNouns(titleAndBody):

@@ -22,11 +22,11 @@ def main(argv):
     #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
 
     #find best performing vectorizer for feature extraction
-    tuneVectorizerParameters(corpus=corpus,labels=labels)
+    #tuneVectorizerParameters(corpus=corpus,labels=labels)
 
     #define vectorizer for corpus vectorization
     #vectorizer = TfidfVectorizer(min_df=5, max_df=0.9, sublinear_tf=True, stop_words='english')
-    #vectorizer = TfidfVectorizer()
+    vectorizer = TfidfVectorizer()
 
     #find best parameters for classifiers
     #tuneModelParameters(corpus=corpus,labels=labels,vectorizer=vectorizer)
@@ -35,7 +35,7 @@ def main(argv):
     #train on movies, evaluate tweets
     #train1_test2(corpus2,labels2,corpus1,labels1,vectorizer)
     #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
-    '''model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
+    model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
     # set where to find release dates files
     mypath = os.path.dirname(__file__)
@@ -53,7 +53,7 @@ def main(argv):
             plotPolynomials(dates=flooredDates, scores=flooredScores, projectName=file)
 
             csvFile.close()
-'''
+
 
 def make_Corpus_From_Tweets(root_dir):
     print "Creating training corpus from training tweets"
