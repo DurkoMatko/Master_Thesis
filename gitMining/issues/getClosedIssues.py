@@ -1,6 +1,7 @@
 from urllib2 import urlopen, Request
 import json
 import sys
+import string
 import MySQLdb
 
 reload(sys)
@@ -125,7 +126,7 @@ def getBugs(projectUri,dbHandle,conn,token):
                  issue['closed_at'][0:(issue['closed_at'].rfind('T'))],
                  issue['body'],
                  labelsString,
-                 projectName
+                 "".join(l.lower() for l in projectName if l not in string.punctuation)     #project name in lowercase without punctiation
                  ))
             conn.commit()
         pageNum = pageNum + 1

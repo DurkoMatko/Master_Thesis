@@ -12,27 +12,30 @@ def main(argv):
     SUCCESS_THRESHOLD = 0.5
     [dbHandle,conn] = connectToDb()
 
-    #get Git bugs (issues) and SO question from database
-    bugs_dict = getGitIssues(dbHandle=dbHandle)
-    so_dict = getStackQuestions(dbHandle=dbHandle)
+    projects = ['angularjs']
 
-    for (so_id,so_item) in so_dict.iteritems():
-        for (git_id, git_issue) in bugs_dict.iteritems():
-            commonNouns = list(set(so_item[0]) & set(git_issue[0]))
-            if len(commonNouns) >= len(git_issue[0])*SUCCESS_THRESHOLD:
-                if git_issue[1] != '' and "#" not in git_issue[1]:
-                    print '--------------------------------------------------------------'
-                    print '--------------------------------------------------------------'
-                    #print 'Git Issue:' + '\n' + git_issue[1]
-                    #print 'Stack:' + '\n' + so_item[1]
-                    print commonNouns                    
-                    #print '\n'
-                    #print '\n'
+    for project in projects:
+        #get Git bugs (issues) and SO question from database
+        bugs_dict = getGitIssues(dbHandle=dbHandle,project=project)
+        so_dict = getStackQuestions(dbHandle=dbHandle,project=project)
 
-    print "Done"
+        for (so_id,so_item) in so_dict.iteritems():
+            for (git_id, git_issue) in bugs_dict.iteritems():
+                commonNouns = list(set(so_item[0]) & set(git_issue[0]))
+                if len(commonNouns) >= len(git_issue[0])*SUCCESS_THRESHOLD and len(git_issue[0])>4:
+                    if git_issue[1] != '' and "#" not in git_issue[1]:
+                        print '--------------------------------------------------------------'
+                        print '--------------------------------------------------------------'
+                        #print 'Git Issue:' + '\n' + git_issue[1]
+                        #print 'Stack:' + '\n' + so_item[1]
+                        print commonNouns
+                        #print '\n'
+                        #print '\n'
 
-def getStackQuestions(dbHandle):
-    sql = "Select question_id,title,body from so_questions where project='angularjs'"
+        print "Done"
+
+def getStackQuestions(dbHandle,project):
+    sql = "Select question_id,title,body from so_questions where project='" + project + "'"
     # Execute the SQL command and fetch all the rows in a list of lists.
     dbHandle.execute(sql)
     so_items = dbHandle.fetchall()
@@ -64,8 +67,8 @@ def preprocessStackBody(questionBody):
 
     return questionBody
 
-def getGitIssues(dbHandle):
-    sql = "Select number,title,description from just_bugs where project='angular.js'"
+def getGitIssues(dbHandle,project):
+    sql = "Select number,title,description from just_bugs where project='" + project + "'"
     # Execute the SQL command and fetch all the rows in a list of lists.
     dbHandle.execute(sql)
     results = dbHandle.fetchall()

@@ -11,33 +11,40 @@ sys.setdefaultencoding('utf8')
 def main(argv):
     [dbHandle,conn] = connectToDb()
 
-    try:
-        SITE = StackAPI('stackoverflow')
-        SITE.max_pages = 1;
-        questions = SITE.fetch(
-                        'questions',
-                        fromdate=date(2012, 5, 8),  # year,month,day
-                        todate=date(2016, 4, 15),
-                        tagged='angularjs',
-                        filter='withbody',
-                        sort='creation'
-                    )
-        j = 0
-        print json.dumps(questions)
-        print len(questions['items'])
-        #while(questions['has_more']):
-        for question in questions['items']:
-            #print question['title']
-            #print datetime.fromtimestamp(int(question['creation_date'])).strftime('%Y-%m-%d')
-            saveQuestion(dbHandle=dbHandle, conn=conn, question=question)
+    projects = ['angularjs']
 
-    except StackAPIError as e:
-        print("   Error URL: {}".format(e.url))
-        print("   Error Code: {}".format(e.code))
-        print("   Error Error: {}".format(e.error))
-        print("   Error Message: {}".format(e.message))
+    for project in projects:
+        try:
+            SITE = StackAPI('stackoverflow')
+            SITE.max_pages = 1;
+            questions = SITE.fetch(
+                            'questions',
+                            fromdate=date(2012, 5, 8),  # year,month,day
+                            todate=date(2016, 4, 15),
+                            tagged=project,
+                            filter='withbody',
+                            sort='creation'
+                        )
+            j = 0
+            print json.dumps(questions)
+            print len(questions['items'])
+            while(questions['has_more']):
+                for question in questions['items']:
+                    #print question['title']
+                    #print datetime.fromtimestamp(int(question['creation_date'])).strftime('%Y-%m-%d')
+                    saveQuestion(dbHandle=dbHandle, conn=conn, question=question, project=project)
 
-def saveQuestion(dbHandle, conn, question):
+                j = j + 1
+                if j == 10:
+                    break;
+
+        except StackAPIError as e:
+            print("   Error URL: {}".format(e.url))
+            print("   Error Code: {}".format(e.code))
+            print("   Error Error: {}".format(e.error))
+            print("   Error Message: {}".format(e.message))
+
+def saveQuestion(dbHandle, conn, question, project):
     dbHandle.execute(
         """INSERT INTO oss_issues.so_questions (question_id,title,creation_date,tags,body,project) VALUES (%s,%s,from_unixtime(%s),%s,%s,%s)""",
         (question['question_id'],
@@ -45,7 +52,7 @@ def saveQuestion(dbHandle, conn, question):
          question['creation_date'],
          ';'.join(question['tags']),
          question['body'],
-         'angularjs'
+         project
          ))
     conn.commit()
     print 'saved'
