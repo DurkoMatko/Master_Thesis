@@ -7,14 +7,23 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 def main(argv):
-	oss_projects = ['https://api.github.com/repos/django/django',
-					'https://api.github.com/repos/angular/angular.js',
-					'https://api.github.com/repos/twbs/bootstrap',
-					'https://api.github.com/repos/nodejs/node',
-					'https://api.github.com/repos/bower/bower',
-					'https://api.github.com/repos/gulpjs/gulp',
-					'https://api.github.com/repos/rails/rails',
-					'https://api.github.com/repos/ethereum/go-ethereum']
+	oss_projects = [
+		#'https://api.github.com/repos/django/django',
+		#'https://api.github.com/repos/angular/angular.js',
+		#'https://api.github.com/repos/twbs/bootstrap',
+		#'https://api.github.com/repos/nodejs/node',
+		#'https://api.github.com/repos/bower/bower',
+		#'https://api.github.com/repos/gulpjs/gulp',
+		#'https://api.github.com/repos/rails/rails',
+		#'https://api.github.com/repos/vuejs/vue',
+		'https://api.github.com/repos/emberjs/ember.js',
+		#'https://api.github.com/repos/aurelia/framework',
+		#'https://api.github.com/repos/ethereum/go-ethereum',
+		#'https://api.github.com/repos/bitcoin/bitcoin',
+		#'https://api.github.com/repos/ripple/rippled',
+		#'https://api.github.com/repos/dashpay/dash'
+		#'https://api.github.com/repos/litecoin-project/litecoin'
+	]
 	token = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 
 	for projectUri in oss_projects:
