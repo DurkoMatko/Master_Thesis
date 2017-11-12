@@ -10,8 +10,9 @@ from sklearn.multiclass import OneVsRestClassifier, OneVsOneClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.model_selection import GridSearchCV
-from matplotlib import pyplot
-from matplotlib import pylab
+import matplotlib.pyplot as plt
+import matplotlib.dates as md
+import datetime as dt
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -35,7 +36,7 @@ def main(argv):
     #train on movies, evaluate tweets
     #train1_test2(corpus2,labels2,corpus1,labels1,vectorizer)
     #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
-    model1_linearSVC, model2_multinomNB = create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
+    model3_logisticRegression= create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
     # set where to find release dates files
     mypath = os.path.dirname(__file__)
@@ -46,11 +47,11 @@ def main(argv):
     for file in tweetFiles:
         with open(os.path.join(tweetFilesPath,file)) as csvFile:
             reader = csv.reader(csvFile, delimiter=';')
-            dates, scores, flooredDates, flooredScores = getDatesAndScores(reader=reader, vectorizer=vectorizer, scikitModel=model2_multinomNB)
-            dates = convertDatesToPassedDays(dates)
-            plotPolynomials(dates=dates, scores=scores, projectName=file)
-            flooredDates = convertDatesToPassedDays(dates=flooredDates)
-            plotPolynomials(dates=flooredDates, scores=flooredScores, projectName=file)
+            dates, scores, flooredDates, flooredScores = getDatesAndScores(reader=reader, vectorizer=vectorizer, scikitModel=model3_logisticRegression)
+            passedDays = convertDatesToPassedDays(dates)
+            plotPolynomials(minDate=min(dates), passedDays=passedDays, scores=scores, projectName=file)
+            flooredPassedDays = convertDatesToPassedDays(dates=flooredDates)
+            plotPolynomials(minDate=min(dates),passedDays=flooredPassedDays, scores=flooredScores, projectName=file)
 
             csvFile.close()
 
@@ -192,11 +193,13 @@ def create_Models(corpus, labels, vectorizer):
     # define and fit(train) models
     model1_linearSVC = LinearSVC()
     model2_multinomNB = MultinomialNB()
-    model1_linearSVC.fit(train_corpus_tf_idf, labels)
-    model2_multinomNB.fit(train_corpus_tf_idf, labels)
+    model3_logisticRegression = LogisticRegression()
+    #model1_linearSVC.fit(train_corpus_tf_idf, labels)
+    #model2_multinomNB.fit(train_corpus_tf_idf, labels)
+    model3_logisticRegression.fit(train_corpus_tf_idf, labels)
     print "SciKit models trained and being returned"
 
-    return model1_linearSVC, model2_multinomNB
+    return model3_logisticRegression
 
 ##################### PLOTTING ###################################
 def getDatesAndScores(reader,vectorizer,scikitModel):
@@ -257,10 +260,10 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
 
     return averageScores.keys(), averageScores.values(), flooredAverageScores.keys(), flooredAverageScores.values()
 
-def plotPolynomials(dates,scores,projectName):
-    x = dates
+def plotPolynomials(minDate,passedDays,scores,projectName):
+    x = passedDays
     y = scores
-
+    print "max x:" + str(max(x))
     # calculate polynomial
     z2 = np.polyfit(x, y, 2)
     z3 = np.polyfit(x, y, 3)
@@ -269,16 +272,29 @@ def plotPolynomials(dates,scores,projectName):
     f3 = np.poly1d(z3)
     f4 = np.poly1d(z4)
 
-    # calculate new x's and y's
+    # calculate new x's and y's for regression
     x_new = np.linspace(0, max(x), 200)
     y_new2 = f2(x_new)
     y_new3 = f3(x_new)
     y_new4 = f4(x_new)
 
+    #revert original x-axis passed days to date format
+    original_dates = [dt.datetime.fromtimestamp(ts) for ts in x]
+    x_original_datenums = md.date2num(original_dates)
 
-    pyplot.plot(x, y, 'o', x_new, y_new2, '.', x_new, y_new3, '-', x_new,y_new4, '--')
-    pylab.title(projectName)
-    pyplot.show()
+    #revert regression x-axis values to datetime format
+    x_axis_dates = [dt.datetime.fromtimestamp(ts) for ts in x_new]
+    x_regression_datenums = md.date2num(x_axis_dates)
+
+    # set x-axis labels to datetime format
+    ax = plt.gca()
+    xfmt = md.DateFormatter('%Y-%m-%d %H:%M:%S')
+    ax.xaxis.set_major_formatter(xfmt)
+
+    # plot original and regression data
+    plt.plot(x_original_datenums, y, 'o', x_regression_datenums, y_new2, '.', x_regression_datenums, y_new3, '-', x_regression_datenums,y_new4, '--')
+    plt.title(projectName)
+    plt.show()
 
 def convertDatesToPassedDays(dates):
     minDate = min(dates)
@@ -287,6 +303,14 @@ def convertDatesToPassedDays(dates):
     for date in dates:
         passedDays.append(abs((date - minDate).days))
     return passedDays
+
+def convertPassedDaysToDates(minDate,days):
+    dates = []
+
+    for passed in days:
+        dates.append(minDate + dt.timedelta(days=passed))
+
+    return dates
 
 def tuneModelParameters(corpus,labels,vectorizer):
     kf = StratifiedKFold(n_splits=2)

@@ -11,12 +11,23 @@ def main(argv):
     token = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
     [dbHandle,conn] = connectToDb()
 
-    oss_projects = ['https://api.github.com/repos/django/django',
-					'https://api.github.com/repos/angular/angular.js',
-					'https://api.github.com/repos/twbs/bootstrap',
-                    'https://api.github.com/repos/bower/bower',
-					'https://api.github.com/repos/gulpjs/gulp',
-                    'https://api.github.com/repos/rails/rails'] #,'https://api.github.com/repos/nodejs/node'
+    oss_projects = [
+        #'https://api.github.com/repos/django/django',
+        #'https://api.github.com/repos/angular/angular.js',
+        #'https://api.github.com/repos/twbs/bootstrap',
+        #'https://api.github.com/repos/bower/bower',
+        #'https://api.github.com/repos/gulpjs/gulp',
+        #'https://api.github.com/repos/rails/rails',
+        #'https://api.github.com/repos/nodejs/node',
+        #'https://api.github.com/repos/vuejs/vue',
+        #'https://api.github.com/repos/emberjs/ember.js',
+        #'https://api.github.com/repos/aurelia/framework',
+        #'https://api.github.com/repos/ethereum/go-ethereum',
+        #'https://api.github.com/repos/bitcoin/bitcoin',
+        #'https://api.github.com/repos/ripple/rippled',
+        #'https://api.github.com/repos/dashpay/dash'
+        #'https://api.github.com/repos/litecoin-project/litecoin'
+        ]
 
 
     for project in oss_projects:
@@ -87,6 +98,11 @@ def getBugs(projectUri,dbHandle,conn,token):
     # get index of last slash
     lastSlashIndex = projectUri.rfind('/') + 1
     projectName = projectUri[lastSlashIndex:]
+    if(projectName=='vue'): projectName='vue.js';
+    if (projectName == 'framework'): projectName = 'aurelia';
+    if (projectName == 'go-ethereum'): projectName = 'ethereum';
+    if (projectName == 'rippled'): projectName = 'ripple';
+    if (projectName == 'node'): projectName = 'node.js';
     print projectName
 
     pageNum = 1
@@ -96,7 +112,6 @@ def getBugs(projectUri,dbHandle,conn,token):
     project = urlopen(request).read()
     issues = json.loads(project)
 
-    # insertQuery = "INSERT INTO oss_issues.issues (title,created,closed,description,labels,project) VALUES "
     while (issues):
         # for each tag(release) of current OSS project
         for issue in issues:
@@ -114,8 +129,21 @@ def getBugs(projectUri,dbHandle,conn,token):
             # if angular issue isn't flagged as bug
             if (projectName == 'angular.js' and not any(lbl in labelsString for lbl in ['type: bug'])):
                 continue;
-            # if angular issue isn't flagged as bug
-            if ((projectName == 'gulp' or projectName == 'bower') and not any(lbl in labelsString for lbl in ['bug'])):
+            # if gulp or bower issue isn't flagged as bug
+            if ((projectName == 'gulp' or
+                 projectName == 'bower') and not any(lbl in labelsString for lbl in ['bug'])):
+                continue;
+            if ((projectName == 'ember.js') and not any(lbl in labelsString for lbl in ['Bug'])):
+                continue;
+            if ((projectName == 'vue.js') and not any(lbl in labelsString for lbl in ['bug','browser quirks','1.x','2.x'])):
+                continue;
+            if ((projectName == 'aurelia') and not any(lbl in labelsString for lbl in ['bug','enhancement'])):
+                continue;
+            if ((projectName == 'node.js') and not any(lbl in labelsString for lbl in ['confirmed-bug','errors','http','install'])):
+                continue;
+            if ((projectName == 'ethereum') and not any(lbl in labelsString for lbl in ['bug','need fix','core','enhancement'])):
+                continue;
+            if ((projectName == 'bitcoin') and not any(lbl in labelsString for lbl in ['bug','mining','Data corruption','Priority High'])):
                 continue;
 
             dbHandle.execute(

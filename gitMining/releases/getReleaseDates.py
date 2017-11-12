@@ -16,7 +16,7 @@ def main(argv):
 		#'https://api.github.com/repos/gulpjs/gulp',
 		#'https://api.github.com/repos/rails/rails',
 		#'https://api.github.com/repos/vuejs/vue',
-		'https://api.github.com/repos/emberjs/ember.js',
+		#'https://api.github.com/repos/emberjs/ember.js',
 		#'https://api.github.com/repos/aurelia/framework',
 		#'https://api.github.com/repos/ethereum/go-ethereum',
 		#'https://api.github.com/repos/bitcoin/bitcoin',

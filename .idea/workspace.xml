@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" line="24" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" line="35" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/thesisText/.~lock.Pairing items.odt#" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/nodejs.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/audacity.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/glassfish.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/gnucash.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/libreOffice.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/magento.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/shotcut.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/vlc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/angularjs.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/bootstrap.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/go-ethereum.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/nodejs.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/Sentiment analysis.odt" afterPath="$PROJECT_DIR$/thesisText/Sentiment analysis.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/Social media.odt" afterPath="$PROJECT_DIR$/thesisText/Social media.odt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.masterThesis_Ideas.odt#" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.~lock.masterThesis_Ideas.odt#" afterPath="$PROJECT_DIR$/.~lock.masterThesis_Ideas.odt#" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" afterPath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" afterPath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/tweets_To_Analyze/ethereum.csv" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/tweets_To_Analyze/ethereum.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/bootstrap.txt" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/bootstrap.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/.~lock.Sentiment analysis.odt#" afterPath="$PROJECT_DIR$/thesisText/.~lock.Sentiment analysis.odt#" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,32 +24,37 @@
       <file leaf-file-name="stackApiTry.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="216">
+              <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getClosedIssues.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
+      <file leaf-file-name="SciKit_sentimentAnalysis.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="128" column="138" lean-forward="false" selection-start-line="128" selection-start-column="138" selection-end-line="128" selection-end-column="138" />
+            <state relative-caret-position="-432">
+              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
-                <element signature="e#1243#1641#0" expanded="false" />
-                <element signature="e#1694#3318#0" expanded="false" />
+                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#2670#3956#0" expanded="false" />
+                <element signature="e#4001#4812#0" expanded="false" />
+                <element signature="e#4889#6773#0" expanded="false" />
+                <element signature="e#6859#8266#0" expanded="false" />
+                <element signature="e#8319#8842#0" expanded="false" />
+                <element signature="e#13133#15200#0" expanded="false" />
+                <element signature="e#15251#15835#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="126">
+              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -85,21 +75,11 @@
       <file leaf-file-name="redditTry.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/redditMining/redditTry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="378">
               <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="get_Tweets_Between_Release_Dates.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-390">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getopt</find>
       <find>delim</find>
       <find>extract_features</find>
       <find>print</find>
@@ -145,6 +124,7 @@
       <find>p&gt;This is the Authentication service code:&lt;/p&gt;</find>
       <find>extractNouns</find>
       <find>projectName</find>
+      <find>plotPolynomials</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,12 +150,13 @@
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/cross_Validation.py" />
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/GridSearchTuning.py" />
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/preprocessTweets.py" />
-        <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
         <option value="$PROJECT_DIR$/stackOverflowMining/tryPairingItems.py" />
         <option value="$PROJECT_DIR$/stackOverflowMining/stackApiTry.py" />
-        <option value="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
         <option value="$PROJECT_DIR$/pairingItems/pairing_SO_items.py" />
         <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" />
+        <option value="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
+        <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/test.py" />
+        <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
         <option value="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
       </list>
     </option>
@@ -204,7 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,18 +200,12 @@
             <path>
               <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
               <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
-              <item name="gitMining" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
-              <item name="gitMining" type="462c0819:PsiDirectoryNode" />
-              <item name="releases" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
               <item name="redditMining" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Master_Thesis" type="462c0819:PsiDirectoryNode" />
+              <item name="sentimentAnalysis_betweenReleases" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Master_Thesis" type="b2602c69:ProjectViewProjectNode" />
@@ -254,6 +228,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RecentsManager">
@@ -277,7 +252,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.get_Tweets_Between_Release_Dates">
+  <component name="RunManager" selected="Python.SciKit_sentimentAnalysis">
+    <configuration name="SciKit_sentimentAnalysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Master_Thesis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="getClosedIssues" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -329,54 +321,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="pairing_SO_items" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pairingItems" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Master_Thesis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pairingItems/pairing_SO_items.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="stackApiTry" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stackOverflowMining" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Master_Thesis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stackOverflowMining/stackApiTry.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.stackApiTry" />
-      <item index="1" class="java.lang.String" itemvalue="Python.pairing_SO_items" />
-      <item index="2" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-      <item index="3" class="java.lang.String" itemvalue="Python.getReleaseDates" />
-      <item index="4" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
+      <item index="0" class="java.lang.String" itemvalue="Python.getClosedIssues" />
+      <item index="1" class="java.lang.String" itemvalue="Python.getReleaseDates" />
+      <item index="2" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
+      <item index="3" class="java.lang.String" itemvalue="Python.SciKit_sentimentAnalysis" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
-        <item index="1" class="java.lang.String" itemvalue="Python.getReleaseDates" />
-        <item index="2" class="java.lang.String" itemvalue="Python.pairing_SO_items" />
-        <item index="3" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-        <item index="4" class="java.lang.String" itemvalue="Python.stackApiTry" />
+        <item index="0" class="java.lang.String" itemvalue="Python.SciKit_sentimentAnalysis" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.getClosedIssues" />
+        <item index="3" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
+        <item index="4" class="java.lang.String" itemvalue="Python.getReleaseDates" />
       </list>
     </recent_temporary>
   </component>
@@ -397,14 +372,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1600" y="8" width="1600" height="904" extended-state="6" />
+    <frame x="1483" y="36" width="1602" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4649123" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3809524" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -461,19 +436,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py</url>
           <line>34</line>
           <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
-          <line>194</line>
-          <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py</url>
@@ -487,7 +452,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
-          <line>129</line>
+          <line>130</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -506,8 +471,9 @@
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py</url>
-          <option name="timeStamp" value="87" />
+          <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
+          <line>312</line>
+          <option name="timeStamp" value="95" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -520,18 +486,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="88" />
+      <option name="time" value="96" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -566,8 +525,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#1243#1641#0" expanded="false" />
-            <element signature="e#1694#3318#0" expanded="false" />
+            <element signature="e#1723#2121#0" expanded="false" />
+            <element signature="e#2174#3798#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -592,8 +551,8 @@
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#1243#1641#0" expanded="false" />
-            <element signature="e#1694#3318#0" expanded="false" />
+            <element signature="e#1723#2121#0" expanded="false" />
+            <element signature="e#2174#3798#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -625,8 +584,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#1243#1641#0" expanded="false" />
-            <element signature="e#1694#3318#0" expanded="false" />
+            <element signature="e#1723#2121#0" expanded="false" />
+            <element signature="e#2174#3798#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,8 +610,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#1243#1641#0" expanded="false" />
-            <element signature="e#1694#3318#0" expanded="false" />
+            <element signature="e#1723#2121#0" expanded="false" />
+            <element signature="e#2174#3798#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -670,8 +629,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#1243#1641#0" expanded="false" />
-            <element signature="e#1694#3318#0" expanded="false" />
+            <element signature="e#1723#2121#0" expanded="false" />
+            <element signature="e#2174#3798#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,28 +757,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
+    <entry file="file://$PROJECT_DIR$/twitterMining/TwitterTry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="121" column="42" lean-forward="false" selection-start-line="121" selection-start-column="42" selection-end-line="121" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-            <element signature="e#3910#4721#0" expanded="false" />
-            <element signature="e#6768#8175#0" expanded="false" />
-            <element signature="e#8228#8643#0" expanded="false" />
-            <element signature="e#8770#11328#0" expanded="false" />
-            <element signature="e#11381#11867#0" expanded="false" />
-            <element signature="e#11910#12050#0" expanded="false" />
-            <element signature="e#12107#14174#0" expanded="false" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="-390">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redditMining/redditTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -833,48 +791,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitterMining/TwitterTry.py">
+    <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/redditMining/redditTry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="28" selection-end-column="65" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#1723#2121#0" expanded="false" />
+            <element signature="e#2174#3798#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
+    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="128" column="138" lean-forward="false" selection-start-line="128" selection-start-column="138" selection-end-line="128" selection-end-column="138" />
+        <state relative-caret-position="115">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#1243#1641#0" expanded="false" />
-            <element signature="e#1694#3318#0" expanded="false" />
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#2670#3956#0" expanded="false" />
+            <element signature="e#4001#4812#0" expanded="false" />
+            <element signature="e#4889#6773#0" expanded="false" />
+            <element signature="e#6859#8266#0" expanded="false" />
+            <element signature="e#8319#8842#0" expanded="false" />
+            <element signature="e#13133#15200#0" expanded="false" />
+            <element signature="e#15251#15835#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding />
         </state>
       </provider>
