@@ -15,6 +15,7 @@ for oneFile in releaseDatefiles:
 
 	#get framework name
 	frameworkName = oneFile.replace(".txt","")
+	if(frameworkName=='ruby on rails'): frameworkName='rubyonrails';
 	print frameworkName
 
 	with open(os.path.join(os.path.dirname(__file__), 'releaseDates/') + oneFile) as releaseDatesFile:

@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.masterThesis_Ideas.odt#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" afterPath="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" afterPath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/tweets_To_Analyze/ethereum.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/angularjs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/aurelia.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/bitcoin.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/bootstrap.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/dash.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/ethereum.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/litecoin.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/nodejs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/ripple.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/alreadyAnalyzed/vuejs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/releaseDates/emberjs.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/Sentiment analysis.odt" afterPath="$PROJECT_DIR$/thesisText/Sentiment analysis.odt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/.~lock.Sentiment analysis.odt#" afterPath="$PROJECT_DIR$/thesisText/.~lock.Sentiment analysis.odt#" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SciKit_sentimentAnalysis.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SciKit_sentimentAnalysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-432">
-              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="401">
+              <caret line="281" column="78" lean-forward="false" selection-start-line="281" selection-start-column="78" selection-end-line="281" selection-end-column="78" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#2670#3956#0" expanded="false" />
@@ -43,18 +53,18 @@
                 <element signature="e#4889#6773#0" expanded="false" />
                 <element signature="e#6859#8266#0" expanded="false" />
                 <element signature="e#8319#8842#0" expanded="false" />
-                <element signature="e#13133#15200#0" expanded="false" />
-                <element signature="e#15251#15835#0" expanded="false" />
+                <element signature="e#12975#15042#0" expanded="false" />
+                <element signature="e#15093#15677#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="108">
+              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -153,11 +163,11 @@
         <option value="$PROJECT_DIR$/stackOverflowMining/tryPairingItems.py" />
         <option value="$PROJECT_DIR$/stackOverflowMining/stackApiTry.py" />
         <option value="$PROJECT_DIR$/pairingItems/pairing_SO_items.py" />
-        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" />
         <option value="$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" />
         <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/test.py" />
-        <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
         <option value="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
+        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py" />
+        <option value="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
       </list>
     </option>
   </component>
@@ -348,9 +358,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.SciKit_sentimentAnalysis" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-        <item index="3" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
+        <item index="1" class="java.lang.String" itemvalue="Python.get_Tweets_Between_Release_Dates" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.getClosedIssues" />
         <item index="4" class="java.lang.String" itemvalue="Python.getReleaseDates" />
       </list>
     </recent_temporary>
@@ -472,7 +482,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py</url>
-          <line>312</line>
+          <line>309</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
       </breakpoints>
@@ -486,7 +496,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="96" />
+      <option name="time" value="99" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -764,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/redditMining/redditTry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -811,6 +814,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -819,10 +830,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        <state relative-caret-position="401">
+          <caret line="281" column="78" lean-forward="false" selection-start-line="281" selection-start-column="78" selection-end-line="281" selection-end-column="78" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#2670#3956#0" expanded="false" />
@@ -830,17 +849,9 @@
             <element signature="e#4889#6773#0" expanded="false" />
             <element signature="e#6859#8266#0" expanded="false" />
             <element signature="e#8319#8842#0" expanded="false" />
-            <element signature="e#13133#15200#0" expanded="false" />
-            <element signature="e#15251#15835#0" expanded="false" />
+            <element signature="e#12975#15042#0" expanded="false" />
+            <element signature="e#15093#15677#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>

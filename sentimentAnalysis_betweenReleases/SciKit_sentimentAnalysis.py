@@ -19,8 +19,8 @@ sys.setdefaultencoding('utf8')
 
 def main(argv):
     # Create a corpus from training data
-    corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
-    #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
+    #corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
+    corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
 
     #find best performing vectorizer for feature extraction
     #tuneVectorizerParameters(corpus=corpus,labels=labels)
@@ -279,20 +279,17 @@ def plotPolynomials(minDate,passedDays,scores,projectName):
     y_new4 = f4(x_new)
 
     #revert original x-axis passed days to date format
-    original_dates = [dt.datetime.fromtimestamp(ts) for ts in x]
-    x_original_datenums = md.date2num(original_dates)
+    original_dates = convertPassedDaysToDates(minDate=minDate,days=passedDays)
 
     #revert regression x-axis values to datetime format
-    x_axis_dates = [dt.datetime.fromtimestamp(ts) for ts in x_new]
-    x_regression_datenums = md.date2num(x_axis_dates)
+    regression_dates = convertPassedDaysToDates(minDate=minDate, days=x_new)
 
     # set x-axis labels to datetime format
-    ax = plt.gca()
-    xfmt = md.DateFormatter('%Y-%m-%d %H:%M:%S')
-    ax.xaxis.set_major_formatter(xfmt)
+    fig, ax = plt.subplots()
+    fig.autofmt_xdate()
 
     # plot original and regression data
-    plt.plot(x_original_datenums, y, 'o', x_regression_datenums, y_new2, '.', x_regression_datenums, y_new3, '-', x_regression_datenums,y_new4, '--')
+    plt.plot(original_dates, y, 'o', regression_dates, y_new2, '.', regression_dates, y_new3, '-', regression_dates,y_new4, '--')
     plt.title(projectName)
     plt.show()
 
