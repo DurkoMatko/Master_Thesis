@@ -13,7 +13,7 @@ def main(argv):
 
     oss_projects = [
         #'https://api.github.com/repos/django/django',
-        #'https://api.github.com/repos/angular/angular.js',
+        'https://api.github.com/repos/angular/angular.js',
         #'https://api.github.com/repos/twbs/bootstrap',
         #'https://api.github.com/repos/bower/bower',
         #'https://api.github.com/repos/gulpjs/gulp',

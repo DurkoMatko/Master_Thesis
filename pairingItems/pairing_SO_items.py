@@ -12,12 +12,30 @@ def main(argv):
     SUCCESS_THRESHOLD = 0.5
     [dbHandle,conn] = connectToDb()
 
-    projects = ['angularjs']
+    projects = [
+        # 'https://api.github.com/repos/django/django',
+        #'angularjs',
+        #'bootstrap',
+        #'node',
+        #'bower',
+        #'gulp',
+        #'rails',
+        #'vuejs',
+        'emberjs',
+        #'framework',
+        #'ethereum',
+        #'bitcoin',
+        #'rippled',
+        #'dash'
+        #'litecoin'
+    ]
 
     for project in projects:
         #get Git bugs (issues) and SO question from database
         bugs_dict = getGitIssues(dbHandle=dbHandle,project=project)
         so_dict = getStackQuestions(dbHandle=dbHandle,project=project)
+        print "Number of bugs:" + str(len(bugs_dict))
+        print "Number of questions:" + str(len(so_dict))
 
         for (so_id,so_item) in so_dict.iteritems():
             for (git_id, git_issue) in bugs_dict.iteritems():

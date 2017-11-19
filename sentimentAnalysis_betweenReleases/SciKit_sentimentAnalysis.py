@@ -19,8 +19,8 @@ sys.setdefaultencoding('utf8')
 
 def main(argv):
     # Create a corpus from training data
-    #corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
-    corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
+    corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
+    #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
 
     #find best performing vectorizer for feature extraction
     #tuneVectorizerParameters(corpus=corpus,labels=labels)
@@ -257,6 +257,7 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
     print "Calculating average scores for year-month combinations"
     for flooredDate, scoreSum in flooredSentimentScoresDict.iteritems():
         flooredAverageScores[flooredDate] = scoreSum / flooredDateCounts[flooredDate]
+        print flooredDate
 
     return averageScores.keys(), averageScores.values(), flooredAverageScores.keys(), flooredAverageScores.values()
 
@@ -287,10 +288,25 @@ def plotPolynomials(minDate,passedDays,scores,projectName):
     # set x-axis labels to datetime format
     fig, ax = plt.subplots()
     fig.autofmt_xdate()
+    ax.set_ylim([0, 1.2])
 
     # plot original and regression data
-    plt.plot(original_dates, y, 'o', regression_dates, y_new2, '.', regression_dates, y_new3, '-', regression_dates,y_new4, '--')
+    plt.plot(original_dates, y, 'o')
+    plt.plot(regression_dates, y_new2, '.', label='quadratic polynomial fit')
+    plt.plot(regression_dates, y_new3, '-',label='cubic polynomial fit')
+    plt.plot(regression_dates,y_new4, '--',label='quartic polynomial fit')
+    legend = ax.legend(loc='lower right', shadow=True)
+    # The frame is matplotlib.patches.Rectangle instance surrounding the legend.
+    frame = legend.get_frame()
+    frame.set_facecolor('0.90')
+
+    # Set the fontsize
+    for label in legend.get_texts():
+        label.set_fontsize('large')
+    for label in legend.get_lines():
+        label.set_linewidth(1.5)  # the legend line width
     plt.title(projectName)
+
     plt.show()
 
 def convertDatesToPassedDays(dates):

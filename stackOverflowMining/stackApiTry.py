@@ -4,6 +4,7 @@ import nltk
 import sys
 import json
 import MySQLdb
+import string
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -11,9 +12,26 @@ sys.setdefaultencoding('utf8')
 def main(argv):
     [dbHandle,conn] = connectToDb()
 
-    projects = ['angularjs']
+    projects = [
+        # 'https://api.github.com/repos/django/django',
+        'angularjs',
+        'bootstrap',
+        'node.js',
+        'bower',
+        'gulp',
+        'ruby-on-rails',
+        'vue.js',
+        'ember.js',
+        'aurelia'
+        #'go-ethereum',
+        #'bitcoin',
+        #'rippled',
+        #'dash'
+        #'litecoin'
+    ]
 
     for project in projects:
+        print project
         try:
             SITE = StackAPI('stackoverflow')
             SITE.max_pages = 1;
@@ -52,10 +70,10 @@ def saveQuestion(dbHandle, conn, question, project):
          question['creation_date'],
          ';'.join(question['tags']),
          question['body'],
-         project
+         "".join(l.lower() for l in project if l not in string.punctuation)
+         # project name in lowercase without punctiation
          ))
     conn.commit()
-    print 'saved'
 
 def extractNouns(titleAndBody):
     # function to test if something is a noun

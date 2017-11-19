@@ -1,7 +1,16 @@
 from os import listdir,system
+from dateutil import parser
 from os.path import isfile, join
 import os
 import datetime
+
+def perdelta(start, end, delta):
+	result = []
+	curr = start
+	while curr < end:
+		result.append(curr)
+		curr += delta
+	return result
 
 DAY_INTERVAL = 2
 TWEETS_PER_RELEASE = 30
@@ -22,24 +31,26 @@ for oneFile in releaseDatefiles:
 		#read lines of the file
 		content = releaseDatesFile.read().splitlines()
 
-		# sort dates
-		sortedReleaseDates = []
+		# parse dates
+		dates = []
 		for line in content:
-			sortedReleaseDates.append(line.split(" ", 1)[0])
-		sortedReleaseDates.sort()
+			dates.append(parser.parse(line.split(" ", 1)[0]).date())
+
+		#create list of of dates incremented by week
+		searchDates = perdelta(min(dates),max(dates),delta=datetime.timedelta(weeks=1))
 
 		lineNum = 0;
 		# execute terminal call for each releaseDate
-		for releaseDate in sortedReleaseDates:
+		for releaseDate in searchDates:
 			try:
-				nextRelease = sortedReleaseDates[lineNum + 1]
+				nextRelease = searchDates[lineNum + 1]
 			except:  # break loop if already reached last release
 				break;
 
 			#find mid-point date between 2 releases
-			releaseDate = datetime.datetime.strptime(releaseDate, "%Y-%m-%d").date()
+			#releaseDate = datetime.datetime.strptime(releaseDate, "%Y-%m-%d").date()
 			print releaseDate
-			nextRelease = datetime.datetime.strptime(nextRelease, "%Y-%m-%d").date()
+			#nextRelease = datetime.datetime.strptime(nextRelease, "%Y-%m-%d").date()
 			betweenReleases = releaseDate + (nextRelease - releaseDate)/2
 
 			#calculate bounds
