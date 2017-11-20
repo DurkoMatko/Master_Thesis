@@ -23,6 +23,7 @@ def main(argv):
 		#'https://api.github.com/repos/ripple/rippled',
 		#'https://api.github.com/repos/dashpay/dash'
 		#'https://api.github.com/repos/litecoin-project/litecoin'
+		#'https://api.github.com/repos/monero-project/monero'
 	]
 	token = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 

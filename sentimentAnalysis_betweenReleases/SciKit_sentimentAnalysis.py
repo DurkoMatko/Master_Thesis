@@ -49,9 +49,9 @@ def main(argv):
             reader = csv.reader(csvFile, delimiter=';')
             dates, scores, flooredDates, flooredScores = getDatesAndScores(reader=reader, vectorizer=vectorizer, scikitModel=model3_logisticRegression)
             passedDays = convertDatesToPassedDays(dates)
-            plotPolynomials(minDate=min(dates), passedDays=passedDays, scores=scores, projectName=file)
+            plotPolynomials(minDate=min(dates), passedDays=passedDays, scores=scores, projectName=file,mypath=mypath)
             flooredPassedDays = convertDatesToPassedDays(dates=flooredDates)
-            plotPolynomials(minDate=min(dates),passedDays=flooredPassedDays, scores=flooredScores, projectName=file)
+            plotPolynomials(minDate=min(dates),passedDays=flooredPassedDays, scores=flooredScores, projectName=file,mypath=mypath)
 
             csvFile.close()
 
@@ -257,11 +257,10 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
     print "Calculating average scores for year-month combinations"
     for flooredDate, scoreSum in flooredSentimentScoresDict.iteritems():
         flooredAverageScores[flooredDate] = scoreSum / flooredDateCounts[flooredDate]
-        print flooredDate
 
     return averageScores.keys(), averageScores.values(), flooredAverageScores.keys(), flooredAverageScores.values()
 
-def plotPolynomials(minDate,passedDays,scores,projectName):
+def plotPolynomials(minDate,passedDays,scores,projectName,mypath):
     x = passedDays
     y = scores
     print "max x:" + str(max(x))
@@ -295,7 +294,22 @@ def plotPolynomials(minDate,passedDays,scores,projectName):
     plt.plot(regression_dates, y_new2, '.', label='quadratic polynomial fit')
     plt.plot(regression_dates, y_new3, '-',label='cubic polynomial fit')
     plt.plot(regression_dates,y_new4, '--',label='quartic polynomial fit')
-    legend = ax.legend(loc='lower right', shadow=True)
+
+    # if it is cryptocurrency, get history prices
+    cryptoPricesPath = os.path.join(mypath, 'cryptoPrices')
+    priceFiles = [f for f in os.listdir(cryptoPricesPath) if os.path.isfile(os.path.join(cryptoPricesPath, f))]
+    if projectName in priceFiles:
+        #get prices and dates
+        priceDates,prices = getCryptoPrices(projectName=projectName, cryptoPricesPath=cryptoPricesPath)
+        #insert first price 0 to make the graph nicer
+        priceDates.insert(len(priceDates), min(original_dates))
+        prices.insert(len(prices),0)
+
+        #add secondary y-axis
+        ax2 = ax.twinx()
+        ax2.plot(priceDates, prices,'grey',label='Price')
+
+    legend = ax.legend(loc='lower left', shadow=True)
     # The frame is matplotlib.patches.Rectangle instance surrounding the legend.
     frame = legend.get_frame()
     frame.set_facecolor('0.90')
@@ -308,6 +322,22 @@ def plotPolynomials(minDate,passedDays,scores,projectName):
     plt.title(projectName)
 
     plt.show()
+
+def getCryptoPrices(projectName,cryptoPricesPath):
+    with open(os.path.join(cryptoPricesPath, projectName)) as priceFile:
+        reader = csv.reader(priceFile, delimiter=',')
+        priceDates = []
+        prices = []
+        for row in reader:
+            # skip first row
+            if (row[0] == 'Date'):
+                continue;
+            # create arrays
+            priceDates.append(dt.datetime.strptime(row[0],'%b %d, %Y'))
+            prices.append(float(row[1]))
+
+    return priceDates, prices
+
 
 def convertDatesToPassedDays(dates):
     minDate = min(dates)
