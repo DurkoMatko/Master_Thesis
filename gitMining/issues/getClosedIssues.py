@@ -145,6 +145,7 @@ def getBugs(projectUri,dbHandle,conn,token):
                 continue;
             if ((projectName == 'bitcoin') and not any(lbl in labelsString for lbl in ['bug','mining','Data corruption','Priority High'])):
                 continue;
+            #dash, ripple, litecoin have small amount of issues so no need to filter them
 
             dbHandle.execute(
                 """INSERT INTO oss_issues.just_bugs (title,number,created,closed,description,labels,project) VALUES (%s,%s,%s,%s,%s,%s,%s)""",

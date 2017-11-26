@@ -14,46 +14,48 @@ def main(argv):
 
     projects = [
         # 'https://api.github.com/repos/django/django',
-        'angularjs',
-        'bootstrap',
-        'node.js',
-        'bower',
-        'gulp',
-        'ruby-on-rails',
-        'vue.js',
-        'ember.js',
-        'aurelia'
+        #'angularjs',
+        #'bootstrap',   #no stack overflow tag
+        #'node.js',
+        #'bower',
+        #'gulp',
+        #'ruby-on-rails',
+        #'vue.js',
+        #'ember.js',
+        'aurelia',
         #'go-ethereum',
+        'ethereum',
         #'bitcoin',
-        #'rippled',
-        #'dash'
+        #'rippled',  #no stack overflow tag
+        #'dash',    #no stack overflow tag
         #'litecoin'
     ]
 
     for project in projects:
         print project
         try:
+            page=1
             SITE = StackAPI('stackoverflow')
             SITE.max_pages = 1;
-            questions = SITE.fetch(
-                            'questions',
-                            fromdate=date(2012, 5, 8),  # year,month,day
-                            todate=date(2016, 4, 15),
-                            tagged=project,
-                            filter='withbody',
-                            sort='creation'
-                        )
-            j = 0
-            print json.dumps(questions)
-            print len(questions['items'])
-            while(questions['has_more']):
+            while True:
+                questions = SITE.fetch(
+                    'questions',
+                    fromdate=date(2012, 5, 8),  # year,month,day
+                    todate=date(2016, 4, 15),
+                    tagged=project,
+                    filter='withbody',
+                    sort='creation',
+                    page=page
+                )
+                print len(questions['items'])
                 for question in questions['items']:
                     #print question['title']
                     #print datetime.fromtimestamp(int(question['creation_date'])).strftime('%Y-%m-%d')
+                    if project == 'go-ethereum': project = 'ethereum'
                     saveQuestion(dbHandle=dbHandle, conn=conn, question=question, project=project)
 
-                j = j + 1
-                if j == 10:
+                page = page + 1
+                if page == 11 or not questions['has_more']:
                     break;
 
         except StackAPIError as e:

@@ -21,10 +21,10 @@ def main(argv):
         #'gulp',
         #'rails',
         #'vuejs',
-        'emberjs',
+        #'emberjs',
         #'framework',
         #'ethereum',
-        #'bitcoin',
+        'bitcoin',
         #'rippled',
         #'dash'
         #'litecoin'
@@ -95,7 +95,7 @@ def getGitIssues(dbHandle,project):
     for res in results:
         title = unicode(res[1])
         description = unicode(res[2])
-        # add tuple (nouns,description) and bug id to dictionary
+        # add tuple (nouns,description) and to dictionary - key is bug id
         bugs_dict[int(res[0])] = (getNouns(title + " " + description), title + " " + description)
 
     return bugs_dict
