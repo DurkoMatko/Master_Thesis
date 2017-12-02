@@ -38,7 +38,10 @@ def main(argv):
     #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
     model3_logisticRegression= create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
-    # set where to find release dates files
+    #playing with thresholds in confidence to differ among positive, negative and neutral tweets
+    #PosNeg_thresholds_on_test_data(model=model3_logisticRegression,vectorizer=vectorizer)
+    
+    # set where to find tweets to analyze
     mypath = os.path.dirname(__file__)
     tweetFilesPath = os.path.join(mypath, 'tweets_To_Analyze')
     tweetFiles = [f for f in os.listdir(tweetFilesPath) if os.path.isfile(os.path.join(tweetFilesPath, f))]
@@ -63,12 +66,13 @@ def make_Corpus_From_Tweets(root_dir):
     trainDataFiles = [f for f in os.listdir(trainDataPath) if os.path.isfile(os.path.join(trainDataPath, f))]
 
     corpus = []
-    #initialization of numpy array needed (1,600,000 is size of my sentiment140 training dataset)
+    #initialization of numpy array needed (1,600,000 is size of my sentiment140 training dataset, 499 of test set)
     labels = np.zeros(1600000);
     for file in trainDataFiles:
         with open(os.path.join(mypath, root_dir+'/') + file) as trainingFile:
             reader = csv.reader(trainingFile, delimiter=',')
             iterator = -1;
+            a = 0
             #for each tweet in file
             for row in reader:
                 #if it's either positive or negative
@@ -107,6 +111,31 @@ def make_Corpus_From_Movies(root_dir):
     labels[1000:]=1
     return corpus, labels
 
+def make_Corpus_From_Test_Tweets(root_dir):
+    print "Creating training corpus from training tweets"
+    mypath = os.path.dirname(__file__)
+    trainDataPath = os.path.join(mypath, root_dir)
+    trainDataFiles = [f for f in os.listdir(trainDataPath) if os.path.isfile(os.path.join(trainDataPath, f))]
+
+    testingCorpus = []
+    #initialization of numpy array needed (1,600,000 is size of my sentiment140 training dataset, 499 of test set)
+    labels = np.zeros(499);
+    for file in trainDataFiles:
+        with open(os.path.join(mypath, root_dir+'/') + file) as trainingFile:
+            reader = csv.reader(trainingFile, delimiter=',')
+            iterator = -1;
+            #for each tweet in file
+            for row in reader:
+                if row[0]==2:
+                    continue
+                #increase index because we're adding to corpus
+                iterator = iterator + 1
+                #add the tweet to corpus
+                testingCorpus.append(unicode(preprocess(row[5]), errors='ignore'))
+                labels[iterator] = row[0]
+
+        trainingFile.close()
+    return testingCorpus,labels
 
 def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
     kf = StratifiedKFold(n_splits=fold_splits)
@@ -201,6 +230,32 @@ def create_Models(corpus, labels, vectorizer):
 
     return model3_logisticRegression
 
+def PosNeg_thresholds_on_test_data(model,vectorizer):
+    testCorpus, testLabels = make_Corpus_From_Test_Tweets(root_dir='datasets/Sentiment140_testData')
+
+    vectorizedTestCorpus = vectorizer.transform(testCorpus)
+    scores = model.predict_proba(vectorizedTestCorpus)
+    #scores = model.predict(vectorizedTestCorpus)
+
+    # initialization of numpy array needed (1,600,000 is size of my sentiment140 training dataset)
+    labels = np.zeros(len(scores));
+    for idx, score in enumerate(scores):
+        if score[1]>0.6:
+            labels[idx] = 4
+        elif score[0]<0.4:
+            labels[idx] = 0
+        else:
+            labels[idx] = 2
+
+        '''if score==1:
+           labels[idx] = 4
+        else:
+           labels[idx] = 0
+        '''
+
+    print accuracy_score(testLabels[:len(scores)],labels)
+
+
 ##################### PLOTTING ###################################
 def getDatesAndScores(reader,vectorizer,scikitModel):
     #create corpus of tweets to be analyzed
@@ -218,11 +273,13 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
     #make prediction
     print "Predicting sentiment scores for tweets corpus"
     vectorizedTweetsCorpus = vectorizer.transform(tweetsCorpus)
-    scores = scikitModel.predict(vectorizedTweetsCorpus)
+    #scores = scikitModel.predict(vectorizedTweetsCorpus)
+    scores = scikitModel.predict_proba(vectorizedTweetsCorpus)
 
-    print "Number of analyzed tweets:" + str(len(scores))
-    print "Number of positive tweets" + str(sum(scores == 1))
-    print "Number of negative tweets" + str(sum(scores == 0))
+    #not usable if using confidence values
+    #print "Number of analyzed tweets:" + str(len(scores))
+    #print "Number of positive tweets" + str(sum(scores == 1))
+    #print "Number of negative tweets" + str(sum(scores == 0))
 
     #process sentimentData scores
     sentimentScoresDict = dict()
@@ -235,17 +292,18 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
     print "Processing sentiment scores returned for tweets corpus"
     for idx, score in enumerate(scores):
         correspondingDate = dates[idx]
+
         if (correspondingDate in sentimentScoresDict):
-            sentimentScoresDict[correspondingDate] = sentimentScoresDict[correspondingDate] + score
+            sentimentScoresDict[correspondingDate] = sentimentScoresDict[correspondingDate] + score[1]
             dateCounts[correspondingDate] = dateCounts[correspondingDate] + 1;
             correspondingDate = correspondingDate.replace(day=1)
-            flooredSentimentScoresDict[correspondingDate] = flooredSentimentScoresDict[correspondingDate] + score
+            flooredSentimentScoresDict[correspondingDate] = flooredSentimentScoresDict[correspondingDate] + score[1]
             flooredDateCounts[correspondingDate] = flooredDateCounts[correspondingDate] + 1;
         else:
-            sentimentScoresDict[correspondingDate] = score
+            sentimentScoresDict[correspondingDate] = score[1]
             dateCounts[correspondingDate] = 1;
             correspondingDate = correspondingDate.replace(day=1)
-            flooredSentimentScoresDict[correspondingDate] = score
+            flooredSentimentScoresDict[correspondingDate] = score[1]
             flooredDateCounts[correspondingDate] = 1
 
     #calculate average scores for every day

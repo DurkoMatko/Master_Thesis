@@ -30,8 +30,7 @@ def main(argv):
         ]
 
 
-    for project in oss_projects:
-        #getIssues(project,dbHandle, conn, token)
+    for project in oss_projects:        #getIssues(project,dbHandle, conn, token)
         getBugs(project,dbHandle, conn, token)
 
 
