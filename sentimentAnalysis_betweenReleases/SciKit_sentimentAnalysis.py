@@ -263,12 +263,27 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
     dates = []
 
     print "Creating a corpus from tweets to be analyzed"
+    mainn=[]
+    use=[]
+    secur=[]
+    i=0
     for row in reader:
         if (row[4] == 'text'):
             continue;
+        i = i + 1
         #create arrays of tweets to analyze
         tweetsCorpus.append(unicode(row[4], errors='ignore'))
         dates.append(parser.parse(row[1].split(' ', 1)[0]).date())
+
+        if "maintain" in row[4] or "control" in row[4] or "fix" in row[4] or "sustain" in row[4] or "retain" in row[4] or "renew" in row[4] or "support" in row[4]:
+            print row[4]
+            mainn.append(i)
+        elif "usab" in row[4] or "adopt" in row[4] or "operat" in row[4] or "usag" in row[4] or "service" in row[4] or "applicab" in row[4] or "useful" in row[4]:
+            print row[4]
+            use.append(i)
+        elif "secur" in row[4] or "guarant" in row[4] or "insur" in row[4] or "preserv" in row[4] or "surveil" in row[4] or "immun" in row[4] or "shield" in row[4] or "safe" in row[4] or "precaution" in row[4] or "guard" in row[4]:
+            print row[4]
+            secur.append(i)
 
     #make prediction
     print "Predicting sentiment scores for tweets corpus"
@@ -280,6 +295,9 @@ def getDatesAndScores(reader,vectorizer,scikitModel):
     #print "Number of analyzed tweets:" + str(len(scores))
     #print "Number of positive tweets" + str(sum(scores == 1))
     #print "Number of negative tweets" + str(sum(scores == 0))
+
+    #analyze quality attribute related tweets and their sentiment
+    #analyzeIsoSentiment(mainn=mainn, use=use, secur=secur, scores=scores)
 
     #process sentimentData scores
     sentimentScoresDict = dict()
@@ -395,6 +413,31 @@ def getCryptoPrices(projectName,cryptoPricesPath):
             prices.append(float(row[1]))
 
     return priceDates, prices
+
+def analyzeIsoSentiment(mainn,use,secur,scores):
+    s = 0
+    for i in mainn:
+        s = s + scores[i][1]
+
+    print "Average maintainability score: " + str(s / len(mainn))
+    print "Number of tweets: " + str(len(mainn))
+    print "Percentage: " + str(float(len(mainn) / len(scores)))
+
+    s = 0
+    for i in use:
+        s = s + scores[i][1]
+
+    print "Average usability score: " + str(s / len(use))
+    print "Number of tweets: " + str(len(use))
+    print "Percentage: " + str(float(len(use) / len(scores)))
+
+    s = 0
+    for i in secur:
+        s = s + scores[i][1]
+
+    print "Average security score: " + str(s / len(secur))
+    print "Number of tweets: " + str(len(secur))
+    print "Percentage: " + str(float(len(secur) / len(scores)))
 
 
 def convertDatesToPassedDays(dates):
