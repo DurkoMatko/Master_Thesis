@@ -1,0 +1,213 @@
+date;submission_text;comments_text;issue_comment;subreddit
+2016-07-16 02:20:21;Is there a vue component similar to algolia/places?;Also discussed here: https://github.com/vuejs/vue-requests/issues/16;Also discussed here: https://github.com/vuejs/vue-requests/issues/16;vuejs
+2016-07-18 04:36:41;Why doesn't this work with Vue 2?;"What exactly are the ""bunch of errors""?
+
+I assume it's because of the different behaviour of v-model [in 2.0](https://github.com/vuejs/vue/issues/2873)
+
+> `v-model` no longer cares about initial inline value. It will always treat the Vue instance data as the source of truth. This means the following will render with a value of 1 instead of 2:
+
+    data: {
+      val: 1
+    }
+    <input v-model=""val"" value=""2"">
+
+> The main idea is that the JS side should be considered the source of truth, not your templates.";"What exactly are the ""bunch of errors""?
+
+I assume it's because of the different behaviour of v-model [in 2.0](https://github.com/vuejs/vue/issues/2873)
+
+> `v-model` no longer cares about initial inline value. It will always treat the Vue instance data as the source of truth. This means the following will render with a value of 1 instead of 2:
+
+    data: {
+      val: 1
+    }
+    <input v-model=""val"" value=""2"">
+
+> The main idea is that the JS side should be considered the source of truth, not your templates.";vuejs
+2016-10-06 14:39:30;DAE cares about Vue 1.0 documentation?;"I checked the vuex github, and it appears to be a [known issue](https://github.com/vuejs/vuex/issues/346).
+
+Here's a working link for the old documentation: [https://github.com/vuejs/vuex/tree/1.0/docs/en](https://github.com/vuejs/vuex/tree/1.0/docs/en)>  was wondering if there are plans to bring back Vue 1.0 documentation along with vue router - vuex to a website format instead of those github readme links?
+
+Vue.js 1.0 documentation is still online and fully functional. 
+We will work on bringing docs for vue-router 0.7 and vuex 1.0 back as websites, but can't do everything at once, so we will have to ask for your patience.
+
+> so tearing down the old forum + no easily searchable documentation = screw you if you are using the old version
+
+* We had to switch forums because we could not get NodeBB to work reliably.
+* There is no migration path from NodeBB to Discourse, so we could not migrate old posts to Dicsourse.
+* the old forum is available at archive.forum.vuejs.org
+* Google links to old forum posts are now redirected properly.
+
+if there is something else you miss, don't hesitate to open an issue.";"I checked the vuex github, and it appears to be a [known issue](https://github.com/vuejs/vuex/issues/346).
+
+Here's a working link for the old documentation: [https://github.com/vuejs/vuex/tree/1.0/docs/en](https://github.com/vuejs/vuex/tree/1.0/docs/en)";vuejs
+2016-10-15 06:59:54;Anyone have experience with Weex? It's an official Vue.js wrapper for native mobile development (backed by Alibaba), an alternative to Ionic or React Native.;"Currently Weex is ""inspired by"" Vue.js. The syntax is designed a little different for some reasons. But soon Weex will use Vue 2.0 directly. It will be ""powered by"" Vue. The roadmap Weex and Vue supporting each other is [here](https://github.com/weexteam/weex-vue-framework/issues/9).
+
+Weex also re-define the tags, attrs, styles and events of each components which is more friendly for native features. But the HTML/CSS/JS/Vue syntax will be respected and preserved in the future.
+
+Front-end developers in Alibaba already build some part of Taobao app on Weex. And the more and more apps in Alibaba is trying to use Weex.Quasar is pretty good but my experience is limited. ""Ionic for Vue"" is exactly how I'd describe it. current version of weex is still 0.7. the syntax is quite different from vuejs! But weex team has invited the author of vuejs to be their technical consultant. so I  think you should stand back and wait for more stable features come out. Almoust all of Alibaba's app will be based on weex.Yea im stuck between Onsen UI and Weex myself ... https://onsen.io/blog/preview-vue-support-onsen-ui/";"Currently Weex is ""inspired by"" Vue.js. The syntax is designed a little different for some reasons. But soon Weex will use Vue 2.0 directly. It will be ""powered by"" Vue. The roadmap Weex and Vue supporting each other is [here](https://github.com/weexteam/weex-vue-framework/issues/9).
+
+Weex also re-define the tags, attrs, styles and events of each components which is more friendly for native features. But the HTML/CSS/JS/Vue syntax will be respected and preserved in the future.
+
+Front-end developers in Alibaba already build some part of Taobao app on Weex. And the more and more apps in Alibaba is trying to use Weex.";vuejs
+2016-11-18 19:10:35;Vuex - why have mutations AND actions?;"You can call the mutation directly from a method in a Vue component.
+
+`this.$store.commit('SOME_MUTATATION, options)`
+
+Actions allow you to share async (remember, mutations have to be synchronous) methods throughout the app. This could include committing multiple mutations or pulling data from an ajax call.IMO it's mostly for readability, [Evan discusses it here.](https://github.com/vuejs/vuex/issues/236) Both actions and mutations indicate that the state will be changed, but you are making it explicitly clear to anyone reading your code that it is synchronous (commit) or asynchronous (dispatch).
+
+It may feel clunky while writing, but code is read more often than it is written.Actions are only to be used for async things that affect your store (actions handle your AJAX calls and then use mutations to affect the state). This is very helpful when using the Vue DevTools as well because each commit on there has all necessary data (and doesn't have to make any AJAX requests to get the app to the proper state). 
+
+If you are using actions as wrappers around mutations without the action doing an async job, then you're not using them properly and you should just use mutations.";"IMO it's mostly for readability, [Evan discusses it here.](https://github.com/vuejs/vuex/issues/236) Both actions and mutations indicate that the state will be changed, but you are making it explicitly clear to anyone reading your code that it is synchronous (commit) or asynchronous (dispatch).
+
+It may feel clunky while writing, but code is read more often than it is written.";vuejs
+2016-11-25 19:40:26;vue 2 router - can't get it to work;"I generally don't put the root component as the ""/"" route but do it like this
+
+    new Vue({
+        el: '#app',
+        router,
+        render: h => h(App),
+    });
+
+Does this help? https://github.com/vuejs/vue-router/issues/713> const app = new Vue({
+  router
+}).$mount('#app')
+
+That is no longer valid in Vue 2.0. Read the docs.";Does this help? https://github.com/vuejs/vue-router/issues/713;vuejs
+2016-12-05 13:21:28;Vue.js for Mobile Apps;"https://alibaba.github.io/weex/
+
+official thread https://github.com/vuejs/vue/issues/2119You might be interested in http://quasar-framework.org/You can always just use cordova, too.";"https://alibaba.github.io/weex/
+
+official thread https://github.com/vuejs/vue/issues/2119";vuejs
+2017-01-12 01:53:15;How come these sass variables aren't global?;Are you importing your sass variable files into WorkQueueContainer.vue's style section? As far as I know, each vue component file's styles are compiled separately by sass, meaning they don't have global access to each other unless you explicitly import them each time. This would only be needed for your variables file, however, so you could just import your CSS reset and framework css once in your App.vue.Check https://github.com/vuejs/vue-loader/issues/328 and specifically https://github.com/shakacode/sass-resources-loader;Check https://github.com/vuejs/vue-loader/issues/328 and specifically https://github.com/shakacode/sass-resources-loader;vuejs
+2017-02-15 03:57:35;Custom attribute selector for scoped CSS?;"nvm... found the answer after poking around the source code for vue-loader: [it passes the modules file path to the hash-sum module](https://github.com/vuejs/vue-loader/blob/master/lib/gen-id.js).
+
+But their seems to be some concern about it being [truly unique](https://github.com/vuejs/vue-loader/issues/371) across code bases. ";"nvm... found the answer after poking around the source code for vue-loader: [it passes the modules file path to the hash-sum module](https://github.com/vuejs/vue-loader/blob/master/lib/gen-id.js).
+
+But their seems to be some concern about it being [truly unique](https://github.com/vuejs/vue-loader/issues/371) across code bases. ";vuejs
+2017-04-21 12:26:48;Access content of Quill element;"You can't that easily.
+
+[Found a github issue with 2 solutions](https://github.com/vue-bulma/quill/issues/2)
+
+----
+First of two options work as is, but without easy reactivity.  
+Add a `ref` to the editor `<quill ref=""qc""></quill>` then use it `this.$refs.qc.$el.querySelector('.ql-editor').innerHTML;` in the parent component.  
+Hacky but working easily.
+
+----
+The second one allows you to use `v-model`, but it makes you recreate a `Quill` component.  
+One guy made a [fork](https://github.com/jaybeecave/quill/blob/88b3983a77b5edd572afd8956e2ffbae0a602c9a/src/Quill.vue), but you can't use slot anymore, only v-model.
+
+----
+It's my main grip with vue, it's userland packages are often in pseudo limbo with just not good enough docs.
+
+Still gratefull for the job.I tried to use this component as well and I've struggled with something else : how to render the HTML created by the quill editor ? The saved HTML contains quill specific classes and elements.";"You can't that easily.
+
+[Found a github issue with 2 solutions](https://github.com/vue-bulma/quill/issues/2)
+
+----
+First of two options work as is, but without easy reactivity.  
+Add a `ref` to the editor `<quill ref=""qc""></quill>` then use it `this.$refs.qc.$el.querySelector('.ql-editor').innerHTML;` in the parent component.  
+Hacky but working easily.
+
+----
+The second one allows you to use `v-model`, but it makes you recreate a `Quill` component.  
+One guy made a [fork](https://github.com/jaybeecave/quill/blob/88b3983a77b5edd572afd8956e2ffbae0a602c9a/src/Quill.vue), but you can't use slot anymore, only v-model.
+
+----
+It's my main grip with vue, it's userland packages are often in pseudo limbo with just not good enough docs.
+
+Still gratefull for the job.";vuejs
+2017-04-27 00:40:13;Server Side Rendering with Laravel? (Or any non Node.js backend);"You need node at the moment to do SSR. In fact it doesn't even really work with other server side JavaScript engines. There's an active issue discussing that. 
+
+https://github.com/vuejs/vue/issues/5415
+
+If you want to do the server side rendering in another language you'd need to do all the template compiling and rendering in that language. Such a thing just doesn't exist. At least not yet. [Have you checked out this thread?](https://github.com/vuejs/vue/issues/4101)
+
+Why don't you want to use nodejs for server side rendering, though? Just want to make sure you're aware of putting node in front of Laravel to solve this problem.
+
+Also, there's less optimal solutions [like this](http://vuejsdevelopers.com/2017/04/09/vue-laravel-fake-server-side-rendering/) that may, or may not (edit: probably not), be a good idea. Ruby on Rails [now natively supports webpack](https://medium.com/statuscode/introducing-webpacker-7136d66cddfb) and VueJS|React|Angular:
+
+https://github.com/rails/webpackerLaravel & VueJs
+
+All About Laravel && VueJs - The latest Articles , Q/A, Trends, Video, Jobs, Services, news, tutorials, plugins, and more.
+
+https://www.laravel-vuejs.com/
+";"[Have you checked out this thread?](https://github.com/vuejs/vue/issues/4101)
+
+Why don't you want to use nodejs for server side rendering, though? Just want to make sure you're aware of putting node in front of Laravel to solve this problem.
+
+Also, there's less optimal solutions [like this](http://vuejsdevelopers.com/2017/04/09/vue-laravel-fake-server-side-rendering/) that may, or may not (edit: probably not), be a good idea. ";vuejs
+2017-05-27 08:03:23;Django Rest Framework and VueJS Server Side Render;"[Only Node.js is currently capable of running vue-server-renderer](https://github.com/vuejs/vue/issues/4101#issuecomment-258194824) so you'll need to run a parallel instance of that to do the server rendering.I'm on the same boat.
+I'll share some  - hopefully - helpful links:
+
+https://github.com/janoliver/DjangoVue
+https://github.com/ezhome/django-webpack-loader";[Only Node.js is currently capable of running vue-server-renderer](https://github.com/vuejs/vue/issues/4101#issuecomment-258194824) so you'll need to run a parallel instance of that to do the server rendering.;vuejs
+2017-05-31 22:56:07;Conditional Children in the same Route;"https://github.com/vuejs/vue-router/issues/76. Recommendation is to use a functional component for this. You can define it in the router if you like.There are a couple of ways to handle this, you could us a named component that changes based on route meta.
+
+I do this to change overall app layout for handling authenticated state.
+
+You could also use http://router.vuejs.org/en/essentials/named-views.html";https://github.com/vuejs/vue-router/issues/76. Recommendation is to use a functional component for this. You can define it in the router if you like.;vuejs
+2017-06-08 17:40:33;I feel like a total idiot right now, but I need help initiating a webpack project...;"hit enter a lotYou probably shouldn't create a project in C:\Users\James! Do something like C:\Users\James\Projects\vue-test or something like that ;)
+
+About the project name, you should be able to just type something in... else just press enter, you can change the name, description etc. later in the package.json file.I believe you need to add an argument. Your command should be:
+
+> vue init webpack-simple new-project-name
+
+The vue init command takes template type and then project name.Since it seems you are using Windows, be aware that ""sensitive"" paths are sometimes blocked by UAC and whatnot. Try to do the exact same thing but with your project set up on your desktop and see if it works.
+
+Might not help at all but it's the only thing I can think of.Hmm this is interesting, I'm not really sure, but could you try to use PowerShell instead of CMD and see if the same thing happens?I'd suggest using the bash plugin (or whatever it is called). Sometimes issues like these might just be Windows. In my experience, Unix based systems usually work better with node projects.Hi /u/ZeppelinJ0,
+
+I ran into the same problem today. It's a known issue affecting Vue-Cli when using Node v8.1. According to the issue on their github repo (https://github.com/vuejs/vue-cli/issues/484) downgrading to Node v8.0 fixes it. I tried and it worked. Good luck!";"Hi /u/ZeppelinJ0,
+
+I ran into the same problem today. It's a known issue affecting Vue-Cli when using Node v8.1. According to the issue on their github repo (https://github.com/vuejs/vue-cli/issues/484) downgrading to Node v8.0 fixes it. I tried and it worked. Good luck!";vuejs
+2017-07-27 01:53:32;A simple vuejs example with Ploly.js?;"If you use this it will work with webpack:
+
+`import Plotly from 'plotly.js/dist/plotly'`
+might be related to these two issue?
+
+https://github.com/mapbox/mapbox-gl-js/pull/4423
+
+https://github.com/mapbox/mapbox-gl-js/issues/3551
+
+edit: formatI've found that Plotly.js only seems to compile in browserify. As far as I've tested it's broken in webpack.try this:
+
+    import Plotly from 'plotly.js/lib/core'Thanks guys, will test!:)";"might be related to these two issue?
+
+https://github.com/mapbox/mapbox-gl-js/pull/4423
+
+https://github.com/mapbox/mapbox-gl-js/issues/3551
+
+edit: format";vuejs
+2017-08-04 15:29:59;"Vue's render function using ""h"" as the parameter";"I always thought it was because this originated from https://github.com/hyperhype/hyperscript
+
+mite b wrong thohttps://github.com/vuejs-templates/webpack-simple/issues/29 maybe this answers your question? :)I've always wondered this as well. Glad to finally know.";https://github.com/vuejs-templates/webpack-simple/issues/29 maybe this answers your question? :);vuejs
+2017-08-23 12:50:03;I'm looking for a ( Vue + Sass + Scss + Webpack + LiveReload/HMR ) template;"    vue init webpack <project name>
+
+cd into the project folder and run 
+
+    npm install -D node-sass sass-loader
+    npm installI feel like the last time I used Vue-cli it asked if I wanted Sass on the install?Try this [boilerplate](https://github.com/petervmeijgaard/vue-2.0-boilerplate) 
+
+It has what you want and a very nice structure imo. I'm using it now in all my projects You Need to install `sass-loader`
+
+See this issue https://github.com/petervmeijgaard/vue-2.0-boilerplate/issues/29
+I think he also describes it somewhere in `bootstrap.js`nuxtjs";"You Need to install `sass-loader`
+
+See this issue https://github.com/petervmeijgaard/vue-2.0-boilerplate/issues/29
+I think he also describes it somewhere in `bootstrap.js`";vuejs
+2017-08-23 07:06:31;[HELP] Passing data from a backend framework (Rails) to a Vue component?;"Actually [I found a solution](https://forum.vuejs.org/t/passing-props-to-root-instances-in-2-0/244/9). 
+
+I don't fully understand how the `render` function works yet, but I think it's a necessary alternative to the `template` property, which [doesn't work in webpacker](https://github.com/rails/webpacker/issues/300).I wanted to be able to mount custom elements from any Rails page so I attach a Vue instance to an outer element in my layout. Then you can use the Vue attribute syntax with `to_json`, like: `<foo :bar=""<%= bar.to_json %>""`
+(I think).";"Actually [I found a solution](https://forum.vuejs.org/t/passing-props-to-root-instances-in-2-0/244/9). 
+
+I don't fully understand how the `render` function works yet, but I think it's a necessary alternative to the `template` property, which [doesn't work in webpacker](https://github.com/rails/webpacker/issues/300).";vuejs
+2017-10-14 10:41:58;Behavior of v-model on middle-click on refresh page button on Firefox.;"I've made a Github issue about the problem:
+
+https://github.com/vuejs/vue/issues/6816";"I've made a Github issue about the problem:
+
+https://github.com/vuejs/vue/issues/6816";vuejs
+2017-10-27 15:28:59;Vue file syntax and linting in VS Code?;"NEVERMIND!
+
+https://github.com/vuejs/vetur/issues/118You should be using quotes around the attribute values.";"NEVERMIND!
+
+https://github.com/vuejs/vetur/issues/118";vuejs

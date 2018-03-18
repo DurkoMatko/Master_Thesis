@@ -13,7 +13,6 @@ from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
 import matplotlib.dates as md
 import datetime as dt
-from MilestoneClassifier.MulticlassMilestoneClassifier import MulticlassMilestoneClassifier, PredictionMode, TrainingMode
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -37,25 +36,22 @@ def main(argv):
     #train on movies, evaluate tweets
     #train1_test2(corpus2,labels2,corpus1,labels1,vectorizer)
     #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
-    #model3 = create_Models(corpus=corpus,labels=labels,vectorizer=)
-    myClassifier = MulticlassMilestoneClassifier()
-    myClassifier.train(corpus=corpus,labels=labels,mode=TrainingMode.BINARY)
+    model3_logisticRegression= create_Models(corpus=corpus,labels=labels,vectorizer=vectorizer)
 
     #playing with thresholds in confidence to differ among positive, negative and neutral tweets
     #PosNeg_thresholds_on_test_data(model=model3_logisticRegression,vectorizer=vectorizer)
     
     # set where to find tweets to analyze
     mypath = os.path.dirname(__file__)
-    tweetFilesPath = os.path.join(mypath, 'tweets_To_Analyze')
-    tweetFiles = [f for f in os.listdir(tweetFilesPath) if os.path.isfile(os.path.join(tweetFilesPath, f))]
+    subFilesPath = os.path.join(mypath, 'submissions_To_Analyze')
+    subFiles = [f for f in os.listdir(subFilesPath) if os.path.isfile(os.path.join(subFilesPath, f))]
 
     # analyze each tweets file
-    for file in tweetFiles:
-        with open(os.path.join(tweetFilesPath,file)) as csvFile:
+    for file in subFiles:
+        with open(os.path.join(subFilesPath,file)) as csvFile:
             reader = csv.reader(csvFile, delimiter=';')
-            reader.next()
             print file
-            dates, scores, flooredDates, flooredScores = getDatesAndScores(reader=reader, classifier=myClassifier)
+            dates, scores, flooredDates, flooredScores = getDatesAndScores(reader=reader, vectorizer=vectorizer, scikitModel=model3_logisticRegression)
             passedDays = convertDatesToPassedDays(dates)
             plotPolynomials(minDate=min(dates), passedDays=passedDays, scores=scores, projectName=file,mypath=mypath)
             flooredPassedDays = convertDatesToPassedDays(dates=flooredDates)
@@ -262,22 +258,40 @@ def PosNeg_thresholds_on_test_data(model,vectorizer):
 
 
 ##################### PLOTTING ###################################
-def getDatesAndScores(reader,classifier):
+def getDatesAndScores(reader,vectorizer,scikitModel):
     #create corpus of tweets to be analyzed
     tweetsCorpus = []
     dates = []
 
     print "Creating a corpus from tweets to be analyzed"
-
+    mainn=[]
+    use=[]
+    secur=[]
+    i=0
     for row in reader:
+        if (row[0] == 'date'):
+            continue;
+        i = i + 1
         #create arrays of tweets to analyze
-        tweetsCorpus.append(unicode(row[4], errors='ignore'))
-        dates.append(parser.parse(row[1].split(' ', 1)[0]).date())
+        tweetsCorpus.append(unicode(row[1], errors='ignore') + ' ' + unicode(row[2], errors='ignore'))
+        dates.append(parser.parse(row[0].split(' ', 1)[0]).date())
+        '''
+        if "maintain" in row[4] or "control" in row[4] or "fix" in row[4] or "sustain" in row[4] or "retain" in row[4] or "renew" in row[4] or "support" in row[4]:
+            print row[4]
+            mainn.append(i)
+        elif "usab" in row[4] or "adopt" in row[4] or "operat" in row[4] or "usag" in row[4] or "service" in row[4] or "applicab" in row[4] or "useful" in row[4]:
+            print row[4]
+            use.append(i)
+        elif "secur" in row[4] or "guarant" in row[4] or "insur" in row[4] or "preserv" in row[4] or "surveil" in row[4] or "immun" in row[4] or "shield" in row[4] or "safe" in row[4] or "precaution" in row[4] or "guard" in row[4]:
+            print row[4]
+            secur.append(i)
+        '''
 
     #make prediction
     print "Predicting sentiment scores for tweets corpus"
+    vectorizedTweetsCorpus = vectorizer.transform(tweetsCorpus)
     #scores = scikitModel.predict(vectorizedTweetsCorpus)
-    scores = classifier.predict(corpus=tweetsCorpus,mode=PredictionMode.BINARY_CONFIDENCE)
+    scores = scikitModel.predict_proba(vectorizedTweetsCorpus)
 
     #not usable if using confidence values
     #print "Number of analyzed tweets:" + str(len(scores))
@@ -295,27 +309,35 @@ def getDatesAndScores(reader,classifier):
     averageScores = dict()
     flooredAverageScores = dict()
 
-    print "Processing sentiment scores returned for tweets corpus"
+    print "Processing sentiment scores returned for submission corpus"
     sum = 0
+    sumneg=0
     for idx, score in enumerate(scores):
-
         correspondingDate = dates[idx]
-        sum = sum + score
-
+        sum = sum + score[1]
+        sumneg = sumneg + score[0]
+        '''if score[1]>0.87:
+            print score[1]
+            print tweetsCorpus[idx]
+        if score[1]<0.11:
+            print score[1]
+            print tweetsCorpus[idx]
+        '''
         if (correspondingDate in sentimentScoresDict):
-            sentimentScoresDict[correspondingDate] = sentimentScoresDict[correspondingDate] + score
+            sentimentScoresDict[correspondingDate] = sentimentScoresDict[correspondingDate] + score[1]
             dateCounts[correspondingDate] = dateCounts[correspondingDate] + 1;
             correspondingDate = correspondingDate.replace(day=1)
-            flooredSentimentScoresDict[correspondingDate] = flooredSentimentScoresDict[correspondingDate] + score
+            flooredSentimentScoresDict[correspondingDate] = flooredSentimentScoresDict[correspondingDate] + score[1]
             flooredDateCounts[correspondingDate] = flooredDateCounts[correspondingDate] + 1;
         else:
-            sentimentScoresDict[correspondingDate] = score
+            sentimentScoresDict[correspondingDate] = score[1]
             dateCounts[correspondingDate] = 1;
             correspondingDate = correspondingDate.replace(day=1)
-            flooredSentimentScoresDict[correspondingDate] = score
+            flooredSentimentScoresDict[correspondingDate] = score[1]
             flooredDateCounts[correspondingDate] = 1
 
-    print str(sum / len(scores))
+    print str(sum/len(scores))
+    print str(sumneg / len(scores))
 
     #calculate average scores for every day
     print "Calculating average scores for every day"

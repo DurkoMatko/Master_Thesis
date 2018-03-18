@@ -1,0 +1,82 @@
+date;submission_text;comments_text;issue_comment;subreddit
+2014-03-01 10:34:33;Productivity: Why Ghost chose Ember.js;"This article confuses me. This is an article not about ghost's decision process, but more about bladerunnerjs choosing knockout. This discussion the article links to is more interesting: https://github.com/TryGhost/Ghost/issues/2144. 
+
+""Instead we've decided to make **Knockout** the default for our open source solution. Although this isn't as popular as Angular, Backbone or Ember it has a strong following, is very well documented, is actively developed and is probably the best MVVM framework out there.""";"This article confuses me. This is an article not about ghost's decision process, but more about bladerunnerjs choosing knockout. This discussion the article links to is more interesting: https://github.com/TryGhost/Ghost/issues/2144. 
+
+""Instead we've decided to make **Knockout** the default for our open source solution. Although this isn't as popular as Angular, Backbone or Ember it has a strong following, is very well documented, is actively developed and is probably the best MVVM framework out there.""";emberjs
+2014-10-28 15:37:31;Ember.js 1.8.0 released. No more metamorphs!;"Updating to 1.8 from 1.7 didn't need any source code changes, that's great!
+
+I remember an update where I had to scrap all of my app and start again from scratch, because the routing API completely changed…If you use Ember.ListView, you'll want to hold off on upgrading to 1.8. https://github.com/emberjs/list-view/issues/169";If you use Ember.ListView, you'll want to hold off on upgrading to 1.8. https://github.com/emberjs/list-view/issues/169;emberjs
+2015-04-06 21:22:05;Building a real time application with Express, Socket.io and Ember.;Had some big problems with socket.io… It breaks 90% of the time when you transfer a non-ASCII character. I ended up URL-encoding everything during transmission to work around this bug. It has been in their bug tracker for months, but [apparently nobody cares](https://github.com/Automattic/socket.io/issues/2018) (except me).;Had some big problems with socket.io… It breaks 90% of the time when you transfer a non-ASCII character. I ended up URL-encoding everything during transmission to work around this bug. It has been in their bug tracker for months, but [apparently nobody cares](https://github.com/Automattic/socket.io/issues/2018) (except me).;emberjs
+2015-06-18 16:16:15;Ember.js 1.13.2 released;Really looking forward to using 1.13.x. My app uses ember-listview and there is an outstanding bug that is incompatible with 1.13, and so I'm waiting. https://github.com/emberjs/list-view/issues/245;Really looking forward to using 1.13.x. My app uses ember-listview and there is an outstanding bug that is incompatible with 1.13, and so I'm waiting. https://github.com/emberjs/list-view/issues/245;emberjs
+2015-07-30 08:09:29;ember-cli 1.13.5 released;"1.13.6 is already out!
+
+https://github.com/ember-cli/ember-cli/releases/tag/v1.13.6A PR to fix it has been merged into master this morning. FYI there is a regression bug along with the new multiple install feature: https://github.com/ember-cli/ember-cli/issues/4551
+
+";"FYI there is a regression bug along with the new multiple install feature: https://github.com/ember-cli/ember-cli/issues/4551
+
+";emberjs
+2015-09-07 15:06:43;[Help] Sideload related resources in with JSONAPIAdapter calls;"See first post on [this](http://discuss.emberjs.com/t/jsonapiadapter-inclusion-of-related-resources/8470) thread. I had the same question a few days ago, and that's the only solution I've found so far (I haven't tried it though).
+
+There's also [this](https://github.com/emberjs/data/issues/2905) issue on emberjs github page, the ""Sugar for includes"" seems to be what we're waiting for. Although I wouldn't call it 'sugar' as it is practically a must have feature in some cases (that would require 1+n rest calls to the server instead of 1 for a list of things that have dependencies), and the workaround is non-trivial.";"See first post on [this](http://discuss.emberjs.com/t/jsonapiadapter-inclusion-of-related-resources/8470) thread. I had the same question a few days ago, and that's the only solution I've found so far (I haven't tried it though).
+
+There's also [this](https://github.com/emberjs/data/issues/2905) issue on emberjs github page, the ""Sugar for includes"" seems to be what we're waiting for. Although I wouldn't call it 'sugar' as it is practically a must have feature in some cases (that would require 1+n rest calls to the server instead of 1 for a list of things that have dependencies), and the workaround is non-trivial.";emberjs
+2015-09-23 13:03:43;starting ember at new job, but super old version (1.7);"Ember strictly follows semantic versioning, limiting breaking changes so any later 1.x release (1.13 is the latest) should work without issue.
+
+2.0 is basically the same as 1.13 except the deprecated items have been removed. There are pointers for compiling docs for older versions here: https://github.com/emberjs/website/issues/2343Dash (the OSX app) will let you access the docs for 1.7. Unfortunately, there is no online site with the old docs. But you can build API docs for any version of Ember by following the instructions in the emberjs/website repo.Lulz, you want super old? Try 1.0.0rc6. 
+The guides are versioned and the 1.10 series is pretty good even for us. 
+
+The best thing to do is learn what's changing in 2.0 and write all new code with that in mind.";"Ember strictly follows semantic versioning, limiting breaking changes so any later 1.x release (1.13 is the latest) should work without issue.
+
+2.0 is basically the same as 1.13 except the deprecated items have been removed. There are pointers for compiling docs for older versions here: https://github.com/emberjs/website/issues/2343";emberjs
+2015-11-18 21:30:23;Ember 2.0 not live reloading;"Found my answer here: https://github.com/ember-cli/ember-cli/issues/5123
+
+Basically, I just have to run 'ember server --host 0.0.0.0' and live reload works as expected.  Apparently it's a bug on Windows they're still working on.";"Found my answer here: https://github.com/ember-cli/ember-cli/issues/5123
+
+Basically, I just have to run 'ember server --host 0.0.0.0' and live reload works as expected.  Apparently it's a bug on Windows they're still working on.";emberjs
+2015-11-26 21:03:21;I'm publishing a new book!;"Could you give a little more info about the book?
+I am considering getting it but the info is a little scarce. 
+Will this book in essence act as an extension of your previous book, but this time we will be focusing on getting a Rails backend to communicate with the EmberJS frontend? Nice to see new work from you Adolfo. I bought Ember 101 (or Ember CLI 101 at the time) and I'm a fan.
+
+Is it just about the current spec of JSONAPI or will it contain tips and tricks for edge cases ( like [this one](https://github.com/json-api/json-api/issues/795) ) that we probably will encounter in real life? :)";"Nice to see new work from you Adolfo. I bought Ember 101 (or Ember CLI 101 at the time) and I'm a fan.
+
+Is it just about the current spec of JSONAPI or will it contain tips and tricks for edge cases ( like [this one](https://github.com/json-api/json-api/issues/795) ) that we probably will encounter in real life? :)";emberjs
+2015-11-24 02:50:47;How do you access the `links` property specified by JSON API?;I've implemented Lux's solution here http://stackoverflow.com/questions/32336710/how-to-use-jsonapi-pagination-with-ember-data-1-13 which copies the data from the links object to the meta object in the adapter, was pretty straightforward and is easy to remove once support is fully baked in, see this issue https://github.com/emberjs/data/issues/2905;I've implemented Lux's solution here http://stackoverflow.com/questions/32336710/how-to-use-jsonapi-pagination-with-ember-data-1-13 which copies the data from the links object to the meta object in the adapter, was pretty straightforward and is easy to remove once support is fully baked in, see this issue https://github.com/emberjs/data/issues/2905;emberjs
+2016-03-01 15:13:30;Ember CLI 2.4.0 released;"Please wait for 2.4.1 which is going to be released very soon. 
+
+2.4.0 breaks static assets:
+https://github.com/ember-cli/ember-cli/issues/5538
+";"Please wait for 2.4.1 which is going to be released very soon. 
+
+2.4.0 breaks static assets:
+https://github.com/ember-cli/ember-cli/issues/5538
+";emberjs
+2016-09-12 07:15:48;Ember as part of a serverside app;"I do this rather simply by storing the basic app server with the ember app in a separate folder. When I build, it runs the ember build command, then the dist and application server contents are copied to the appropriate directories in my docker container where it is hosted, but this part is more for my personal workflow and not required. 
+
+You could also just download the added express app repo at the appropriate time, or the built ember files as the appropriate time as needed in your builds. Can you elaborate a bit on which part you are unsure about? It sounds like you have a pretty good grasp for it. 
+
+You can build the ember app out to a specific folder using the output-path flag. ie:
+> ember build --output-path=../public/dashboard
+
+Then in your express app for the your /user/dashboard route you can serve the ember app from that directory. 
+
+
+
+We ended up creating a mixture of login mock routes and proxied to point to a deployed backend/server-side application, see https://ember-cli.com/extending/#generators-and-blueprints
+
+You could also look at the SANE stack at least for reference (project is either dead or at the very least backed up: see https://github.com/sane/sane/issues/205)";"We ended up creating a mixture of login mock routes and proxied to point to a deployed backend/server-side application, see https://ember-cli.com/extending/#generators-and-blueprints
+
+You could also look at the SANE stack at least for reference (project is either dead or at the very least backed up: see https://github.com/sane/sane/issues/205)";emberjs
+2016-10-14 18:10:34;Side by side: hot reloading vs full page reloading;"Is this coming to ember? If so, drool.I assume this is coming from the [ember-cli-hot-loader](https://github.com/toranb/ember-cli-hot-loader) addon. I tried it on an Ember 2.8 app and ""kind of worked"".
+
+It only reloads components and component templates but it's really promissing. I think I got hit by this issue https://github.com/toranb/ember-cli-hot-loader/issues/22 which is why I couldn't use it...
+
+But I'm really looking forward to it :)So hot reloading is a much better Developer experience than a full page reloading? 
+
+In other news, grass is green! :DDoes anyone know what is that tmux theme?
+
+edit, looks like it's [this one](https://github.com/toranb/dotfiles/blob/master/tmux/linux_tmux/themes/default.tmux)";"I assume this is coming from the [ember-cli-hot-loader](https://github.com/toranb/ember-cli-hot-loader) addon. I tried it on an Ember 2.8 app and ""kind of worked"".
+
+It only reloads components and component templates but it's really promissing. I think I got hit by this issue https://github.com/toranb/ember-cli-hot-loader/issues/22 which is why I couldn't use it...
+
+But I'm really looking forward to it :)";emberjs

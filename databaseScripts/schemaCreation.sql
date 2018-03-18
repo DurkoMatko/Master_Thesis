@@ -38,3 +38,12 @@ CREATE TABLE `oss_issues`.`so_questions` (
   `body` VARCHAR(4000) NULL,
   `project` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
+
+CREATE TABLE `oss_issues`.`so_issue_comments` (
+  `id` INT NOT NULL,
+  `question_id` INT(11) NULL,
+  `comment_id` INT(11) NULL,
+  `comment_body` VARCHAR(4000) NULL,
+  `project` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+

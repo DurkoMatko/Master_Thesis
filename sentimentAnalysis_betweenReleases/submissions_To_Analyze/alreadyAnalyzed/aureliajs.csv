@@ -1,0 +1,692 @@
+date;submission_text;comments_text
+2015-04-28 06:49:13;Animating Aurelia;
+2015-05-17 13:27:30;Found your boat in Amsterdam;
+2015-05-17 03:25:59;saw the getting started video and..;
+2015-05-26 05:45:56;Quick Blog Example With Aurelia And Firebase;
+2015-05-21 04:54:54;Episode 38: Aurelia.io;
+2015-06-01 16:00:09;Building Web Apps with Aurelia: Live at Twitter Boston / MobileTea;
+2015-05-31 05:09:43;How should I use sockets in Aurelia?;the same way as everywhere else. Unlike Angular 1.x, Aurelia doesn't have digest loops, so there is no need to wrap it.[deleted][deleted]
+2015-05-31 03:28:44;What are you building with Aurelia?;I developing realtime analysis tools for my company. We wanted to use Angular 1.x for the next big project but after I saw Aurelia I fell in love and now I am testing Aurelia for production use. My opinion so far: It's AWESOME!https://github.com/capaj/twitter-spelling-nazi. Very simple-only like 80 lines of actual custom code(html+JS), but working. I built it as a first stage of an interview with some company in UK. They were looking for someone with more bash/sysadmin skills, so they did not hire me, but it was quite fun and quite liberating to write comparing to the code I write at work(Angular 1.x).I'm making a form designer for internal use. A lot of my group's business is making custom forms which is great, but boring as shit. So we're developing something that allows people to build them through a simple drag/drop interface. We need it to integrate with some other systems as well.
+2015-06-08 15:58:52;Is Aurelia ready for productive using?;"Its getting close. They say that their latest version has minimized the need for future breaking changes to their API.
+
+I've been using it on a side project to learn the ropes. I would use it if the product was slatted to go live in 6 months. Probably not before.
+
+Productive, yes. Production, no.Some people have apps in production but according to Rob Eisenberg (creator/manager) you should wait until the first beta, which should be coming in ~2 months or so.Absolutely. Aurelia as it stands right now is production ready. The bundling for templates and Javascript works, there is no reason to not deploy into production now."
+2015-06-07 14:40:03;Cross-platform example desktop app using Electron and Aurelia;"This is basically the navigation-skeleton plus bits and pieces from electron and electron-starter. 
+
+I'm putting this together more as a prototype for another idea I have. I thought others might find the project structure useful.How do you build it? Where are the releases?"
+2015-06-07 03:00:47;Is there any repository of aurelia plugins?;https://github.com/aurelia/registry
+2015-06-03 07:04:34;aurelia service composition;
+2015-06-12 08:45:10;Proble trying to run Aurelia;"You need to be running node 12 with the `--harmony` flag.
+
+I would install nvm: `npm install -g nvm` and then you can manage your node versions. It's pretty easy to use: `nvm install 0.12` and `nvm use 0.12` then you can start your app with `node --harmony app.js`
+
+I use webstorm and it's really easy to tell it which version (with what flags) of node to use.What version of node are you running? For information: I've got it working on a clean Debian 8 install using the nodejs and npm debian packages. I tried with a local build of the latest nodejs but they got lost in dependency hell :)"
+2015-06-25 17:28:44;Aurelia: Next Generation Web Apps - Rob Eisenberg;Glad to see they put containerless option on the compose. I remember discussing that in Gitter. Amazing how quick this team seems to respond to feedback.
+2015-06-25 10:43:46;"Source maps not working for errors in the ""Get started"" app?";"I eventually discovered [this NPM package](https://www.npmjs.com/package/source-map-support) which states that source maps aren't supported via the V8 stack trace API.
+
+I ran
+
+    npm install source-map-support
+and added the lines
+
+    <script src=""/node_modules/source-map-support/browser-source-map-support.js""></script>
+    <script>sourceMapSupport.install();</script> 
+to my index.html file. However, it didn't work with the embedded source maps, so I changed the /build/tasks/build.js file to keep the .js.map files and serve them up via a regular URL.
+
+Specifically, I changed the build-system task to this:
+
+    gulp.task('build-system', function () {
+        return gulp.src(paths.source)
+            .pipe(plumber())
+            .pipe(changed(paths.output, {extension: '.js'}))
+            .pipe(sourcemaps.init({loadMaps: false}))
+            .pipe(to5(assign({}, compilerOptions, {modules:'system'})))
+            .pipe(sourcemaps.write('../dist/', {sourceRoot: paths.sourceMapRelativePath}))
+            .pipe(gulp.dest(paths.output));
+    });
+
+This will generate .js.map files in the /dist/ folder and generate links like
+
+    //# sourceMappingURL=../dist/welcome.js.map
+
+After doing all of this and rebuilding the project, [errors now point me to the original source code](http://i.imgur.com/sgWGfFQ.png).
+
+The NPM module generates some strange 404 errors; probably because I'm somehow using it wrong. Everything else seems to work though.
+
+If anyone has a better way of achieving this, please do tell. Otherwise, hopefully this will help someone else.
+
+EDIT:
+
+Slight improvement by installing source-map-support via jspm instead
+
+    jspm install npm:source-map-support
+
+and adding the following to the app.js file
+
+    import 'source-map-support/browser-source-map-support';
+    sourceMapSupport.install();
+"
+2015-07-06 16:14:09;Aurelia, ASP.NET and server-side templates;Personally I would elect to use partial views instead, they work really well with AJAX. I would much rather be using Web API however, although ASP.NET 5 looks pretty dope
+2015-07-11 10:42:51;Which DBs does Aurelia play nice with?;"JS frameworks, for the most part, are database agnostic. They are designed to work through an interface such as a RESTful API, websockets, etc. This means that in addition to the front-end, you'll have to build or connect a server-side piece that'll speak directly to your database as the front-end won't be doing that. 
+
+As such, the database you use should be based on the app you are building. All the different databases have their positives and negatives. If this is your first project with a DB, I'd probably stick with MySQL as its a pretty common starting point and you'll find plenty of information online. I've been using RethinkDB and love it. Anything.  Aurelia is a client-side framework.  What you use on the server and database side is entirely up to you.  (Though generally, you'll want to use some language/framework that provides JSON webservices.)
+
+Some common choices for the server side:
+
+Node + Mongo 
+
+Node + Postgres
+
+Node + MySQL
+
+ASP.NET MVC + Sql Server
+
+Redis and Mongodb are very different types of database built for different use cases, one is not a drop-in replacement for the other. You need to research both carefully to determine which you can use, if Redis is more suitable for your project then it's likely Mongodb will not be good for you (and vice-versa). I've also used both MongoDB and Redis in some projects when I need the strengths of both and many people do the same."
+2015-07-17 14:24:35;Unit Testing your ES6+ Custom Elements;"Why ""Custom Elements""? That's [already a thing](http://www.w3.org/TR/custom-elements/) and just makes it confusing."
+2015-08-07 04:17:31;Does anyone have a properly sized video of this presentation? I saw it once, but I can't find it. This one is squished by some hack video uploader.;
+2015-08-05 22:28:41;Creating your first Aurelia app: From authentication to calling an API with JWTs;
+2015-09-01 06:05:13;Creating Multipage Apps with Aurelia;
+2015-09-06 03:25:17;Aurelia on Node (Babel ES6 on client and server);
+2015-09-14 03:35:41;Aurelia Skeleton Question: Where are the users coming from?;"Looking at [the source](https://github.com/aurelia/skeleton-navigation/blob/master/src/users.js), you can see there is an `activate` function. In Aurelia, this gets called when the view is loaded (i.e. activated). In that function, you can see an http call is made to `https://api.github.com/users` (combining the baseurl that was set up earlier with the ""users"" part that is added).From the aurelia docs.
+
+> The activate method can even return a Promise to cause the composition process to wait until after some async work is done before actually databinding and rendering into the DOM."
+2015-09-22 02:03:20;Aurelia and Drag/Drop Using Sortable;
+2015-10-09 02:06:29;Aurelia with a JVM web server instead of node?;An Aurelia app is simply static files. You can serve them using any web server and from whatever port you'd like.
+2015-10-08 15:13:42;I just opened the sources of my control surface project made with aurelia;
+2015-11-24 12:55:26;Getting started with Aurelia on Windows 10;
+2015-12-14 21:57:29;Has anyone had luck with Aurelia working in IE 10? I am completely stuck.;I found the fix at:  https://github.com/aurelia/documentation/blob/master/English/docs.md
+2015-12-22 23:29:40;What port does Aurelia use in the Get Started tutorial?;Aurelia is front end. It doesn't care what server technology you build with. With gulp it's port 9000 though.[deleted]Might be a cache issue. If you're on chrome try disabling cache under the network tab.
+2015-12-19 09:37:22;readthesource Aurelia.io Databinding;
+2015-12-17 21:28:58;More Aurelia Performance, Bug Fixes, Docs and TypeScript Awesome!;
+2015-12-16 19:20:47;Comparing Angular, Aurelia and React: Is there a next-gen JS framework that rules them all? - AE Blog;"Good to see someone talking about Aurelia in comparison.
+
+Really do like Rob's work. Really well thought out and nowhere near as verbose."
+2015-12-27 11:31:14;Part 8: Aurelia-dialog and the Delete method of aurelia-fetch-client;
+2016-01-05 10:01:25;Aurelia Plunker with JQuery;"Hey,
+So I see that you're trying to include jQuery through the module loader in modal.js. The 
+    ""import $ from 'jquery';"" 
+statement is going to trigger a lookup in the config.js of 'jquery'. But you don't have a mapping for jquery in there so it's dying. If you add something like 
+    ""jquery"": ""github:components/jquery@2.1.4"",
+to the map section of the config.js, it will be able to do the mapping and find the file. (the rest of the file mapping comes from the path section and this line: 
+    ""github:*"": ""https://cdn.rawgit.com/jdanyow/aurelia-plunker/v0.10.0/jspm_packages/github/*"",
+).
+
+All that being said, your plunker still won't work because just importing jquery doesn't import .modal() as well. But I'll leave that to you to see if you can figure out how to do that now that I've hopefully explained a bit about how the import process works... :-)
+
+Or there's a potentially easier solution if you were just looking for a modal / dialog: https://github.com/aurelia/dialog
+I've never actually used that but it comes from the aurelia guys themselves so I'd have faith in it but I guess I have no idea if it will fit your use case or not.
+
+Hope this helps!
+"
+2016-01-29 19:36:11;Questions about Object.observe, Proxies;"Aurelia is not using Object.observe anymore. 
+https://github.com/aurelia/binding/pull/217"
+2016-01-28 22:02:11;Aurelia and Kendo UI;
+2016-02-04 22:56:21;Aurelia Windows 10 Universal App (store app);I was looking at doing this too and asked on the Aurelia Gitter channel if anyone had done it, but got no response. I'm sure it's possible, but my search ended up leading me to Ionic, which is really nice and can be used to develop for Windows 10 as well. 
+2016-02-15 18:40:40;DevChat: Adventures in Angular: Aurelia with Rob Eisenberg;
+2016-02-15 15:51:32;An Interview with Durandal's Rob Eisenberg;My main take away from this was how little Google cares about developers. Sad.oh god!! this should be in javascript reddit
+2016-02-20 19:02:11;The Definitive Guide To Bundling & Exporting In Aurelia - I Like Kill Nerds;"I've also done a little guide on bundling (just a ""how I did it and it works for me"" kind of thing): http://www.onsentipster.com/blog/2016-02-10-tech-rewrite-aurelia.html#lessons"
+2016-02-19 02:25:20;Podcast: The History Behind Aurelia with Rob Eisenberg;
+2016-02-18 23:12:29;What are you building?;I'm making a project management tool using aurelia right now. Got done a lot of work in only 4 days.I'm rewriting [OnsenTipster - Japanese Hot Spring Search](http://www.onsentipster.com/) in Aurelia! I've completed the internal-only admin interface already, now working on the main site!Working on an admin app for enterprise SaaS application for day job. Currently MVP'ing it up at the moment and hope to release a bit more about the application as it evolves, especially our deploy process.Working on upgrading our decade-old customer portal, which is currently written completely in JSF.I'm re-writing an authoring environment for building interactive social stories for games. 
+2016-02-17 18:11:58;Working With The Aurelia Task Queue - I Like Kill Nerds;
+2016-03-01 20:10:41;Aurelia Early March 2016 Update;
+2016-02-25 19:51:54;[book] Aurelia For Real World Applications;"Is it really only 5% complete? I'd be willing to purchase but how soon will it be finished? Will it get done and I'll pay for something incomplete?
+
+Edit. I noticed your reddit name is the same as your leanpub username and then saw the link to your blog via Leanpub. I've read your blog quite a bit and I've liked the content you've written. I'll buy this now as like a pre-emptive ""thanks""
+
+I looked to see what Aurelia related stuff you've posted on this sub and it looks like you're a Thrice fan so... that's cool with me. :)I kinda lost interest when I read
+> JQuery (UI)
+
+You can solve so many things just by thinking in a different manner and using the data binding.The book looks great so far. 
+Are there any chances for a printed version on paper?"
+2016-03-08 23:03:08;Discover Aurelia with CEO Rob Eisenberg;This is the best video I've seen about Aurelia yet. Aurelia is really going to give the big hitters like Angular and React a run for their money. Especially since you can already use React components directly in Aurelia with a simple plugin!
+2016-03-05 14:44:57;Aurelia's learning curve for someone new to frameworks;"I personally find Aurelia's learning curve to be fairly minimal. You can download the ""skeleton"" and modify quickly. The syntax is about as straightforward as it gets. I like the separation, the binding... It might be a little challenging to learn all the periphery (npm/jspm/ES2016/bower/gulp) if you're unfamiliar with modern frameworks, but Aurelia itself is refreshingly simple to grok.you know, this is not a great place for asking opinions on aurelia.
+in my opinion, as you are beginner you are better off with emberJs( a mature full fledged framework with better tooling) or vue ( a small library, but easier to learn). 
+
+aurelia is a great framework and has lots of  hype. but do not use a beta framework. Programming is hard. lets not, actively, make it harder."
+2016-03-03 17:23:10;Authentication using JWT with Aurelia and Django;
+2016-03-11 16:30:28;Aurelia <3 Webpack;
+2016-03-21 11:01:58;The current state of dependency inversion in JavaScript;
+2016-03-19 13:07:45;Through the Haze: Aurelia custom element async life cycle event;
+2016-03-18 21:18:40;Preparing for Infrastructure Update;
+2016-03-16 22:17:00;JSJ Aurelia with Rob Eisenberg;
+2016-03-29 16:27:28;Aurelia Late March Patch Update;
+2016-03-26 08:29:07;How does aurelia-auth support multiple endpoints?;
+2016-03-25 17:50:20;Aurelia i18n Update Release;
+2016-03-24 23:42:53;Put your Aurelia app on Google App Engine with free SSL certificates from Letsencrypt;
+2016-03-23 20:41:17;How to Use AureliaJS for Building Apps;
+2016-04-05 15:25:05;Hello World in Aurelia (without the starter files);I thought I would make this quick tutorial on Aurelia for beginners. 
+2016-03-31 13:58:42;What's the current state of Aurelia? Is it usable?;"I'm coming from the same place as you, plus I've written a few ASP.Net MVC and Angular apps. I've started using it for a side-project, and it seems nice so far. 
+
+The biggest problem I've found is the learning curve of all the other stuff that seems to come with modern webdev once you get out of the Dot Net or Java spaces. Do I use the JSPM version, or WebPack or Bower... how do I get it setup with VS? ASP.Net Core/EF Core don't really seem to be ready yet (if fundamental stuff like the names of the tools keep changing, it's not a release candidate in my book) so it's time to trawl some blog posts to find some instructions for setting it up with MVC5...
+
+All that said, I think it looks a lot nicer than Angular (1.x or 2) and most of the other flavour of the month frameworks.  I have really enjoyed working in Aurelia. I am coming from a .NET background, and while the tooling is something new to wrap your head around, I don't find it much more complicated than .NET's resources and dll's and NuGet and web.config madness.
+
+I'd recommend starting with the Aurelia skeleton-navigation using Webpack and ES2016. https://github.com/aurelia/skeleton-navigation/tree/master/skeleton-es2016-webpack
+
+Webpack seems to have much less friction than the older JSPM/System.JS way of using Aurelia.
+
+The Gitter chat for Aurelia is super-active and full of helpful people who can help answer questions. It's been really nice to have other people on hand to work through syntax and implementation issues.I have been using it at work since sometime in December on a ASP.Net MVC application. The application already existed, we are reworking the UI and using Aurelia to accomplish that. 
+
+Aurelia itself has been pretty stable. Their blog posts do a good job of indicating what is going to change in the future. We haven't run into some API change breaking anything, but we also aren't doing anything super crazy with it. 
+
+I would say the biggest pain is JSPM. It can be rather frustrating to get working, and it's annoying to have to fix something with it when it breaks. Hopefully Webpack will work out better. Beyond that some of the plugins aren't quite ready yet. I don't think they are considered beta at this point. For example, I would recommend against using the validation plugin for now. That being said after using knockout and Angular, I'd take Aurelia over them any day. I have already 2 Aurelia applications running on production for clients of ours, and 2 more are in the pipeline for other clients.
+
+The latest beta is stable, and for most of the stuff you'll do you'll never come across any problems. In case that happens, the developers are very active in GitHub and StackOverflow so they'll be able to help.
+
+The only thing that might make you uncomfortable is that, the framework  being in beta, it is potentially subject to breaking changes. I wouldn't worry too much about that though; we're at a far enough stage that big breaking changes are unlikely to happen, and were that the case Rob Eisenbger will probably document the changes over at http://blog.durandal.io.
+
+In short, go for it. We've done it and haven't regretted it for a second. Aurelia really is a lot of fun to use.
+
+**edit: ** Our Aurelia applications are based on the ASP.NET 5/ES2016 navigation skeletons"
+2016-04-12 21:11:40;Aurelia Hello World Video Tutorial;I got some interest from my blog to do a video so here it is! I'm going to try to create a few more this week. 
+2016-04-06 17:37:36;.NET Rocks! Aurelia Update with Rob Eisenberg;
+2016-04-19 13:39:17;Aurelia seems to be pretty solid, and may give even Angular a run for its money - so why does nobody know about it?;"I think there isn't enough tutorials/videos/books out there for it. I've been personally creating some Aurelia screencasts on YouTube, trying to get the word out. It's been hard though, I've had troubles getting solid views on any of the videos. I admit, I am new to YouTube so that doesn't help. I also think AureliaJS isn't searched that often in YouTube search either. 
+
+I think the new hotness has been React/Angular for a while and getting past the noise has been tough. I agree though once 1.0 hits that will help. [deleted]Started using it in-house for a monitoring app ... liking it for the most part. I hear about it repeatedly in my C# news sources, so it's being watched by that audience. I'm excited about it ideologically and aesthetically and I hope to see it take over. I haven't used it yet because I'm busy with stuff that's gotta be production ready, but the moment 1.0 drops you bet I'm ditching Angular.
+
+My guess is that's what a lot of people are waiting for.I think it is just too new...still being in beta and all.  But I agree.  I'm learning it as fast as I can and am using it for a company side project to get some experience.
+
+I'm just trying to figure out how to find contract jobs that I can use it for building apps.They have one of the most active gitter chatrooms around, so I just think you need to go there to see how alive it is.it is because majority of devs do not visit reddit or hackernews. so until something big or dramatic happens, they won't know.
+Don't forget a lot of applications have already been built in Angular 1, and a lot of dev shops have knowledge of Angular. So obviously they're looking at Angular 2 for the future.
+
+Personally, I haven't used Angular 2 intensively, but my first impression is that I don't like it. Aurelia is much more lightweight, less intrusive, etc. I sincerely hope it will take off. It doesn't have to be number 1, but I hope there will be some competition in the SPA-space."
+2016-04-18 21:53:52;Observer patterns in Aurelia - PubSub vs signals;
+2016-04-13 11:41:28;How to create Aurelia bundle without having Babel as dependence?;"The Aurelia bundler uses Babel.  If you want to go a route without Babel you will need to rewrite the Aurelia bundler but with a different tool.
+
+This is not recommended and will be way more pain than it is worth.
+
+I'm not honestly sure why having Babel on your dev box taking up some space is an issue to you.  But, if it truly is, Aurelia is not the right framework for you.  Server side rendering? I thought that wasn't available. "
+2016-04-22 12:03:01;Aurelia CLI, Debug Tools and Microsoft Collaboration;This is really exciting! The tooling is always the hardest part. An official CLI will be great.
+2016-05-10 08:16:15;New Aurelia Fundamentals Course on Pluralsight;
+2016-05-10 08:15:14;More Aurelia Workshops in Europe;
+2016-05-08 06:43:15;tomtomau/aurelia-mousetrap: integrating keyboard shortcuts into Aurelia through Mousetrap and EventAggregator;
+2016-05-07 13:20:13;Material Design Lite doesn't have a selectfield component neither Aurelia Material. So i modified the Mebibou Mdl-Selectfield component as plugin for Aurelia framework.;
+2016-05-04 07:05:29;Aurelia's New Validation and Testing Capabilities;
+2016-05-13 17:21:01;How to load/import costum third party libraries/code;"Try placing it in the activate() lifecycle hook maybe? I'm still pretty new as well, so this is just a shot in the dark.You can customize the Aurelia startup and place it there.
+http://aurelia.io/docs.html#/aurelia/framework/1.0.0-beta.1.2.4/doc/article/app-configuration-and-startup/0
+"
+2016-05-11 15:43:02;May 10 Aurelia Release;
+2016-05-24 08:37:47;Aurelia Shadow DOM v1 Slots Prerelease;"> What if the fallback content generates more slots!? Those fallback slots can be targeted by the content
+
+Today I learned that fallback content can contain slots as well
+
+
+> what about slots, that target other slots with fallback content that generates slots...
+
+Today I nearly lost sanity."
+2016-05-21 14:46:50;Example of Aurelia + Express + Webpack?;"you only need to bundle your client files. you don't need to bundle your server files. so, it should live only on the client directory.
+
+also, keep your dependencies separated because they can create conflicts when merged.
+
+to use webpack client side the [aurelia webpack skeleton](https://github.com/aurelia/skeleton-navigation/tree/master/skeleton-es2016-webpack) has all information/files that u need."
+2016-05-18 07:45:05;May 17, 2016 - Aurelia Patch Update;
+2016-05-26 07:15:48;May 24 Aurelia Patch Release Update;
+2016-06-07 06:37:15;"Don't Get Skewered By ""kebab-case"" In Aurelia";Why not use it in the js variables as well then?
+2016-06-06 09:34:26;Can someone make a PR to add aurelia to this comparison?;Sounds like you just volunteered yourself.
+2016-06-13 18:29:03;Best arguments for Enterprise Aurelia?;"Read these:
+
+http://aurelia.io/docs.html#/aurelia/framework/1.0.0-beta.1.2.4/doc/article/business-advantages
+
+http://aurelia.io/docs.html#/aurelia/framework/1.0.0-beta.1.2.4/doc/article/technical-benefitsWell, what is your reason for choosing aurelia over ember?
+
+I can think of a number of reasons for wanting to stay away from angular, but ember is as good as you can get **right now**. it is battle tested, has clean upgrade path and has loyal community.
+
+On the other hand, while aurelia will be good in future. It will be at least couple of months till 1.0.
+Ping me on twitter: @ashleymgrant I can help you build your arguments."
+2016-06-10 06:28:48;Build a Mini Instagram App with Aurelia;
+2016-06-08 13:20:01;Getting Prepared for Aurelia 1.0.0-rc;
+2016-06-08 08:44:14;May 31 Aurelia Patch Release Update;
+2016-06-18 22:16:43;Why can't getters() have parameters?;"Getters and Setters originate from Java if I am not mistaking. A Getter literally means you are requesting a variable with restricted access or maybe you're requesting a variable which is constructed from different variables. A full name for example is constructed from the first name and last name.
+
+If you're going to query data, a getter is not suitable for this. You would need method / function for that."
+2016-06-17 16:51:25;Sharing functionality across multiple applications;Are you talking about Android apps for example which use the same data?
+2016-06-28 20:52:08;Why you should switch to Aurelia;I wish the comparison was with Angular 2.
+2016-06-25 02:07:35;Aurelia Interface Update;I hope that AI eventually includes so many components that it will be the one stop solution.
+2016-06-23 20:53:06;Having trouble configuring bundled asset paths;long shot here.. did u try to remove baseURL from your config file?
+2016-06-22 19:17:06;Aurelia Release Candidate!;
+2016-07-01 12:33:31;Use Syncfusion JavaScript UI components in your Aurelia application;
+2016-07-01 06:57:16;I made an Aurelia Loader icon. Well, and another... thing. Feel free to use it as you wish!;Ha, niceThat second one is pretty nice.
+2016-06-30 21:05:23;Job interview Aurelia And Best practice to navigate between pages;"One thing you have to remember is Aurelia is a standards abiding framework that has very little self-concepts. Everything you write is a Javascript ES2015 class, you use decorators (yet to be finalised) and work primarily with Aurelia's Dependency Injection layer. When you learn Aurelia you're not really learning anything specific to Aurelia, you're learning just Javascript.
+
+- Read up on the basics of Dependency Injection [here](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/3)
+- How to create a custom attribute [here](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/8)
+- How to create a custom element [here](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/8)
+- How to define a route and the different types of route you can create [here](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/7)
+- You should also brush up on the [component lifecycle](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/3) and screen activation lifecycle in the router section of the hub here [here](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/7)"
+2016-06-30 17:19:24;Aurelia Contributors;
+2016-06-30 14:20:33;AureliaJS form validation;
+2016-07-12 09:56:03;JS frameworks benchmark (including Aurelia);
+2016-07-10 03:25:26;Atom Aurelia Snippets Plugin;Do these work with vscode as well?vscode has one already
+2016-07-16 20:11:52;Adding tether.js to webpack;
+2016-07-15 00:48:20;Been trying for days to get Chart.js working within a custom element. Any help would be greatly appreciated! (Sample project included);Ive added containerless to my custom element the same way you did but the canvas is still not rendering. I also added some plain text to the custom element to make sure that the DOM is updating properly, and it is, I can see the text but the chart does not render. Any idea what that might be?
+2016-07-14 14:59:36;Aurelia with Firebase, how to get it to work?;"You're likely getting tripped up by the good ol' vagaries of `this` in JavaScript. Try using an arrow function instead of a regular function.
+
+    activate() {
+      firebase.database().ref('tables').on('value', snapshot => {
+        this.tables = snapshot.val();
+      });
+    }I'm thinking of trying firebase with Aurelia. Can you tell me how you got along? Is it workable? Did you use the plugin?
+Thanks"
+2016-07-14 13:08:39;Built In A Couple of Hours Using Aurelia: Pokego;"Awesome. Is it open source? Would love to see the code behind it.
+
+Edit: Also, I've read all your Aurelia blogs. Keep it up! They're very helpful."
+2016-07-22 12:36:51;Wrappers for Syncfusion-JavaScript widgets;
+2016-07-21 14:55:24;A curated list of amazingly awesome Aurelia libraries;
+2016-07-20 14:50:08;Getting started with aurelia from an node express application;What are you trying to do exactly? Replace knockout with it or add it to the current knockout frontend?
+2016-07-28 04:53:29;Aurelia 1.0 is Here!!!;"I'm a bot, *bleep*, *bloop*. Someone has linked to this thread from another place on reddit:
+
+- [/r/javascript] [Aurelia 1.0 is Here!!! • \/r\/aureliajs](https://np.reddit.com/r/javascript/comments/4v9jk2/aurelia_10_is_here_raureliajs/)
+
+[](#footer)*^(If you follow any of the above links, please respect the rules of reddit and don't vote in the other threads.) ^\([Info](/r/TotesMessenger) ^/ ^[Contact](/message/compose?to=/r/TotesMessenger))*
+
+[](#bot)"
+2016-07-27 18:44:02;What am I doing wrong?;Try opening the development tools (F12 in most browsers) in your browser and select the option for disabling the cache while the development tools are visible. Then hit refresh.Use the cli, but it looks like you haven't rebuilt the code.
+2016-08-09 05:04:51;Built With Aurelia: A showcase of things built on and for Aurelia;I am really quite stoked about Aurelia.  I've been waiting for Aurelia to go mainstream thus giving me a reason to employ it in production code.  However, demos that either dump to github repositories, or websites that require a login really do not help me to that end.
+2016-08-05 15:37:00;An awesome Aurelia datagrid;"it's stuck on Loading for me. Using Safari if that matters.We're curious to see if anybody is interested in it, in case we want to develop it further.It looks nice. From a superficial glance, does it handle pagination?
+
+Otherwise I guess you're going to have some competition in this space (Aurelia controls). First [Aurelia](http://blog.durandal.io/2016/06/24/aurelia-interface-update/) themselves are building a UI library, and secondly component providers like [Telerik](http://demos.telerik.com/kendo-ui/grid/index) have data controls that bridge to Aurelia.Loading the entire result set into the front end and doing all the searching, filtering, and sorting there would be a deal breaker for all the use cases I have to handle. 
+
+If you have any non-trivial amount of data those operations are horribly performing anywhere but the database engine. 
+
+If you want any traction at all in the enterprise space pagination is a must. 
+Very interested. How do I get started."
+2016-08-14 15:44:50;Angular vs React vs Aurelia;"I'm happy to see Aurelia getting some love. I'm a long time developer, but just now getting into web development. I love what I see, but am always eager to ask friend developers for their thoughts. Most of them haven't even heard of it. The 1.0 announcement didn't even make it into to the front page of Hacker News. Why isn't Aurelia a bigger deal?
+
+Edit: typoI am excited to try Aurelia."
+2016-08-23 19:22:05;is there a way i could connect to my database natively from the front end using Aurelia?;"It is never a good idea to connect directly to your database from the front end...
+
+If you mean connecting to your NodeJS server, then I suggest using a framework like Express or Restify on your server to serve up the data to your client using REST.
+
+Aurelia has two libraries for handling REST on the front end, aurelia-http-client and aurelia-fetch-client.
+
+Both of which have documentation found [here](http://aurelia.io/hub.html#/doc/article/aurelia/fetch-client/latest/http-services)
+
+Hope that helps.
+The biggest problem with connecting the client to a db is when you want to write data to the database. A mean person could destroy your database if you allow writing to the db from the client.
+
+If you only want to read data you could make json files and store them on your server.
+
+There is no good reason to connect a client app to the db directly."
+2016-08-17 19:55:54;Aurelia 1.0: How to build a simple secured application;How does aurelia compare to vuejs?This is a comprehensive intro (routing, dependency injection, plugins, a bit of webpack configuration, auth, and more) to Aurelia, not merely demonstrating authentication. As one of my first exposures to Aurelia, I'm impressed by both the framework and this tutorial. Thanks for the post!
+2016-08-17 14:47:45;I created a plugin with useful value converters. Feel free to check it out and let me know what you think! (Link inside);Nice work. Here is another that I created ages ago that has quite a few value converters for Aurelia as well: https://github.com/Vheissu/aurelia-code-snippets/tree/master/Value%20ConvertersLooks nice. I might send some PRs your way later this week as I have time.
+2016-08-29 12:55:50;Status Aurelia and server side rendering & SEO;"what's PAL?The Node PAL is being worked on currently. That will facilitate SSR.
+
+You should note that Google's crawler can run JavaScript nowadays. That being said, there are good, non-SEO reasons to implement SSR."
+2016-08-26 11:28:31;Aurelia-Validation – The Aurelia Way;
+2016-09-07 17:36:02;Standalone template usage;
+2016-09-18 06:37:21;Aurelia, some questions and boxes to tick;">I see that it is able to do http requests etc, does bridging the data received on to a UI of some sort also fall into what Aurelia does?
+
+Yeah, you can take the data received from a call like that and bind to it, as long as you set it to a property on your ViewModel class.
+>If I was after more complex widgets, say graphs and editable tables, would I be able to tap into other javascript UI projects to feed it data that Aurelia receives?
+
+Of course! There are projects out there that provide ""wrappers"" for most of the popular UI widget libraries (at least those that aren't themselves tied to a front-end framework. For example, here's a library of Kendo UI wrappers: https://github.com/aurelia-ui-toolkits/aurelia-kendoui-bridge"
+2016-09-16 15:52:24;Anyone watched the Rob Eisenberg training sessions on Vimeo?;"Just finished watching them. I purchased the beginning and intermediate (last 2) videos.  
+
+As someone who has been following the project for sometime, but not really having the time to work with it much, I would highly recommend them! Rob takes you through building an application in each of the videos. The first being a note/task application. Although it is a simple app it introduces you to many of the features of aurelia. 
+
+In the intermediate video, you build a help-desk app. Again you cover most of the aurelia features, but in much more depth than the beginning video. 
+
+As a bonus, for each video your left with an application that you can go back and reference as your building your own app.
+
+If you can only go with one, go with the last. Hope this helps."
+2016-09-16 13:49:38;Rob Eisenberg Joining Microsoft;"When this info came out I jumped ship to be honest. I had been behind this framework for a year. Drinking the coolade and whatnot. 
+
+""Aurelia will be better because the customers are the developers, Aurelia Interface will be great, etc. etc."" said Rob. I believed him, but now that this news has come out, and it looks like Aurelia Interface will never be a thing, I won't be using it.
+
+If Microsoft picked it up then my mind would change. But until that point I won't be using the framework.
+
+Another thing that really bothers me, is that I went to the Dev Intersection conference this year where Rob was having a workshop. I chose his workshop because he said he would be teaching Aurelia Interface and giving each person who attended a free one year membership.
+
+That sounded good to me so I went. At the workshop he tells everyone that Aurelia Interface isn't ready so we won't be learning anything about cross platform development and its too bad if we signed up for that. But he does hold his promise that we will get Aurelia Interface for year.
+
+Now Aurelia Interface isn't going to happen and several hundred dollars was wasted on workshop that I'll never get any value from... which pisses me off.
+
+I understand the need to make money, but all of that really bothers me.
+
+My initial reaction was 'bye-bye Aurelia', but apparently Rob hasn't been working on Aurelia full time because it wasn't paying the bills. Rob seems to indicate that being close to Microsoft people might allow it to gain more traction than it might have otherwise. It still creates a bit of FUD in my mind though.I hope this doesn't impact Aurelia  too badly; I've been using Robs UI frameworks since Caliburn made WPF tolerable.There are many very talented people working on Aurelia and that will continue.  
+
+In his comparison of frameworks (http://react-etc.net/entry/rob-eisenberg-compares-angularjs-angular-2-aurelia-ember-polymer-and-react), Rob talks a lot about the company commitment behind the product being an important factor when making a decision.   Aurelia becoming a part-time side project for the product's driving force brings that commitment into question.  
+
+I am very disappointed and hope that Aurelia can find a way to thrive and compete against products with a lot more visibility.Oh no, I might have to like an MS service again."
+2016-09-26 18:03:44;Server side conditional formatting with Aurelia;"Aurelia toolset should facilitate you well for the front-end/client-side logic and presentation creation, maybe some parts of business logic which may be moved out of server-side as well.
+
+You should use whatever tools you're comfortable with at the back-end side. I discourage you to use JavaScript (and Aurelia) on the server side unless you are comfortable with and is experienced using Node.JS. You may use ASP.NET or PHP or even rely on some 3rd party services if it fulfills your business needs."
+2016-10-04 17:35:46;"Aurelia Pack; extension for visual studio";
+2016-10-04 12:09:39;Introducing Monterey;"What are they thinking here? Are some devs still afraid of the command line? What problem is being solved? I really do not understand.
+"
+2016-09-29 09:58:20;How to properly get Typescript type definition files (*.d.ts) after TS 2.0. release?;Thanks, with this I anticipated issues I was about to run into.Aurelia + typescript. You're winning.
+2016-10-18 13:48:14;Using tomorrow’s CSS with Aurelia (typescript) and PostCSS;
+2016-10-12 10:59:58;Collecting translation keys during TypeScript build;
+2016-11-07 11:44:56;Best practice for placement of variables and constructors;"[deleted]For what it's worth, we typically code in the style of class 2. It keeps all the functions (including constructor) in one place.I'm using TypeScript and prefer the following order, makes it easy to find what I'm looking for fast:
+
+public properties
+
+private properties
+
+public methods (with the constructor being the first one here)
+
+private methodsI use the ClassTwo approach. I like my class variables to be first in the class and then my constructor following after. Then closely followed by Aurelia lifecycle methods like; activate, attached, detached and so on.option 2 is my preference"
+2016-11-05 11:28:16;Introducing Aurelia UX;*crickets.wav*Looking forward to seeing this when it's ready - the sample app has the buttons now, so we're making progress!
+2016-11-04 12:15:39;Building a SPA with Aurelia on ASP.NET Core using TypeScript and Sass;"Word homieGreat series. Not new to web dev or .net but I found the Aurelia stuff interesting. I was reassured by the way you approached the things I knew enough to use your project structure as the template for my new side project. Great posts. I've just skimmed through them for now but will be going back through them and following along soon. I'm an experienced C#/ASP.Net developer wanting to get into JS frontend development. It looks like the Aurelia CLI is simpler than webpack and some of the other methods.I'm a bot, *bleep*, *bloop*. Someone has linked to this thread from another place on reddit:
+
+- [/r/dotnet] [Building a SPA with Aurelia on ASP.NET Core using TypeScript and Sass](https://np.reddit.com/r/dotnet/comments/5b38xw/building_a_spa_with_aurelia_on_aspnet_core_using/)
+
+[](#footer)*^(If you follow any of the above links, please respect the rules of reddit and don't vote in the other threads.) ^\([Info](/r/TotesMessenger) ^/ ^[Contact](/message/compose?to=/r/TotesMessenger))*
+
+[](#bot)"
+2016-11-15 13:43:04;Beta packages?;"IMO aurelia  is not production ready for now.  Even if main parts of the framework have reached the 1.0 the hole aurelia ecosystem is still very young.  
+Documentation is not complete,  some very important part of spa nowadays are not yet stable (aurelia-validation,  aurelia-cli, aurelia-dialog, aurelia-ux...)
+I think that aurelia is the good way to approach spa today but I don't think that building a large scale app with aurelia in its state is a good advice (specially if you are looking for productivity).  If your goal is a small app it could be a good choice. I've been using it in my latest project by building from the aurelia-cli, and it's been meeting and surpassing all my expectations. (Not using typescript though). Honestly it's not bad at all. I've built two medium sizish apps using the CLI (not webpack) and didn't have any major problems I couldn't solve quickly. Although I would say If you want everything handed to you on a plate, you're better off using a more popular framework. 
+
+
+It's a shame Aurelia didn't catch on but it's not really the devs fault. Rob and the team have done a really good job considering they all have other jobs and commitments.We had so many problems just like this that, after a year, we got frustrated and gave up on Aurelia. Some of the open issues suggest it prematurely left beta, IMO it's more alpha quality."
+2016-11-22 14:59:48;Aurelia in ASP.NET JavaScriptServices;
+2016-11-23 23:14:31;Aurelia Authentication Using Firebase;
+2016-12-05 17:23:31;Announcing Aurelia Support for ag-Grid;
+2016-12-07 17:14:14;"""Aurelia vs. Angular 2: What should I choose?"" by Brian Noyes";I avoided react for a very long time due to various prejudices/concerns about its design. The buggyness of Aurelia and the overcomplicatedness of Angular 2 led me to finally try it. Whilst it's not ideal, I'm getting things done much more efficiently and wasting a lot less time than with Aurelia and Angular 2.
+2016-12-19 15:11:56;What use cases does Aurelia cover that Vue and React don't already?;"Well for one, react and vue are view layer only. So this isn't a direct comparison. Each of those have various components in their ecosystems that enable a more full featured framework, but those rely on non-core devs a lot of times. For example, when react or vue updates, you have to rely on separate teams to update your other components. If one component project never updates, you'll need a replacement or fork. It easily leads to ""JS fatigue.""
+
+Aurelia on the other hand is a full featured framework, so you have more certainty regarding consistency and maintenance. I also prefer full frameworks for large teamworks, because documentation is centralized and generally more thorough. There are exceptions of course, but that's the general rule. 
+
+So really, you should be considering your use case primarily. [deleted]I think the main use case is when you don't like Vue or React."
+2016-12-27 21:21:31;Aurelia Release Notes - 12/24/2016;
+2017-01-03 20:22:10;Aurelia 2017 Resolutions;"I'd like to see some actual numbers about that growth and adoption. I don't know anyone who uses Aurelia in production. I guess a showcase would be nice? I'm no expert in Aurelia - I just started using and learning it. And about that learning thing, the docs are not great. I think what I miss the most are good examples and usecases .. sorry about the ot
+Edit: about that ""most users don't need serverside rendering"" huh? Why, wouldn't they? It's a performance plus and if Aurelia can make that easier, why not?All wonderful news. Hopefully 2017 is the year for Aurelia. Can't wait to have all those goodies to use with one of the best frameworks!"
+2017-01-02 16:20:59;Databinding SVG with Aurelia;
+2017-01-16 19:39:42;New Aurelia Features and Release Notes - 1/12/2017;"Is there an ""how to update Aurelia""? For CLI it's just installing the node package again but what about a current project?"
+2017-01-24 20:02:50;Getting Started with Aurelia CLI and Boostrap;"> Bootstrap was written to export its functions to a global '$' variable
+
+Doesnt it conflict with jquery then? Or does it extend it?
+
+> The content of this blog article is mostly identical to the [Contact Manager Tutorial](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/contact-manager-tutorial).
+
+Now that's a useful link
+any resources or tutorials setting up an aurelia project with bundling on a node/express site with routes? i could never figure that out."
+2017-01-21 06:25:34;A Challenger for Ionic: Aurelia Framework7;"From the article:
+
+> You’re going to be using Angular 2+, a framework that, well, I just don’t want to learn.
+
+I find that really annoying; the only way you can discover the relative merits of a technology is to learn it, or at least start leaning it. ""I refuse to learn, I will bury my head in the sand"" is a very dogmatic decision. Programming is art combined with science, dogma is harmful to both of these aspects."
+2017-01-20 07:21:08;2 aurelia demos on github built with github and spotify api;Really great work. I am glad to see examples of Aurelia's simplicity and elegance.
+2017-01-18 20:15:31;Question: Webpack and Lazy Loading Third Party Libs;
+2017-01-18 10:46:15;Aurelia CLI html minification;
+2017-02-01 08:12:16;Aurelia with Onsen UI;
+2017-02-12 11:38:01;Aurelia E2E Testing with TestCafe;
+2017-02-08 13:30:35;Using NPM modules in Aurelia (Version 0.24.0);"The correct answer is ""Yes, but how you accomplish this depends on if you are using the Aurelia CLI, Webpack, or JSPM/SystemJS.""Read ""Adding Client Libraries to Your Project"" 
+
+
+
+On: http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/the-aurelia-cli/6I haven't used Aurelia in awhile, so someone please correct me if I'm wrong, but if I recall correctly they can be imported from node_modules just as you would any other core module. The syntax should be the same as it would be with just nodejs + babilify, with the exception of having to use the inject decorator.
+
+So something like:
+
+    import soap from 'soap';
+    @inject(soap)
+    class Reddit {
+        constructor(soap) { 
+            this.soap = soap;
+        }
+    }
+
+Try using JSPM:
+
+`jspm install npm:soap`
+
+Then, use the normal import syntax in your file:
+
+`import soap from soap';`Also worth noting, the aurelia [Contact Manager Tutorial](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/contact-manager-tutorial/) includes an example of how to install Bootstrap and jQuery into an aurelia CLI project."
+2017-02-17 16:36:27;Aurelia Framework7: A Lightweight Mobile App Platform;
+2017-02-16 23:25:38;DotNet core + AureliaSpa generator;Maybe a sentence or two about this?Each template gives you a Bootstrap-based dashboard-style site with client-side navigation, and each demonstrates a pattern for fetching data and implementing UI components with your chosen framework/architecture. The backend is DotNet Core and for the frontend you can choose Aurelia, Angular 2.x, Knockout, React (with Redux).
+2017-02-16 08:10:11;Sharing data between child and parent components?;"You can have one central resource and just pass it in the compose for every component
+
+    <compose view-model=""some-component"" model.bind=""centralResource""></compose>
+
+Or you can make a service that assembles the JSON and @inject it into every component.You can have any number of components and subcomponents all bound to one object or any number of properties on that object; any property / object *reference* that you need to be able to modify, you should be sure to specify the two-way binding-mode in your binding declaration, like so:
+
+(in the parent component view:)
+`<child-component model-property.two-way=""myModelProp""></child-component>`
+
+OR (my preference, in the sub-component view-model:)
+`import { bindable, bindingMode } from 'aurelia-framework';`
+and
+`@bindable({ defaultBindingMode: bindingMode.twoWay }) modelProperty;`I have created a [basic app with a single component and one object in the view model](https://gist.run/?id=a5cc21025caa098fef1b1efb7c79a572). I added two fields in the view, and binded them to the view model object properties. However, when changing the text input, the object properties do not seem to update. What should I do differently to bind to sub-properties of an object?"
+2017-02-26 08:12:09;Aurelia Overview;Several parts seem to be incomplete, might as well go to [Doc HUB](http://aurelia.io/hub.html).
+2017-02-25 05:13:53;problems with http-fetch;Need to call response.json().
+2017-02-24 14:36:34;Learn advanced Aurelia templating techniques;
+2017-02-23 23:30:53;GitHub - trydis/aurelia-creditcard-plugin;Custom attributes for handling credit card input. Just started working on it and new to Aurelia, so any feedback is welcome.
+2017-03-11 02:19:01;Aurelia: Getting Started For complete tutorials visit tutorialsdojo.com;
+2017-03-09 20:06:59;Early March Mega Release!;Aurelia and visual studio and.net are looking to become a very nice coupling of technologiesIt seems noone cares for this library any more. 
+2017-03-20 20:09:51;Sharing data between two different aurelia SPA's (apps);If they share the same domain name, use localStorage. Well I'd use Firebase from Google but that isn't necessarily Aurelia but it would work.
+2017-03-19 10:46:22;Combining Value Converters with i18n in Aurelia;
+2017-03-27 21:07:49;Is Typescript now the official recommendation by Aurelia core devs?;"What makes you think that typescript doesn't fall under ""pure clean modern and standards compliant""? It's all of those.
+
+&nbsp;
+
+> my fear of Typescript slowly taking over I guess, since I see it as a serious regression 
+
+TypeScript is a superset of JavaScript though, so how can it be in any way a regression of it?I don't really have that much desire to use Typescript over ES2016 - other than the Intellisense you'd get out of it would be helpful."
+2017-03-27 19:12:09;Aurelia Release Update - Late March Edition;Awesome update, thank you! Quite happy with the speed improvements when running aurelia-cli 🙂 (had to wait 1.5mins for all tracing, now 10 seconds)
+2017-04-04 21:35:30;Case Study: netroStation;
+2017-04-10 09:47:42;Simple poller library in TypeScript;
+2017-04-07 11:29:12;Opinionated Comparison of React, Angular2, and Aurelia;"Thanks for sharing. I really appreciated the author's breakdown of the comparison.Good read. I use Aurelia and I can definitely agree the skeletons for webpack are lacking. That said webpack is webpack and you can definitely use it without the ""easywebpack"" which is what I did as well."
+2017-04-16 17:27:35;Aurelia Release Notes - Early April 2017;
+2017-04-24 09:05:54;What are some high profile apps/sites using Aurelia?;How about http://builtwithaurelia.comhttp://blog.aurelia.io/2017/04/04/case-study-netrostation/I'd be interested also.
+2017-04-24 00:00:21;aurelia-feathersjs-socket-demo please look and validate;Your example code looks good :-) Thank you for sharing!
+2017-04-30 06:25:16;Aurelia Lecture 2. For more video tutorials subscribe to our youtube chanel.;
+2017-04-26 08:27:28;Aurelia Overview Video Tutorial. Subscribe to our youtube chanel for the complete video tutorials.;
+2017-05-09 12:55:41;Aurelia Validation with checkboxes;Have you tried asking on Stackoverflow? You may get better luck there.
+2017-05-30 09:37:04;Submitting a Hackernews PWA for HN PWA;"https://github.com/michaelbull/aurelia-hacker-news
+
+https://github.com/Vheissu/aurelia-hn"
+2017-05-29 04:27:35;Fetch API Data is not showing up in Aurelia template;"Push this.accounts.accounts is valid ? 
+
+Edit I misread the line on phone. I'm not familiar with push.apply I always just set the array normally 
+
+this.accounts = accounts;I'm not a promise master but is your last then with the console log not returning the data back so it's not getting to caller of getAll
+
+Add console log in page portion if u can't set breakpoint 
+
+
+        getAll() {
+            return this.http.fetch('accounts')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+        }
+
+
+it works if you do this:
+
+
+        getAll() {
+            return this.http.fetch('accounts')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    return data;
+                })
+        }
+
+see it working:
+https://gist.run/?id=da6820af6d16927b42719c4b3f6edeca"
+2017-06-01 22:05:50;How do I prep for an internship?;"If you know C# or Java you will be fine syntax wise with Aurelia. Study topics like Dependency Injection, Services, WebComponents. Also look at the Aurelia lifecycle methods and understand promises. we use aurelia and c# together as we use ASP .Net Web API.
+
+You could start with the skeleton projects at https://github.com/aurelia/skeleton-navigation/tree/master/skeleton-esnext-aspnetcore and see if you can get anything going?You will enjoy the syntax of non ES5 JavaScript, and if you know C# it will be even more natural. I use Aurelia and TypeScript professionally and enjoy it a lot. Know your typical CRUD stuff both client and server side (hopefully Web API 2) and you should be fine. CORS, JWT, responsive design are things you should know how to handle, for example. Aurelia makes things pretty easy so you should do fine."
+2017-07-03 20:42:25;Any good video courses on TS and Aurelia?;"I've not watched this series, but it might be a good place to start [Aurelia+TypeScript Tutorial](https://www.youtube.com/playlist?list=PLkpAqauvJhF_GdGcVH94gQ2G3DKczhOOI)Maybe pluralsight but typescript is just typescript nothing special Aurelia related . No need to see a tutorial in typescript when u can just add the types in yourself to ""translate"" "
+2017-07-08 12:48:27;New to Aurelia, so could anyone please take a look over this plugin and give some feedback? Thanks.;"Are you looking for advice with using it or writing it? I can't tell if you're a developer of the plugin or somebody wanting to use it.I've actually been using this plug-in (paid) for a while now!  I have actually been meaning to look through the plug-in and contribute at some point, but instead have poured myself entirely into my company's product.
+
+I will try to remember to look through the code later when I am at my desk."
+2017-07-07 09:09:49;I have a problem with a basic Aurelia component when using dash in its name. Can anyone help?;What is the error you are getting?Actually, I was not getting any error, only that the component constructor was never called. It looks like it was overridden. I managed to fix this, it was actually a naming conflict from app.html. https://stackoverflow.com/a/44967334/3275470
+2017-07-06 13:44:47;Aurelia, Angular2 and React - Top 3 JavaScript Frameworks with Merits and Demerits;"More benefits of Aurelia: 
+
+- CLI even though it is in alpha is pretty stable, easy to customize build (its all gulp tasks) 
+
+- Its 350k minified (Angular2 is 750k)
+
+- Eisenberg (its creator) responds directly to GitHub issues and asks for PR's from people for feature requests.I love Aurelia and it's my framework of choice but seriously ""no practice limitations""? Even if you thought that it just reads as bias especially when listed first even if you weren't giving them an order on purpose. Is Aurelia really a top 3 framework?"
+2017-08-08 15:09:04;Cannot get sockets.io working with Aurelia;"It really just seems like you are missing the file in the dist folder. Are you using webpack or something that bundles ? If so maybe you need to exclude that file from the process.[An Example](https://github.com/Malexion/Node-Web-Crawler/blob/master/client/src/socket.js)
+
+you have to call io.connect(...); client side instead of io(...)You mentioned you're using gulp, so I'm going to assume you're using the skeleton project.  If so, you can remove the npm copy of socket-io and keep the jspm one.  
+
+I'm also going to assume you're using the gulp 'export' task, since the 'watch' task generally doesn't throw 404's when attempting to access a newly installed library. 
+
+If both of these assumptions are correct, you need to include the socket-io.client library in your gulp aurelia bundle.
+
+Go to /build/bundles and add 'socket.io-client' to the 'dist/aurelia'.'includes' array in the json.
+
+"
+2017-08-07 22:17:32;Building a Treeview in Aurelia;"Just a little nitpick thing 
+
+    <span if.bind=""current.hasChildren()"" click.trigger=""current.toggleNode()"" class=""${current.icon}""></span>
+
+I'd change the if.bind to if.bind=""current.children.length > 0"" since current.hasChildren() will never update if the current.children array changes.
+
+You could also use a computed getter.
+
+    import {... computedFrom ...} from 'aurelia-framework';
+    ...
+    @computedFrom('current', 'current.children')
+    get hasChildren() { return (this.current && this.current.children) ? this.current.children.length > 0 : false; }"
+2017-08-06 17:29:22;Handling Unknown Routes is not working;"Pretty sure the unknown route page has to be in your config.map array though the documentation doesn't mention it.The code looks right. Is there any error in console?
+
+"
+2017-08-20 20:25:02;Is there a service like Laracasts for Aurelia?;"There isn't that I'm aware of. I've wanted to create free content, but I've been basing my income on consulting and training for the last 18 months, so it's been hard for me to justify it. Now that I've started working for a company, I'm hoping to be able to produce some free content.
+
+I'm Ashley, the Community Lead for the framework, btw"
+2017-08-19 07:23:15;Our challenges and concerns for choosing aurelia over other frameworks, what are your opinions?;"I'll address these point by point:
+
+1. Documentation/Community - This tends to be very subjective. Some developers love our documentation, some think it's ok and some don't like it. It's something we're constantly working on and we know we need to improve. We recently renewed our efforts around this in two ways. 1. We're creating a bunch of new content for the site. 2. We're preparing to launch a new website and documentation platform that we've been working on for a few months. It will allow us to greatly enhance and more rapidly improve our documentation. We'll also be launching a Discourse forum as part of this work, so there will be a better place to have a conversation like this. That's something we've lacked for a long time and we apologize for the delay there. It's almost ready. Beyond this, the new site includes greatly improved SEO and content visibility, which is another area we've lacked. These items aside, there are plenty of video courses on Aurelia, both free and pay. There are multiple courses on Pluralsight. There are also multiple books available. These books and courses cover the fundamentals and often go beyond that to more intermediate and advanced topics. You can learn about these resources here: http://aurelia.io/training.html There are countless other videos, blogs and community writings around as well. In addition to this, there are 550 contributors to the Aurelia framework and tens of thousands of companies that use Aurelia, including Fortune 5 companies. This is not a small community. Is it as large as Angular or React? No. Is it larger than most open source projects? Yes. Most don't come close. Is it big enough for you? I don't know. That's up for you to decide. One quick point I'd like to mention is that user pier25's stats are incorrect, since there's no significant package named ""aurelia"" that is used by Aurelia devs. So, those numbers are bogus. Aurelia is distributed as a collection of NPM packages (https://www.npmjs.com/~aureliaeffect#packages). You would have to aggregate all of those and compare the numbers to get an accurate picture. If you find that the community resources aren't enough for you, our core team members provide tailored training, consulting, and adhoc support to assist teams in their specific needs. All that said, please don't forget that a big part of open source is contribution and collaboration. So, if you see an area that needs improvement, please get involved. We love our contributors and would love you to join with the other 550 people who've worked to help build what we have today.
+
+2. Free and Rich UI Framework - There are at least 6 full UI frameworks available for Aurelia, both free and pay. We had a newsletter a few months back which provided a list. When we were putting that list together, even I was surprised to find new ones cropping up. You can read the online newsletter here: http://mailchi.mp/bluespire/aurelia-weekly-issue-10 We're also working on our own framework, Aurelia UX, which has a core set of components, but also is built as an extensibility platform to enable the entire community to more easily build themable, skinnable and platform-adaptive components.
+
+3. RxJs - This brings up an important differentiator of Aurelia, and something that often confuses developers coming from other frameworks. Because Aurelia stays so close to web standards and focuses on supporting vanilla JS objects, it rarely needs special plugins to integrate with other libraries. Frameworks like Angular, Vue and React frequently require custom plugins to enable things like RxJS to integrate with them. Aurelia doesn't. This throws people off because they perceive that ""thing X"" either isn't supported by Aurelia or that the community's plugin contributions aren't large enough to result in many libraries being supported. But again, the fact is that custom Aurelia-specific plugins just aren't needed to support these libraries most of the time. To the original question, members of the Aurelia community, including our core team, have been building apps that leverage RxJs for a long time now. I'd love to hear what types of issues you are experiencing. The most common problem we find people facing with 3rd party libraries is figuring out how to correctly bundle them. If that's your issue, then I recommend that you look into adopting Webpack, as it's the most widely supported tool for addressing that sort of issue, and it's fully supported by Aurelia as well. You can use our CLI to generate a Weback 3 project and be up and running in no time. Here's a couple of Aurelia/RxJs blogs from a team member that you might find relevant: http://pragmatic-coder.net/using-a-state-container-with-aurelia/ and http://pragmatic-coder.net/aurelia-cli-and-rxjs-size-sensitive-bundles/
+
+4. Mobile App Framework - This has tremendous overlap with point #2 above. Many of the UI frameworks support this. The Aurelia UX library we're working on also targets this scenario. Future versions of our CLI will also support project builds for Cordova/PhoneGap, independent of any particular UI library. In fact, that's up at the top of our list for the CLI, after yesterday's release. Again, many of the Ionic plugins related to PhoneGap/Cordova are needed for Angular-specific reasons. See point #3 above. These are simply not needed with Aurelia. I'd love to hear what functionality you specifically feel is missing. We've got our own ideas and plans to build more, based on previous conversations with our community. I'd love your input into that process as well.One of the key differentiation points for me between Aurelia and Angular is the extension libraries for things like validation and dialogues.
+There are dozens of third-party solutions for these, but in my experience non played particularly nicely with Angular, and we ended up having to perform so many hacks to each application to get anything vaguely acceptable that it blew out development times significantly.
+The Aurelia extension stuff was generally 95% correct out of the box, and it was only understanding and design decisions that caused the slowdowns.
+
+Having said that, there is two major flaws I see in the provision of Aurelia to ""the masses"":
+1) Tooling
+We all know tooling for the web is a debacle. ES6,TS,WebPack,RequireJS,SystemJS,JSPM,NPM,Grunt,Gulp, etc.
+Aurelia started by trying to appease all camps, because by being development and deployment agnostic it was impossible to criticise, and nobody could say ""I'm not using it, because it doesn't support X"".
+But, that means we spent the first critical year buggering around with JSMP and WebPack, with everything having to be duplicated for every possible module loader, and then all that doubled to support both ES6 and Typescript skeletons.
+Angular said ""Let's keep it simple. We choose TypeScript, and we'll give you a CLI using the loader we've chosen"". Sure, that might feel restrictive, but 75% of people will simply accept, 20% will whinge... then accept, and 5% will refuse.  I'd be happy with those results, because as it is we've probably lost 50% of people who 'tried' Aurelia simply because they floundered in the myriad of options, incomplete examples, and non-working web examples dues to the shifting bases.
+
+2) Knowledge-base handling
+Now this to me is a crazy situation, and I've complained about it since the very first Aurelia release.
+For much of the development process Gitter was used as the communications platform. It's great for instant help requests, but utterly and totally USELESS for finding anything commented on more than 24 hours ago.
+Why oh why was there never a forum approach setup so that knowledge was captured and retained for new adopters?  I've spent several hundred hours helping people in Gitter's Aurelia rooms, finding faults for them, explaining design mistakes, and writing personal blog entries so I can link to them to avoid having to explain complex concepts repeatedly on the Gitter chat.
+We've probably lost thousands of hours of helpful snippets, design decision advice, and Frequently Asked Questions on that crappy system, and while Stack Overflow is an improvement, it's still not moderated so there's nobody to collate FAQs or pin helpful advice or links.
+I believe Rob should have chosen a forum system from day one, and appointed one or more core members to act as moderators to keep it as a document knowledge base as well as a fast-moving conversation thread system.
+As time went on and people became more familiar with the workings, outside people could have been given moderator rights, encouraging loyalty and reflecting appreciation for time donated ""to the cause of enhancing and encouraging use of Aurelia"", thus creating a growing pyramid of dedicated developers.
+I genuinely think this is a major reason take-up has been slow and spluttering, because so many people I've chatted with have subsequently said ""I gave up, because it was too hard to get a stable base to build from"".  It's not hard, it's just not particularly intuitive unless you're a web dev guru.
+
+So, I'm currently sticking with Aurelia because it's generally superior to Angular in terms of speed of development, but would I recommend it as a chosen major platform for a large organisation? Only if they already had an Aurelia guru on their dev team to help get them started and as a constant source of advice when they discover unexpected behaviour.Resources, community, and ecosystem, are almost non existent.
+
+Quite frankly, as promising as Aurelia was 1-2 years ago, I think it's fair to say that considering your concerns you should stay away form it.
+
+Vue and Marko are still small players compared to React or Angular, but are faring a lot better than Aurelia.
+
+~~https://npm-stat.com/charts.html?package=aurelia&package=vue&package=marko&from=2015-01-01&to=2017-08-19~~
+
+https://npm-stat.com/charts.html?package=aurelia-framework&package=vue&package=marko&from=2015-01-01&to=2017-08-19It pains me to say this, but I have to agree with the other commenters here. Having used Aurelia for two years now, I can honestly say that the small community is a major sticking point that shouldn't be ignored. Often times, I've found myself spending hours trying to add npm modules that are easily integrated into other frameworks. The default solutions found in the skeleton project that include jspm should be avoided as jspm causes far more issues than it solves. Looking back, every step beyond the basics was a steep learning curve and there was little-to-no assistance readily available. The few blogs that fill gaps in the documentation are non-responsive to comments and often contain outdated solutions. 
+
+In short, you should look elsewhere. From my experience, When you use something so good and you know it yourself, why would you need to wait for others to say it's good.
+
+You can hardly do things wrong in Aurelia, everything just works. For more advanced usage, with a little of extension, you probably get the result you want.
+
+For native mobile App, I think it's possible to integrate Aurelia & NativeScript. Maybe someone can address / share opinions on this matter.
+
+So, maybe with a several rules, your team will do absolutely well.It's really to bad, I love to write in Aurelia now that I've been exposed to it for so long. It's just less overhead than Angular 2 in creating basic components, and I really hate inline html I like to have the editor markup.
+
+I haven't found another framework that has <template replaceable part=""""> yet either like Aurelia has. All I see on other frameworks are components that act like <slot>(aurelia) for the shadow dom like <ng-content>(angular 2) and these components don't do so well inside repeat.for spaces which is something I find myself needing a lot for lists and other spaces.Aurelia is, in my opinion, very clean and well organized.  The syntax is easy to learn and understand, and the framework intrudes almost not  at all on the component code, allowing you in essence to create Plain Old Javascript Objects.  If additionally I apply some discipline and keep logic that doesn't need to be coupled to framework component classes away from them, and delegate from those components to POJOs instead, I feel like the inevitable desire to switch frameworks several years down the road will be much easier to fulfill.  So, regardless of what you decide, I suggest using disciplined factoring to hedge your bets.  Don't pile all your code in Angular components, for example, should you choose Angular.
+
+For my own projects, at the moment I lean towards Aurelia.  The documentation is sufficient.  Sometimes I have gotten stuck, usually with regard to integrating a third-party library, but on the whole I think I move faster with Aurelia than I do with Angular.
+
+On the flip side, however, for corporations, I would hesitate to push strongly for Aurelia.  The more risk is associated with technology choices, the more managers feel comfortable with big names and being in a crowded room, and Angular is that room.  If you have a team that is disciplined about code factoring, understands concepts like Single Responsibility, you mitigate the risk a lot because a fairly thin layer of your UI's code should be framework-bound.  If the UI is going to have complex behavior but limited UI depth, risk is further mitigated.  An application with many, many widgets / interaction points but not a lot of complex logic in the UI will be more framework-bound, and therefore the technology choice becomes more crucial / less easy to change in future.
+
+It's tough to choose at this point in time - there are so many alternatives and noise.  Frankly no matter which framework you choose, a big chunk of your pain is the same - what flavor of javascript?  what builder/packager?  typescript or not? - the web development world is highly fractured right now - which framework is just one of many head-scratchers you face.I know this post is old, in internet years, but I'd like to provide info to whomever falls on to this.  First of all, yes there are lots of options out there for frameworks and you have to choose what's best for you, your team, and the business. I can say for sure though after building out 6+ enterprise applications (internal and can't say who as usual) that aurelia has more than proven itself to us with it's ""convention over configuration"" and it's unobtrusiveness yet still tons of rich features.  We have a fairly large team (15+) and most are of the generalist flavor which means strong in the middle/back tiers and not so much in the frontend.  They have found it very easy to jump into since you are, for the most part, just writing vanilla JS.  
+
+On to the original posted points ...
+
+1.  Documentation.  I'd say that's not an issue anymore since their documentation has significantly improved and is quite easy to navigate. Their cheat sheet is a great place to bookmark during development with aurelia.  http://aurelia.io/docs/fundamentals/cheat-sheet
+
+2.  Free and Rick UI framework:  For us, we opted for just customized bootstrap css (and their UI components) and hand picked some other components  such as charts (https://www.highcharts.com), datagrids (http://bootstrap-table.wenzhixin.net.cn/), selects (https://select2.org), date picker (http://www.daterangepicker.com), etc. to fit each business requirement. It's so easy to just plug in whatever 3rd party component you need and add it as a global component. If you are in the market for full UI framework other than bootstrap, there are tons out there.  
+  -  https://github.com/aurelia/ux
+  -  http://aurelia-ui-toolkits.github.io/demo-materialize
+  -  https://adarshpastakia.github.io/aurelia-ui-framework
+  -  http://sigmaframeworks.io
+  -  and you can find many more in the googles
+
+3. RxJs (Reactive framework): We have had no need for this with all that aurelia, and native JS, provides out-of-the-box.
+
+4.  Mobel App Framework: We don't develop exclusively for mobile and almost all our end users would use this on either a computer or tablet so for mobile, we've needed only to develop responsively.  They do offer aurelia UX library and I know I've come across a couple others over the past year (see aforementioned list of UI frameworks). Again as stated earlier, I believe you could easily use whatever sln you'd use for any other web app whether it was build with .NET MVC, LAMP, etc. 
+
+Another point of concern was community numbers vs the other big frameworks.  Yes that is true, numbers are not as high as say Angular or React (plus whatever). However, just because the community is not as big does not mean you can't find the help you need. As I mentioned before, 2 years now I we have yet to run across something we couldn't either find in documentation or on post somewhere (stackoverflow, gitter, discourse, etc.).  There's also a very exhaustive list of how-tos, tutorials, etc on https://discourse.aurelia.io/t/aurelia-collected-tutorials/204?u=rkever and a github repo at https://github.com/behzad888/awesome-aurelia.
+
+For the ""backend"" of our frontend aurelia, we have landed on webpack as our build tool. It really works well and has a ton of possibilities through all available plugins.  It does its job well (after some time figuring out how it works) and keeps out of the way so all we have to concentrate on is development. See https://ilikekillnerds.com/2017/03/code-splitting-aurelia-webpack-applications for a great example of code splitting for larger apps.
+
+As developers we do have to pick what is best for the project at hand and usually there's many variables involved to make the best decision. I can say for sure for us, aurelia has turned out better than we could have hoped for and look forward to continued development using aurelia as our go-to framework.Everyone commenting on the lack of documentation, help and community really has to join us on the Aurelia channel on Gitter. https://gitter.im/aurelia/Discuss
+
+There are 5000+ people on there at any given time and questions are answered in minutes.Aurelia has some drawbacks but over all it is a great framework to code with. [Here are some well considered comments.](https://www.reddit.com/r/javascript/comments/6xcr0b/looking_for_a_critique_of_aureliajs/)
+
+However (and this really isn't subjective) the community is small and documentation lacking. I have had fast response from key developers on Aurelia to my questions and they do a great job. But it is hard to find answers to questions by researching forums, blogs and the Aurelia documentation. The Aurelia docs are fine as far as they actually go but the size and complexity of Aurelia framework often has me stuck at things like package install. My task runner fu is not the greatest and I have twice almost given up on Aurelia because of this.
+
+But I really like coding with Aurelia. I like the approach which for me is cleaner, the framwork hardly intrudes into my code or HTML and I feel it is more in line with the spirit and standards of HTML5, ES6 & TypeScript than other frameworks. It is this that keeps me here.
+
+Aurelia had a great fanfare a couple of years ago which it probably wasn't ready for. The build system was difficult to use, last year skeleton projects for getting started often failed, and documentation was not in place to help. I feel this timing has cost Aurelia the community it deserves. I want Aurelia to succeed and for now I am continuing to use it.
+
+But community size has me worried about Aurelia's continued active longevity and that worries me for larger projects.Most of the pain of packaging in Aurelia seems to come from folks using the CLI when it was officially not ready for primetime (just look at the version numbers).  I eschewed the CLI from the start because frankly, I found everything simpler and more reliable without it.
+
+The instructions for getting started _without_ the CLI are right on the Aurelia ""Getting Started"" page, and they aren't complicated.  That simplicity is one of the beauties of Aurelia.  It is ironic that this simplicity is obscured by the CLI!
+
+Yes, I had to learn JSPM and later Webpack, but I'm glad I did.  I am willing to bet that any project using Angular, Vue or Aurelia that hopes to avoid having to understand JSPM or Webpack will ultimately be disappointed."
+2017-08-16 06:07:39;What's the difference between a component and HTML behavior?;"Might be misunderstanding the terms but:
+
+* Component is typically an element html/js combination of which there are many types (custom element, template view, binding behavior, attribute, value-converter, etc)
+* Behavior usually refers to the binding behavior type of component which allows you to control the binding interaction [see the most useful one I've seen, the intercept binding behavior](https://www.danyow.net/aurelia-binding-behaviors/)
+* Just html is typically refered to as a view and can be brought in as a view template with a compose element and have data bound into it, typically used for style or structure of components that don't really do anything interactive like an id cardI can maybe fill in the blanks a bit here. I think what's confusing the matter is two separate concepts. 
+
+There are HTML behaviors which you can think of as a parent component type which both custom elements and custom attributes derive from. Then there are binding behaviors, like Mal_ex_ion mentions. These give you a way of manipulating the way that bindings behave. 
+
+Example of binding behaviors include:
+
+* validate
+* throttle
+* debounce
+
+...
+
+These are applied to bindings with syntax like:
+
+    <input firstName.bind=""firstName & validate"">
+
+The above expression applies the validate binding behavior to the input, triggering validation on input change events.
+
+You can also create your own custom binding behaviors if you further manipulate how bindings work. "
+2017-08-29 20:53:36;Using Django as backend for Aurelia?;"Hi,
+Aurelia is backend API agnostic, it plays well with HTTP API built on any platform unless you are opinionated.
+I have used it in Dotnet core APIs (ServiceStack), Sails JS and FeathersJS.
+Example below
+
+https://bitbucket.org/praveengandhi/aurelia-feathersjs-socket-demo
+Some other examples:
+
+https://github.com/EisenbergEffect/aspnetcore-aurelia-build-2017/
+
+http://www.fatlemon.co.uk/2016/12/aurelia-with-a-rails-api/
+
+I think Django is very similar to ruby rails if I am not wrong, same is Asp.net MVC /aspnet core MVC."
+2017-09-05 19:59:34;Failing to run when using Bootstrap v4;"I've got it working with the Aurelia CLI bundler (not using jspm). I've got a skeleton project with an ASP.Net Core backend in a [GitHub project](https://github.com/dwarry/AspNetCoreWithAurelia). Have a look at the bootstrap4 branch - all the Aurelia stuff is in the `AspNeWithAurelia\ui` folder. I couldn't work out how to get the popper.js dependency to be included in the bundle successfully, so I ended up cheating and just putting it in a script tag...
+
+Hope this helps!"
+2017-09-05 19:19:06;Using the HTML template and Custom element web component APIs with Aurelia;
+2017-09-03 16:35:59;Aurelia Swipeout - A custom element for iOS style swipeout actions;
+2017-09-03 05:10:59;How to use the HTML import web component API with Aurelia;
+2017-09-01 22:02:09;You might not need a dialog library;Is this a common ask? I always found it dead simple to wire up a modal / dialog base component. 
+2017-09-08 08:34:46;Web components and Aurelia - The Shadow DOM;
+2017-09-16 18:02:47;Best way to approach situation for duplicated form inputs?;Add a method named `determineActivationStrategy` to `blog-post.js` that returns the string `replace`.
+2017-09-16 10:47:54;5 techniques used by Aurelia to promote great code quality;Aurelia may be not that popular and wide used among all frameworks, but this technology is very functional and worth of every frontend developer's attention. Comparing to the most popular JavaScript framework Angular, we can see many improvements. For example, Aurelia has much simpler structure, so [Aurelia developer](https://mobilunity.com/blog/hire-aurelia-developer-in-europe/)s spend minimum time to learn it, while Angular takes much more time to master. Besides, Aurelia has adaptive data binding, means it can support one-way data binding as well as two-way data binding. And there are even more advantages over Angular. So it won’t be surprising Aurelia will become one of the top JavaScript frameworks in the future.  
+2017-09-24 02:58:46;Content projection and templated lists in Aurelia;

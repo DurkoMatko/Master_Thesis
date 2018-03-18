@@ -9,32 +9,33 @@ import string
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+############# API THROTTLE PROBLEM !!!!!!!!!!! #######################
 def main(argv):
     [dbHandle,conn] = connectToDb()
 
-    projects = [
-        # 'https://api.github.com/repos/django/django',
-        #'angularjs',
-        #'bootstrap',   #no stack overflow tag
-        'node.js',
-        #'bower',
-        #'gulp',
-        #'ruby-on-rails',
-        #'vue.js',
-        #'ember.js',
-        #'aurelia',
-        #'go-ethereum',
-        #'ethereum',
-        #'bitcoin',
-        #'rippled',  #no stack overflow tag
-        #'dash',    #no stack overflow tag
-        #'litecoin'
-    ]
+    stackGitPairs = dict();
+    stackGitPairs['django'] = 'django/django';
+    stackGitPairs['node.js'] = 'nodejs/node';
+    stackGitPairs['angularjs'] = 'angular/angular';
+    stackGitPairs['bower'] = 'bower';
+    stackGitPairs['gulp'] = 'gulpjs/gulp';
+    stackGitPairs['ruby-on-rails'] = 'rails/rails';
+    stackGitPairs['vue.js'] = 'vuejs/vue';
+    stackGitPairs['ember.js'] = 'emberjs/ember.js';
+    stackGitPairs['aurelia'] = 'aurelia/framework';
+    stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
+    stackGitPairs['bitcoin'] = 'bitcoin/bitcoin';
+    stackGitPairs['litecoin'] = 'litecoin/litecoin';
+    # 'rippled',  #no stack overflow tag
+    # 'dash',    #no stack overflow tag
+    # 'bootstrap',   #no stack overflow tag
 
-    for project in projects:
-        print project
+
+    for stackName, gitName in stackGitPairs.iteritems():
+        print stackName
         try:
-            page=1
+            page=5
+            commentCount = 0
             SITE = StackAPI('stackoverflow')
             SITE.max_pages = 1;
             while True:
@@ -42,7 +43,7 @@ def main(argv):
                     'questions',
                     fromdate=date(2012, 5, 8),  # year,month,day
                     todate=date(2016, 4, 15),
-                    tagged=project,
+                    tagged=stackName,
                     filter='withbody',
                     sort='creation',
                     page=page
@@ -51,12 +52,20 @@ def main(argv):
                 for question in questions['items']:
                     #print question['title']
                     #print datetime.fromtimestamp(int(question['creation_date'])).strftime('%Y-%m-%d')
-                    if project == 'go-ethereum': project = 'ethereum'
-                    saveQuestion(dbHandle=dbHandle, conn=conn, question=question, project=project)
+                    answers = SITE.fetch('questions/' + str(question['question_id']) + '/answers',
+                                         min=10,
+                                         sort='votes',
+                                         filter='withbody')
+                    for answer in answers['items']:
+                        commentCount += 1
+                        if gitName + '/issues' in answer['body']:
+                            saveComment(dbHandle=dbHandle, conn=conn, answer=answer, question_id=question['question_id'], project=stackName)
 
                 page = page + 1
                 if page == 11 or not questions['has_more']:
                     break;
+
+            print 'answer count:' + str(commentCount)
 
         except StackAPIError as e:
             print("   Error URL: {}".format(e.url))
@@ -64,25 +73,16 @@ def main(argv):
             print("   Error Error: {}".format(e.error))
             print("   Error Message: {}".format(e.message))
 
-def saveQuestion(dbHandle, conn, question, project):
+def saveComment(dbHandle, conn, answer, question_id, project):
     dbHandle.execute(
-        """INSERT INTO oss_issues.so_questions (question_id,title,creation_date,tags,body,project) VALUES (%s,%s,from_unixtime(%s),%s,%s,%s)""",
-        (question['question_id'],
-         question['title'],
-         question['creation_date'],
-         ';'.join(question['tags']),
-         question['body'],
+        """INSERT INTO oss_issues.so_issue_comments (question_id,comment_id,comment_body,project) VALUES (%s,%s,%s,%s)""",
+        (question_id,
+         answer['answer_id'],
+         answer['body'],
          "".join(l.lower() for l in project if l not in string.punctuation)
          # project name in lowercase without punctiation
          ))
     conn.commit()
-
-def extractNouns(titleAndBody):
-    # function to test if something is a noun
-    is_noun = lambda pos: pos[:2] == 'NN'
-    tokenized = nltk.word_tokenize(titleAndBody)
-    nouns = [word for (word, pos) in nltk.pos_tag(tokenized) if is_noun(pos)]
-    return nouns
 
 def connectToDb():
     conn = MySQLdb.connect(host="localhost",

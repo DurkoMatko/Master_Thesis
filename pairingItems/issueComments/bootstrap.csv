@@ -1,0 +1,70 @@
+date;submission_text;comments_text;issue_comment;subreddit
+2014-11-01 23:53:51;Full Height Accordion;"There was ticket at GitHub, but now it's locked without any certain result. Maybe one of the propositions will hint you something.
+
+[Fluid Layout with 100% height #1671](https://github.com/twbs/bootstrap/issues/1671)";"There was ticket at GitHub, but now it's locked without any certain result. Maybe one of the propositions will hint you something.
+
+[Fluid Layout with 100% height #1671](https://github.com/twbs/bootstrap/issues/1671)";bootstrap
+2015-09-08 19:13:05;Bootstrap Glyphicons turn into Chinese characters on mobile. How do i fix this?;"Maybe related to https://github.com/twbs/bootstrap/issues/10106 ? Are you using an outdated version of Bootstrap?Did you find out what was wrong? I'm having the same issue on android phones!Did you figure this out?The response time of google is probably faster than posting here.
+
+Answer (first google result of ""glyphicons Chinese"")
+
+http://stackoverflow.com/questions/22718240/why-do-my-bootstrap-glyphicons-get-rendered-to-chinese-characters";Maybe related to https://github.com/twbs/bootstrap/issues/10106 ? Are you using an outdated version of Bootstrap?;bootstrap
+2016-04-13 17:29:20;Anyone have an idea of when Bootstrap 4 is being released?;"Alpha3 is 78% complete:
+
+https://github.com/twbs/bootstrap/milestones/v4.0.0-alpha.3
+
+Theres still A LOT to do... 
+
+I'm using Alpha2 for sites I know won't go live potentially till 3rd quarter... 
+
+I can patch fix stuff as Alphas and Betas come through-out my development - plus actually using it is integral to fleshing out issues and finding where things are missingThey are still working on it. You can see the progress/activity on https://github.com/twbs/bootstrap. You may want to give the lastest master branch a shot if you're daring. Otherwise, you can access the Apha2 tag for the latest alpha files which are circa Dec 2015.It's a hugely ambitious release and like most large releases it will take time. Be more patient[Related thread](https://github.com/twbs/bootstrap/issues/19815) on GitHub";[Related thread](https://github.com/twbs/bootstrap/issues/19815) on GitHub;bootstrap
+2016-05-04 22:25:27;Any predictions for when v4 will be ready for official release?;"August 4th.
+
+No reason.I was thinking August too, since that's the historical Bootstrap release month, but now I'm not so sure. I mean it's May, and it's still in Alpha. The most recent Alpha 2 was [5 months ago](https://github.com/twbs/bootstrap/issues/18480)I've been wondering about this too. There has been a lot of activity on github.com but nothing on the blog at all. ";I was thinking August too, since that's the historical Bootstrap release month, but now I'm not so sure. I mean it's May, and it's still in Alpha. The most recent Alpha 2 was [5 months ago](https://github.com/twbs/bootstrap/issues/18480);bootstrap
+2016-09-08 05:20:07;When do you think Bootstrap 4 will be production-ready?;"Good question. I'm curious too!My take is that the latest alpha is beta-ish. Last time around for 3.x they spent very little time with alpha versions, and quite a while with a few betas and RC's. 
+
+For Bootstrap 4 there has already been a lot of alpha versions. We may see a beta very soon. If we don't I think there will be several more alphas, and the beta will be short and quickly move to RC.
+
+In the meanwhile, I'm keeping an eye on Alpha 5: 
+https://github.com/twbs/bootstrap/issues/20630 and 
+https://github.com/twbs/bootstrap/milestone/36If you'd asked me that 2 weeks ago, I would have said next year some time. However with Mark Otto's announcement recently, it looks like they are putting steps in place to speed up the date. 
+
+I'm not sure when they will release a final, but I am optimistic they seem to be trying to hurry a bit.I am in a same situation. I am wondering if I use in production, how tough situations can be to deal with breaking changes in a complex application- If I use 3, then how much effort will be involved if we need to migrate to 4?Any updates in this matter? Did anyone go with BS4?";"My take is that the latest alpha is beta-ish. Last time around for 3.x they spent very little time with alpha versions, and quite a while with a few betas and RC's. 
+
+For Bootstrap 4 there has already been a lot of alpha versions. We may see a beta very soon. If we don't I think there will be several more alphas, and the beta will be short and quickly move to RC.
+
+In the meanwhile, I'm keeping an eye on Alpha 5: 
+https://github.com/twbs/bootstrap/issues/20630 and 
+https://github.com/twbs/bootstrap/milestone/36";bootstrap
+2016-10-13 12:32:46;When do you think Bootstrap 4 will be released?;"Please refer to the following threads:
+
+https://www.reddit.com/r/bootstrap/search?q=bootstrap+4+release&restrict_sr=on&sort=relevance&t=allNo way. I believe they're still in Alpha.Some info here: https://github.com/twbs/bootstrap/issues/20631";Some info here: https://github.com/twbs/bootstrap/issues/20631;bootstrap
+2017-06-01 10:43:43;Should a new dev learn Bootstrap 3 or 4?;"3, since it's what most people will be using for the foreseeable future.
+
+4 has been in development for ages and I'll be surprised if it's production ready before the end of the year.It really depends on what work you want to do (and what work you think will be available).  If you only know old tools, you risk being put on maintenance rather than more interesting work.  Bear in mind that Bootstrap 3 has been end-of-life since September 2016 ([announcement](https://github.com/twbs/bootstrap/issues/20631)), and the last v3 release was in July 2016 ([release] (https://blog.getbootstrap.com/2016/07/25/bootstrap-3-3-7-released/)).  The world moves on.  Putting in the effort to stay current is something all developers have to come to terms with.Bootstrap 3 and 4 are not that different, so if you know already one of them it's not a big deal to start writing in another one. The only problem for me was that one uses {LESS} (b3) and the second one SASS (b4). 
+
+I make Bootstrap templates and I use B4 for all my new templates. It has flexbox support and some more extras lacking in B3. If you have work lined up using one version or the other, learn the one that you'll be using. If you want to use features only supported by one but not the other, learn the one with the features you want.
+
+Otherwise, start with one then learn the other. There will always be legacy code to support when new versions come out.It depends. Sometimes you should support some legacy project with bootstrap 2. So, you can start learning 3 and compare it with 4 and 2.
+And to be in stream you should keep eye on v4 changesDon't call them freelance jobs if you want to land a contract with a company. Pls.";It really depends on what work you want to do (and what work you think will be available).  If you only know old tools, you risk being put on maintenance rather than more interesting work.  Bear in mind that Bootstrap 3 has been end-of-life since September 2016 ([announcement](https://github.com/twbs/bootstrap/issues/20631)), and the last v3 release was in July 2016 ([release] (https://blog.getbootstrap.com/2016/07/25/bootstrap-3-3-7-released/)).  The world moves on.  Putting in the effort to stay current is something all developers have to come to terms with.;bootstrap
+2017-08-01 15:56:21;Bootstrap 4 realease?;"I think we'd all love to know. The last I heard was from bardiharborow at https://github.com/twbs/bootstrap/issues/23120:
+""If you want a timeline, we're looking at closer to 2 weeks than September, but as always, I can't provide any guarantees.""
+
+That was about 2 weeks ago. I'm under the impression that there are a fair amount of cleanup things left to do and that the contributors have limited capacity right now so they'll need a bit of time.
+
+As for using it in Angular 2, assuming you're using the CLI, just download the latest alpha via npm, change ""app.css"" to ""app.scss"" (if you're not using Sass already), and then `@import` the desired Bootstrap scss file from within ""app.scss"".
+
+For components, ng-bootstrap seems to have good BS4 support. I haven't checked on ngx-bootstrap lately but I believe that one might too.No idea at this point. It's taken far far to long now. Obviously no bad feeling towards its creators, they're making it out of passion. But from a business point of view, it's made the whole bootstrap project look like it's on very shakey grounds for the future. I say this as someone who uses it every day and loves it to pieces.
+
+We're at just under 3 years since Bootstrap 4 was announced. In comparison it took 17 months to go from Bootstrap 2's first release to Bootstrap 3's first stable release. We're at 47 months now and still not close to a stable release.
+
+They really need to look at getting more core contributors on board. I get that this is mdo's baby and he's very protective of it. But seriously there's something very wrong when he has to spend an evening randomly closing issues and instantly halting all BS3 development to try and push BS4 out.
+
+I really hope he can turn this thing around because right now it's not looking great long term wise.";"I think we'd all love to know. The last I heard was from bardiharborow at https://github.com/twbs/bootstrap/issues/23120:
+""If you want a timeline, we're looking at closer to 2 weeks than September, but as always, I can't provide any guarantees.""
+
+That was about 2 weeks ago. I'm under the impression that there are a fair amount of cleanup things left to do and that the contributors have limited capacity right now so they'll need a bit of time.
+
+As for using it in Angular 2, assuming you're using the CLI, just download the latest alpha via npm, change ""app.css"" to ""app.scss"" (if you're not using Sass already), and then `@import` the desired Bootstrap scss file from within ""app.scss"".
+
+For components, ng-bootstrap seems to have good BS4 support. I haven't checked on ngx-bootstrap lately but I believe that one might too.";bootstrap

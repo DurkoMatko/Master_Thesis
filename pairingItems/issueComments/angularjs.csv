@@ -1,0 +1,809 @@
+date;submission_text;comments_text;issue_comment;subreddit
+2013-08-12 14:50:15;Overriding individual angular-ui templates;"Depending on which version you're using this may or may not work. Currently when you grunt build angular-ui, it makes two versions - one with inlined templates and one that pulls them in via a $http.get. 
+
+https://github.com/angular-ui/bootstrap/issues/420
+
+see also:
+
+http://stackoverflow.com/questions/17660947/can-you-override-specific-templates-in-angularui-bootstrap/17677437#17677437
+";"Depending on which version you're using this may or may not work. Currently when you grunt build angular-ui, it makes two versions - one with inlined templates and one that pulls them in via a $http.get. 
+
+https://github.com/angular-ui/bootstrap/issues/420
+
+see also:
+
+http://stackoverflow.com/questions/17660947/can-you-override-specific-templates-in-angularui-bootstrap/17677437#17677437
+";angularjs
+2013-09-04 01:30:43;CORS AngularJS <-> Flask API;"It's probably not related to your problem as you're testing in Chrome, but useXDomain appears to have been removed from Angular - what version are you using? I've had success using flXHR for cross domain requests in IE - I followed [the instructions on Github](https://github.com/angular/angular.js/issues/934#issuecomment-18554956) and got it working.
+
+I've had more luck debugging CORS requests using a debugging proxy like Charles (there's a free trial available) than with the Chrome network panel. If you're able to capture the raw requests and responses and post them here, it might be easier to work out what's going on.";"It's probably not related to your problem as you're testing in Chrome, but useXDomain appears to have been removed from Angular - what version are you using? I've had success using flXHR for cross domain requests in IE - I followed [the instructions on Github](https://github.com/angular/angular.js/issues/934#issuecomment-18554956) and got it working.
+
+I've had more luck debugging CORS requests using a debugging proxy like Charles (there's a free trial available) than with the Chrome network panel. If you're able to capture the raw requests and responses and post them here, it might be easier to work out what's going on.";angularjs
+2014-03-01 11:45:06;Who's broken, Chrome or Angular;"You're trying to do DOM manipulation in the post-linking function which won't work. By the time the post-link function runs, the DOM has already been constructed by Angular's compile phase. There's nothing wrong with manipulating the DOM in a directive, that's what they're explicitly for, actually. But to do that, you have to use the compile function instead of the link function. 
+
+compile: function(tElement, tAttrs){
+    angular.element(tElement).addClass('class');
+
+return {
+   link: //link code goes here
+   };
+};
+
+Compile always returns an object of the link function and you no longer use the separate link function like in your example (Angular will just ignore it). If you need to access scope in the compile function (say to set a dynamic class based on controller data) you can't do that in compile, so instead you have to use a pre-link function in the returned object. Pre-link has access to scope and runs before the linkage phase, so it effectively works like compile. 
+
+return {
+   pre-link: function(scope, element, attrs){
+     //you can manipulate DOM here with scope properties
+    },
+    post-link: function(scope, element, attrs){
+    //mostly for attaching event listeners and things like that
+    };
+
+[This](http://www.sitepoint.com/practical-guide-angularjs-directives/) blog post helped me wrap my head around it. Sorry for the lack of formatting. I'm on my phone. 
+
+Edit: I shouldn't say you can't manipulate the DOM in the post-link phase. You can, but it's mostly done on events like click and you have to run $apply to make sure that Angular passes the change out to the DOM. 
+More likely you. :) Toss a default case into that switch (with a console.warn), or step debug it.I've just cloned your project, an immediate issue seems to be that the result variable is empty when I try to console.log it. 
+
+Asides from that, the method you're employing isn't a particularly ""angular"" approach - it would be nicer to assign these classes to the elements via your markup, rather than in the directive itself.
+Insert 4 whitespaces at the front of a line to format like code.
+
+    angular.module('myApp') .directive('myBackground', function () {             
+        return { restrict: 'A', link: function (scope, element, attrs) { 
+            var result = getComputedStyle(element[0], ':after').content;
+            result = result.replace(/""/g,''); //Because Firefox keeps quotes from content 
+
+            switch (result) { 
+                case ""phone"" : element.addClass(""bg-small""); 
+                     break; 
+
+                case ""tablet"" : element.addClass(""bg-medium""); 
+                     break;
+                
+                case ""small-desktop"" : element.addClass(""bg-small-desktop"");
+                     break; 
+
+                case ""large-desktop"" : element.addClass(""bg-large-desktop""); 
+                     break;
+             }
+        } 
+    }; });**Solved!**
+
+I found confirmation of my theory, a Chrome bug. Chrome is handling `getComputedStyle()` with considerable difficulty. If your pseudo-element is set to `display:none`, Chrome 33 Stable soils itself.
+
+[Stackoverflow Question](http://stackoverflow.com/questions/22046170/explanation-on-window-getcomputedstyle-and-why-chrome-handles-it-differently)
+
+[Bug Filed With Chromium](https://code.google.com/p/chromium/issues/detail?id=236603)
+
+Both efforts describe exactly what I was experiencing. To test I changed the pseudo-element to `display: block`, and presto! happiness in Chrome.
+
+My thanks to r/angularjs!Do people not know what jsfiddle/plunkr/liveweave/etc do??
+
+If you want fucking help put your fucking code in a fucking live editor.";"**Solved!**
+
+I found confirmation of my theory, a Chrome bug. Chrome is handling `getComputedStyle()` with considerable difficulty. If your pseudo-element is set to `display:none`, Chrome 33 Stable soils itself.
+
+[Stackoverflow Question](http://stackoverflow.com/questions/22046170/explanation-on-window-getcomputedstyle-and-why-chrome-handles-it-differently)
+
+[Bug Filed With Chromium](https://code.google.com/p/chromium/issues/detail?id=236603)
+
+Both efforts describe exactly what I was experiencing. To test I changed the pseudo-element to `display: block`, and presto! happiness in Chrome.
+
+My thanks to r/angularjs!";angularjs
+2014-03-23 16:05:32;Problem with AngularJS ng-view, it doesn’t work when inside a directive;This is being tracked as: https://github.com/angular/angular.js/issues/6812Couldn't you just have the directive use transclusion and provide the `ng-view` element to it?;This is being tracked as: https://github.com/angular/angular.js/issues/6812;angularjs
+2014-05-20 20:30:25;ng-inspector: Browser extension to inspect AngularJS apps, now on Chrome as well;"I see that you mentioned Batarang above.  Can you describe how this compares to it, featurewise?I am experiencing this issue since I am manual bootstrapping. Clearly you already know about it which is cool. :)
+
+https://github.com/rev087/ng-inspector/issues/2I've built this because I missed the Batarang extension when developing in Safari, but since then a lot of people requested a Chrome release, so here it is :)really cool, good job!Are you going to put this in the chrome web store?Is this like the angular chrome extension released by Google?I'd like a Firefox release please!";"I am experiencing this issue since I am manual bootstrapping. Clearly you already know about it which is cool. :)
+
+https://github.com/rev087/ng-inspector/issues/2";angularjs
+2014-07-18 13:14:35;Memory use way higher than expected;"Based on my experience, I'd say that's not out of the ordinary with Angular; it's a memory hog, in part due to how dirty watching works and in part due (I think, could be entirely wrong here) to caching detached DOM subtrees as for how directive templates get cloned.  Items like ng-repeat are especially big culprits because it involves a lot of additional checks for changes as well as a lot of DOM manipulation.
+
+There is a bug due to Chrome's GC (fixed in Chrome 36, I believe) not being able to grab chunks of memory that Angular was prone to triggering, especially if you attached certain types of values to $scope objects and didn't delete them yourself during the $scope's '$destroy' event.
+
+Reference tickets:
+
+* Angular: https://github.com/angular/angular.js/issues/6794
+* Chrome: https://code.google.com/p/v8/issues/detail?id=2073#c35Will the data change?  If not, look into [bind-once](https://github.com/Pasvaz/bindonce)
+
+Only bind what might change.  That will clear up most of it.
+
+Share some code if you're comfortable.Is there an Ng-repeat involved here?";"Based on my experience, I'd say that's not out of the ordinary with Angular; it's a memory hog, in part due to how dirty watching works and in part due (I think, could be entirely wrong here) to caching detached DOM subtrees as for how directive templates get cloned.  Items like ng-repeat are especially big culprits because it involves a lot of additional checks for changes as well as a lot of DOM manipulation.
+
+There is a bug due to Chrome's GC (fixed in Chrome 36, I believe) not being able to grab chunks of memory that Angular was prone to triggering, especially if you attached certain types of values to $scope objects and didn't delete them yourself during the $scope's '$destroy' event.
+
+Reference tickets:
+
+* Angular: https://github.com/angular/angular.js/issues/6794
+* Chrome: https://code.google.com/p/v8/issues/detail?id=2073#c35";angularjs
+2014-09-03 00:12:33;1.3.0 $location and unit tests broken?;You may have already seen this but it's a known bug ([8866](https://github.com/angular/angular.js/issues/8866)) that has been resolved ([commit fc706d13d80bb40eb3dade58ea4b92dca33ce4e7](https://github.com/angular/angular.js/commit/fc706d13d80bb40eb3dade58ea4b92dca33ce4e7)). I assume they'll include the fix in the next RC?;You may have already seen this but it's a known bug ([8866](https://github.com/angular/angular.js/issues/8866)) that has been resolved ([commit fc706d13d80bb40eb3dade58ea4b92dca33ce4e7](https://github.com/angular/angular.js/commit/fc706d13d80bb40eb3dade58ea4b92dca33ce4e7)). I assume they'll include the fix in the next RC?;angularjs
+2014-09-18 20:28:36;[Help] How are you guys handling CSS/LESS when modularizing your code?;"This might sound crazy, but I think **module-specific CSS should not be coupled to the module**. A base framework CSS file (like Bootstrap, Foundation, or your own) should cover all basic styling for every app you build, and then you should write custom CSS (I keep mine in a public/scss/ folder, which I watch and compile with Grunt) for each app, which is kept separately from the Angular code, so that someone doesn't have to understand Angular architecture to work on the stylesheets.
+
+The point here is to keep structural CSS (Bootstrap/Foundation) away from site-specific CSS which often expresses a specific brand or aesthetic style.
+
+There are cases where re-usable components will need specific structural CSS — a calendar, a music player, etc. These should be implemented as **private bower components** that come with a base stylesheet (as minimal as possible, so you can override in your app-specific CSS).
+
+So basically:
+
+1. Most modules shouldn't need specific styling to function. Thus, keep the modules truly portable by not coupling them with CSS at all.
+
+2. Any modules that _do_ need styling to function (usually related to positioning) you should implement as bower components. 
+
+3. Any set-in-stone modules that you want to implement across projects should be turned into bower components anyway.I put a _foo.scss file in each module directory. Unfortunately, there's no good way to put it all together, so we just have a main.scss file that does @import ""foo/foo"" and so forth. The big issue is that if you have generics you're extending (e.g., compass etc) they'd get multiply imported if you had a lot of different sass files. Sass / Less both could use something similar to a linker, where you compile against a library but the libraries are lazy-loaded at runtime. But I digress.
+
+So I end up with a top, application-level css file that contains all the child sass stuff. This helps with code organization more than anything else, because namespacing css isn't particularly easy anyway. Someday, webcomponents and shadow DOM will fix this.I include <link> elements inside my main templates. I then have a build process which inlines my templates and then inlines the CSS inside the template. It means that I occasionally get a flash of unstyled content when  testing but it doesn't happen after everything has been inlined. The build script isn't complicated, it's about 100 lines of JS.
+
+Before: http://pastebin.com/G4YnsSe1
+
+After: http://pastebin.com/4KTRqKP0
+
+Build script: http://pastebin.com/WJfF110xI went all in on Webpack for next - gen Plunker. I describe the setup at: https://gist.github.com/ggoodman/149751343c22892b9871
+
+That is how http://explore.plunker.co is built I think you would like atomify. It covers that and it's very simple. Don't use LESS but with SASS I just write it as a separate SCSS file and then include it in the main compile sheet.If you are following the ng-boilerplate style of bundling you LESS files together with your modules, rather than all in one central LESS directory, you can use the grunt plugin [grunt-less-imports](https://github.com/MarcDiethelm/grunt-less-imports) to automatically compile all the LESS files.
+
+I discovered this when I had the exact same question as the one you asked.
+
+A bit more information on how it might be implmeneted (specific to ng-boilerplate but should apply to any such scaffolding) can be found [here](https://github.com/ngbp/ngbp/issues/158#issuecomment-41672346)
+
+The build system is Grunt, so not necessarily ""really complex"", although I do think the ng-boilerplate gruntfile in particular is not the easiest to get your head around.If this doesn't quite make sense, think of something like Bootstrap's LESS file organize and the Angular adaptation - UI-Boostrap. There's no real association between the two. If you want any part of UI-Bootstrap you have to pull in the whole Boostrap CSS set. (That's just an example, not trying to start a discussion on Bootstrap/ui-bootstrap organization).
+
+I want my LESS and my modules to come into the project together, so that I can maintain them together outside of the project and override styles within the project.";"If you are following the ng-boilerplate style of bundling you LESS files together with your modules, rather than all in one central LESS directory, you can use the grunt plugin [grunt-less-imports](https://github.com/MarcDiethelm/grunt-less-imports) to automatically compile all the LESS files.
+
+I discovered this when I had the exact same question as the one you asked.
+
+A bit more information on how it might be implmeneted (specific to ng-boilerplate but should apply to any such scaffolding) can be found [here](https://github.com/ngbp/ngbp/issues/158#issuecomment-41672346)
+
+The build system is Grunt, so not necessarily ""really complex"", although I do think the ng-boilerplate gruntfile in particular is not the easiest to get your head around.";angularjs
+2014-10-05 17:07:14;My first AngularJS web app: Borderlands The Pre-Sequel! Skill Tree Planner;"Behind the scenes:
+
+ * Skill tree data: 
+    * custom Java program to convert CSV into [JSON](http://blpresequel.com/skilldata/fragtrap.json).
+    * angular service to provide JSON data to the app
+    * To-do: implement value changes per skill level (e.g. make numbers in the text change from 5, 10, 15, 20, 25 as points are invested)
+ * CSS: 
+    * Bootstrap 3 (could ya tell? ;) ) with modifications to support functionality. 
+    * Responsive, try it on mobile, too - much better mobile support than other skill calculators
+    * To-do: Convert to SASS or LESS and personalize / customize
+ * Skill hover-overs: ui-bootstrap. To-do: debug [watcher leaks](https://github.com/angular-ui/bootstrap/issues/2110) which I think are still a problem... 
+ * Skill images: downloadthemall'd from the official site, placed into a [CSS sprite](http://blpresequel.com/img/sprite-fragtrap.gif) per class, angular-calculated css class name based on points invested (gray = 0, orange = max, green = else).
+    * To-do: Optimize class name css class naming, relocate to service?
+ * General to-do:
+    * Tidy up and post source to github
+    * Relocate calculations from controller to services.
+    * Refactor parts of view into directives - presently no real repetition due to ng-repeat usage,but directive would help future refactoring. 
+    * Based on static nature of skill tree layout, consider refactoring into somewhat more static template.
+
+I'd love any feedback you may have!deleted  ^^^^^^^^^^^^^^^^0.8591  [^^^What ^^^is ^^^this?](https://pastebin.com/FcrFs94k/55927)Nice job, keep it up. I like the behind the scenes, wouldn't mind more info on how you worked. It would be nice to be able to toggle skills on click and decrease the counter on right click (contextmenu) for skills with a count like ruthless or snap shot.";"Behind the scenes:
+
+ * Skill tree data: 
+    * custom Java program to convert CSV into [JSON](http://blpresequel.com/skilldata/fragtrap.json).
+    * angular service to provide JSON data to the app
+    * To-do: implement value changes per skill level (e.g. make numbers in the text change from 5, 10, 15, 20, 25 as points are invested)
+ * CSS: 
+    * Bootstrap 3 (could ya tell? ;) ) with modifications to support functionality. 
+    * Responsive, try it on mobile, too - much better mobile support than other skill calculators
+    * To-do: Convert to SASS or LESS and personalize / customize
+ * Skill hover-overs: ui-bootstrap. To-do: debug [watcher leaks](https://github.com/angular-ui/bootstrap/issues/2110) which I think are still a problem... 
+ * Skill images: downloadthemall'd from the official site, placed into a [CSS sprite](http://blpresequel.com/img/sprite-fragtrap.gif) per class, angular-calculated css class name based on points invested (gray = 0, orange = max, green = else).
+    * To-do: Optimize class name css class naming, relocate to service?
+ * General to-do:
+    * Tidy up and post source to github
+    * Relocate calculations from controller to services.
+    * Refactor parts of view into directives - presently no real repetition due to ng-repeat usage,but directive would help future refactoring. 
+    * Based on static nature of skill tree layout, consider refactoring into somewhat more static template.
+
+I'd love any feedback you may have!";angularjs
+2014-10-16 13:14:21;Help! ngTransclude inside of ngRepeat behaves differently with Angular 1.3.0;"Reposting from Stack Overflow.
+
+https://github.com/angular/angular.js/issues/8182
+
+It was decided for 1.3 that ng-trasclude would not pull scope from the directive. There is a work-around on the linked pages,
+
+https://github.com/angular/angular.js/issues/7874 https://github.com/angular/angular.js/issues/7874#issuecomment-47647528
+
+This is the expected behavior.";"Reposting from Stack Overflow.
+
+https://github.com/angular/angular.js/issues/8182
+
+It was decided for 1.3 that ng-trasclude would not pull scope from the directive. There is a work-around on the linked pages,
+
+https://github.com/angular/angular.js/issues/7874 https://github.com/angular/angular.js/issues/7874#issuecomment-47647528
+
+This is the expected behavior.";angularjs
+2014-10-30 19:47:28;Tired of ng-transclude's scope not doing what you want? Check out ngTranscludeMod.;"I started using this... it gives CRAZY control over scoping with ng-transclude. 
+
+Incidentally, this mod also allows the use of isolated scope variables outside of the template...
+ 
+Found this little guy here: https://github.com/angular/angular.js/issues/7874#issuecomment-61152217
+
+edit: 'give' to 'gives' and 'also' was added.
+edit2: added link.";"I started using this... it gives CRAZY control over scoping with ng-transclude. 
+
+Incidentally, this mod also allows the use of isolated scope variables outside of the template...
+ 
+Found this little guy here: https://github.com/angular/angular.js/issues/7874#issuecomment-61152217
+
+edit: 'give' to 'gives' and 'also' was added.
+edit2: added link.";angularjs
+2015-01-10 16:10:50;Translating Jquery's $.ajax to Angular's $http, while keeping onprogress event.;"On my phone right  now so can't write verry well. But I think the $http promise have 3 callbacks or what it's called. Success, error and update, maybe the last could do something?
+
+Sorry for my shitty answer and English.Progress reporting is currently not supported in $http. There is some talk about introducing it one way or another in Angular 1.4.""Angular file upload"" plugin has $upload service that you can re-use. It has progress method, but your server should accept form-data
+
+https://github.com/danialfarid/angular-file-uploadNot yet supported.  Probably won't be.
+
+https://github.com/angular/angular.js/issues/1934Cant you update the scope manually using $scope.$apply inside the onprogress event call?You can get the scope associated with any element using:
+
+`angular.element(domElement).scope()`";"Not yet supported.  Probably won't be.
+
+https://github.com/angular/angular.js/issues/1934";angularjs
+2015-01-27 03:12:12;"Anyone experience ""Error: Invalid argument."" In IE 9, 10 before?";"So, it turns out that by passing some unescaped html from a directive to another and then that directive binding it via brackets was not liked so much. Switching to ng-bind or escaping the html resolves the issue.
+
+More can be found:
+
+https://github.com/angular/angular.js/issues/8659
+
+In the end it is all about the nodeValue being attempted to changed on a node that either does not exist or the nodeValue is null/undefined.
+
+Crazy stuff that is incredibly difficult to debug.i only support ie11 now. the ies can go fuck themselves for all i care.YES! So very often when I'm trying to work through a disagreement with my wife she'll just throw that error at me. ""Invalid Argument"". Pfft. And of course, no details to back it up. No specific line of reasoning she can point to as to why it's so invalid.Any chance you've got an errant trailing comma somewhere? They can be really elusive and I've seen them culminate in that kind of error message in the past.";"So, it turns out that by passing some unescaped html from a directive to another and then that directive binding it via brackets was not liked so much. Switching to ng-bind or escaping the html resolves the issue.
+
+More can be found:
+
+https://github.com/angular/angular.js/issues/8659
+
+In the end it is all about the nodeValue being attempted to changed on a node that either does not exist or the nodeValue is null/undefined.
+
+Crazy stuff that is incredibly difficult to debug.";angularjs
+2015-02-24 06:49:24;browserify with angular: cannot add restangular dependency;"Not 100% sure if related but certainly seems like it:
+https://github.com/mgonto/restangular/issues/749";"Not 100% sure if related but certainly seems like it:
+https://github.com/mgonto/restangular/issues/749";angularjs
+2015-02-19 06:15:30;Gulp test can not find module;"Detail description
+https://github.com/Swiip/generator-gulp-angular/issues/364#issuecomment-75035751";"Detail description
+https://github.com/Swiip/generator-gulp-angular/issues/364#issuecomment-75035751";angularjs
+2015-03-16 03:59:21;Advice on using HAML with AngularJS;"Or you know, just use gulp/grunt with jade/haml (seriously, give jade a try). I am currently using a rails API with grape and a gulp driven angular.js environment, all connected with foreman. The gulp process handles all asset precompilation or dist-compilation (e.g.manifest-generation), while the server handles pure api requests (one route for angular entry point)Looking into Middleman at the moment, seems like this might be a nice service for serving up angular and assets. Any experience with this?Take a look at the yeoman angular generator. It doesn't ship with hamltohtml out of the box, but it isn't hard to swap out. See: https://github.com/yeoman/yeoman/issues/399You don't usually use a separate templating engine with Angular. Rather, you use Angular directives to compose your view.
+
+That said, if you're not sure what a good workflow would be, do check out [Yeoman](http://yeoman.io/).";Take a look at the yeoman angular generator. It doesn't ship with hamltohtml out of the box, but it isn't hard to swap out. See: https://github.com/yeoman/yeoman/issues/399;angularjs
+2015-05-13 13:50:28;Multiple directive attributes or a single attribute with a configurable object? Anyone got any suggestions?;"I tend to use multiple arguments for an element-bound directive and an object for an attribute-bound directive in order to avoid name clashes.This question came up while I was working on a custom directive and had a request to use an object instead of multiple attributes, so I thought I'd reach out and ask other people.
+
+[Here is the Github issue](https://github.com/Reklino/angular-resizable/issues/4) in case anyone is interested.";"This question came up while I was working on a custom directive and had a request to use an object instead of multiple attributes, so I thought I'd reach out and ask other people.
+
+[Here is the Github issue](https://github.com/Reklino/angular-resizable/issues/4) in case anyone is interested.";angularjs
+2015-05-22 06:33:46;This AngularJS modules/dependencies thing is a lie;"I've known this for so long now, that I've sort of forgotten that it can nail new people in the ass.
+
+The last one registered with the name wins - which means you have to be mindful about how you name things, or prefix/namespace them.
+
+The other issue that can happen, is once something is defined as a dependency somehow in your app - every other module can use it, even if it was not an explicit dependency.
+
+    angular.module('a',['b','c'];
+    angular.module('b',[]).factory('bFactory',function(cFactory) { });
+    angular.module('c',[]).factory('cFactory',function() { });
+
+When you run your app, module b can access cFactory, even though you never defined it as a module dependency.
+
+However, when writing my unit tests - I'll only do a beforeEach(module('b')) - in which case, the unit test would blow up and fail about not knowing about cFactoryProvider. Helps keep me honest about keeping my module dependencies in check and being mindful about where I'm getting things from, even if when running as an app - that sort of goes out the window.
+
+
+Well it will be gone soon anyway and we can do this:
+
+    import {hello as hello1} from 'thirdParty1';
+    import {hello as hello2} from 'thirdParty2';
+
+and then just use hello1() hello2() without any DI
+
+You can even do this now if you are using angular 1.4, you are transpiling your ES6 code and if each of the modules exports in the common fashion.We just realized this recently as well. As much as the title sounds click baity, I kind of agree. 
+
+The whole module DI concept really leads one to feel like there is a scope provided for all objects but the reality seems that it is more of a global type of situation. My team recently ran into this issue with a couple popular libraries: https://github.com/mgcrea/angular-strap/issues/521
+
+To get around it, we had to tweak our build to rename one of the conflicting components at build time.TL;DR: watch out for namespace conflicts, be diligent with namespacing your module's components So it's just like an ""import module"" from python or anything else?  
+
+I'd agree that it sounds like it should be the way the author said, but this behavior is not unheard ofThis is one my biggest pet peeves with Angular.";"My team recently ran into this issue with a couple popular libraries: https://github.com/mgcrea/angular-strap/issues/521
+
+To get around it, we had to tweak our build to rename one of the conflicting components at build time.";angularjs
+2015-06-20 17:34:18;Simple pagination and URL params with ui-router;"This is great. Can't understand how I could miss this and have struggled with $location to solve the same problem.
+
+Note this bug: https://github.com/angular-ui/ui-router/issues/2334";"This is great. Can't understand how I could miss this and have struggled with $location to solve the same problem.
+
+Note this bug: https://github.com/angular-ui/ui-router/issues/2334";angularjs
+2015-07-13 22:06:40;"Need help with using ""orderBy"" in Angular";"You'll be able to do this using ng-repeat-start/ng-repeat-end and filter.  
+
+Something like:  
+ng-repeat-start=""id in uniqueIds""  
+ng-repeat=""item in items | filter:{id: id}""  
+ng-repeat-end  
+
+Basically, for each unique Id, display all items with that id.https://github.com/a8m/angular-filter/issues/57#issuecomment-65041792";https://github.com/a8m/angular-filter/issues/57#issuecomment-65041792;angularjs
+2015-07-21 09:52:38;How do you handle SPA from a UI perspective?;"[deleted]I assume you are talking about having route ""resolve"" taking time and therefore causing the noticable delay. 
+
+You could hook up on route changing/changed events and add some sort of minimally disruptive wait animation if the route change takes longer than about 160ms (what feels like instentaneous change). 
+
+We've taken the road of not disabling input and not using wait animation, but instead adding transitions so we buy ourselves a little more time on resolves. Also we try to put as little as possible in resolves, and instead load data ""async"".
+
+Hope it makes senseThis issue has a few solutions to show a loading bar during ui-router's resolve. This can probably be implemented using ngRouter aswell.
+https://github.com/angular-ui/ui-router/issues/456
+
+This directive is also used to show a loading indication:
+https://github.com/chieffancypants/angular-loading-bar
+
+Another option is to load your data in the controller and use angular-busy:
+https://github.com/cgross/angular-busy
+
+Perhaps these might inspire you to figure out whatever works for you/your application. ";"This issue has a few solutions to show a loading bar during ui-router's resolve. This can probably be implemented using ngRouter aswell.
+https://github.com/angular-ui/ui-router/issues/456
+
+This directive is also used to show a loading indication:
+https://github.com/chieffancypants/angular-loading-bar
+
+Another option is to load your data in the controller and use angular-busy:
+https://github.com/cgross/angular-busy
+
+Perhaps these might inspire you to figure out whatever works for you/your application. ";angularjs
+2015-08-09 15:32:46;Laravel lumen and AngularJS Todo Application;"I've done an AngularJS todo app with Laravel before there was Lumen. https://github.com/Zemke/starter-laravel-angular
+
+I've also thought about replacing the back-end with Lumen. https://github.com/Zemke/starter-laravel-angular/issues/15
+
+Definitely your work is some inspiration. Good work!";"I've done an AngularJS todo app with Laravel before there was Lumen. https://github.com/Zemke/starter-laravel-angular
+
+I've also thought about replacing the back-end with Lumen. https://github.com/Zemke/starter-laravel-angular/issues/15
+
+Definitely your work is some inspiration. Good work!";angularjs
+2015-09-24 10:23:35;How to go to new url using ui-router without changing the state;"After creating the model and receiving the id, store it in local storage. Then if user visits later or reloads, just check which id he edited last and change the state. You can offer the user to start from scratch by just deleting the local Storage key and reload.
+
+You can change the url without changing the url by using:
+$location.path(""your/path/123"").replace()
+
+Or:
+
+$state.go(""my.state"", {location: true, notify: false, reload: false}).
+Source: https://github.com/angular-ui/ui-router/issues/64
+
+I'm on mobile atm, so it's untested.";"After creating the model and receiving the id, store it in local storage. Then if user visits later or reloads, just check which id he edited last and change the state. You can offer the user to start from scratch by just deleting the local Storage key and reload.
+
+You can change the url without changing the url by using:
+$location.path(""your/path/123"").replace()
+
+Or:
+
+$state.go(""my.state"", {location: true, notify: false, reload: false}).
+Source: https://github.com/angular-ui/ui-router/issues/64
+
+I'm on mobile atm, so it's untested.";angularjs
+2015-10-03 00:42:30;AngularJS 1.5.0-beta.1 dense-dispersion is here!(2015-09-29);"Too bad they introduced $xhrFactory, but still didn't touch that one line below there to add proper http authentication support via username/password :-/
+
+https://github.com/angular/angular.js/issues/1678There doesn't seem like there are many new features for a minor version increment. I guess the breaking change is what has caused the change from 1.4 to 1.5.So basically no big changes yet in this beta?
+
+There's one thing I liked though: A nice performance boost if you have lots of `ng-if`s on screen (we've had had to implement this manually ourselves in the past, now will be the default).
+";"Too bad they introduced $xhrFactory, but still didn't touch that one line below there to add proper http authentication support via username/password :-/
+
+https://github.com/angular/angular.js/issues/1678";angularjs
+2015-12-15 02:25:55;Angular Material official release of v1.0.0!;It's still pretty janky on mobile - the official docs page doesn't have the correct scroll down behaviour, some of the elements are misplaced and move around, and the animations aren't very snappy (Chrome on Galaxy S6).Am I the only one that doesn't really like Angular Material?It's awesome that library moves forward, but I feel that this release was a bit rushed. I can't really speak for mobile performance, but not taking care of [this issue](https://github.com/angular/material/issues/2197) prior to release really feels like a big mistakeShame it's still super buggy and pretty much unusable on a mobile device, including new ones. And there was much rejoicing!Excuse my ignorance, but will Angular Material work with Angular 2.0?Great!  This is actually one I'd be interested in using for a project.Great library.   It makes developing mobile websites quick and easy.   [deleted];It's awesome that library moves forward, but I feel that this release was a bit rushed. I can't really speak for mobile performance, but not taking care of [this issue](https://github.com/angular/material/issues/2197) prior to release really feels like a big mistake;angularjs
+2015-12-14 16:01:53;[HELP] My team doesn't see the value in http interceptors and I don't know how to sway their opinion;"it looks like angular 2 wants to [get away](https://github.com/angular/angular/issues/2684) from the 'global interceptor' pattern and have you wrap http. The topic is still being discussed but it seems as thought interceptors will a thing of the past. I've been working for quite a while with angular, and am not a big fan of interceptors myself. Don't like the whole 'intercept all requests and maybe act on some' thing.
+
+I prefer a wrapper around `ngResource`with special attention to `transformRequest`, `transformResponse`and local `interceptor`properties for each action.What do you mean by handle pre and post flight details ?
+
+If i'm not mistaken the interceptor should handle the request and response objects \ headers etc.What is their logic? Why are they wrong? ";it looks like angular 2 wants to [get away](https://github.com/angular/angular/issues/2684) from the 'global interceptor' pattern and have you wrap http. The topic is still being discussed but it seems as thought interceptors will a thing of the past. ;angularjs
+2015-12-30 03:22:07;Is it possible to enable/disable my app?;If you are talking about distributing the app for people to host themselves, you should remember it will be pretty trivial for them to just remove any code that checks for an expired license. You could really only enforce it if the API calls go through a server you control and you check for a valid license on the backendSince you aren't providing a service, a one time fee for the script is more appropriate.  People who charge a recurring licensing fee for software without hosting it or providing some sort of ongoing service are the lowest of the low in my opinion.I would probably use something like [firebase](https://www.firebase.com/docs/web/libraries/angular/quickstart.html) to store subscription status. Use the authentication tool to return the status of the subscription. Use UI router's [resolve](https://github.com/angular-ui/ui-router/issues/42) to protect routes when the subscription is expired.;I would probably use something like [firebase](https://www.firebase.com/docs/web/libraries/angular/quickstart.html) to store subscription status. Use the authentication tool to return the status of the subscription. Use UI router's [resolve](https://github.com/angular-ui/ui-router/issues/42) to protect routes when the subscription is expired.;angularjs
+2016-01-12 21:36:08;Advice needed. Starting new project. Should I pick AngularJS 2 or 1.x?;"Honestly I would use Angular >= 1.5.x for now, but make componentization a real focus, avoid ng-controller etc.
+
+Basically read this:
+
+http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html
+
+2.0 is way too bleeding edge atm to be used in production IMHO.hi.
+if you choose to go with ng1 > 1.5, consider using ES6/ES2015 - thus, making the code almost ready for a move to ng2.
+You consult a styleguide i've started
+https://github.com/orizens/angular-es2015-styleguideI get asked this a lot and finally put an AMA up with some thoughts: https://github.com/toddmotto/ama/issues/8
+
+Hope these help! :)I would lean strongly towards angular 2.
+
+If this software needs to be enterprise-grade from the start, or you have more than just a few people working in it, or if the rest of your team isn't keen on using the cutting edge, then for sure you should stick to 1.5.
+
+If none of the above applies, then angular 2 is right now capable of being the core of a large project and you shouldn't feel too wary of it. I've converted an app to 2 already and am pretty satisfied with it. I'd recommend trying it out. It's pretty decent for beta. As long as you have time to keep upgrading it through the release.It depends on your launch timescale and how critical it is if things are delayed due to hiccups.
+
+I've been ""kicking the tires"" of Angular 2 and even though there are still some rough spots and pain points you can see the promise of it. It's forward looking and embracing the future of client-side development rather than sticking with the past. There are plans for server-side rendering, web-workers etc...
+
+Sometimes there are some frustrations not least because the documentation and know-how hasn't been built up yet but given time that will come. I already feel more productive with v2 despite the learning curve and having used v1 for quite a while.
+
+If you have no Angular know-how at all then I think it's a no-brainer - learn Angular 2 ... when did any old-version framework ever outlive the new version? (apart from Python 2 vs 3).";"I get asked this a lot and finally put an AMA up with some thoughts: https://github.com/toddmotto/ama/issues/8
+
+Hope these help! :)";angularjs
+2016-01-24 21:33:33;UI-Router 0.2.16 released;"Stay tuned.  We're excited about the future of UI-Router.  
+
+We've re-architected and rewritten the guts of UI-Router.  The core code has been divorced from angular, and will be moving to a new repository.  
+
+The angular1 platform specific code (an adapter) will continue to live at angular-ui/ui-router.  
+
+We prototyped an angular2 adapter in less than a day!  We hope to release a preview of ui-router-ng2 within a month, and intend for a production release on or before Angular 2's production release.
+
+
+We're actively working on getting another 1.0.0 alpha out the door for ng1.  In case you missed it, [1.0.0-alpha0](https://github.com/angular-ui/ui-router/releases/tag/1.0.0alpha0) landed on new years day.
+
+
+With the new UI-Router 1.0 architecture, creating adapters for other platforms (React, anyone?) should be fairly easy.  Long awaited and long overdue. There were several major issues with 0.2.15 which gave me no choice other than using @master. Especially for this awesome feature with automatic query parameters, https://github.com/angular-ui/ui-router/issues/1673";Long awaited and long overdue. There were several major issues with 0.2.15 which gave me no choice other than using @master. Especially for this awesome feature with automatic query parameters, https://github.com/angular-ui/ui-router/issues/1673;angularjs
+2016-01-24 15:46:09;CORS what should I do?;"It's possible your problem only exists when using localhost:
+
+https://blog.nraboy.com/2014/08/bypass-cors-errors-testing-apis-locally/
+http://stackoverflow.com/questions/10883211/deadly-cors-when-http-localhost-is-the-origin
+https://code.google.com/p/chromium/issues/detail?id=67743
+
+Try mapping another domain to it in your hosts file or using a public DNS -> localhost mapping like xip.io (127.0.0.1.xip.io) and you might find it just works.
+
+You don't need to do anything special with Angular to use CORS - it already handles things correctly although you will read lots of blog posts and stack overflow replies that say otherwise (possibly about older versions).Like others have mentioned, a proxy server is the solution. If the owner of the service isn't going to enable CORS you need to set up a proxy server of your own that injects those headers in the response. 
+
+You can set one up in node without too much difficulty. Others may know of an even simpler solution. You'll point your app to your proxy server instead of directly at the remote end points. You need to allow CORS on the server: [http://enable-cors.org/server.html](http://enable-cors.org/server.html)This isn't a client side issue, it can only be resolved through the server header configuration. If this happens in-house, you tell your server side java dev or whoever to open them up for you. But looks like it's a 3rd party api you're pointing to and isn't meant to be publicly used";"It's possible your problem only exists when using localhost:
+
+https://blog.nraboy.com/2014/08/bypass-cors-errors-testing-apis-locally/
+http://stackoverflow.com/questions/10883211/deadly-cors-when-http-localhost-is-the-origin
+https://code.google.com/p/chromium/issues/detail?id=67743
+
+Try mapping another domain to it in your hosts file or using a public DNS -> localhost mapping like xip.io (127.0.0.1.xip.io) and you might find it just works.
+
+You don't need to do anything special with Angular to use CORS - it already handles things correctly although you will read lots of blog posts and stack overflow replies that say otherwise (possibly about older versions).";angularjs
+2016-02-17 01:16:42;Is Angular 2 is faster ?;"The Angular 2 version gets significantly faster with `trackBy` support.
+https://github.com/angular/angular/pull/6779
+
+When profiling with the chrome devtools timeline I get
+
+Version | JS time | Layout time
+-------|-------|-----------
+[Angular 1](http://plnkr.co/edit/PlN72d?p=preview) | 65 ms | 75 ms
+[Angular 2 original](http://plnkr.co/edit/mJyjcH?p=preview) | 210 ms | 60 ms
+[Angular 2 trackBy](http://plnkr.co/edit/mJw0dO?p=info) | 27 ms | 45 ms
+Just a couple things:
+
+Where have you heard that Angular 2 is Production ready? I'm not sure that's the case.
+
+Also, you mention the most recent version being beta 3, but at the time of your positing the writing it's actually beta 6. In fact, you're using beta 6 in your example. Just simple corrections.
+
+But I am really curious about that production thing. I haven't heard anywhere say that it's seriously ready for production.
+
+edit: Here's the same scheme using RXJS Observables: http://pastebin.com/Vrrj25SN .. I'm not a pro, just working off what they teach you in the tutorials/guides + a simple observables tutorial. I have no means of testing it (crappy comp).Is it just me or should this code really have used the async pipe in combination with an observable that just keeps emitting new values?
+
+That might provide preformance improvementsThis was proven the other day when it was pasted to the FB page the reason it's slower in this case is because the developer coded it wrong.. 
+
+https://github.com/angular/angular/issues/7088I would love to see some commentary on this! Maybe its an Angular 2 problem, or the code could have been written in a more optimized way (for angular 2). 
+
+Also have you tried bench marking each piece to see where the slow down occurs? 
+
+Wonderful work by the way!I have an app currently in use in production that proved to be significantly faster in all ways. When I converted, I had to remove dozens of performance workarounds that were literally required for angular 1 to function with the amount of data I've got. After converting, I require none of the workarounds at all and it's actually still faster.
+
+I suspect you've found a bug potentially, but I wouldn't call this some indication of overall performance loss.What do you think the results would have been had you utilized RxJS vs. setInterval, which I believe is the preferred way to handle these types of periodic events. 
+
+Also, just thinking about the test scenario you propose.  10000 iterations in 50ms with random getting called 3 times, per iteration. That's a shit ton of operations. Honestly, I don't think that either of them are keeping up with that frequently a UI gets updated.  My guess is that Angular 2 is throttling this to keep things more efficient and lower burden on the UI.  
+
+Some JS benchmarks would be helpful as well.  
+Yes it is https://auth0.com/blog/2016/01/07/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/I am not that surprised. Angular 2 is massive and it is always harder to optimize large codebase. Thankfully I switched to react last year.";"This was proven the other day when it was pasted to the FB page the reason it's slower in this case is because the developer coded it wrong.. 
+
+https://github.com/angular/angular/issues/7088";angularjs
+2016-03-29 14:58:03;Angular 2 with TypeScript: Let's discuss tools, specifically WebStorm and Visual Studio Code;"fwiw, visual studio code's intellisense [directly integrates with typescript](https://github.com/Microsoft/TypeScript/issues/4789), which i'd say gives it a good edgeI started using WS2016 with NG2 and typescript. I was blown away at the improvements.
+I guess that VScode has a comparable autocomplete, but the one in WS is awesome. 
+
+What also is fantastic is the auto import! You start writing the name of the object, and WS suggests all exported objects (first the local ones, then the node_modules). If you accept a suggestion it automatically adds an import line at the beginning of the file.
+
+It also minimizes all the imports section to one line.Visual Studio is good in terms of feature, but if you are writing full javascript app (ex: nodejs/angular) using typescript, I found Visual Studio Code doing amazing job. I don't really find myself in need of these extra features the regular VS has and I love how light VSC is.I'm still a Sublime Text user. It requires some manual plugins (not different from VSC), but once setup it can be complete tool.Anyone been using WebStorm 2016.1 for TypeScript development? What has your experience been? New features look pretty nice, though I've not had a chance to play with it myself. Here's a couple of stats: 
+
+VSCode 127Mb installed, project opens in 3seconds, 58 first level menu options
+
+WebStorm 476Mb installed, project opens in 6 seconds, 179 first level menu options
+
+I suppose that WebStorm does a lot more than VSCode, but VSCode seems to do everything that I want it to. I think Microsoft really nailed it when they decided what to have in out-of-the-box and what could be left to extensions. 
+
+Personally, beyond editing the code itself most of my development activities are handled by a gulp file, so as long as my editor is gulp aware that makes it an IDE as far as I'm concerned.
+
+WebStorm, in comparison, is carrying a lot of things that  I just don't need, for example : 'Toggle Temporary Line Breakpoint  Ctrl+Shift+Alt+F8'.
+
+(context: express/angular, there's no way I'd use VSCode for .NET)You said VSC is an editor as opposed to a full-blown IDE like WebStorm; why is that?If you are not using Visual Studio Community 2015, you are doing it wrong. It has full angular and typescript support.
+
+I may be biased because I'm a .net developer, but it's no secret that Visual Studio Community is the best free IDE available today.";fwiw, visual studio code's intellisense [directly integrates with typescript](https://github.com/Microsoft/TypeScript/issues/4789), which i'd say gives it a good edge;angularjs
+2016-03-27 21:59:52;UI-Router 1.0.0-alpha.1 released.;"This is a huge boost to angular 1.5. This actually makes it almost as sexy as ng2 with good principles now. I love it.# [1.0.0-alpha.1](https://github.com/angular-ui/ui-router/compare/1.0.0alpha0...1.0.0-alpha.1) (2016-03-27)
+
+This release checkpoints the continued development of the 1.0 codebase, as we approach final release.  
+
+### Notable additions in this release:
+
+#### Packages
+
+We are now publishing three separate packages using a new publishing architecture:
+
+  - `ui-router-core`  (npm) framework agnostic core
+  - `angular-ui-router` (npm and bower) angular 1
+  - `ui-router-ng2` (npm; coming soon!) angular 2
+
+The `ui-router-core` package is framework-agnostic.  Both ng1 and ng2 packages share the code in `ui-router-core` and provide viewport adapters to implement the `<ui-view>`.  Third parties could potentially depend on `ui-router-core` to implement ui-router adapter for any other framework.
+
+#### Route to component
+
+We now support routing to angular 1.5+ `.component()`s in two different ways.  We now put the resolved data on `$scope.$resolve` (or `$scope[controllerAs]$resolve`), so you can use [Components as route templates](https://docs.angularjs.org/guide/component#components-as-route-templates) in the same way as ngRoute.
+
+We also now allow a state's view to be specified using `component: 'MyComponent'` in lieu of a controller+template.  We will map resolve data to the component's `bindings:` by name.
+
+See the [component](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1viewdeclaration.html#component) and [bindings](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1viewdeclaration.html#bindings) for more information. 
+
+We also support angular 1.3+ `.component()` with Todd Motto's [polyfill](https://github.com/toddmotto/angular-component), and even support old school angular 1.2 directives (instead of `bindings: { foo: '<' }`, we will map to `scope: { foo: '=' }`).
+
+#### View hooks (component/controller hooks)
+
+For a long time, we've advocated using the state machine to manage application lifecycle.  However, using callbacks such as `onExit` can be challenging, since the answer to ""can I exit this state?"" often lives in the view.  We've introduced some view-level callbacks that can be used to integrate controller code with the transition pipeline.
+
+The first view hook we've implemented is `uiCanExit()`.  This hook can be used much the same as the component router's `routerCanDeactivate`.  See  the [Ng1Controller docs](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1controller.html#uicanexit) for more information.  The `uiCanExit` view hook is simply  sugar for [adding a transition onBefore hook](https://github.com/angular-ui/ui-router/blob/1.0.0-alpha.1/src/ng1/viewDirective.ts#L424-L427).
+
+#### Dynamic params
+
+Dynamic parameters (the replacement for `reloadOnSearch`) can be declared in a [params block in a state definition](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1statedeclaration.html#params) like so: `params; { fooParam: { dynamic: true } }`.  When a dynamic parameter changes, it does not cause the state to be reloaded.  A controller/component callback `uiOnParamsChanged` may be used to be notified of parameter changes.
+
+See the [Ng1Controller docs](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1controller.html#uionparamsupdated) for details on the new callback.
+
+#### Expose internal state object's API
+
+We're now exposing the internal state objects via an undocumented API.  This can be useful for other library authors who need access to things like `.parent` or `.includes`.  This internal API is subject to change (it hasn't changed much so far), so be careful.  The internal api of an arbitrary state can be fetched like so:
+
+    var normalState = $state.get('foo'); 
+    var internalStateObject = normalState.$$state();  
+    console.log(internalStateObject.parent.name);
+
+
+### We will maintain a list of [Known BC from 0.2.x to 1.0 final](https://github.com/angular-ui/ui-router/issues/2219) to help you upgrade to the 1.0 release.
+Finally. We are using 1.5 components and getting the resolve to work was kinda awkward. 
+
+Working on a ~4 month old application with Angular 1.5.x. I would like to upgrade from UI Router 0.2.15 to 1.0.0A but a bit concerned that this is ... well alpha. The app hasn't launched yet so I could do the upgrade without breaking production code but I'm not sure about bringing an alpha release into an app that will see release soon. Any thoughts?I am new to angular' component. How much different between components and states? Seems to me they are going to be co-existing. To me, ui-route is simpler and better. This only applies to 1.x as I have not studied 2.";"# [1.0.0-alpha.1](https://github.com/angular-ui/ui-router/compare/1.0.0alpha0...1.0.0-alpha.1) (2016-03-27)
+
+This release checkpoints the continued development of the 1.0 codebase, as we approach final release.  
+
+### Notable additions in this release:
+
+#### Packages
+
+We are now publishing three separate packages using a new publishing architecture:
+
+  - `ui-router-core`  (npm) framework agnostic core
+  - `angular-ui-router` (npm and bower) angular 1
+  - `ui-router-ng2` (npm; coming soon!) angular 2
+
+The `ui-router-core` package is framework-agnostic.  Both ng1 and ng2 packages share the code in `ui-router-core` and provide viewport adapters to implement the `<ui-view>`.  Third parties could potentially depend on `ui-router-core` to implement ui-router adapter for any other framework.
+
+#### Route to component
+
+We now support routing to angular 1.5+ `.component()`s in two different ways.  We now put the resolved data on `$scope.$resolve` (or `$scope[controllerAs]$resolve`), so you can use [Components as route templates](https://docs.angularjs.org/guide/component#components-as-route-templates) in the same way as ngRoute.
+
+We also now allow a state's view to be specified using `component: 'MyComponent'` in lieu of a controller+template.  We will map resolve data to the component's `bindings:` by name.
+
+See the [component](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1viewdeclaration.html#component) and [bindings](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1viewdeclaration.html#bindings) for more information. 
+
+We also support angular 1.3+ `.component()` with Todd Motto's [polyfill](https://github.com/toddmotto/angular-component), and even support old school angular 1.2 directives (instead of `bindings: { foo: '<' }`, we will map to `scope: { foo: '=' }`).
+
+#### View hooks (component/controller hooks)
+
+For a long time, we've advocated using the state machine to manage application lifecycle.  However, using callbacks such as `onExit` can be challenging, since the answer to ""can I exit this state?"" often lives in the view.  We've introduced some view-level callbacks that can be used to integrate controller code with the transition pipeline.
+
+The first view hook we've implemented is `uiCanExit()`.  This hook can be used much the same as the component router's `routerCanDeactivate`.  See  the [Ng1Controller docs](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1controller.html#uicanexit) for more information.  The `uiCanExit` view hook is simply  sugar for [adding a transition onBefore hook](https://github.com/angular-ui/ui-router/blob/1.0.0-alpha.1/src/ng1/viewDirective.ts#L424-L427).
+
+#### Dynamic params
+
+Dynamic parameters (the replacement for `reloadOnSearch`) can be declared in a [params block in a state definition](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1statedeclaration.html#params) like so: `params; { fooParam: { dynamic: true } }`.  When a dynamic parameter changes, it does not cause the state to be reloaded.  A controller/component callback `uiOnParamsChanged` may be used to be notified of parameter changes.
+
+See the [Ng1Controller docs](http://angular-ui.github.io/ui-router/1.0.0-alpha.1/interfaces/ng1.ng1controller.html#uionparamsupdated) for details on the new callback.
+
+#### Expose internal state object's API
+
+We're now exposing the internal state objects via an undocumented API.  This can be useful for other library authors who need access to things like `.parent` or `.includes`.  This internal API is subject to change (it hasn't changed much so far), so be careful.  The internal api of an arbitrary state can be fetched like so:
+
+    var normalState = $state.get('foo'); 
+    var internalStateObject = normalState.$$state();  
+    console.log(internalStateObject.parent.name);
+
+
+### We will maintain a list of [Known BC from 0.2.x to 1.0 final](https://github.com/angular-ui/ui-router/issues/2219) to help you upgrade to the 1.0 release.
+";angularjs
+2016-03-27 15:17:45;ui-router update - Added support to routable components (Route a view to a directive using `component`);"That's great news! But how is it done? I read a [post by you](https://github.com/angular-ui/ui-router/issues/2627) a few days ago and you had multiple options in mind. Which option did you settle for?So now I should refactor my standalone controllers to components and route to them instead?Here is my personal project (work in progress), that's already using it. New $state component definition is working as expected :)
+
+https://github.com/PabloHidalgo/angularjs-1.5-components-showcase
+
+Besides new component feature in state definition already working, you can check a full component based angular app architecture, based on dumb/smart components, data service communication, etc...any contribution is well received!Just started learning Angular. Somehow ended up using ui-router. Still not clear on features.
+
+is there an ELI5 for Angular noobs?
+";That's great news! But how is it done? I read a [post by you](https://github.com/angular-ui/ui-router/issues/2627) a few days ago and you had multiple options in mind. Which option did you settle for?;angularjs
+2016-07-22 13:20:13;How do I wait for a modal dialog using Protractor?;"Hiii, Protractor works with promises you should write :
+
+    it('Test modal dialog', function () {
+        browser.get(mainPage);
+        element(by.id(""addNewClient"")).click().then(function(){
+            browser.wait(element(by.id(""newClientModal"")).isDisplayed, 5000);
+        }).then(function(){
+            element(by.id(""clientLastName"")).sendKeys('Smith');
+        }).then(function(){
+            ...
+        });  
+    });
+
+wait, click, sendkeys are promises trust me you should wait them ;) else you gonna have fake fails.
+
+If you are using a modal try to wait the backdrop ;)I'm not at home right now but when i get back i'll send you my solution. I had the same problem and i used this solution
+
+    this.clickWhenClickable = function(element) {
+        return browser.wait(function() {
+        return element.click().then(
+            function() {
+                return true;
+            },
+        function() {
+            console.log('not clickable');
+            return false;
+        });
+      });
+    };
+
+https://github.com/angular/protractor/issues/1555If you're using ui.bootstrap or other similar libraries to generate the modal, there's an invisible ""backdrop"" div that's probably blocking your select input call. Try hiding that first before accessing content in the modal. ";"I'm not at home right now but when i get back i'll send you my solution. I had the same problem and i used this solution
+
+    this.clickWhenClickable = function(element) {
+        return browser.wait(function() {
+        return element.click().then(
+            function() {
+                return true;
+            },
+        function() {
+            console.log('not clickable');
+            return false;
+        });
+      });
+    };
+
+https://github.com/angular/protractor/issues/1555";angularjs
+2016-08-19 02:32:57;Pound symbol meaning in angularJS?;"This question was asked/answered [here](https://github.com/angular/angular/issues/4017)It's a local template variable. Gives you easy access to the form object.[From Wikipedia:](https://en.wikipedia.org/wiki/Number_sign)
+
+>The symbol # is most commonly known as a number sign, hash, or pound sign. Other names include octothorpe and hashtag.";This question was asked/answered [here](https://github.com/angular/angular/issues/4017);angularjs
+2016-09-25 02:35:19;Is it just me or does anyone else find the Angular 2 mobile site to be pretty bad?;"I just can't stop looking at your 34 open tabsI encountered the same frustrating problem on my [iPad Mini](http://imgur.com/a/OsbiQ) while trying to navigate the docs.Someone was nice enough to open an issue up about this on the site's issue tracker, and seems to be looking into sending out a PR. :)
+https://github.com/angular/angular.io/issues/2471It works fine for me.
+Nexus 6. Chrome.On my android firefox, this only happens, when i open the ""Docs"" dropdown. Transparency of that one is a bit high.Hmm... It looks fine in Chrome on my HTC 10. Actually, it looks even better than fine -- it is one of the more fluid and beautiful mobile sites I have seen in quite a while. That is very odd that it is working so differently for you, and *is* almost certainly an indication that they aren't testing their site well enough.What do you expect?? Google?? 
+
+Oh... Wait...Just you, worked perfectly on my Xperia Z, Firefox.Who gives a shit? Do you not realize that Google has spent literally **millions** of dollars on Ng2 for something they give away for free? If you have a problem with the mobile site get on a fucking desktop.It's just you, I see nothing wrong with this";"Someone was nice enough to open an issue up about this on the site's issue tracker, and seems to be looking into sending out a PR. :)
+https://github.com/angular/angular.io/issues/2471";angularjs
+2016-10-07 15:30:46;UI-Router 1.0.0 and UI-Bootstrap 2.1.3 dropdown no longer closes with ui-sref;"You're seeing this issue: https://github.com/angular-ui/ui-router/issues/2962#issuecomment-246946346
+
+It's a problem in 1.0.0-beta.2, fixed in beta.3.  
+
+Updated your plunker to use beta.3: https://plnkr.co/edit/BOZi79OFqCvyqSLmiCVq?p=preview";"You're seeing this issue: https://github.com/angular-ui/ui-router/issues/2962#issuecomment-246946346
+
+It's a problem in 1.0.0-beta.2, fixed in beta.3.  
+
+Updated your plunker to use beta.3: https://plnkr.co/edit/BOZi79OFqCvyqSLmiCVq?p=preview";angularjs
+2016-11-17 02:52:00;ng-map problem;Maybe this problem is related to: https://github.com/allenhwkim/angularjs-google-maps/issues/471?;Maybe this problem is related to: https://github.com/allenhwkim/angularjs-google-maps/issues/471?;angularjs
+2016-12-17 14:26:31;Angular Directive Transclusion Scope Issue;"Create a plunkr.Ah, you've encountered one of the weird parts of Angular 1.x, transclusion scope. Transcluded content is a sibling scope of the component/directive that it's being transcluded to. So ng-repeating transclusion won't work, at least not by default. There's a few bugs filed on github, but the Angular team isn't going to change the current behavior.
+
+Luckily in some of these github bugs, there are discussions on how to achieve what you want. Take a look [here](https://github.com/angular/angular.js/issues/7874) for discussion. The solution that I think made the most sense is [in this comment](https://github.com/angular/angular.js/issues/7874#issuecomment-47647528)
+
+
+Edit: you could also use ng-include as well";"Ah, you've encountered one of the weird parts of Angular 1.x, transclusion scope. Transcluded content is a sibling scope of the component/directive that it's being transcluded to. So ng-repeating transclusion won't work, at least not by default. There's a few bugs filed on github, but the Angular team isn't going to change the current behavior.
+
+Luckily in some of these github bugs, there are discussions on how to achieve what you want. Take a look [here](https://github.com/angular/angular.js/issues/7874) for discussion. The solution that I think made the most sense is [in this comment](https://github.com/angular/angular.js/issues/7874#issuecomment-47647528)
+
+
+Edit: you could also use ng-include as well";angularjs
+2017-01-04 20:07:04;A comprehensive post on using components with both UI Router 0.3.3 and 1.0;"Very well written article!
+
+We've got some additional features in ui-router 1.0.0-rc.1 (coming soon) that make route-to-component even better.
+
+### & bindings
+
+We are adding support for ""&"" bindings for component callbacks.  See https://github.com/angular-ui/ui-router/issues/3111
+
+    .state('foo', {
+      component: 'foo',
+      resolve: {
+        handleFooEvent: (FooService) => (event) => FooService.handleEvent(event)
+      }
+    }
+    
+    .component('foo', {
+      bindings: { handleFooEvent: ""&"" }
+    });
+
+### wire bindings from parent state component
+
+We are also adding the ability to wire bindings down from the parent state component to the child (using the ui-view).  See https://github.com/angular-ui/ui-router/issues/3239
+
+    .state('foo', { component: 'foo' })
+    .state('foo.bar', { component: 'bar' })
+    
+    .component('foo', {
+      template: '<h1>foo</h1>' +
+        '<ui-view foo-data=""$ctrl.data"" on-foo-event=""$ctrl.handleFooEvent(eventData)""></ui-view>'
+      controller: 'FooController',
+    });
+
+    .component('bar', {
+      bindings: { fooData: ""<"", onFooEvent: '""&"" },
+      template: '<h1>bar</h1>' +
+         '<button ng-click=""$ctrl.onFooEvent({ eventData: 12345 })"">fire event</button>',
+    });
+
+Expect rc.1 in a couple days";"Very well written article!
+
+We've got some additional features in ui-router 1.0.0-rc.1 (coming soon) that make route-to-component even better.
+
+### & bindings
+
+We are adding support for ""&"" bindings for component callbacks.  See https://github.com/angular-ui/ui-router/issues/3111
+
+    .state('foo', {
+      component: 'foo',
+      resolve: {
+        handleFooEvent: (FooService) => (event) => FooService.handleEvent(event)
+      }
+    }
+    
+    .component('foo', {
+      bindings: { handleFooEvent: ""&"" }
+    });
+
+### wire bindings from parent state component
+
+We are also adding the ability to wire bindings down from the parent state component to the child (using the ui-view).  See https://github.com/angular-ui/ui-router/issues/3239
+
+    .state('foo', { component: 'foo' })
+    .state('foo.bar', { component: 'bar' })
+    
+    .component('foo', {
+      template: '<h1>foo</h1>' +
+        '<ui-view foo-data=""$ctrl.data"" on-foo-event=""$ctrl.handleFooEvent(eventData)""></ui-view>'
+      controller: 'FooController',
+    });
+
+    .component('bar', {
+      bindings: { fooData: ""<"", onFooEvent: '""&"" },
+      template: '<h1>bar</h1>' +
+         '<button ng-click=""$ctrl.onFooEvent({ eventData: 12345 })"">fire event</button>',
+    });
+
+Expect rc.1 in a couple days";angularjs
+2017-01-11 22:40:11;UI-Router 1.0.0-rc.1 released;"### The following list highlights the most notable changes in this release:
+
+- Route-to-component
+  - Now supports binding to a *child state component from the parent state's component* through the `ui-view` tag (for handling events from dumb components, etc)
+  - Now supports `""&""` callback bindings to functions returned by resolves
+- Url Rules subsystem overhauled
+  - Now, the most relevant URL is matched, instead of the rule that was registered first https://github.com/ui-router/core/issues/15
+- Query parameters no longer encode slashes as `~2F`
+  - New param types: `path`, `query`, `hash`
+- Hash parameter is cleared out on subsequent transitions (it is no longer an inherited param) 
+- Use `{ location: 'replace' }` when a URL redirect occurs.  This eliminates the extra entry in the browser history.
+- Create a new `UrlService` (`$urlService` and `$urlServiceProvider`).  This service is a facade which consolidates the most commonly used URL APIs.  The other URL apis still exist, but are marked as deprecated for public use.
+- Typescript definitions (`.d.ts`) are now compatible with Typescript 1.8.x
+- Implemented `NOWAIT` resolve policy (do not wait for promises; do not unwrap promises)
+- `ui-sref`/`-active` 
+  - Links update when states are added/removed
+  - Params-only srefs work properly (only change params on the current state)
+- ui-view
+  - States without any views (template or component) get a template of `<ui-view></ui-view>` allowing easier creation of `abstract` states
+- Use `$templateRequest` by default to fetch templates
+- Lazy Load
+  - More flexible lazy loading (lazy load anything: states, components, services -- whatever you need)
+  - Imperative lazy loading (can be used to pre-load lazy states)
+  - Bugfixes
+Amazing work!";"### The following list highlights the most notable changes in this release:
+
+- Route-to-component
+  - Now supports binding to a *child state component from the parent state's component* through the `ui-view` tag (for handling events from dumb components, etc)
+  - Now supports `""&""` callback bindings to functions returned by resolves
+- Url Rules subsystem overhauled
+  - Now, the most relevant URL is matched, instead of the rule that was registered first https://github.com/ui-router/core/issues/15
+- Query parameters no longer encode slashes as `~2F`
+  - New param types: `path`, `query`, `hash`
+- Hash parameter is cleared out on subsequent transitions (it is no longer an inherited param) 
+- Use `{ location: 'replace' }` when a URL redirect occurs.  This eliminates the extra entry in the browser history.
+- Create a new `UrlService` (`$urlService` and `$urlServiceProvider`).  This service is a facade which consolidates the most commonly used URL APIs.  The other URL apis still exist, but are marked as deprecated for public use.
+- Typescript definitions (`.d.ts`) are now compatible with Typescript 1.8.x
+- Implemented `NOWAIT` resolve policy (do not wait for promises; do not unwrap promises)
+- `ui-sref`/`-active` 
+  - Links update when states are added/removed
+  - Params-only srefs work properly (only change params on the current state)
+- ui-view
+  - States without any views (template or component) get a template of `<ui-view></ui-view>` allowing easier creation of `abstract` states
+- Use `$templateRequest` by default to fetch templates
+- Lazy Load
+  - More flexible lazy loading (lazy load anything: states, components, services -- whatever you need)
+  - Imperative lazy loading (can be used to pre-load lazy states)
+  - Bugfixes
+";angularjs
+2017-03-04 23:42:28;Lazy Loading with Webpack and Angular 1.x;"Unfortunately no. Once your app is bootstrapped there's no official support for registering a module with Angular in 1.x. ocLazyLoad works around this by registering all the components, services, etc. with the proper angular providers (e.g, a component with the $compileProvider), then running the config/run blocks of a module. This is very similar to what Angular does in the bootstrap phase. Future compiles and service injections will work as expected. I think it puts some wrappers around the angular window objects as well. 
+
+If you want 1.x support, I'd recommend using ocLazyLoad. Lazy loading was [proposed](https://github.com/angular/angular.js/issues/11015), but never completed for 1.x. Angular 2 has this ability [built in](https://angular-2-training-book.rangle.io/handout/modules/lazy-loading-module.html). I built a large app in Angular 1.x several years ago and had Lazy Loading in it. I don't have the code anymore (it was for a company), but I believe I derived it from [this post](http://ify.io/lazy-loading-in-angularjs/). I was not using Webpack, but it does use RequireJS, which you should be able to get working with Webpack.
+
+Things to note about this way of lazy loading (and Angular2's lazy load, as well) is that they load code into memory and attach the new stuff to the existing app, but there is no way to UN-load those things. So, if you have a large app, it will take up more and more memory as things are lazy loaded.We are using it with out much headache. ";"Unfortunately no. Once your app is bootstrapped there's no official support for registering a module with Angular in 1.x. ocLazyLoad works around this by registering all the components, services, etc. with the proper angular providers (e.g, a component with the $compileProvider), then running the config/run blocks of a module. This is very similar to what Angular does in the bootstrap phase. Future compiles and service injections will work as expected. I think it puts some wrappers around the angular window objects as well. 
+
+If you want 1.x support, I'd recommend using ocLazyLoad. Lazy loading was [proposed](https://github.com/angular/angular.js/issues/11015), but never completed for 1.x. Angular 2 has this ability [built in](https://angular-2-training-book.rangle.io/handout/modules/lazy-loading-module.html). ";angularjs
