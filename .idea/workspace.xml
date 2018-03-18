@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demographicAnalysis/getUerDetails.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pairingItems/GensimSimilarityTry.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pairingItems/nltk_similarity.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/masterThesis_notes.odt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pairingItems/pairing_SO_items.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/redditMining/redditTry.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterThesis_Ideas.odt" afterPath="$PROJECT_DIR$/masterThesis_Ideas.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/Pairing items.odt" afterPath="$PROJECT_DIR$/thesisText/Pairing items.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thesisText/Sentiment analysis.odt" afterPath="$PROJECT_DIR$/thesisText/Sentiment analysis.odt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pairingItems/issueComments/.~lock.angularjs.csv#" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pairingItems/nltk_similarity.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/databaseScripts/schemaCreation.sql" afterPath="$PROJECT_DIR$/databaseScripts/schemaCreation.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stackOverflowMining/stackApiTry.py" afterPath="$PROJECT_DIR$/stackOverflowMining/stackApiTry.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py" afterPath="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairingItems/issueComments/nodejs.csv" afterPath="$PROJECT_DIR$/pairingItems/issueComments/nodejs.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py" afterPath="$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,35 +23,9 @@
       <file leaf-file-name="GensimSimilarityTry.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pairingItems/GensimSimilarityTry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SciKit_sentimentAnalysis_Reddit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis_Reddit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5238">
-              <caret line="305" column="30" lean-forward="false" selection-start-line="305" selection-start-column="30" selection-end-line="305" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nltk_similarity.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="226" column="51" lean-forward="true" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,7 +33,7 @@
       <file leaf-file-name="getClosedIssues.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-641">
+            <state relative-caret-position="1962">
               <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -81,10 +45,44 @@
       <file leaf-file-name="pairing_Reddit_Git.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="46" column="70" lean-forward="false" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
+            <state relative-caret-position="428">
+              <caret line="108" column="82" lean-forward="false" selection-start-line="108" selection-start-column="82" selection-end-line="108" selection-end-column="82" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nltk_similarity_Reddit.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nltk_similarity_Stack.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MulticlassMilestoneClassifier.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Toreador/classifier/MilestoneClassifier/MulticlassMilestoneClassifier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1296">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,8 +91,8 @@
       <file leaf-file-name="pairing_SO_questions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pairingItems/pairing_SO_questions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-416">
+              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -113,9 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>1.0</find>
-      <find>roadm</find>
-      <find>lo</find>
       <find>0.5</find>
       <find>transformTrainingCorpus</find>
       <find>zip</find>
@@ -143,6 +138,9 @@
       <find>tf</find>
       <find>getBugs</find>
       <find>getSimilarity</find>
+      <find>getRedditDialogues</find>
+      <find>preprocessStackBody</find>
+      <find>process</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,10 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/.gitignore" />
-        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetCriteria.py" />
-        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/got/manager/TweetManager.py" />
-        <option value="$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/Exporter.py" />
         <option value="$PROJECT_DIR$/semanticAnalysis_betweenReleases/TextBlob_sentimentAnalysis.py" />
         <option value="$PROJECT_DIR$/semanticAnalysis_betweenReleases/semantic_Analysis.py" />
         <option value="$PROJECT_DIR$/semanticAnalysis_betweenReleases/try.py" />
@@ -202,14 +196,18 @@
         <option value="$PROJECT_DIR$/stackOverflowMining/stackApi_issueComments.py" />
         <option value="$PROJECT_DIR$/redditMining/reddit_getIssueComments.py" />
         <option value="$PROJECT_DIR$/pairingItems/nltk_similarity.py" />
+        <option value="$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py" />
+        <option value="$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py" />
+        <option value="$PROJECT_DIR$/pairingItems/Nltk_Similarity_Checker/Nltk_Similarity_Checker.py" />
+        <option value="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1856" />
-    <option name="y" value="362" />
-    <option name="width" value="1196" />
-    <option name="height" value="586" />
+    <option name="x" value="1811" />
+    <option name="y" value="36" />
+    <option name="width" value="1194" />
+    <option name="height" value="578" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -255,24 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pairing_Reddit_Git">
-    <configuration name="GensimSimilarityTry" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pairingItems" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Master_Thesis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pairingItems/GensimSimilarityTry.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.nltk_similarity_Stack">
     <configuration name="SciKit_sentimentAnalysis_Reddit" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -324,6 +305,40 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="nltk_similarity_Reddit" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pairingItems" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Master_Thesis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="nltk_similarity_Stack" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pairingItems" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Master_Thesis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="pairing_Reddit_Git" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,38 +356,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="stackApi_issueComments" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stackOverflowMining" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Master_Thesis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stackOverflowMining/stackApi_issueComments.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.SciKit_sentimentAnalysis_Reddit" />
       <item index="1" class="java.lang.String" itemvalue="Python.nltk_similarity" />
-      <item index="2" class="java.lang.String" itemvalue="Python.stackApi_issueComments" />
-      <item index="3" class="java.lang.String" itemvalue="Python.GensimSimilarityTry" />
-      <item index="4" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-      <item index="5" class="java.lang.String" itemvalue="Python.pairing_Reddit_Git" />
+      <item index="2" class="java.lang.String" itemvalue="Python.getClosedIssues" />
+      <item index="3" class="java.lang.String" itemvalue="Python.pairing_Reddit_Git" />
+      <item index="4" class="java.lang.String" itemvalue="Python.nltk_similarity_Reddit" />
+      <item index="5" class="java.lang.String" itemvalue="Python.nltk_similarity_Stack" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.pairing_Reddit_Git" />
-        <item index="1" class="java.lang.String" itemvalue="Python.nltk_similarity" />
-        <item index="2" class="java.lang.String" itemvalue="Python.getClosedIssues" />
-        <item index="3" class="java.lang.String" itemvalue="Python.stackApi_issueComments" />
-        <item index="4" class="java.lang.String" itemvalue="Python.GensimSimilarityTry" />
+        <item index="0" class="java.lang.String" itemvalue="Python.nltk_similarity_Stack" />
+        <item index="1" class="java.lang.String" itemvalue="Python.nltk_similarity_Reddit" />
+        <item index="2" class="java.lang.String" itemvalue="Python.pairing_Reddit_Git" />
+        <item index="3" class="java.lang.String" itemvalue="Python.nltk_similarity" />
+        <item index="4" class="java.lang.String" itemvalue="Python.getClosedIssues" />
       </list>
     </recent_temporary>
   </component>
@@ -393,14 +391,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1856" y="362" width="1602" height="912" extended-state="6" />
+    <frame x="1600" y="8" width="1600" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29573935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30530402" sideWeight="0.178125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30530402" sideWeight="0.821875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -410,7 +408,7 @@
       <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3734336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3725744" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="6.25E-4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -581,14 +579,9 @@
           <option name="timeStamp" value="311" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pairingItems/nltk_similarity.py</url>
-          <line>205</line>
-          <option name="timeStamp" value="313" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pairingItems/nltk_similarity.py</url>
-          <line>188</line>
-          <option name="timeStamp" value="314" />
+          <url>file://$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="315" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -603,7 +596,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="315" />
+      <option name="time" value="316" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -612,21 +605,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stackOverflowMining/tryPairingItems.py" />
-    <entry file="file://$PROJECT_DIR$/gitMining/issues/db_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitterMining/TwitterTry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/test.py" />
     <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/cryptoPrices.py" />
     <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates_Ordered.py" />
@@ -784,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Toreador/classifier/MilestoneClassifier/MulticlassMilestoneClassifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Toreador/classifier/multiclass_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -858,16 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pairingItems/GensimSimilarityTry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stackOverflowMining/stackApiTry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-425">
@@ -878,39 +839,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pairingItems/pairing_SO_questions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis_Reddit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5238">
           <caret line="305" column="30" lean-forward="false" selection-start-line="305" selection-start-column="30" selection-end-line="305" selection-end-column="30" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="46" column="70" lean-forward="false" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-641">
+        <state relative-caret-position="1962">
           <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -918,10 +859,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pairingItems/GensimSimilarityTry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="226" column="51" lean-forward="true" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="51" />
+        <state relative-caret-position="-2484">
+          <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairingItems/pairing_SO_questions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="108" column="82" lean-forward="false" selection-start-line="108" selection-start-column="82" selection-end-line="108" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Toreador/classifier/MilestoneClassifier/MulticlassMilestoneClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1296">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairingItems/Nltk_Similarity_Checker/Nltk_Similarity_Checker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>

@@ -10,53 +10,10 @@ import sys
 import re
 from urllib2 import urlopen, Request
 import json
+from Nltk_Similarity_Checker.Nltk_Similarity_Checker import Nltk_Similarity_Checker
 
 reload(sys)
 sys.setdefaultencoding('utf8')
-
-def process(text):
-	tokens = word_tokenize(text)
-	words = [w.lower() for w in tokens]
-
-	porter = nltk.PorterStemmer()
-	stemmed_tokens = [porter.stem(t) for t in words]
-
-	#removing stop words
-	stop_words = set(stopwords.words('english'))
-	filtered_tokens = [w for w in stemmed_tokens if not w in stop_words]
-
-	#count words
-	count = nltk.defaultdict(int)
-	for word in filtered_tokens:
-		count[word] += 1
-	return count;
-
-def cos_sim(a, b):
-	dot_product = np.dot(a, b)
-	norm_a = np.linalg.norm(a)
-	norm_b = np.linalg.norm(b)
-	return dot_product/(norm_a * norm_b)
-
-def getSimilarity(text1, text2):
-	dict1 = process(text1)
-	dict2 = process(text2)
-
-	all_words_list = []
-	for key in dict1:
-		all_words_list.append(key)
-	for key in dict2:
-		all_words_list.append(key)
-	all_words_list_size = len(all_words_list)
-
-	v1 = np.zeros(all_words_list_size, dtype=np.int)
-	v2 = np.zeros(all_words_list_size, dtype=np.int)
-	i = 0
-	for (key) in all_words_list:
-		v1[i] = dict1.get(key,0)
-		v2[i] = dict2.get(key, 0)
-		i = i + 1
-	sim =  cos_sim(v1, v2)
-	return sim
 
 def connectToDb():
     conn = MySQLdb.connect(host="localhost",
@@ -157,12 +114,12 @@ def getNouns(text):
 def isNotNan(num):
 	return num == num
 
-def calculateAverageSimilarity(social_medium_dict,bugs_dict):
+def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker):
 	similaritySum = 0.0
 	combinations = 0
 	for (social_medium_id, social_medium_item) in social_medium_dict.iteritems():
 		for (git_id, git_issue) in bugs_dict.iteritems():
-			similarity = getSimilarity(social_medium_item[1], git_issue[1])
+			similarity = similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
 			if isNotNan(similarity):
 				similaritySum += similarity
 				combinations += 1
@@ -174,7 +131,7 @@ def calculateAverageSimilarity(social_medium_dict,bugs_dict):
 
 
 #calculates similarity between Stack question and the issue its own issue it's talking about
-def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, gitToken):
+def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, gitToken, similarityChecker):
 	sql = "SELECT question_id, body, project FROM oss_issues.so_questions where body like '%/issues%' and body like CONCAT('%/',project,'/%')"
 
 	GIT_URI = 'https://api.github.com/repos/'
@@ -203,7 +160,7 @@ def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, 
 				request.add_header('Authorization', 'token %s' % gitToken)
 				response = urlopen(request).read()
 				requestedIssue = json.loads(response)
-				similarity = getSimilarity(requestedIssue['body'], body)
+				similarity = similarityChecker.getSimilarity(requestedIssue['body'], body)
 				if isNotNan(similarity):
 					similaritySum += similarity
 					similarityCount += 1
@@ -214,6 +171,8 @@ def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, 
 if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 	[dbHandle, conn] = connectToDb()
+
+	nltk_similarity_checker = Nltk_Similarity_Checker()
 
 	stackGitPairs = dict();
 	#stackGitPairs['django'] = 'django/django';
@@ -242,7 +201,7 @@ if __name__ == '__main__':
 		print "Number of bugs:" + str(len(bugs_dict))
 		print "Number of questions:" + str(len(social_medium_dict))
 
-		#calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict)
+		#calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
 	'''
 
-	calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken)
+	calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker)

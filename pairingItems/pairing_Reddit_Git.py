@@ -15,9 +15,9 @@ def main(argv):
 
     projects = [
         # 'https://api.github.com/repos/django/django',
-        #'angularjs',
+        'angularjs',
         #'bootstrap',
-        'nodejs',
+        #'nodejs',
         #'bower',
         #'gulp',
         #'rails',
@@ -36,7 +36,7 @@ def main(argv):
         bugs_dict = getGitIssues(dbHandle=dbHandle,project=project)
         reddit_dict = getRedditDialogues(project=project)
         print "Number of bugs:" + str(len(bugs_dict))
-        print "Number of questions:" + str(len(reddit_dict))
+        print "Number of reddit threads:" + str(len(reddit_dict))
 
         for (rddt_id,rddt_item) in reddit_dict.iteritems():
             for (git_id, git_issue) in bugs_dict.iteritems():
