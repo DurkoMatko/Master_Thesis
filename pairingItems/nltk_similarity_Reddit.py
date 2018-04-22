@@ -46,8 +46,25 @@ def getRedditDialogues(project):
             rddt_dict[title] = (getNouns(issueComment), issueComment)
     return rddt_dict
 
+def getRedditDialogueAndComment(project):
+    mypath = os.path.dirname(__file__)
+    redditFilesPath = os.path.join(mypath, 'issueComments')
+
+    rddt_dict = dict();
+
+    with open(os.path.join(redditFilesPath, project + '.csv')) as csvFile:
+        reader = csv.reader(csvFile, delimiter=';');
+        reader.next();
+        for row in reader:
+            title = unicode(row[1])
+            allComments = unicode(row[2])
+            issueComment = unicode(row[3])
+            rddt_dict[title] = (allComments, issueComment)
+    return rddt_dict
+
 
 def getGitIssues(dbHandle,project):
+    if project == 'angular': project = 'angularjs'
     sql = "Select number,title,description from just_bugs where project='" + project + "'"
     # Execute the SQL command and fetch all the rows in a list of lists.
     dbHandle.execute(sql)
@@ -130,7 +147,7 @@ def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker):
 	print "combinations:" + str(combinations)
 
 
-#calculates similarity between Stack question and the issue its own issue it's talking about
+#calculates similarity between Stack question and its own issue it's talking about
 def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, gitToken, similarityChecker):
 	sql = "SELECT question_id, body, project FROM oss_issues.so_questions where body like '%/issues%' and body like CONCAT('%/',project,'/%')"
 
@@ -167,6 +184,37 @@ def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, 
 
 	print 'Average similarity of own issue related questions is: ' + str(similaritySum/similarityCount)
 
+def compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs,similarityChecker):
+	GIT_URI = 'https://api.github.com/repos/'
+	similarityCommentSum = 0.0
+	similarityDiscussionSum = 0.0
+	similarityCount = 0
+	for redditName, gitUrl in redditGitPairs.iteritems():
+		reddit_dict = getRedditDialogueAndComment(redditName)
+		for redditTitle, redditDiscussionAndComment in reddit_dict.iteritems():
+			if gitUrl + '/issues' in redditDiscussionAndComment[1]:
+				m = re.findall('issues/' + r'\d+', redditDiscussionAndComment[1])
+				issueNumber = m[0][m[0].find('/'):]
+
+				request = Request(GIT_URI + gitUrl + '/issues' + issueNumber)
+				request.add_header('Authorization', 'token %s' % gitToken)
+				response = urlopen(request).read()
+				requestedIssue = json.loads(response)
+				similarity = similarityChecker.getSimilarity(requestedIssue['body'], redditDiscussionAndComment[1])
+				if isNotNan(similarity):
+					similarityCommentSum += similarity
+					similarityCount += 1
+				similarity = similarityChecker.getSimilarity(requestedIssue['body'], redditDiscussionAndComment[0])
+				if isNotNan(similarity):
+					similarityDiscussionSum += similarity
+
+	print "Done"
+	print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
+	print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
+
+			# indexOfIssue = redditDiscussionAndComment[1].find(gitUrl+'/issues')
+			# startIndex = redditDiscussionAndComment[1][:indexOfIssue].rfind(' ')
+
 
 if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
@@ -191,17 +239,23 @@ if __name__ == '__main__':
 	# 'dash',    #no stack overflow tag
 	# 'bootstrap',   #no stack overflow tag
 
-	'''similaritySum = 0.0
-	combinations = 0
-	maxSimilarity = 0.0
-	for stackName, gitUrl in stackGitPairs.iteritems():
-		bugs_dict = getGitIssues(dbHandle=dbHandle, project=gitUrl.split('/')[0])
-		social_medium_dict = getStackQuestionsAboutOwnIssues(dbHandle=dbHandle, project=gitUrl)
-		print gitUrl
-		print "Number of bugs:" + str(len(bugs_dict))
-		print "Number of questions:" + str(len(social_medium_dict))
+	redditGitPairs = dict();
+	# stackGitPairs['django'] = 'django/django';
+	redditGitPairs['nodejs'] = 'nodejs/node';
+	redditGitPairs['angularjs'] = 'angular/angular';
+	redditGitPairs['vuejs'] = 'vuejs/vue';
+	redditGitPairs['emberjs'] = 'emberjs/ember.js';
 
-		#calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
+	'''
+	for redditName, gitUrl in redditGitPairs.iteritems():
+		reddit_dict = getRedditDialogues(redditName)
+		bugs_dict = getGitIssues(dbHandle=dbHandle, project=gitUrl.split('/')[0])
+		print redditName
+		print "Number of bugs:" + str(len(bugs_dict))
+		print "Number of questions:" + str(len(reddit_dict))
+
+		calculateAverageSimilarity(social_medium_dict=reddit_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
 	'''
 
-	calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker)
+	#COMPARING SIMILARITY OF THE ISSUE COMMENT AND THE REST OF THE THREAD
+	compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=nltk_similarity_checker)

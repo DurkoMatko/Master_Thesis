@@ -1,9 +1,10 @@
 import os, csv, sys, re
 import numpy as np
+from apsw import config
 from dateutil import parser
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
-from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, classification_report
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
 from sklearn.multiclass import OneVsRestClassifier, OneVsOneClassifier
@@ -13,6 +14,7 @@ from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
 import matplotlib.dates as md
 import datetime as dt
+import collections
 from MilestoneClassifier.MulticlassMilestoneClassifier import MulticlassMilestoneClassifier, PredictionMode, TrainingMode
 
 reload(sys)
@@ -20,8 +22,9 @@ sys.setdefaultencoding('utf8')
 
 def main(argv):
     # Create a corpus from training data
-    corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
+    #corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
     #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
+    corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Crypto_Labeled_Data')
 
     #find best performing vectorizer for feature extraction
     #tuneVectorizerParameters(corpus=corpus,labels=labels)
@@ -36,7 +39,7 @@ def main(argv):
 
     #train on movies, evaluate tweets
     #train1_test2(corpus2,labels2,corpus1,labels1,vectorizer)
-    #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
+    execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
     #model3 = create_Models(corpus=corpus,labels=labels,vectorizer=)
     myClassifier = MulticlassMilestoneClassifier()
     myClassifier.train(corpus=corpus,labels=labels,mode=TrainingMode.BINARY)
@@ -72,7 +75,7 @@ def make_Corpus_From_Tweets(root_dir):
 
     corpus = []
     #initialization of numpy array needed (1,600,000 is size of my sentiment140 training dataset, 499 of test set)
-    labels = np.zeros(1600000);
+    labels = np.zeros(60);
     for file in trainDataFiles:
         with open(os.path.join(mypath, root_dir+'/') + file) as trainingFile:
             reader = csv.reader(trainingFile, delimiter=',')
@@ -152,10 +155,16 @@ def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
 
     #performance metrics initialization
     crossValidationAccuracy = dict()
+    crossValidationRecall = dict()
+    crossValidationPrecision = dict()
+    crossValidationFmeasure = dict()
     confusionMetrices = dict()
     for name in names:
         crossValidationAccuracy[name] = []
-        confusionMetrices[name] = np.zeros((2, 2));  #confusion matrix
+        crossValidationRecall[name] = []
+        crossValidationPrecision[name] = []
+        crossValidationFmeasure[name] = []
+        confusionMetrices[name] = np.zeros((2, 2))*1.0;  #confusion matrix
 
     print "Starting n-fold training with number of folds:"+str(fold_splits)
     for train_index, test_index in kf.split(corpus, labels):
@@ -171,7 +180,12 @@ def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
             clf.fit(train_corpus_tf_idf, y_train)
             result = clf.predict(test_corpus_tf_idf)
             crossValidationAccuracy[name].append(accuracy_score(y_test,result))
-            confusionMetrices[name] = confusionMetrices[name] + confusion_matrix(y_test, result)
+            crossValidationRecall[name].append(recall_score(y_test, result))
+            crossValidationPrecision[name].append(precision_score(y_test, result))
+            crossValidationFmeasure[name].append(f1_score(y_test, result))
+            conf_matrix = confusion_matrix(y_test, result)
+            normalized_conf_matrix = np.divide(conf_matrix, len(result), dtype=float)
+            confusionMetrices[name] = confusionMetrices[name] + normalized_conf_matrix
 
         print "Models succesfully trained, number of iteration:" + str(iter)
 
@@ -182,9 +196,23 @@ def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
 
     for name in names:
         print name
-        print "Cross validation results: ",
+        print "Cross validation accuracy: ",
         for item in crossValidationAccuracy[name]: print item,
-        print "Cross validation average:" + str(sum(crossValidationAccuracy[name]) / len(crossValidationAccuracy[name]))
+        print "Cross validation accuracy average:" + str(sum(crossValidationAccuracy[name]) / len(crossValidationAccuracy[name]))
+        print "Cross validation precision: ",
+        for item in crossValidationPrecision[name]: print item,
+        print "Cross validation precision average:" + str(
+            sum(crossValidationPrecision[name]) / len(crossValidationPrecision[name]))
+        print "Cross validation recall: ",
+        for item in crossValidationRecall[name]: print item,
+        print "Cross validation accuracy average:" + str(
+            sum(crossValidationRecall[name]) / len(crossValidationRecall[name]))
+        print "Cross validation F measure: ",
+        for item in crossValidationFmeasure[name]: print item,
+        print "Cross validation accuracy average:" + str(
+            sum(crossValidationFmeasure[name]) / len(crossValidationFmeasure[name]))
+
+        print "Cross validation confusion matrix:" + str(confusionMetrices[name]/fold_splits)
 
 def train1_test2(trainCorpus, trainLabels, testCorpus, testLabels, vectorizer):
     #choose classifiers to evaluate
@@ -391,6 +419,13 @@ def plotPolynomials(minDate,passedDays,scores,projectName,mypath):
     plt.title(projectName)
 
     plt.show()
+
+
+    #printing data for supervisor meeting and sheet creation
+    xy_dict = dict(zip(original_dates, y))
+    xy_dict_sorted = collections.OrderedDict(sorted(xy_dict.items()))
+    print xy_dict_sorted.keys()
+    print xy_dict_sorted.values()
 
 def getCryptoPrices(projectName,cryptoPricesPath):
     with open(os.path.join(cryptoPricesPath, projectName)) as priceFile:
