@@ -176,21 +176,21 @@ if __name__ == '__main__':
 	stackGitPairs = dict();
 	#stackGitPairs['django'] = 'django/django';
 	stackGitPairs['node.js'] = 'nodejs/node';
-	stackGitPairs['angularjs'] = 'angular/angular';
-	stackGitPairs['bower'] = 'bower/bower';
-	stackGitPairs['gulp'] = 'gulpjs/gulp';
-	stackGitPairs['ruby-on-rails'] = 'rails/rails';
-	stackGitPairs['vue.js'] = 'vuejs/vue';
-	stackGitPairs['ember.js'] = 'emberjs/ember.js';
-	stackGitPairs['aurelia'] = 'aurelia/framework';
-	stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
-	stackGitPairs['bitcoin'] = 'bitcoin/bitcoin';
-	stackGitPairs['litecoin'] = 'litecoin/litecoin';
+	#stackGitPairs['angularjs'] = 'angular/angular';
+	#stackGitPairs['bower'] = 'bower/bower';
+	#stackGitPairs['gulp'] = 'gulpjs/gulp';
+	#stackGitPairs['ruby-on-rails'] = 'rails/rails';
+	#stackGitPairs['vue.js'] = 'vuejs/vue';
+	#stackGitPairs['ember.js'] = 'emberjs/ember.js';
+	#stackGitPairs['aurelia'] = 'aurelia/framework';
+	#stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
+	#stackGitPairs['bitcoin'] = 'bitcoin/bitcoin';
+	#stackGitPairs['litecoin'] = 'litecoin/litecoin';
 	# 'rippled',  #no stack overflow tag
 	# 'dash',    #no stack overflow tag
 	# 'bootstrap',   #no stack overflow tag
 
-	'''similaritySum = 0.0
+	imilaritySum = 0.0
 	combinations = 0
 	maxSimilarity = 0.0
 	for stackName, gitUrl in stackGitPairs.iteritems():
@@ -200,7 +200,7 @@ if __name__ == '__main__':
 		print "Number of bugs:" + str(len(bugs_dict))
 		print "Number of questions:" + str(len(social_medium_dict))
 
-		#calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
-	'''
+		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
 
-	calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker)
+
+	#calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker)

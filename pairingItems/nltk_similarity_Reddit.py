@@ -136,7 +136,7 @@ def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker):
 	combinations = 0
 	for (social_medium_id, social_medium_item) in social_medium_dict.iteritems():
 		for (git_id, git_issue) in bugs_dict.iteritems():
-			similarity = similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
+			similarity = 1# similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
 			if isNotNan(similarity):
 				similaritySum += similarity
 				combinations += 1
@@ -246,7 +246,7 @@ if __name__ == '__main__':
 	redditGitPairs['vuejs'] = 'vuejs/vue';
 	redditGitPairs['emberjs'] = 'emberjs/ember.js';
 
-	'''
+
 	for redditName, gitUrl in redditGitPairs.iteritems():
 		reddit_dict = getRedditDialogues(redditName)
 		bugs_dict = getGitIssues(dbHandle=dbHandle, project=gitUrl.split('/')[0])
@@ -255,7 +255,7 @@ if __name__ == '__main__':
 		print "Number of questions:" + str(len(reddit_dict))
 
 		calculateAverageSimilarity(social_medium_dict=reddit_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
-	'''
+
 
 	#COMPARING SIMILARITY OF THE ISSUE COMMENT AND THE REST OF THE THREAD
-	compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=nltk_similarity_checker)
+	#compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=nltk_similarity_checker)

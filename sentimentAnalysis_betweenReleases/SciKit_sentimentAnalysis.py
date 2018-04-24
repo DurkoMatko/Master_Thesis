@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as md
 import datetime as dt
 import collections
+import pickle
 from MilestoneClassifier.MulticlassMilestoneClassifier import MulticlassMilestoneClassifier, PredictionMode, TrainingMode
 
 reload(sys)
@@ -24,7 +25,7 @@ def main(argv):
     # Create a corpus from training data
     #corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140')
     #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
-    corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Crypto_Labeled_Data')
+    #corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Crypto_Labeled_Data')
 
     #find best performing vectorizer for feature extraction
     #tuneVectorizerParameters(corpus=corpus,labels=labels)
@@ -39,10 +40,19 @@ def main(argv):
 
     #train on movies, evaluate tweets
     #train1_test2(corpus2,labels2,corpus1,labels1,vectorizer)
-    execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
+    #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
     #model3 = create_Models(corpus=corpus,labels=labels,vectorizer=)
-    myClassifier = MulticlassMilestoneClassifier()
-    myClassifier.train(corpus=corpus,labels=labels,mode=TrainingMode.BINARY)
+
+    f = open("trainedClassifier.pickle", 'rb')
+    myClassifier = pickle.load(f)
+    f.close()
+
+    #myClassifier = MulticlassMilestoneClassifier()
+    #myClassifier.train(corpus=corpus, labels=labels, mode=TrainingMode.BINARY)
+    #f = open("trainedClassifier.pickle", 'wb')
+    #pickle.dump(myClassifier, f)
+    #f.close()
+
 
     #playing with thresholds in confidence to differ among positive, negative and neutral tweets
     #PosNeg_thresholds_on_test_data(model=model3_logisticRegression,vectorizer=vectorizer)
@@ -75,7 +85,7 @@ def make_Corpus_From_Tweets(root_dir):
 
     corpus = []
     #initialization of numpy array needed (1,600,000 is size of my sentiment140 training dataset, 499 of test set)
-    labels = np.zeros(60);
+    labels = np.zeros(82);
     for file in trainDataFiles:
         with open(os.path.join(mypath, root_dir+'/') + file) as trainingFile:
             reader = csv.reader(trainingFile, delimiter=',')
@@ -424,8 +434,10 @@ def plotPolynomials(minDate,passedDays,scores,projectName,mypath):
     #printing data for supervisor meeting and sheet creation
     xy_dict = dict(zip(original_dates, y))
     xy_dict_sorted = collections.OrderedDict(sorted(xy_dict.items()))
-    print xy_dict_sorted.keys()
-    print xy_dict_sorted.values()
+    for key in xy_dict_sorted.keys():
+        print str(key)
+    for val in xy_dict_sorted.values():
+        print val
 
 def getCryptoPrices(projectName,cryptoPricesPath):
     with open(os.path.join(cryptoPricesPath, projectName)) as priceFile:
