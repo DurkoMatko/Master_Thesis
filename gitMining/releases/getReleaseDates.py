@@ -24,6 +24,10 @@ def main(argv):
 		#'https://api.github.com/repos/dashpay/dash'
 		#'https://api.github.com/repos/litecoin-project/litecoin'
 		#'https://api.github.com/repos/monero-project/monero'
+		#'https://api.github.com/repos/laravel/laravel'
+		#'https://api.github.com/repos/symfony/symfony'
+		#'https://api.github.com/repos/yiisoft/yii'
+		#'https://api.github.com/repos/cakephp/cakephp'
 	]
 	token = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 
