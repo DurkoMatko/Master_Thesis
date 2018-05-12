@@ -2,6 +2,12 @@
 \usepackage{wrapfig}
 \usepackage[pdftex]{graphicx}
 \usepackage{eso-pic}
+\usepackage{fixltx2e}
+\usepackage{subfig}
+
+%because of my name
+%\usepackage[slovak]{babel}
+%\usepackage[utf8]{inputenc}
 
 \graphicspath{{img/}}
 \newcommand*{\xchapter}{\stepcounter{chapter}\setcounter{section}{0}\addchap}
@@ -9,7 +15,7 @@
 
 % define medatata
 \def\MTitle{The Title}
-\def\MAuthor{Max Mustermann}
+\def\MAuthor{Martin Ďurček}
 \def\MKeywords{Keyword 1 \sep Keyword 2\sep Keyword 3\sep Keyword 4}
 \def\MOrg{Universit{\"a}t Innsbruck}
 \def\MDate{\today}
@@ -28,10 +34,16 @@
 
 \chapter{Introduction}
 \label{chp:introduction}
+\input{cross_correlation}
 
-\section{Motivation}
+
+%\section{Motivation}
 \label{sec:introduction}
 
 The content goes here\ldots
+\newpage
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{masterthesis}
 
 \end{document}

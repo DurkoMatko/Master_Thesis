@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.27)  8 MAY 2018 13:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  12 MAY 2018 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **masterthesis.tex
 (./masterthesis.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 4 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls
 Document Class: scrbook 2013/12/19 v3.12 KOMA-Script document class (book)
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -189,34 +189,74 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+LaTeX Info: Redefining \textsubscript on input line 424.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen107
+\captionmargin@=\dimen108
+\captionwidth=\dimen109
+\caption@tempdima=\dimen110
+\caption@indent=\dimen111
+\caption@parindent=\dimen112
+\caption@hangindent=\dimen113
+)
+Package caption Info: KOMA-Script document class.
+\c@ContinuedFloat=\count91
+Package caption Info: wrapfig package is loaded.
+)
+\c@KVtest=\count92
+\sf@farskip=\skip48
+\sf@captopadj=\dimen114
+\sf@capskip=\skip49
+\sf@nearskip=\skip50
+\c@subfigure=\count93
+\c@subfigure@save=\count94
+\c@lofdepth=\count95
+\c@subtable=\count96
+\c@subtable@save=\count97
+\c@lotdepth=\count98
+\sf@top=\skip51
+\sf@bottom=\skip52
+)
 (./masterthesis.aux)
 \openout1 = `masterthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count91
-\scratchdimen=\dimen107
+\scratchcounter=\count99
+\scratchdimen=\dimen115
 \scratchbox=\box28
-\nofMPsegments=\count92
-\nofMParguments=\count93
+\nofMPsegments=\count100
+\nofMParguments=\count101
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count94
-\MPscratchDim=\dimen108
-\MPnumerator=\count95
-\makeMPintoPDFobject=\count96
+\MPscratchCnt=\count102
+\MPscratchDim=\dimen116
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
 \everyMPtoPDFconversion=\toks17
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -263,6 +303,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box29
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 (./titlepage.tex <img/uni-logo-4c.pdf, id=1, 150.96701pt x 300.62312pt>
 File: img/uni-logo-4c.pdf Graphic file (type pdf)
@@ -289,6 +332,10 @@ Class scrbook Warning: Usage of deprecated font command `\bf'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrbook)              by `\normalfont \bfseries ' on input line 22.
 
+Missing character: There is no Ä in font cmbx12!
+Missing character: There is no Ž in font cmbx12!
+Missing character: There is no Ä in font cmbx12!
+Missing character: There is no  in font cmbx12!
 
 
 pdfTeX warning: pdflatex (file ./img/UniWatermark.pdf): PDF inclusion: found PD
@@ -309,14 +356,7 @@ Package pdftex.def Info: img/UniWatermark.pdf used on input line 38.
 /img/uni-logo-4c.pdf>]) [2
 
 
-] (./masterthesis.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
-)
+] (./masterthesis.toc)
 \tf@toc=\write3
 \openout3 = `masterthesis.toc'.
 
@@ -327,27 +367,58 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ] [4
 
 
-] [1
+] (./cross_correlation.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+Missing character: There is no â in font cmti10!
+Missing character: There is no € in font cmti10!
+Missing character: There is no ¦ in font cmti10!
+
+<img/NodeJS_beforeDiff.jpg, id=30, 642.4pt x 521.95pt>
+File: img/NodeJS_beforeDiff.jpg Graphic file (type jpg)
+
+<use img/NodeJS_beforeDiff.jpg>
+Package pdftex.def Info: img/NodeJS_beforeDiff.jpg used on input line 31.
+(pdftex.def)             Requested size: 170.71652pt x 138.70633pt.
+
+<img/NodeJS_afterDiff.jpg, id=31, 660.4675pt x 513.92pt>
+File: img/NodeJS_afterDiff.jpg Graphic file (type jpg)
+
+<use img/NodeJS_afterDiff.jpg>
+Package pdftex.def Info: img/NodeJS_afterDiff.jpg used on input line 33.
+(pdftex.def)             Requested size: 170.71652pt x 132.8397pt.
+) [1
+
+
+] [2 <./img/NodeJS_beforeDiff.jpg> <./img/NodeJS_afterDiff.jpg>] (./masterthesi
+s.bbl) [3
 
 
 ] (./masterthesis.aux) ) 
 Here is how much of TeX's memory you used:
- 3552 strings out of 494985
- 53981 string characters out of 6180356
- 160176 words of memory out of 5000000
- 6738 multiletter control sequences out of 15000+600000
- 9392 words of font info for 33 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 47i,14n,63p,246b,306s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 4780 strings out of 493304
+ 76233 string characters out of 6139872
+ 194908 words of memory out of 5000000
+ 8183 multiletter control sequences out of 15000+600000
+ 10095 words of font info for 35 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 50i,14n,63p,900b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-
-Output written on masterthesis.pdf (5 pages, 177056 bytes).
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on masterthesis.pdf (7 pages, 297445 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 73 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

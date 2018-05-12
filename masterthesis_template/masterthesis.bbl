@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{hyndman5forecast}
+Rob~J Hyndman, George Athanasopoulos, Slava Razbash, Drew Schmidt, Zhenyu Zhou,
+  Yousaf Khan, Christoph Bergmeir, and Earo Wang.
+\newblock forecast: Forecasting functions for time series and linear models,
+  2013.
+\newblock {\em R package version}, 5.
+
+\end{thebibliography}
