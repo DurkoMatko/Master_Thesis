@@ -6,6 +6,11 @@ NodeJS_y <- as.ts(c(-0.0194,0.1286,-0.0488,-0.0149,-0.0270,-0.0400,-0.0051,-0.03
 ccf(NodeJS_x, NodeJS_y)
 print("NodeJS")
 cor.test(NodeJS_x,NodeJS_y)
+framework_y_seasdiff <- diff(NodeJS_y, lag=frequency(NodeJS_y), differences=1)  # seasonal differencing
+framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
+framework_x_seasdiff <- diff(NodeJS_x, lag=frequency(NodeJS_x), differences=1)  # seasonal differencing
+framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
+ccf(framework_x_StationaryTS, framework_y_StationaryTS)
 
 # AngularJS
 AngularJS_x <- as.ts(c(2,4,2,2,1,2,2,2,1,1,2,3,1,1,3,4,3,4,2,2,2,2,2,2,2,1,1,4,3,4,3,6,4,3,5,7,5,5,5,4,5,6,6,2,2,2,2,3,3,7,2,1,3,1,4,2,2,3,7,9,7,11,9,7,7,4,6,5,5,6,4,10)) 
@@ -42,6 +47,11 @@ Laravel_y <- as.ts(c(0.05957741842,0.04160998777,0.0261462484,0.02707601536,0.00
 ccf(Laravel_x, Laravel_y)
 print("Laravel")
 cor.test(Laravel_x, Laravel_y)
+framework_y_seasdiff <- diff(Laravel_y, lag=frequency(Laravel_y), differences=1)  # seasonal differencing
+framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
+framework_x_seasdiff <- diff(Laravel_x, lag=frequency(Laravel_x), differences=1)  # seasonal differencing
+framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
+ccf(framework_x_StationaryTS, framework_y_StationaryTS)
 
 
 # Symfony
@@ -57,18 +67,15 @@ adfres
 
 # Seasonal Differencing
 #> 1
-AirPassengers_seasdiff <- diff(NodeJS_y, lag=frequency(NodeJS_y), differences=1)  # seasonal differencing
-plot(AirPassengers_seasdiff, type="l", main="Seasonally Differenced")  # still not stationary!
+framework_y_seasdiff <- diff(NodeJS_y, lag=frequency(NodeJS_y), differences=1)  # seasonal differencing
+#plot(framework_y_seasdiff, type="l", main="Seasonally Differenced")  # still not stationary!
 
 # Make it stationary
-ndiffs(AirPassengers_seasdiff)  # number of differences need to make it stationary
-#> 1 
-stationaryTS <- diff(AirPassengers_seasdiff, differences= 1)
-adf.test(stationaryTS)
-plot(stationaryTS, type="l", main="Differenced and Stationary")  # appears to be stationary
+framework_y_StationaryTS <- diff(framework_y_seasdiff, differences= 1)
+#plot(framework_y_StationaryTS, type="l", main="Differenced and Stationary")  # appears to be stationary
+
 
 #some plots for thesis text
 plot.ts(NodeJS_y)
-diff_NodeJS_y <- diff(NodeJS_y, differences=1)
-plot.ts(diff_NodeJS_y)
-adf.test(diff(NodeJS_y, differences=1))
+plot.ts(framework_y_StationaryTS)
+adf.test(framework_y_StationaryTS)

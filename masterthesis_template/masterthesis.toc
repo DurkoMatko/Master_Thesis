@@ -1,1 +1,6 @@
 \contentsline {chapter}{\nonumberline Introduction}{1}
+\contentsline {chapter}{\nonumberline Proposed framework}{3}
+\contentsline {chapter}{\nonumberline Social Media}{5}
+\contentsline {chapter}{\nonumberline Open-source projects}{7}
+\contentsline {chapter}{\nonumberline Sentiment analysis}{9}
+\contentsline {chapter}{\nonumberline Pairing bugs}{11}
