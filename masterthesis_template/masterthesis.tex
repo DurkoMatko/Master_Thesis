@@ -5,11 +5,21 @@
 \usepackage{fixltx2e}
 \usepackage{subfig}
 
+% bibloiography
+\usepackage{listings}
+
+%table positioning
+\usepackage{float}
+\restylefloat{table}
+
 %because of my name
 %\usepackage[slovak]{babel}
 %\usepackage[utf8]{inputenc}
 
-\graphicspath{{img/}}
+\graphicspath{
+ {img/}
+ {img/CrossCorelation/Releases/}
+ }
 \newcommand*{\xchapter}{\stepcounter{chapter}\setcounter{section}{0}\addchap}
 \renewcommand*{\thesection}{\arabic{section}}
 

@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/masterthesis_template/cross_correlation.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/CrossCorrelation/.crossCorrelationScript.kate-swp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/CrossCorrelation/crossCorrelationScript.rkward_autosave" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/masterthesis_template/img/NodeJS_afterDiff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/masterthesis_template/img/NodeJS_beforeDiff.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/CrossCorrelation/crossCorrelationScript" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" afterPath="$PROJECT_DIR$/gitMining/releases/getReleaseDates.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitMining/releases/releaseDates/cakephp.txt" afterPath="$PROJECT_DIR$/gitMining/releases/releaseDates/cakephp.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/crossCorrelation.tex" afterPath="$PROJECT_DIR$/masterthesis_template/crossCorrelation.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/CrossCorrelation/crossCorrelationScript" afterPath="$PROJECT_DIR$/sentimentAnalysis_betweenReleases/CrossCorrelation/crossCorrelationScript" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +31,8 @@
       <file leaf-file-name="SciKit_sentimentAnalysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+            <state relative-caret-position="1008">
+              <caret line="74" column="27" lean-forward="false" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -52,7 +53,7 @@
       <file leaf-file-name="pairing_Reddit_Git.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
+            <state relative-caret-position="558">
               <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -64,7 +65,7 @@
       <file leaf-file-name="nltk_similarity_Reddit.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
+            <state relative-caret-position="2070">
               <caret line="127" column="28" lean-forward="false" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
               <folding />
             </state>
@@ -98,8 +99,8 @@
       <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="113" column="26" lean-forward="false" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
+            <state relative-caret-position="310">
+              <caret line="105" column="60" lean-forward="false" selection-start-line="105" selection-start-column="60" selection-end-line="105" selection-end-column="60" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -242,10 +243,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="-4" />
-    <option name="width" value="1600" />
-    <option name="height" value="904" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1600" />
+    <option name="y" value="36" />
+    <option name="width" value="1596" />
+    <option name="height" value="812" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -265,7 +267,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,6 +300,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -465,23 +467,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
+    <frame x="1600" y="36" width="1596" height="812" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30451614" sideWeight="0.416875" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26131955" sideWeight="0.583125" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26131955" sideWeight="0.583125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858992" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.190625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19110276" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858992" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34282017" sideWeight="0.720625" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -493,6 +494,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858992" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1009,7 +1011,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
+        <state relative-caret-position="558">
           <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -1029,7 +1031,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
+        <state relative-caret-position="2070">
           <caret line="127" column="28" lean-forward="false" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
           <folding />
         </state>
@@ -1037,8 +1039,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sentimentAnalysis_betweenReleases/SciKit_sentimentAnalysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+        <state relative-caret-position="1008">
+          <caret line="74" column="27" lean-forward="false" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -1055,6 +1057,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python2.7/encodings/utf_8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/releases/requestsLibrary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1065,18 +1075,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python2.7/encodings/utf_8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="113" column="26" lean-forward="false" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
+        <state relative-caret-position="310">
+          <caret line="105" column="60" lean-forward="false" selection-start-line="105" selection-start-column="60" selection-end-line="105" selection-end-column="60" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>

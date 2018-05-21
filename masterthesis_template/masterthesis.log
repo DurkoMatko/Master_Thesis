@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  13 MAY 2018 01:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  21 MAY 2018 19:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -229,35 +229,69 @@ Package caption Info: wrapfig package is loaded.
 \sf@top=\skip51
 \sf@bottom=\skip52
 )
-(./masterthesis.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count99
+\lst@gtempboxa=\box28
+\lst@token=\toks16
+\lst@length=\count100
+\lst@currlwidth=\dimen115
+\lst@column=\count101
+\lst@pos=\count102
+\lst@lostspace=\dimen116
+\lst@width=\dimen117
+\lst@newlines=\count103
+\lst@lineno=\count104
+\lst@maxwidth=\dimen118
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count105
+\lst@skipnumbers=\count106
+\lst@framebox=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count107
+\float@exts=\toks17
+\float@box=\box30
+\@float@everytoks=\toks18
+\@floatcapt=\box31
+)
+\@float@every@table=\toks19
+ (./masterthesis.aux)
 \openout1 = `masterthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen115
-\scratchbox=\box28
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen116
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks17
+\scratchcounter=\count108
+\scratchdimen=\dimen119
+\scratchbox=\box32
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen120
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -302,10 +336,13 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box29
+\AtBeginShipoutBox=\box33
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count114
 
 (./titlepage.tex <img/uni-logo-4c.pdf, id=1, 150.96701pt x 300.62312pt>
 File: img/uni-logo-4c.pdf Graphic file (type pdf)
@@ -367,7 +404,23 @@ Package pdftex.def Info: img/UniWatermark.pdf used on input line 38.
 ] [4
 
 
-] [1
+]
+
+Class scrbook Warning: \float@addtolists detected!
+(scrbook)              Implementation of \float@addtolist became
+(scrbook)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrbook)              has been replaced by more several more flexible
+(scrbook)              features of package `tocbasic`.
+(scrbook)              Since Version 3.12 support for deprecated
+(scrbook)              \float@addtolist interface has been
+(scrbook)              restricted to only some of the KOMA-Script
+(scrbook)              features and been removed from others.
+(scrbook)              Loading of package `scrhack' may help to
+(scrbook)              avoid this warning, if you are using a
+(scrbook)              a package that still implements the
+(scrbook)              deprecated \float@addtolist interface .
+
+[1
 
 
 ] [2
@@ -376,15 +429,15 @@ Package pdftex.def Info: img/UniWatermark.pdf used on input line 38.
 ] (./proposedFramework.tex) [3] [4
 
 
-] (./socialMedia.tex) [5]
-[6
+] (./socialMedia.tex) [5] [6
 
 
-] (./ossProjects.tex) [7] [8
+]
+(./ossProjects.tex) [7] [8
 
 
 ] (./sentimentAnalysis.tex
-(./crossCorrelation.tex
+(./crossCorrelationReleases.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -394,48 +447,67 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ¦ in font cmti10!
- <img/NodeJS_beforeDiff.jpg, id=55, 642.4pt x 521.95pt>
-File: img/NodeJS_beforeDiff.jpg Graphic file (type jpg)
 
-<use img/NodeJS_beforeDiff.jpg>
-Package pdftex.def Info: img/NodeJS_beforeDiff.jpg used on input line 31.
+Underfull \vbox (badness 7203) has occurred while \output is active []
+
+ [9]
+<img/CrossCorelation/Releases/NodeJS_before.jpg, id=62, 642.4pt x 521.95pt>
+File: img/CrossCorelation/Releases/NodeJS_before.jpg Graphic file (type jpg)
+
+<use img/CrossCorelation/Releases/NodeJS_before.jpg>
+Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_before.jpg used on
+ input line 51.
 (pdftex.def)             Requested size: 170.71652pt x 138.70633pt.
 
-<img/NodeJS_afterDiff.jpg, id=56, 660.4675pt x 513.92pt>
-File: img/NodeJS_afterDiff.jpg Graphic file (type jpg)
+<img/CrossCorelation/Releases/NodeJS_after.jpg, id=63, 660.4675pt x 513.92pt>
+File: img/CrossCorelation/Releases/NodeJS_after.jpg Graphic file (type jpg)
 
-<use img/NodeJS_afterDiff.jpg>
-Package pdftex.def Info: img/NodeJS_afterDiff.jpg used on input line 33.
+<use img/CrossCorelation/Releases/NodeJS_after.jpg>
+Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_after.jpg used on 
+input line 53.
 (pdftex.def)             Requested size: 170.71652pt x 132.8397pt.
-)) [9] [10 <./img/NodeJS_beforeDiff.jpg> <./img/NodeJS_afterDiff.jpg>] (./pairi
-ngBugs.tex) [11
+)
+(./crossCorrelationCommits.tex
+Underfull \vbox (badness 1502) has occurred while \output is active []
+
+ [10 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/
+Releases/NodeJS_after.jpg>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+
+[11])) [12] (./pairingBugs.tex) [13
 
 
-] (./masterthesis.bbl [12
+] (./masterthesis.bbl [14
 
 
-])
-[13] (./masterthesis.aux) ) 
+]) [15]
+(./masterthesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4815 strings out of 493304
- 76886 string characters out of 6139872
- 194946 words of memory out of 5000000
- 8203 multiletter control sequences out of 15000+600000
+ 6088 strings out of 493304
+ 96144 string characters out of 6139872
+ 217872 words of memory out of 5000000
+ 9453 multiletter control sequences out of 15000+600000
  10095 words of font info for 35 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 50i,14n,63p,925b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on masterthesis.pdf (17 pages, 302053 bytes).
+ 50i,14n,63p,883b,1090s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on masterthesis.pdf (19 pages, 315741 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 115 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
