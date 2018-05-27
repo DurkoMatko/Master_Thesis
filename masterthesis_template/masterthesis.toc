@@ -4,4 +4,4 @@
 \contentsline {chapter}{\nonumberline Open-source projects}{7}
 \contentsline {chapter}{\nonumberline Sentiment analysis}{9}
 \contentsline {subsubsection}{\nonumberline Commits count within releases}{11}
-\contentsline {chapter}{\nonumberline Pairing bugs}{13}
+\contentsline {chapter}{\nonumberline Pairing bugs}{15}

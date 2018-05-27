@@ -1,5 +1,8 @@
 library(tseries)
 
+max_lags <- vector(mode="numeric", length=0)
+max_corrs <- vector(mode="numeric", length=0)
+
 Find_Max_CCF<- function(a,b)
 {
  d <- ccf(a, b, plot = FALSE)
@@ -7,7 +10,6 @@ Find_Max_CCF<- function(a,b)
  lag = d$lag[,,1]
  res = data.frame(cor,lag)
  res_max = res[which.max(abs(res$cor)),]
- res_max$lag
 } 
 
 # NodeJS
@@ -22,6 +24,9 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(NodeJS_x, differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
+MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
+max_lags <- c(max_lags, MaxCff$lag)
+max_corrs <- c(max_corrs, MaxCff$res)
 
 # AngularJS
 AngularJS_x <- as.ts(c(2,4,2,2,1,2,2,2,1,1,2,3,1,1,3,4,3,4,2,2,2,2,2,2,2,1,1,4,3,4,3,6,4,3,5,7,5,5,5,4,5,6,6,2,2,2,2,3,3,7,2,1,3,1,4,2,2,3,7,9,7,11,9,7,7,4,6,5,5,6,4,10)) 
@@ -105,6 +110,14 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(Symfony_x, lag=frequency(Symfony_x), differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
+
+# FINAL PLOT
+plot(Lags, Correlations, main="Highest correlation for every OSS project", pch=c(15), col = c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.5)
+grid(nx=20,ny=30)
+axis(side=1, at=c(-15:15))
+axis(side=2, at=c(-1:1))
+legend(-10,0.5, legend=c("NodeJS", "AngularJS","EmberJS","VueJS","CakePHP","Laravel","Symfony"),col=c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.2,  pch = c(15))
+
 
 
 tsdata <- ts(Symfony_y)

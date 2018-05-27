@@ -49,4 +49,11 @@ After getting the data ready I performed a stationarity test for commit counts. 
 \label{table:stationarity_table_commits}
 \end{table}
 
-I see that there are again several data series (AngularJS, EmberJS, VueJS, Laravel + NodeJS because of unstationarity of sentiment data) which are not stationary so exactly as before with release counts, I had to transform the data. After that, Pearson's cross correlation was calculated.
+I see that there are again several data series (AngularJS, EmberJS, VueJS, Laravel + NodeJS because of unstationarity of sentiment data) which are not stationary so exactly as before with release counts, I had to transform the data. After that, Pearson's cross correlation was calculated. Results for all 7 OSS projects can be seen in Figure \ref{fig:highestCorrelationsPlot}
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=6cm]{highestCorrelationsPlot.jpg}
+    \caption{Highest correlations for every OSS project}%
+    \label{fig:highestCorrelationsPlot}%
+\end{figure}

@@ -44,18 +44,20 @@ To determine whether my data are stationary, I've used the Dickey-Fuller test me
 \label{table:stationarity_table_release_count}
 \end{table}
 
-As we can see, p-values are always higher than 0.05 what indicates non-stationarity of the data, therefore I can't calculate the cross-correlation on them in this state. To transform non-stationary data into stationary, 2 approaches can be used. These are differencing and transforming.  I've taken data series and differenced the values in listing \ref{lst:differencing}. I've executed both, seasonal differencing and stationary differencing although seasonal probably was not needed because the data should not be dependant on the season.
+As we can see, p-values are always higher than 0.05 what indicates non-stationarity of the data, therefore I can't calculate the cross-correlation on them in this state. To transform non-stationary data into stationary, 2 approaches can be used. These are differencing and transforming.  I've taken data series and differenced the values. I've executed both, seasonal differencing and stationary differencing although seasonal probably was not needed because the data should not be dependant on the season.
 
-\begin{lstlisting}[caption={Used differencing method in R},label={lst:differencing},language=R]
+
+\begin{lstlisting}
 Differencing <- function(x,y)
 {
- framework_x_seasdiff <- diff(x,differences=1)  # seasonal differencing
- framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
- framework_y_seasdiff <- diff(y, differences=1)
- framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
- return(list(framework_x_Stationary,framework_y_Stationary))
+framework_x_seasdiff <- diff(x, lag=frequency(x), differences=1)  # seasonal differencing
+framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
+framework_y_seasdiff <- diff(y, lag=frequency(y), differences=1)  # seasonal differencing
+framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
+return(list(framework_x_Stationary,framework_y_Stationary))
 }
 \end{lstlisting}
+
 New differenced values do appear to be stationary in mean and variance, as the level and the variance of the series stays roughly constant over time. Sentiment for NodeJS before and after differencing can be seen in Figure \ref{fig:NodeJS_Sentiment_before_after}
 
 \begin{figure}[H]%
@@ -67,11 +69,4 @@ New differenced values do appear to be stationary in mean and variance, as the l
     \label{fig:NodeJS_Sentiment_before_after}%
 \end{figure}
 
-Same procedure needed to be done with the "number of releases per month" data and afterwards. Then, cross-correlation could be executed. For this task I've used ccf method in R which implements Pearson's correlation calculation method. Results for all 7 OSS projects can be seen in Figure \ref{fig:highestCorrelationsPlot}
-
-\begin{figure}[H]%
-    \centering
-	\includegraphics[width=6cm]{highestCorrelationsPlot.jpg}
-    \caption{Highest correlations for every OSS project}%
-    \label{fig:highestCorrelationsPlot}%
-\end{figure}
+Same procedure needed to be done with the "number of releases per month" data and afterwards, cross-correlation could be executed. For this task I've used ccf method in R which implements Pearson's correlation calculation method.
