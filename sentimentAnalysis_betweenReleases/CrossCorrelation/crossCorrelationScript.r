@@ -1,7 +1,9 @@
 library(tseries)
 
-max_lags <- vector(mode="numeric", length=0)
-max_corrs <- vector(mode="numeric", length=0)
+Lags <- vector(mode="numeric", length=0)
+Correlations <- vector(mode="numeric", length=0)
+Lags_nonStat <- vector(mode="numeric", length=0)
+Correlations_nonStat <- vector(mode="numeric", length=0)
 
 Find_Max_CCF<- function(a,b)
 {
@@ -9,8 +11,10 @@ Find_Max_CCF<- function(a,b)
  cor = d$acf[,,1]
  lag = d$lag[,,1]
  res = data.frame(cor,lag)
- res_max = res[which.max(abs(res$cor)),]
-} 
+ minIndex = which.max(abs(res$cor))
+ retVal <- c(res$cor[minIndex], res$lag[minIndex])
+ #res_max = res[which.max(abs(res$cor)),]
+}
 
 # NodeJS
 NodeJS_x <- as.ts(c(5,1,6,6,2,5,4,2,4,3,4,4,2,3,3,2,3,2,2,5,3,3,3,1,1,4,5,4,2,4,3,5,6,5,3,3,7,5,6,4,4,1,3,5,5,7,5,5,6,4,4,4,3,2,2,3,1,1,3,2,2,1,2,1,2,11,6,10,5,8,6,15,4,10,7,6,8,5,10,14,7,7,7,2,3,5,8,3,5,6,5,8,3,4,5,6,3)) 
@@ -25,8 +29,11 @@ framework_x_seasdiff <- diff(NodeJS_x, differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
-max_lags <- c(max_lags, MaxCff$lag)
-max_corrs <- c(max_corrs, MaxCff$res)
+Lags <- c(Lags, MaxCff[2])
+Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(NodeJS_x, NodeJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # AngularJS
 AngularJS_x <- as.ts(c(2,4,2,2,1,2,2,2,1,1,2,3,1,1,3,4,3,4,2,2,2,2,2,2,2,1,1,4,3,4,3,6,4,3,5,7,5,5,5,4,5,6,6,2,2,2,2,3,3,7,2,1,3,1,4,2,2,3,7,9,7,11,9,7,7,4,6,5,5,6,4,10)) 
@@ -40,7 +47,12 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(AngularJS_x, lag=frequency(AngularJS_x), differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
-
+MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
+Lags <- c(Lags, MaxCff[2])
+Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(AngularJS_x, AngularJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # EmberJS
 EmberJS_x <- as.ts(c(4,1,1,1,2,2,1,1,2,1,1,1,2,2,6,2,3,7,4,3,9,7,3,4,2,6,3,2,5,4,5,1,4,4,5,4,5,7,8,4,3,5,1,10,5,6,7,2,5,6,9,7,6,6,4,6,3,4,5,5,5,3,10,2)) 
@@ -54,7 +66,12 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(EmberJS_x, lag=frequency(EmberJS_x), differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
-
+MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
+Lags <- c(Lags, MaxCff[2])
+Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(EmberJS_x, EmberJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # VueJS
 VueJS_x <- as.ts(c(5,11,6,1,1,1,1,2,1,4,1,3,6,11,9,7,14,14,7,6,6,2,6,2,6,12,5,7,10,2,9,5,2,4,5,2,3,1,3,2,3,1)) 
@@ -68,7 +85,12 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(VueJS_x, lag=frequency(VueJS_x), differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
-
+MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
+Lags <- c(Lags, MaxCff[2])
+Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(VueJS_x, VueJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # CakePhp
 CakePhp_x <- as.ts(c(1,1,1,1,4,2,3,3,1,1,1,1,1,1,2,1,1,2,3,2,4,4,3,2,2,2,3,2,2,1,4,1,2,2,4,1,1,6,1,2,4,5,1,1,1,1,2,3,6,4,3,3,1,2,2,3,3,2,2,2,3,7,4,6,9,4,5,5,1,2,4,6,1,1,1,5,1,3,1,1,1,2,1,1,1,2,1,1)) 
@@ -82,7 +104,12 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(CakePhp_x, lag=frequency(CakePhp_x), differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
-
+MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
+Lags <- c(Lags, MaxCff[2])
+Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(CakePhp_x, CakePhp_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # Laravel
 Laravel_x <- as.ts(c(1,4,6,6,4,1,3,4,1,1,1,1,2,2,2,3,4,5,3,2,1,2,3,3,6,4,3,2,1,2,2,4,3,2,4,4,3,7,7,7,10,4,4,5,2,2,5,9,3,1,1,2,6,2,3,1,4,1,3,4,2,1,2,3,1,1,1,1,2,1))
@@ -95,8 +122,12 @@ framework_y_seasdiff <- diff(Laravel_y, lag=frequency(Laravel_y), differences=1)
 framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(Laravel_x, lag=frequency(Laravel_x), differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
-ccf(framework_x_StationaryTS, framework_y_StationaryTS)
-
+MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
+Lags <- c(Lags, MaxCff[2])
+Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(Laravel_x, Laravel_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # Symfony
 Symfony_x <- as.ts(c(1,1,2,5,4,1,2,2,1,2,1,1,2,1,1,3,2,2,4,2,1,3,1,1,5,2,6,3,6,3,3,2,3,6,7,6,1,6,2,5,3,5,2,2,4,9,1,5,4,2,5,3,4,3,3,2,5,4,2,4,4,2,2,2,2,2,2,4,2,3,2,1,1))
@@ -110,14 +141,22 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 framework_x_seasdiff <- diff(Symfony_x, lag=frequency(Symfony_x), differences=1)  # seasonal differencing
 framework_x_Stationary <- diff(framework_x_seasdiff, differences= 1)
 ccf(framework_x_Stationary, framework_y_Stationary)
+MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
+Lags <- c(Lags, MaxCff[2])
+Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(Symfony_x, Symfony_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # FINAL PLOT
-plot(Lags, Correlations, main="Highest correlation for every OSS project", pch=c(15), col = c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.5)
+plot(Lags, Correlations, main="Highest correlation for every OSS project", pch=c(15), col = c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.5, ylim=c(-0.6,0.6), xlim=c(-15,20))
 grid(nx=20,ny=30)
-axis(side=1, at=c(-15:15))
-axis(side=2, at=c(-1:1))
-legend(-10,0.5, legend=c("NodeJS", "AngularJS","EmberJS","VueJS","CakePHP","Laravel","Symfony"),col=c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.2,  pch = c(15))
+legend(-15,-0.05, legend=c("NodeJS", "AngularJS","EmberJS","VueJS","CakePHP","Laravel","Symfony"),col=c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.2,  pch = c(15))
 
+# FINAL PLOT NONSTAT
+plot(Lags_nonStat, Correlations_nonStat, main="Highest correlation for every OSS project", pch=c(15), col = c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.5,ylim=c(-0.6,0.6), xlim=c(-15,20))
+grid(nx=20,ny=30)
+legend(-15,-0.05, legend=c("NodeJS", "AngularJS","EmberJS","VueJS","CakePHP","Laravel","Symfony"),col=c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.2,  pch = c(15))
 
 
 tsdata <- ts(Symfony_y)

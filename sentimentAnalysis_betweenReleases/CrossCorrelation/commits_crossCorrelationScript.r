@@ -2,6 +2,8 @@ library(tseries)
 
 Lags <- vector(mode="numeric", length=0)
 Correlations <- vector(mode="numeric", length=0)
+Lags_nonStat <- vector(mode="numeric", length=0)
+Correlations_nonStat <- vector(mode="numeric", length=0)
 
 Find_Max_CCF<- function(a,b)
 {
@@ -39,6 +41,9 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
 Lags <- c(Lags, MaxCff[2])
 Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(NodeJS_x, NodeJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # AngularJS
 AngularJS_x <- as.ts(c(33,150,31,97,47,78,46,158,90,0,106,105,33,181,240,87,49,69,108,135,87,69,82,179,375,488,255,673,165,183,100,396,113,149,131,241,293,182,296,134,145,121,106,78,96,78,67,53,112,129,112,64,156,32,96,0,0,0,0,571,70,41,0,0,0,0)) 
@@ -54,6 +59,9 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
 Lags <- c(Lags, MaxCff[2])
 Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(AngularJS_x, AngularJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # EmberJS
 EmberJS_x <- as.ts(c(275,200,65,252,81,192,688,275,447,230,273,187,338,138,5,505,187,275,175,1,362,272,0,256,0,433,494,0,268,459,717,0,858,0,342,0,582,0,0,798,0,372,0,425,157,0,759,0,350,57,718,0,834,99,164,0,209,0,193,180,353,0,294,0)) 
@@ -69,6 +77,9 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
 Lags <- c(Lags, MaxCff[2])
 Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(EmberJS_x, EmberJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # VueJS
 VueJS_x <- as.ts(c(0,0,0,0,309,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,768,146,145,95,53,158,140,50,144,87,126,34,0,164,87,103,33)) 
@@ -84,6 +95,9 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
 Lags <- c(Lags, MaxCff[2])
 Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(VueJS_x, VueJS_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # CakePhp
 CakePhp_x <- as.ts(c(0,41,115,44,2028,897,1684,621,79,17,56,0,80,59,30,1832,62,49,3076,480,3701,778,177,133,436,661,468,454,533,133,471,116,453,683,609,2,92,136,51,94,410,795,81,158,104,63,2964,1678,618,1541,5450,606,572,935,257,1044,262,8073,428,4927,234,317,247,124,1033,415,219,139,132,711,200,259,106,155,151,686,673,223,95,110,539,1202,671,155,14,125,180,768,1069,117,75)) 
@@ -99,6 +113,9 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
 Lags <- c(Lags, MaxCff[2])
 Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(CakePhp_x, CakePhp_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # Laravel
 Laravel_x <- as.ts(c(0,275,256,25,436,56,350,145,61,19,192,18,64,188,15,3,6,5,99,7,33,48,18,413,44,154,8,33,65,27,54,66,244,33,5,146,22,33,56,10,20,84,54,25,72,11))
@@ -114,6 +131,9 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
 Lags <- c(Lags, MaxCff[2])
 Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(Laravel_x, Laravel_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 
 # Symfony
@@ -130,16 +150,20 @@ framework_y_Stationary <- diff(framework_y_seasdiff, differences= 1)
 MaxCff <- Find_Max_CCF(framework_x_Stationary, framework_y_Stationary)
 Lags <- c(Lags, MaxCff[2])
 Correlations <- c(Correlations, MaxCff[1])
+MaxCff <- Find_Max_CCF(Symfony_x, Symfony_y)
+Lags_nonStat <- c(Lags_nonStat, MaxCff[2])
+Correlations_nonStat <- c(Correlations_nonStat, MaxCff[1])
 
 # FINAL PLOT
-plot(Lags, Correlations, main="Highest correlation for every OSS project", pch=c(15), col = c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.5)
+plot(Lags, Correlations, main="Highest correlation for every OSS project", pch=c(15), col = c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.5, ylim=c(-0.6,0.6), xlim=c(-15,20))
 grid(nx=20,ny=30)
-axis(side=1, at=c(-15:15))
-axis(side=2, at=c(-1:1))
-legend(-10,0.5, legend=c("NodeJS", "AngularJS","EmberJS","VueJS","CakePHP","Laravel","Symfony"),col=c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.2,  pch = c(15))
+legend(-15,0.6, legend=c("NodeJS", "AngularJS","EmberJS","VueJS","CakePHP","Laravel","Symfony"),col=c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.2,  pch = c(15))
 
-grid(NA, 5, lwd = 2) # grid only in y-direction
-grid(nx = NULL, ny = nx, col = "lightgray", lty = "dotted", lwd = par("lwd"), equilogs = TRUE)
+# FINAL PLOT NONSTAT
+plot(Lags_nonStat, Correlations_nonStat, main="Highest correlation for every OSS project", pch=c(15), col = c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.5,ylim=c(-0.6,0.6), xlim=c(-15,20))
+grid(nx=20,ny=30)
+legend(11,0.6, legend=c("NodeJS", "AngularJS","EmberJS","VueJS","CakePHP","Laravel","Symfony"),col=c("brown","red", "green","blue", "orange", "purple", "black"), cex=1.2,  pch = c(15))
+
 
 tsdata <- ts(Symfony_y)
 adfres <- adf.test(tsdata)

@@ -67,11 +67,22 @@ New differenced values do appear to be stationary in mean and variance, as the l
     \label{fig:NodeJS_Sentiment_before_after}%
 \end{figure}
 
-Same procedure needed to be done with the "number of releases per month" data and afterwards. Then, cross-correlation could be executed. For this task I've used ccf method in R which implements Pearson's correlation calculation method. Results for all 7 OSS projects can be seen in Figure \ref{fig:highestCorrelationsPlot}
+Same procedure needed to be done with the "number of releases per month" data and afterwards. Then, cross-correlation could be executed. For this task I've used ccf method in R which implements Pearson's correlation calculation method. Results for all 7 OSS projects can be seen in Figure \ref{fig:highestCorrelationsPlotReleases}
 
 \begin{figure}[H]%
     \centering
-	\includegraphics[width=6cm]{highestCorrelationsPlot.jpg}
+	\includegraphics[width=6cm]{highestCorrelationsPlotReleases.jpg}
     \caption{Highest correlations for every OSS project}%
-    \label{fig:highestCorrelationsPlot}%
+    \label{fig:highestCorrelationsPlotReleases}%
 \end{figure}
+
+\paragraph{Results interpretation:}
+
+As we can there is no general pattern. Maximal project correlations happen to occupy 3 of 4 possible quadrants. Each quadrant represents a different relationship between number of releases and sentiment change.
+
+\begin{itemize}
+  \item \textbf{I. Quadrant}(Positive correlation + positive lag) - Increase of release count increases a sentiment
+  \item \textbf{II. Quadrant}(Positive correlation + negative lag) - Increase of sentiment increases a release count
+  \item \textbf{III. Quadrant}(Negative correlation + positive lag) - Increase of release count decreases a sentiment
+  \item \textbf{IV. Quadrant}(Negative correlation + Negative lag) - Increase of sentiment decreases a release count
+\end{itemize}

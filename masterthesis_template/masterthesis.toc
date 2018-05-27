@@ -3,5 +3,7 @@
 \contentsline {chapter}{\nonumberline Social Media}{5}
 \contentsline {chapter}{\nonumberline Open-source projects}{7}
 \contentsline {chapter}{\nonumberline Sentiment analysis}{9}
-\contentsline {subsubsection}{\nonumberline Commits count within releases}{11}
+\contentsline {subsubsection}{\nonumberline Cross-correlation between releases and sentiment change}{9}
+\contentsline {paragraph}{\nonumberline Results interpretation:}{11}
+\contentsline {subsubsection}{\nonumberline Commits count within releases}{12}
 \contentsline {chapter}{\nonumberline Pairing bugs}{15}
