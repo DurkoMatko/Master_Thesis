@@ -1,1 +1,39 @@
-socialMedia
+Social media is a term referring to online communication channels meant for social interaction, content-sharing and collaboration. Over time, this term became widely used, its exact definition somewhat blurred and if really wanted, most of the today's websites could be labeled as social media. In context of this thesis,  I refer to social media in its “original” meaning. To be considered a social media platform, most of following features usually need to be fulfilled:
+
+\begin{itemize}
+  \item \textbf{User accounts} - platform allows users to create and run their own accounts that they can log into. These are online representations of their owners and serve as a too to reach and interact with other users.
+  \item \textbf{Profile pages} - pages which represent an individual, might it be a real person, group of people or company. It should contain several personal information about the user like bio, profile picture or other personal data.
+  \item \textbf{Friends, followers, groups} - list of accounts whose owners have some form of a relationship  or common interest with the user.
+  \item \textbf{News feeds} - Area where all new content from other connected entities appears.
+\end{itemize}
+
+Even if a platform fulfills these requirements, it doesn't necessarily have to be classified as social networking platform as pointed out in Haewoon Kwak's paper\cite{kwak2010twitter}.
+
+\subsubsection{Potential of social media data mining}
+Social media are changing the way that information is passed across societies and around the world.\cite{mayfield2008social}
+Among many other potentials of social media, there is a huge amount of data generated on daily basis. These data carry lots of real world data and if used correctly, can offer deep insight into almost any area. The process of analyzing these data and searching for repetitive reoccurring patterns with goal of predicting future trends is also called social media mining. Successful mining can not only save money and time spent on getting the data in more traditional way like surveys but can also provide crucial factor in planning or decision making of businesses. Although internet is one big hole and contains lot of false facts and desinformation, there is indication that social networks tend to favour
+valid information over rumours.\cite{castillo2011information} 
+
+
+\subsubsection{Getting data}
+As you will have a chance to see, big social networking platforms started realizing that data they own are a “golden egg” and getting raw full data from them got much more difficult than it was in the early years of social media age.
+
+\paragraph{Twitter:}
+To get the data from Twitter,  I first tried to use the Twitter API but I very early got to know that Twitter is well aware of the worth of their data. They don't provide tweets older than 2 weeks what basically made their API inapplicable for my purposes. The only way how to get historical Twitter data is actually:
+
+\begin{itemize}
+  \item collect them over time
+  \item buy them from Twitter
+  \item buy them from other companies who collect Twitter dumps over time
+\end{itemize}
+
+Therefore to obtain my data, I had to use the Twitter Search Api. To do this I used the project (https://github.com/Jefferson-Henrique/GetOldTweets-python) which simplifies work with Search Api to several basic command line calls. Using this technique, I managed to get the significant amount of data needed for all my tasks in this thesis.
+
+\paragraph{Facebook:}
+I originally planned to use Facebook statuses as a big part of analyzed data. Sadly, this was not possible since Facebook Graph API doesn't allow post searching feature. There was this option till early 2014 with Facebook API 1.x versions but since Graph API has been introduced, there's no way how to make Facebook application send requests to 1.x versions of API. At first, application created before 2014 were still working on top of the early Api versions and it has been maintained but over time, all the applications were migrated to 2.x Api versions. There's currently to public way how to freely get the Facebook posts data. The other types provided by the Api are for example user, page, event, group or place.
+
+\paragraph{Reddit:}
+Despite that reddit doesn't offer big amount of user data in OSS projects subreddits, I thought getting and working with Reddit could increase the variety of users and the data which I will be working with. To get the data I used Python PRAW library used to directly work with Reddit Api. 
+
+\paragraph{Stack overflow:}
+To extract the questions about the OSS projects of my interest I once again used provided Api.Python module called StackApi offers a way how to communicate with various Stack Exchange Api endpoints - answers, badges, comments, posts, questions, tags and users.  Stack Exchange is limited on 30 requests per second what caused the process of getting the data to take much more time since program execution needed to be regularly stopped to avoid the SO “throttle violation” and from it resulting penalization. At first I intended to use the type “posts” which returns both, questions and answers, but later I've realized how huge amount of data SO contains.  The average count of questions using one of the examined projects names as a tag was around 150 000. Because of this, I had to find out how to filter just the questions with higher probability of talking about bugs. Since the questions on SO do not have any labels which I could use to my advantage like I did with Git issues, I decided to keep just the questions which mention a word “bug”. This still left me with considerable big dataset of X questions to work with. Out of all properties of questions retrieved from questions endpoint, I decided to store and further work just with several of them – mainly its title and body since these two provide most of the semantic meaning.

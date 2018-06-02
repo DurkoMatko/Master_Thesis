@@ -1,4 +1,16 @@
-sentimentAnalysis
+Sentiment analysis and opinion mining is the field of study that analyzes people's opinions, sentiments, evaluations, attitudes, and emotions from written language.\cite{liu2012sentiment} It's also known as emotion AI or opinion mining. The main and basic task of this field is to correctly classify the polarity of a particular text and evaluate whether is it positive, negative or in some cases neutral. It can be used in almost any situation where data need to be analyzed for its sentiment aspect - for example product reviews, online discussions or social media content.
+
+Sentiment analysis can be divided into several standalone steps:
+\begin{enumerate}
+  \item \textbf{Data collection} - involves all the substeps required to gather user-generated content from any source. Surveys, blogs, various forums and social media. These all contains huge amount of real people from real world with real experiences. These data are always expressed completely different - using slang, shortcuts, internet language or generally just being used in different context.
+  \item \textbf{Data preprocessing} - this step represents cleaning the data. Data preprocessing can often have a significant impact on generalization performance of a supervised ML algorithms \cite{kotsiantis2006data} and if there is much irrelevant information and data are unreliable, then knowledge discovery during the training phase is more difficult. It removes irrelevant content which could potentially lead to bad and incorrect results. This is a very delicate step because it manipulates the raw data and if not done correctly, it can easily change results.
+  \item \textbf{Sentiment detection} - this step basically stands for training of the classifier. Subjective feelings and expressions are highlighted, emphasized and retained while objective information like facts are discarded and ignored. 
+  \item \textbf{Sentiment classification} - subjective expressions are classified.
+    \item \textbf{Output interpretation} - graphical presentation of obtained results. Time and sentiment can be analyzed to construct various charts, graphs, timelines and many other metrices.
+\end{enumerate}
+
+\subsubsection{History}
+
 
 \subsubsection{Cross-correlation between releases and sentiment change}
 \input{crossCorrelationReleases}

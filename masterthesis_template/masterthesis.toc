@@ -1,9 +1,16 @@
 \contentsline {chapter}{\nonumberline Introduction}{1}
 \contentsline {chapter}{\nonumberline Proposed framework}{3}
 \contentsline {chapter}{\nonumberline Social Media}{5}
-\contentsline {chapter}{\nonumberline Open-source projects}{7}
-\contentsline {chapter}{\nonumberline Sentiment analysis}{9}
-\contentsline {subsubsection}{\nonumberline Cross-correlation between releases and sentiment change}{9}
-\contentsline {paragraph}{\nonumberline Results interpretation:}{11}
-\contentsline {subsubsection}{\nonumberline Commits count within releases}{12}
-\contentsline {chapter}{\nonumberline Pairing bugs}{15}
+\contentsline {subsubsection}{\nonumberline Potential of social media data mining}{5}
+\contentsline {subsubsection}{\nonumberline Getting data}{6}
+\contentsline {paragraph}{\nonumberline Twitter:}{6}
+\contentsline {paragraph}{\nonumberline Facebook:}{6}
+\contentsline {paragraph}{\nonumberline Reddit:}{6}
+\contentsline {paragraph}{\nonumberline Stack overflow:}{6}
+\contentsline {chapter}{\nonumberline Open-source projects}{9}
+\contentsline {chapter}{\nonumberline Sentiment analysis}{11}
+\contentsline {subsubsection}{\nonumberline History}{12}
+\contentsline {subsubsection}{\nonumberline Cross-correlation between releases and sentiment change}{12}
+\contentsline {paragraph}{\nonumberline Results interpretation:}{14}
+\contentsline {subsubsection}{\nonumberline Commits count within releases}{15}
+\contentsline {chapter}{\nonumberline Pairing bugs}{19}

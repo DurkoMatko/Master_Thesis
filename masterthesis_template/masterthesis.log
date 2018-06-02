@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  27 MAY 2018 18:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  2 JUN 2018 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -429,15 +429,65 @@ Class scrbook Warning: \float@addtolists detected!
 ] (./proposedFramework.tex) [3] [4
 
 
-] (./socialMedia.tex) [5] [6
+] (./socialMedia.tex
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [5]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+) [6] [7] [8
 
 
 ]
-(./ossProjects.tex) [7] [8
+(./ossProjects.tex) [9] [10
 
 
 ] (./sentimentAnalysis.tex
-(./crossCorrelationReleases.tex
+
+LaTeX Warning: Citation `liu2012sentiment' on page 11 undefined on input line 1
+.
+
+
+LaTeX Warning: Citation `kotsiantis2006data' on page 11 undefined on input line
+ 6.
+
+(./crossCorrelationReleases.tex [11]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -447,10 +497,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ¶ in font cmti10!
-
-Underfull \vbox (badness 1168) has occurred while \output is active []
-
- [9]
+ [12]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
@@ -463,7 +510,7 @@ File: lstlang3.sty 2013/08/26 1.5b listings language file
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 50.
 
-<img/CrossCorelation/Releases/NodeJS_before.jpg, id=62, 642.4pt x 521.95pt>
+<img/CrossCorelation/Releases/NodeJS_before.jpg, id=73, 642.4pt x 521.95pt>
 File: img/CrossCorelation/Releases/NodeJS_before.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_before.jpg>
@@ -471,7 +518,7 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_before.jpg used on
  input line 63.
 (pdftex.def)             Requested size: 170.71652pt x 138.70633pt.
 
-<img/CrossCorelation/Releases/NodeJS_after.jpg, id=63, 660.4675pt x 513.92pt>
+<img/CrossCorelation/Releases/NodeJS_after.jpg, id=74, 660.4675pt x 513.92pt>
 File: img/CrossCorelation/Releases/NodeJS_after.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_after.jpg>
@@ -479,10 +526,7 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_after.jpg used on
 input line 65.
 (pdftex.def)             Requested size: 170.71652pt x 132.8397pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=69, 649.4
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=75, 649.4
 2625pt x 640.3925pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg Graphic 
 file (type jpg)
@@ -491,18 +535,27 @@ file (type jpg)
 Package pdftex.def Info: img/CrossCorelation/Releases/highestCorrelationsPlotRe
 leases.jpg used on input line 74.
 (pdftex.def)             Requested size: 170.71652pt x 168.33517pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 84.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/
+Releases/NodeJS_after.jpg>]
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg, id=8
+2, 657.45625pt x 637.38126pt>
+File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg 
+Graphic file (type jpg)
+
+<use img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg>
+Package pdftex.def Info: img/CrossCorelation/Releases/highestCorrelationsPlotRe
+leases_nonStat.jpg used on input line 94.
+(pdftex.def)             Requested size: 170.71652pt x 165.50125pt.
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
- [11 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/
-Releases/NodeJS_after.jpg> <./img/CrossCorelation/Releases/highestCorrelationsP
-lotReleases.jpg>])
-(./crossCorrelationCommits.tex [12]
-<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=79, 649.42625pt x 
+Underfull \vbox (badness 4181) has occurred while \output is active []
+
+ [14 <./img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg>]
+(./crossCorrelationCommits.tex [15 <./img/CrossCorelation/Releases/highestCorre
+lationsPlotReleases_nonStat.jpg>]
+<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=90, 649.42625pt x 
 631.35875pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot.jpg Graphic file (typ
 e jpg)
@@ -510,39 +563,60 @@ e jpg)
 Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot.jp
 g used on input line 56.
 (pdftex.def)             Requested size: 170.71652pt x 165.96054pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=94, 658.46
+pt x 635.37375pt>
+File: img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg Graphic f
+ile (type jpg)
+
+<use img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg>
+Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot_no
+nStat.jpg used on input line 65.
+(pdftex.def)             Requested size: 170.71652pt x 164.7279pt.
 ))
-[13 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg>] [14
+[17 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg> <./img/CrossCor
+elation/Commits/highestCorrelationsPlot_nonStat.jpg>] [18
 
 
-]
-(./pairingBugs.tex) [15] (./masterthesis.bbl [16
+] (./pairingBugs.tex)
+[19] (./masterthesis.bbl [20
 
 
-]) [17] (./masterthesis.aux) ) 
+]) [21] (./masterthesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6943 strings out of 493304
- 106583 string characters out of 6139872
- 267490 words of memory out of 5000000
- 10293 multiletter control sequences out of 15000+600000
+ 6960 strings out of 493304
+ 107421 string characters out of 6139872
+ 264266 words of memory out of 5000000
+ 10308 multiletter control sequences out of 15000+600000
  10430 words of font info for 37 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 50i,14n,63p,789b,1724s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt9.pfb>
-Output written on masterthesis.pdf (21 pages, 508078 bytes).
+ 50i,14n,63p,1415b,1724s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.
+pfb>
+Output written on masterthesis.pdf (25 pages, 693839 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 150 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
