@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{kwak2010twitter}
 Haewoon Kwak, Changhyun Lee, Hosung Park, and Sue Moon.
@@ -17,11 +17,68 @@ Carlos Castillo, Marcelo Mendoza, and Barbara Poblete.
 \newblock In {\em Proceedings of the 20th international conference on World
   wide web}, pages 675--684. ACM, 2011.
 
+\bibitem{mantyla2018evolution}
+Mika~V M{\"a}ntyl{\"a}, Daniel Graziotin, and Miikka Kuutila.
+\newblock The evolution of sentiment analysis—a review of research topics,
+  venues, and top cited papers.
+\newblock {\em Computer Science Review}, 27:16--32, 2018.
+
+\bibitem{alexander2002working}
+Shaosong~Ou Alexander~Hars.
+\newblock Working for free? motivations for participating in open-source
+  projects.
+\newblock {\em International Journal of Electronic Commerce}, 6(3):25--39,
+  2002.
+
+\bibitem{lerner2001open}
+Josh Lerner and Jean Tirole.
+\newblock The open source movement: Key research questions.
+\newblock {\em European economic review}, 45(4-6):819--826, 2001.
+
+\bibitem{liu2012sentiment}
+Bing Liu.
+\newblock Sentiment analysis and opinion mining.
+\newblock {\em Synthesis lectures on human language technologies}, 5(1):1--167,
+  2012.
+
+\bibitem{kotsiantis2006data}
+SB~Kotsiantis, D~Kanellopoulos, and PE~Pintelas.
+\newblock Data preprocessing for supervised leaning.
+\newblock {\em International Journal of Computer Science}, 1(2):111--117, 2006.
+
+\bibitem{richmond1998spies}
+JA~Richmond.
+\newblock Spies in ancient greece.
+\newblock {\em Greece \& Rome}, 45(1):1--18, 1998.
+
+\bibitem{go2009twitter}
+Alec Go, Richa Bhayani, and Lei Huang.
+\newblock Twitter sentiment classification using distant supervision.
+\newblock {\em CS224N Project Report, Stanford}, 1(12), 2009.
+
+\bibitem{warriner2013norms}
+Amy~Beth Warriner, Victor Kuperman, and Marc Brysbaert.
+\newblock Norms of valence, arousal, and dominance for 13,915 english lemmas.
+\newblock {\em Behavior research methods}, 45(4):1191--1207, 2013.
+
 \bibitem{hyndman5forecast}
 Rob~J Hyndman, George Athanasopoulos, Slava Razbash, Drew Schmidt, Zhenyu Zhou,
   Yousaf Khan, Christoph Bergmeir, and Earo Wang.
 \newblock forecast: Forecasting functions for time series and linear models,
   2013.
 \newblock {\em R package version}, 5.
+
+\bibitem{feller2002understanding}
+Joseph Feller, Brian Fitzgerald, et~al.
+\newblock {\em Understanding open source software development}.
+\newblock Addison-Wesley London, 2002.
+
+\bibitem{pang2004sentimental}
+Bo~Pang and Lillian Lee.
+\newblock A sentimental education: Sentiment analysis using subjectivity
+  summarization based on minimum cuts.
+\newblock In {\em Proceedings of the 42nd annual meeting on Association for
+  Computational Linguistics}, page 271. Association for Computational
+  Linguistics, 2004.
 
 \end{thebibliography}

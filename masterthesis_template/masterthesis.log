@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  2 JUN 2018 12:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  9 JUN 2018 00:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -266,18 +266,18 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
  (./masterthesis.aux)
 \openout1 = `masterthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -450,6 +450,20 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
  [5]
+<img/SentimentAnalysis/papersWordcloudHistory.jpg, id=48, 251.94125pt x 269.005
+pt>
+File: img/SentimentAnalysis/papersWordcloudHistory.jpg Graphic file (type jpg)
+ <use img/SentimentAnalysis/papersWordcloudHistory.jpg>
+Package pdftex.def Info: img/SentimentAnalysis/papersWordcloudHistory.jpg used 
+on input line 26.
+(pdftex.def)             Requested size: 227.62204pt x 243.03812pt.
+ [6 <./img/SentimentAnalysis/papersWordcloudHistory.jpg>]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 64.
+ [7] [8]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -471,33 +485,50 @@ Missing character: There is no ù in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
-) [6] [7] [8
+)
+[9] [10
+
+
+] (./ossProjects.tex [11]) [12] (./sentimentAnalysis.tex
+(./sentimentAnalysisHistory.tex [13
 
 
 ]
-(./ossProjects.tex) [9] [10
-
-
-] (./sentimentAnalysis.tex
-
-LaTeX Warning: Citation `liu2012sentiment' on page 11 undefined on input line 1
-.
-
-
-LaTeX Warning: Citation `kotsiantis2006data' on page 11 undefined on input line
- 6.
-
-(./crossCorrelationReleases.tex [11]
+<img/SentimentAnalysis/papersCountHistory.jpg, id=77, 452.69125pt x 296.10625pt
+>
+File: img/SentimentAnalysis/papersCountHistory.jpg Graphic file (type jpg)
+ <use img/SentimentAnalysis/papersCountHistory.jpg>
+Package pdftex.def Info: img/SentimentAnalysis/papersCountHistory.jpg used on i
+nput line 7.
+(pdftex.def)             Requested size: 227.62204pt x 148.88863pt.
+) (./trainingDatasets.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 3.
+(Font)              <10.95> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+
+[14 <./img/SentimentAnalysis/papersCountHistory.jpg>]
+Overfull \hbox (55.50298pt too wide) in paragraph at lines 7--7
+[][]\OT1/cmr/m/n/9 https://github.com/woodrad/Twitter-Sentiment-Mining/tree/mas
+ter/Hu%20and%20Liu%20Sentiment%20Lexicon| 
+ []
+
+) (./languageProcessingTools.tex [15]) (./confusionMatrices.tex
+
+LaTeX Warning: Citation `bradley1997use' on page 16 undefined on input line 16.
+
+
+[16]) (./crossCorrelationReleases.tex
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ¶ in font cmti10!
- [12]
+ [17]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
@@ -506,11 +537,8 @@ File: lstlang2.sty 2013/08/26 1.5b listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2013/08/26 1.5b listings language file
-)
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 50.
-
-<img/CrossCorelation/Releases/NodeJS_before.jpg, id=73, 642.4pt x 521.95pt>
+) [18]
+<img/CrossCorelation/Releases/NodeJS_before.jpg, id=99, 642.4pt x 521.95pt>
 File: img/CrossCorelation/Releases/NodeJS_before.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_before.jpg>
@@ -518,7 +546,7 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_before.jpg used on
  input line 63.
 (pdftex.def)             Requested size: 170.71652pt x 138.70633pt.
 
-<img/CrossCorelation/Releases/NodeJS_after.jpg, id=74, 660.4675pt x 513.92pt>
+<img/CrossCorelation/Releases/NodeJS_after.jpg, id=100, 660.4675pt x 513.92pt>
 File: img/CrossCorelation/Releases/NodeJS_after.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_after.jpg>
@@ -526,97 +554,99 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_after.jpg used on
 input line 65.
 (pdftex.def)             Requested size: 170.71652pt x 132.8397pt.
 
-<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=75, 649.4
-2625pt x 640.3925pt>
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=101, 649.
+42625pt x 640.3925pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg Graphic 
 file (type jpg)
 
 <use img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg>
 Package pdftex.def Info: img/CrossCorelation/Releases/highestCorrelationsPlotRe
 leases.jpg used on input line 74.
-(pdftex.def)             Requested size: 170.71652pt x 168.33517pt.
+(pdftex.def)             Requested size: 227.62204pt x 224.45341pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/
+ [19 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/
 Releases/NodeJS_after.jpg>]
-<img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg, id=8
-2, 657.45625pt x 637.38126pt>
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg, id=1
+05, 657.45625pt x 637.38126pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg 
 Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg>
 Package pdftex.def Info: img/CrossCorelation/Releases/highestCorrelationsPlotRe
 leases_nonStat.jpg used on input line 94.
-(pdftex.def)             Requested size: 170.71652pt x 165.50125pt.
+(pdftex.def)             Requested size: 227.62204pt x 220.6651pt.
 )
-Underfull \vbox (badness 4181) has occurred while \output is active []
+Underfull \vbox (badness 1199) has occurred while \output is active []
 
- [14 <./img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg>]
-(./crossCorrelationCommits.tex [15 <./img/CrossCorelation/Releases/highestCorre
+ [20 <./img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg>]
+(./crossCorrelationCommits.tex [21 <./img/CrossCorelation/Releases/highestCorre
 lationsPlotReleases_nonStat.jpg>]
-<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=90, 649.42625pt x 
-631.35875pt>
+<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=113, 649.42625pt x
+ 631.35875pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot.jpg Graphic file (typ
 e jpg)
  <use img/CrossCorelation/Commits/highestCorrelationsPlot.jpg>
 Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot.jp
 g used on input line 56.
-(pdftex.def)             Requested size: 170.71652pt x 165.96054pt.
+(pdftex.def)             Requested size: 227.62204pt x 221.28716pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=94, 658.46
-pt x 635.37375pt>
+ [22]
+<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=117, 658.4
+6pt x 635.37375pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg Graphic f
 ile (type jpg)
 
 <use img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg>
 Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot_no
 nStat.jpg used on input line 65.
-(pdftex.def)             Requested size: 170.71652pt x 164.7279pt.
+(pdftex.def)             Requested size: 227.62204pt x 219.64046pt.
 ))
-[17 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg> <./img/CrossCor
-elation/Commits/highestCorrelationsPlot_nonStat.jpg>] [18
+[23 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg> <./img/CrossCor
+elation/Commits/highestCorrelationsPlot_nonStat.jpg>] [24
 
 
 ] (./pairingBugs.tex)
-[19] (./masterthesis.bbl [20
+[25] (./masterthesis.bbl [26
 
 
-]) [21] (./masterthesis.aux)
+]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no î in font cmr10!
+ [27]) [28] (./masterthesis.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 6960 strings out of 493304
- 107421 string characters out of 6139872
- 264266 words of memory out of 5000000
- 10308 multiletter control sequences out of 15000+600000
- 10430 words of font info for 37 fonts, out of 8000000 for 9000
+ 7161 strings out of 493304
+ 110669 string characters out of 6139872
+ 293730 words of memory out of 5000000
+ 10490 multiletter control sequences out of 15000+600000
+ 11043 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 50i,14n,63p,1415b,1724s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,14n,63p,1132b,2218s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.
-pfb>
-Output written on masterthesis.pdf (25 pages, 693839 bytes).
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on masterthesis.pdf (32 pages, 802879 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 183 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

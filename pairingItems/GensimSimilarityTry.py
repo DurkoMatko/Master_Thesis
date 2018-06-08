@@ -3,7 +3,6 @@ import gensim
 
 raw_documents = [
                  "My socks are a force multiplier.",
-
 				 ]
 
 gen_docs = [[w.lower() for w in word_tokenize(text)] for text in raw_documents]

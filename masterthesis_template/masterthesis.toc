@@ -4,13 +4,19 @@
 \contentsline {subsubsection}{\nonumberline Potential of social media data mining}{5}
 \contentsline {subsubsection}{\nonumberline Getting data}{6}
 \contentsline {paragraph}{\nonumberline Twitter:}{6}
-\contentsline {paragraph}{\nonumberline Facebook:}{6}
-\contentsline {paragraph}{\nonumberline Reddit:}{6}
-\contentsline {paragraph}{\nonumberline Stack overflow:}{6}
-\contentsline {chapter}{\nonumberline Open-source projects}{9}
-\contentsline {chapter}{\nonumberline Sentiment analysis}{11}
-\contentsline {subsubsection}{\nonumberline History}{12}
-\contentsline {subsubsection}{\nonumberline Cross-correlation between releases and sentiment change}{12}
-\contentsline {paragraph}{\nonumberline Results interpretation:}{14}
-\contentsline {subsubsection}{\nonumberline Commits count within releases}{15}
-\contentsline {chapter}{\nonumberline Pairing bugs}{19}
+\contentsline {paragraph}{\nonumberline Facebook:}{8}
+\contentsline {paragraph}{\nonumberline Reddit:}{8}
+\contentsline {paragraph}{\nonumberline Stack overflow:}{8}
+\contentsline {chapter}{\nonumberline Open-source projects}{11}
+\contentsline {subsubsection}{\nonumberline History of Open-Source Software}{11}
+\contentsline {subsubsection}{\nonumberline Choosing projects of interest}{11}
+\contentsline {chapter}{\nonumberline Sentiment analysis}{13}
+\contentsline {subsubsection}{\nonumberline History}{14}
+\contentsline {subsubsection}{\nonumberline Training datasets}{14}
+\contentsline {subsubsection}{\nonumberline Language processing tools}{15}
+\contentsline {subsubsection}{\nonumberline Performance metrics}{16}
+\contentsline {paragraph}{\nonumberline Terminology}{16}
+\contentsline {subsubsection}{\nonumberline Cross-correlation between releases and sentiment change}{17}
+\contentsline {paragraph}{\nonumberline Results interpretation:}{20}
+\contentsline {subsubsection}{\nonumberline Commits count within releases}{21}
+\contentsline {chapter}{\nonumberline Pairing bugs}{25}
