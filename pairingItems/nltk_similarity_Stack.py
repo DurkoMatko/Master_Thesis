@@ -180,8 +180,8 @@ if __name__ == '__main__':
 	#stackGitPairs['bower'] = 'bower/bower';
 	#stackGitPairs['gulp'] = 'gulpjs/gulp';
 	#stackGitPairs['ruby-on-rails'] = 'rails/rails';
-	#stackGitPairs['vue.js'] = 'vuejs/vue';
-	#stackGitPairs['ember.js'] = 'emberjs/ember.js';
+	stackGitPairs['vue.js'] = 'vuejs/vue';
+	stackGitPairs['ember.js'] = 'emberjs/ember.js';
 	#stackGitPairs['aurelia'] = 'aurelia/framework';
 	#stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
 	#stackGitPairs['bitcoin'] = 'bitcoin/bitcoin';
@@ -190,7 +190,7 @@ if __name__ == '__main__':
 	# 'dash',    #no stack overflow tag
 	# 'bootstrap',   #no stack overflow tag
 
-	imilaritySum = 0.0
+	similaritySum = 0.0
 	combinations = 0
 	maxSimilarity = 0.0
 	for stackName, gitUrl in stackGitPairs.iteritems():

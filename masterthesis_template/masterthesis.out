@@ -1,0 +1,27 @@
+\BOOKMARK [0][-]{chapter*.3}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter*.4}{Proposed framework}{}% 2
+\BOOKMARK [0][-]{chapter*.5}{Social Media}{}% 3
+\BOOKMARK [1][-]{section.0.1}{Potential of social media data mining}{chapter*.5}% 4
+\BOOKMARK [1][-]{section.0.2}{Data}{chapter*.5}% 5
+\BOOKMARK [2][-]{subsection.0.2.1}{Getting data}{section.0.2}% 6
+\BOOKMARK [0][-]{chapter*.11}{Open-source projects}{}% 7
+\BOOKMARK [1][-]{section.0.3}{History of Open-Source Software}{chapter*.11}% 8
+\BOOKMARK [1][-]{section.0.4}{Choosing projects of interest}{chapter*.11}% 9
+\BOOKMARK [1][-]{section.0.5}{Github mining}{chapter*.11}% 10
+\BOOKMARK [2][-]{subsection.0.5.1}{Release dates}{section.0.5}% 11
+\BOOKMARK [2][-]{subsection.0.5.2}{Issues}{section.0.5}% 12
+\BOOKMARK [0][-]{chapter*.12}{Sentiment analysis}{}% 13
+\BOOKMARK [1][-]{section.0.6}{History}{chapter*.12}% 14
+\BOOKMARK [1][-]{section.0.7}{Training datasets}{chapter*.12}% 15
+\BOOKMARK [1][-]{section.0.8}{Language processing tools}{chapter*.12}% 16
+\BOOKMARK [1][-]{section.0.9}{Performance metrics}{chapter*.12}% 17
+\BOOKMARK [1][-]{section.0.10}{Results}{chapter*.12}% 18
+\BOOKMARK [2][-]{subsection.0.10.1}{Cross-correlation between releases and sentiment change}{section.0.10}% 19
+\BOOKMARK [2][-]{subsection.0.10.2}{Commits count within releases}{section.0.10}% 20
+\BOOKMARK [0][-]{chapter*.21}{Linking bug repositories and social media}{}% 21
+\BOOKMARK [1][-]{section.0.11}{Aproaches}{chapter*.21}% 22
+\BOOKMARK [1][-]{section.0.12}{Available data}{chapter*.21}% 23
+\BOOKMARK [1][-]{section.0.13}{Similarity results}{chapter*.21}% 24
+\BOOKMARK [2][-]{subsection.0.13.1}{NLTK}{section.0.13}% 25
+\BOOKMARK [1][-]{section.0.14}{Buckets}{chapter*.21}% 26
+\BOOKMARK [1][-]{section.0.15}{Using GIT labels}{chapter*.21}% 27

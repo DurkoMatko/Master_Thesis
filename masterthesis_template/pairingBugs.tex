@@ -1,1 +1,26 @@
-pairingbugs
+My goal of pairing bugs with social media might be somewhat similar to nowadays very active field of bug report duplicate discovery but has also a lot common with topic modeling and general text similarity algorithms.
+
+To link any two texts based on their content, there's an obvious need for understanding what the text features are. 
+To do this, there are several ways how to calculate text (string) similarity value or one can even execute so called "Topic modeling" algorithm and try to connect documents based on their matching topics.
+
+Topic modeling is a method used to organize and summarize large textual information. It's used to discover hidden topical patterns and annotate documents according to these topics. It can also be described as a method of finding group of words (i.e topic) from in a text that best represents the information in the collection.
+
+The obstacle of using a topic modeling for my case is that neither SO nor Reddit questions are not long enough. This could potentially be avoided by concatenating the whole discussions into one long text but these are still too topic-specific to get reasonable output. In this case, topic modeling output is not granular enough to differentiate among similar texts which are all from the very same domain. 
+
+Because the output provided by topic modeling wasn't enough to pair particular items, I searched for, found and considered several alternative approaches.
+
+\section{Aproaches}
+\input{pairingApproaches}
+
+\section{Available data}
+\input{pairingData}
+
+\section{Similarity results}
+\input{similarityResults}
+
+\section{Buckets}
+\input{pairingBuckets}
+
+
+\section{Using GIT labels}
+\input{pairingGitLabels}

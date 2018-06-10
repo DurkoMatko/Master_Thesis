@@ -5,6 +5,12 @@
 \usepackage{fixltx2e}
 \usepackage{subfig}
 
+% ref packages
+\usepackage{nameref}
+% folowing  must be in this order
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{cleveref}
 % bibloiography
 \usepackage{listings}
 \lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
@@ -22,6 +28,7 @@
  {img/CrossCorelation/Releases/}
  {img/CrossCorelation/Commits/}
  {img/SentimentAnalysis/}
+ {img/PairingItems/gitLabels/}
  }
 \newcommand*{\xchapter}{\stepcounter{chapter}\setcounter{section}{0}\addchap}
 \renewcommand*{\thesection}{\arabic{section}}
@@ -69,7 +76,7 @@
 \label{chp:sentimentAnalysis}
 \input{sentimentAnalysis}
 
-\chapter{Pairing bugs}
+\chapter{Linking bug repositories and social media}
 \label{chp:pairingBugs}
 \input{pairingBugs}
 
@@ -78,7 +85,7 @@
 %\section{Motivation}
 \label{sec:introduction}
 
-The content goes here\ldots
+
 \newpage
 \nocite{*}
 \bibliographystyle{unsrt}

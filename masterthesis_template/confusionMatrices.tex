@@ -35,6 +35,6 @@ Here are some of the most often used metrics used to evaluate classification alg
 \[ Precision = \frac{TP}{TP + FP}\]
 \item \textbf{Recall} - also called \textit{sensitivity} or the \textit{True Positive Rate}, it is a number of True Positives divided by the number of True Positives and the number of False Negatives. In other words, it is a ratio of how many of all positive instances have been identified. Recall can be tricked (labeling all as majority class) but if used next to precision, it gives extra information
 \[ Recall = \frac{TP}{TP + FN}\]
-\item \textbf{F measure} - as already mentioned, precision hides some facts and recall can be tricked. To give the full story, they need to be used together. That's what F measure is for.
+\item \textbf{F1 score} - as already mentioned, precision hides some facts and recall can be tricked. To give the full story, they need to be used together. That's what F1 measure (F measure) is for. It is the harmonic average of the precision and recall, where its best value is at 1.
 \[ F = 2 * \frac{precision * recall}{precision + recall}\]
 \end{itemize}Nice example to demonstrate difference between precision and recall is the concept of Indian Jurisprudence, where "100 culprits may let go free but no innocent should be punished". If we let go so many culprits in order to ensure no innocent is punished, recall will be pretty low, but precision very high.

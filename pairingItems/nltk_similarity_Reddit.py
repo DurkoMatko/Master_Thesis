@@ -63,7 +63,7 @@ def getRedditDialogueAndComment(project):
     return rddt_dict
 
 
-def getGitIssues(dbHandle,project):
+def getGitBugs(dbHandle,project):
     if project == 'angular': project = 'angularjs'
     sql = "Select number,title,description from just_bugs where project='" + project + "'"
     # Execute the SQL command and fetch all the rows in a list of lists.
@@ -208,7 +208,15 @@ def compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs,similarityChe
 				if isNotNan(similarity):
 					similarityDiscussionSum += similarity
 
-	print "Done"
+		print "Done" + redditName
+		print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
+		print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
+
+		similarityCommentSum = 0.0
+		similarityDiscussionSum = 0.0
+		similarityCount = 0
+
+	print "Done "
 	print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
 	print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
 
@@ -244,17 +252,19 @@ if __name__ == '__main__':
 	redditGitPairs['nodejs'] = 'nodejs/node';
 	redditGitPairs['angularjs'] = 'angular/angular';
 	redditGitPairs['vuejs'] = 'vuejs/vue';
-	redditGitPairs['emberjs'] = 'emberjs/ember.js';
+	#redditGitPairs['emberjs'] = 'emberjs/ember.js';
 
+	compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs,
+													similarityChecker=nltk_similarity_checker)
 
 	for redditName, gitUrl in redditGitPairs.iteritems():
 		reddit_dict = getRedditDialogues(redditName)
-		bugs_dict = getGitIssues(dbHandle=dbHandle, project=gitUrl.split('/')[0])
+		bugs_dict = getGitBugs(dbHandle=dbHandle, project=gitUrl.split('/')[0])
 		print redditName
 		print "Number of bugs:" + str(len(bugs_dict))
 		print "Number of questions:" + str(len(reddit_dict))
 
-		calculateAverageSimilarity(social_medium_dict=reddit_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
+		#calculateAverageSimilarity(social_medium_dict=reddit_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
 
 
 	#COMPARING SIMILARITY OF THE ISSUE COMMENT AND THE REST OF THE THREAD

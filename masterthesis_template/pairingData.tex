@@ -1,0 +1,41 @@
+\paragraph{Git issue reports:}
+Using the approach described in the section \ref{ssec:issuesMining}, I've downloaded 96,651 issue reports from Git while 25,978 of those labeled as bug or similar. Because this part of the thesis was more just a PoC than the part with sentiment analysis, I've decided not to work with all the data and rather just picked several projects of interest. The bug counts among this projects is displayed in the table \ref{table:projectIssuesDistribution}.
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{3cm}||p{3cm}|}
+ \hline
+\textbf{ Framework }& \textbf{Bug count}\\
+ \hline
+ NodeJS   & 1615\\ \hline
+ AngularJS &   2225 \\ \hline
+ EmberJS & 1284\\ \hline
+ VueJS & 353\\ \hline
+ Aurelia & 73\\ \hline
+ Bower & 155\\ \hline
+\end{tabular}
+\caption{Bug count per project}
+\label{table:projectIssuesDistribution}
+\end{table}
+
+\paragraph{Stack overflow questions:}
+SO mining has been described in section \ref{ssec:GettingData} and I've downloaded 5,847 questions. There are thousand questions for AngularJS, NodeJS, Bower, Ruby on Rails and VueJS each and EmberJS has only 847 questions. Downside is, that despite having a lot of questions, it doesn't necessarily mean that each and every one of them talks about some known bug. Actually, opposite is true as out of all those questions only very tiny percentage does (AngularJS - 1, NodeJS - 2, EmberJS - 2, VueJS - 0).
+
+\paragraph{Reddit dialogues:}Reddit subreddits mining has been described in the same subsection as SO mining. Results of this process are shown in the table \ref{table:redditDiscussionsDistribution}.
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{3cm}||p{3cm}|}
+ \hline
+\textbf{ Framework }& \textbf{Submissions count}\\
+ \hline
+ NodeJS   &  108\\ \hline
+ AngularJS &   43 \\ \hline
+ VueJS & 20\\ \hline
+ EmberJS & 13\\ \hline
+\end{tabular}
+\caption{Reddit submissions counts}
+\label{table:redditDiscussionsDistribution}
+\end{table}
