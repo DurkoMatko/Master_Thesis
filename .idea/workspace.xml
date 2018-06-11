@@ -7,21 +7,11 @@
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/socialMedia.tex" afterPath="$PROJECT_DIR$/masterthesis_template/socialMedia.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/confusionMatrices.log" afterPath="$PROJECT_DIR$/masterthesis_template/confusionMatrices.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/confusionMatrices.tex" afterPath="$PROJECT_DIR$/masterthesis_template/confusionMatrices.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/crossCorrelationCommits.tex" afterPath="$PROJECT_DIR$/masterthesis_template/crossCorrelationCommits.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.bib" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.bib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/ossProjects.tex" afterPath="$PROJECT_DIR$/masterthesis_template/ossProjects.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/pairingBugs.tex" afterPath="$PROJECT_DIR$/masterthesis_template/pairingBugs.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py" afterPath="$PROJECT_DIR$/pairingItems/nltk_similarity_Reddit.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" afterPath="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,11 +44,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getClosedIssues.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getClosedIssues.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1138">
+            <state relative-caret-position="-1030">
               <caret line="33" column="15" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getReleaseDates.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="763">
+              <caret line="82" column="46" lean-forward="true" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requestsLibrary.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gitMining/releases/requestsLibrary.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -952,13 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitMining/releases/requestsLibrary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-412">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pairingItems/pairing_Reddit_Git.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-452">
@@ -1034,13 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="89" column="81" lean-forward="false" selection-start-line="89" selection-start-column="81" selection-end-line="89" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/twitterMining/GetOldTweets-python-master/get_Tweets_Between_Release_Dates.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
@@ -1086,8 +1082,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1138">
+        <state relative-caret-position="-1030">
           <caret line="33" column="15" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/releases/requestsLibrary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitMining/releases/getReleaseDates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="82" column="46" lean-forward="true" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
           <folding />
         </state>
       </provider>
