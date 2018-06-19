@@ -11,6 +11,9 @@ import re
 from urllib2 import urlopen, Request
 import json
 from Nltk_Similarity_Checker.Nltk_Similarity_Checker import Nltk_Similarity_Checker
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -73,6 +76,8 @@ def preprocessStackBody(questionBody):
             break
         #get code within <pre><code> ... </pre></code>
         code = questionBody[start-len('<pre>'):end+len('</code></pre>')]
+        if code == '':
+           break; #fixing some weird problem for one particular issue
         questionBody = questionBody.replace(code,'')
 
     #get rid of links
@@ -131,7 +136,7 @@ def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker):
 
 
 #calculates similarity between Stack question and the issue its own issue it's talking about
-def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, gitToken, similarityChecker):
+def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, gitToken, similarityChecker, withBodyPreprocess):
 	sql = "SELECT question_id, body, project FROM oss_issues.so_questions where body like '%/issues%' and body like CONCAT('%/',project,'/%')"
 
 	GIT_URI = 'https://api.github.com/repos/'
@@ -160,12 +165,43 @@ def calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle, stackGitPairs, 
 				request.add_header('Authorization', 'token %s' % gitToken)
 				response = urlopen(request).read()
 				requestedIssue = json.loads(response)
-				similarity = similarityChecker.getSimilarity(requestedIssue['body'], body)
+				if withBodyPreprocess:
+					similarity = similarityChecker.getSimilarity(requestedIssue['body'], preprocessStackBody(body))
+				else:
+					similarity = similarityChecker.getSimilarity(requestedIssue['body'], body)
+
 				if isNotNan(similarity):
 					similaritySum += similarity
 					similarityCount += 1
 
 	print 'Average similarity of own issue related questions is: ' + str(similaritySum/similarityCount)
+
+
+#calculates similarity between corresponding git and stack items which I crawled and downloaded
+def calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle, similarityChecker, withBodyPreprocess):
+	sql = "SELECT * FROM oss_issues.git_so_matches"
+	dbHandle.execute(sql)
+	results = dbHandle.fetchall()
+
+	similarities = []
+	similaritySum = 0
+	for res in results:
+		if withBodyPreprocess:
+			similarity = similarityChecker.getSimilarity(preprocessStackBody(res[5]), res[6])
+		else:
+			similarity = similarityChecker.getSimilarity(res[5], res[6])
+
+		similaritySum += similarity
+		similarities.append(similarity)
+
+	#plot histogram of similarity values
+	plt.hist(similarities,20)
+	plt.xlabel('Similarity')
+	plt.ylabel('Bugs count')
+	plt.title('Histogram of Git-Stack corresponding items similarities')
+	plt.grid(True)
+	plt.show()
+	print 'Average similarity the matches is: ' + str(similaritySum / len(results))
 
 
 if __name__ == '__main__':
@@ -174,21 +210,25 @@ if __name__ == '__main__':
 	nltk_similarity_checker = Nltk_Similarity_Checker()
 
 	stackGitPairs = dict();
-	#stackGitPairs['django'] = 'django/django';
+	stackGitPairs['django'] = 'django/django';
 	stackGitPairs['node.js'] = 'nodejs/node';
-	#stackGitPairs['angularjs'] = 'angular/angular';
-	#stackGitPairs['bower'] = 'bower/bower';
-	#stackGitPairs['gulp'] = 'gulpjs/gulp';
-	#stackGitPairs['ruby-on-rails'] = 'rails/rails';
+	stackGitPairs['angularjs'] = 'angular/angular';
+	stackGitPairs['bower'] = 'bower/bower';
+	stackGitPairs['gulp'] = 'gulpjs/gulp';
+	stackGitPairs['ruby-on-rails'] = 'rails/rails';
 	stackGitPairs['vue.js'] = 'vuejs/vue';
 	stackGitPairs['ember.js'] = 'emberjs/ember.js';
-	#stackGitPairs['aurelia'] = 'aurelia/framework';
+	stackGitPairs['aurelia'] = 'aurelia/framework';
 	#stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
 	#stackGitPairs['bitcoin'] = 'bitcoin/bitcoin';
 	#stackGitPairs['litecoin'] = 'litecoin/litecoin';
 	# 'rippled',  #no stack overflow tag
 	# 'dash',    #no stack overflow tag
 	# 'bootstrap',   #no stack overflow tag
+
+	#	calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker, withBodyPreprocess=False)
+
+	#calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle=dbHandle, similarityChecker=nltk_similarity_checker, withBodyPreprocess=True)
 
 	similaritySum = 0.0
 	combinations = 0
@@ -201,6 +241,3 @@ if __name__ == '__main__':
 		print "Number of questions:" + str(len(social_medium_dict))
 
 		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
-
-
-	#calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker)

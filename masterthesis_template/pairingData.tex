@@ -1,5 +1,5 @@
 \paragraph{Git issue reports:}
-Using the approach described in the section \ref{ssec:issuesMining}, I've downloaded 96,651 issue reports from Git while 25,978 of those labeled as bug or similar. Because this part of the thesis was more just a PoC than the part with sentiment analysis, I've decided not to work with all the data and rather just picked several projects of interest. The bug counts among this projects is displayed in the table \ref{table:projectIssuesDistribution}.
+Using the approach described in the section \ref{ssec:issuesMining}, I've downloaded 96,651 issue reports from Git while 25,978 of those labeled as bug or similar. Because this part of the thesis was more just a PoC than the part with sentiment analysis, I've decided not to work with all the data and rather just picked several projects of interest. The bug counts among this projects is displayed in the table \ref{table:gitProjectIssuesDistribution}.
 
 
 \begin{table}[H]
@@ -16,13 +16,48 @@ Using the approach described in the section \ref{ssec:issuesMining}, I've downlo
  Bower & 155\\ \hline
 \end{tabular}
 \caption{Bug count per project}
-\label{table:projectIssuesDistribution}
+\label{table:gitProjectIssuesDistribution}
 \end{table}
 
 \paragraph{Stack overflow questions:}
-SO mining has been described in section \ref{ssec:GettingData} and I've downloaded 5,847 questions. There are thousand questions for AngularJS, NodeJS, Bower, Ruby on Rails and VueJS each and EmberJS has only 847 questions. Downside is, that despite having a lot of questions, it doesn't necessarily mean that each and every one of them talks about some known bug. Actually, opposite is true as out of all those questions only very tiny percentage does (AngularJS - 1, NodeJS - 2, EmberJS - 2, VueJS - 0).
+SO mining has been described in section \ref{ssec:GettingData} and I've downloaded 5,847 questions. There are thousand questions for AngularJS, NodeJS, Bower, Ruby on Rails and VueJS each and EmberJS has only 847 questions. Downside is, that despite having a lot of questions, it doesn't necessarily mean that each and every one of them talks about some known bug. Actually, opposite is true as out of all those questions only very tiny percentage does (can be seen in table \ref{table:SObugQuestionsDistribution}). Because the projects I worked with till now had just so few questions linked to its own issues, I had to increase the number of bugs in the dataset. Since StackApi is limited to 10 thousand requests per day, I've decided to from opposite end and crawled through all closed git issues of projects and checked if there's a SO question linked to them. If that was the case I've saved both, git issue and SO question and that way increased the size of my dataset (can be seen in table \ref{table:additionalSObugQuestionsDistribution})
 
-\paragraph{Reddit dialogues:}Reddit subreddits mining has been described in the same subsection as SO mining. Results of this process are shown in the table \ref{table:redditDiscussionsDistribution}.
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{3cm}||p{3cm}||p{3cm}|}
+ \hline
+\textbf{ Framework }& \textbf{Question count}& \textbf{Bug count}\\
+ \hline
+ NodeJS & 1000  & 2 \\ \hline
+ AngularJS & 1000  &   0 \\ \hline
+ EmberJS & 847 & 2 \\ \hline
+ VueJS & 1000 & 0 \\ \hline
+ Aurelia & 646 & 4 \\ \hline
+ Bower & 1000 & 5 \\ \hline
+\end{tabular}
+\caption{Bug count per project}
+\label{table:SObugQuestionsDistribution}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{3cm}||p{3cm}|}
+ \hline
+\textbf{ Framework }& \textbf{Bug count}\\
+ \hline
+ NodeJS & 2   \\ \hline
+ AngularJS & 46 \\ \hline
+ EmberJS & 20 \\ \hline
+ VueJS & 1 \\ \hline
+ Aurelia & 3 \\ \hline
+ Bower & 4 \\ \hline
+ Django & 13 \\ \hline
+\end{tabular}
+\caption{Extra bugs added to the dataset}
+\label{table:additionalSObugQuestionsDistribution}
+\end{table}
+
+\paragraph{Reddit dialogues:}Reddit subreddits mining has been described in the same subsection as SO mining. After I have learnt that there is too much data online, with Reddit I downloaded only submissions with any Git issue link (not necessarily own issue). Results of this process are shown in the table \ref{table:redditDiscussionsDistribution}.
 
 
 \begin{table}[H]

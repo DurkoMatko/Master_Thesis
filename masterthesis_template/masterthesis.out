@@ -10,18 +10,20 @@
 \BOOKMARK [1][-]{section.0.5}{Github mining}{chapter*.11}% 10
 \BOOKMARK [2][-]{subsection.0.5.1}{Release dates}{section.0.5}% 11
 \BOOKMARK [2][-]{subsection.0.5.2}{Issues}{section.0.5}% 12
-\BOOKMARK [0][-]{chapter*.12}{Sentiment analysis}{}% 13
-\BOOKMARK [1][-]{section.0.6}{History}{chapter*.12}% 14
-\BOOKMARK [1][-]{section.0.7}{Training datasets}{chapter*.12}% 15
-\BOOKMARK [1][-]{section.0.8}{Language processing tools}{chapter*.12}% 16
-\BOOKMARK [1][-]{section.0.9}{Performance metrics}{chapter*.12}% 17
-\BOOKMARK [1][-]{section.0.10}{Results}{chapter*.12}% 18
-\BOOKMARK [2][-]{subsection.0.10.1}{Cross-correlation between releases and sentiment change}{section.0.10}% 19
-\BOOKMARK [2][-]{subsection.0.10.2}{Commits count within releases}{section.0.10}% 20
-\BOOKMARK [0][-]{chapter*.21}{Linking bug repositories and social media}{}% 21
-\BOOKMARK [1][-]{section.0.11}{Aproaches}{chapter*.21}% 22
-\BOOKMARK [1][-]{section.0.12}{Available data}{chapter*.21}% 23
-\BOOKMARK [1][-]{section.0.13}{Similarity results}{chapter*.21}% 24
-\BOOKMARK [2][-]{subsection.0.13.1}{NLTK}{section.0.13}% 25
-\BOOKMARK [1][-]{section.0.14}{Buckets}{chapter*.21}% 26
-\BOOKMARK [1][-]{section.0.15}{Using GIT labels}{chapter*.21}% 27
+\BOOKMARK [0][-]{chapter*.13}{Sentiment analysis}{}% 13
+\BOOKMARK [1][-]{section.0.6}{History}{chapter*.13}% 14
+\BOOKMARK [1][-]{section.0.7}{Training datasets}{chapter*.13}% 15
+\BOOKMARK [1][-]{section.0.8}{Language processing tools}{chapter*.13}% 16
+\BOOKMARK [1][-]{section.0.9}{Performance metrics}{chapter*.13}% 17
+\BOOKMARK [1][-]{section.0.10}{Data to analyze}{chapter*.13}% 18
+\BOOKMARK [1][-]{section.0.11}{Results}{chapter*.13}% 19
+\BOOKMARK [2][-]{subsection.0.11.1}{Performance}{section.0.11}% 20
+\BOOKMARK [2][-]{subsection.0.11.2}{Cross-correlation between releases and sentiment change}{section.0.11}% 21
+\BOOKMARK [2][-]{subsection.0.11.3}{Commits count within releases}{section.0.11}% 22
+\BOOKMARK [0][-]{chapter*.22}{Linking bug repositories and social media}{}% 23
+\BOOKMARK [1][-]{section.0.12}{Aproaches}{chapter*.22}% 24
+\BOOKMARK [1][-]{section.0.13}{Available data}{chapter*.22}% 25
+\BOOKMARK [1][-]{section.0.14}{Similarity results}{chapter*.22}% 26
+\BOOKMARK [2][-]{subsection.0.14.1}{NLTK}{section.0.14}% 27
+\BOOKMARK [1][-]{section.0.15}{Buckets}{chapter*.22}% 28
+\BOOKMARK [1][-]{section.0.16}{Using GIT labels}{chapter*.22}% 29

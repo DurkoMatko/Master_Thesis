@@ -2,7 +2,17 @@ Linking items and in general finding similarity among these already area-specifi
 
 \subsection{NLTK}
 \paragraph{Stack Overflow:}
-The average similarity between SO questions talking about particular issue and that particular issue body description is 0.3467.
+The average similarity between SO questions talking about particular issue and that particular issue body description is 0.316 without body preprocessing and 0.292 with body preprocessing.
+
+The distribution of similarities in buckets by increased by 0.05 can be seen in histogram in Figure 
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=8cm]{gitStackMatchesHistogram.jpg}
+    \caption{Histogram of similarities distribution among git issues and their matching SO questions}%
+    \label{fig:GitStackMatchesHistogram}%
+\end{figure}
+
 
 
 Comparing Git bugs descriptions with SO questions talking about own project issues and general issues, similarity values are following \ref{table:StackOverflowNLTKsimilarity}. Same table but for Reddit discussions can be seen in \ref{table:RedditNLTKsimilarity}
@@ -40,6 +50,20 @@ Here I've calculated the similarity between the bug description and either parti
 \label{table:RedditNLTKsimilarity}
 \end{table}
 
-This indicates that the semantic meaning of the bug is better expressed in the whole discussion rather than just the particular comment which referenced the bug.
+This indicates that the semantic meaning of the bug is better expressed in the whole discussion rather than just the particular comment which referenced the bug. This made me question if it could be generalized that longer the text is, more similar it is to actual bug description. I've plotted a relationship between similarity score and length in Figures \ref{fig:SimilarityLengthRelationshipComment} and \ref{fig:SimilarityLengthRelationshipDiscussion}.
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=8cm]{SimilarityLengthRelationshipDiscussion.jpg}
+    \caption{Discussion lengths and similarity scores with the issue}%
+    \label{fig:SimilarityLengthRelationshipDiscussion}%
+\end{figure}
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=8cm]{SimilarityLengthRelationshipComment.jpg}
+    \caption{Comment lengths and similarity scores with the issue}%
+    \label{fig:SimilarityLengthRelationshipComment}%
+\end{figure}
 
 

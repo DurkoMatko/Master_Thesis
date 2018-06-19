@@ -55,3 +55,38 @@ After obtaining all tags, one more request for every one of those tags was neede
 I saved the release dates in simple text file, one per line. This code was later on changed (in subsection \ref{ssec:crossCorrelationCommits}) to include also number of commits per release.
 
 \subsection{Issues} \label{ssec:issuesMining}
+To get the project issues, I've used the endpoint \textit{issues}. It offers various parameters like state, labels, sort, direction or since date. I've decided to work just with closed issues and snippet where I'm sending the request can be seen in listing \ref{lst:issuesEndpoint}).
+
+\begin{lstlisting}[caption={Requesting 100 closed issues},label={lst:issuesEndpoint},language=Python]
+request = Request(projectUri + '/issues?state=closed&perpage=100&page=' + str(pageNum))
+\end{lstlisting}
+
+It is also worth noting here that GitHub's REST API v3 considers every pull request an issue so I had to identify and filter them out using their \textit{pullRequest} key.
+
+During my later work, I've realized the ammount of issues is just too big and broad and not every issue is a bug or even remotely similar to bug. That was when I have decided to filter the issues and keep only real bugs. For this I've used Git labels. Labels on GitHub help organize and prioritize work. They can be applied to issues and pull requests to signify priority, category, or any other information you find useful. There are two types of labels - default and custom. GitHub provides default ones in every new repository. All default labels can be seen in table \ref{fig:defaultLabels} and can be used to create a standard workflow in a repository:
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=8cm]{defaultLabels.jpg}
+    \caption{Default Git labels provided for every repository}%
+    \label{fig:defaultLabels}%
+\end{figure}
+
+From there I have chosen the label \textit{bug}. Then I have checked all custom tags of all repositories and chosen just those which were semantically similar to bug. All chosen labels can be seen in the table \ref{table:allGitBugLabels}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{3cm}||p{6cm}|}
+ \hline
+\textbf{ Repository }& \textbf{Chosen custom labels}\\
+ \hline
+ NodeJS   & confirmed-bug, errors \\ \hline
+ AngularJS &   type: bug \\ \hline
+ VueJS & browser-quirks, 1.x, 2.x\\ \hline
+ Aurelia & enhancement\\ \hline
+ EmberJS & Bug\\ \hline
+\end{tabular}
+\caption{Reddit submissions counts}
+\label{table:allGitBugLabels}
+\end{table}

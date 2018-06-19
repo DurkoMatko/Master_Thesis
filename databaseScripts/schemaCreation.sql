@@ -47,3 +47,18 @@ CREATE TABLE `oss_issues`.`so_issue_comments` (
   `project` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
 
+
+CREATE TABLE `oss_issues`.`git_so_matches` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `so_id` INT NULL,
+  `git_id` INT NULL,
+  `so_title` VARCHAR(450) NULL,
+  `git_title` VARCHAR(450) NULL,
+  `so_body` VARCHAR(4000) NULL,
+  `git_body` VARCHAR(4000) NULL,  
+  `git_project` VARCHAR(45) NULL,
+  `so_tags` VARCHAR(450) NULL,
+  PRIMARY KEY (`id`));
+
+  ALTER TABLE `oss_issues`.`git_so_matches` 
+CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ;

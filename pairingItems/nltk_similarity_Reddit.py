@@ -10,6 +10,7 @@ import sys
 import re
 from urllib2 import urlopen, Request
 import json
+import matplotlib.pyplot as plt
 from Nltk_Similarity_Checker.Nltk_Similarity_Checker import Nltk_Similarity_Checker
 
 reload(sys)
@@ -136,7 +137,7 @@ def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker):
 	combinations = 0
 	for (social_medium_id, social_medium_item) in social_medium_dict.iteritems():
 		for (git_id, git_issue) in bugs_dict.iteritems():
-			similarity = 1# similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
+			similarity = similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
 			if isNotNan(similarity):
 				similaritySum += similarity
 				combinations += 1
@@ -189,6 +190,10 @@ def compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs,similarityChe
 	similarityCommentSum = 0.0
 	similarityDiscussionSum = 0.0
 	similarityCount = 0
+	commentSimilarities = list()
+	commentsLength = list()
+	discussionSimilarities = list()
+	discussionLength = list()
 	for redditName, gitUrl in redditGitPairs.iteritems():
 		reddit_dict = getRedditDialogueAndComment(redditName)
 		for redditTitle, redditDiscussionAndComment in reddit_dict.iteritems():
@@ -202,27 +207,42 @@ def compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs,similarityChe
 				requestedIssue = json.loads(response)
 				similarity = similarityChecker.getSimilarity(requestedIssue['body'], redditDiscussionAndComment[1])
 				if isNotNan(similarity):
+					commentSimilarities.append(similarity)
+					commentsLength.append(len(redditDiscussionAndComment[1]))
 					similarityCommentSum += similarity
 					similarityCount += 1
 				similarity = similarityChecker.getSimilarity(requestedIssue['body'], redditDiscussionAndComment[0])
 				if isNotNan(similarity):
+					discussionSimilarities.append(similarity)
+					discussionLength.append(len(redditDiscussionAndComment[0]))
 					similarityDiscussionSum += similarity
 
-		print "Done" + redditName
-		print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
-		print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
+		print "Done " + redditName
+		#print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
+		#print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
 
 		similarityCommentSum = 0.0
 		similarityDiscussionSum = 0.0
 		similarityCount = 0
 
 	print "Done "
-	print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
-	print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
+	#print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
+	#print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
+	print "similarityCommentsList: " + str(commentSimilarities)
+	print "similarityDiscussionList: " + str(discussionSimilarities)
 
-			# indexOfIssue = redditDiscussionAndComment[1].find(gitUrl+'/issues')
+	showSimilarityVsLengthRelationship(commentsLength,commentSimilarities)
+
+
+# indexOfIssue = redditDiscussionAndComment[1].find(gitUrl+'/issues')
 			# startIndex = redditDiscussionAndComment[1][:indexOfIssue].rfind(' ')
 
+def showSimilarityVsLengthRelationship(length,similarityScore):
+	plt.plot(length, similarityScore, 'o')
+	plt.title("Relationship between similarity score and length of comment")
+	plt.ylabel('Similarity')
+	plt.xlabel('Comment length')
+	plt.show()
 
 if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
@@ -252,10 +272,7 @@ if __name__ == '__main__':
 	redditGitPairs['nodejs'] = 'nodejs/node';
 	redditGitPairs['angularjs'] = 'angular/angular';
 	redditGitPairs['vuejs'] = 'vuejs/vue';
-	#redditGitPairs['emberjs'] = 'emberjs/ember.js';
-
-	compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs,
-													similarityChecker=nltk_similarity_checker)
+	redditGitPairs['emberjs'] = 'emberjs/ember.js';
 
 	for redditName, gitUrl in redditGitPairs.iteritems():
 		reddit_dict = getRedditDialogues(redditName)
@@ -269,3 +286,4 @@ if __name__ == '__main__':
 
 	#COMPARING SIMILARITY OF THE ISSUE COMMENT AND THE REST OF THE THREAD
 	#compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=nltk_similarity_checker)
+	

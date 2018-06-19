@@ -29,7 +29,7 @@ def main(argv):
 				  #'aureliajs',
 				  #'bootstrap',
 				  #'emberjs',
-				  #'node',
+				  'node',
 				  #'vuejs',
 				  #'django',
 				  #'ethereum',
