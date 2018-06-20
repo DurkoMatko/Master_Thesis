@@ -35,6 +35,6 @@
 \contentsline {section}{\numberline {14}Similarity results}{29}{section.0.14}
 \contentsline {subsection}{\numberline {14.1}NLTK}{30}{subsection.0.14.1}
 \contentsline {paragraph}{\nonumberline Stack Overflow:}{30}{section*.26}
-\contentsline {paragraph}{\nonumberline Reddit:}{30}{section*.28}
-\contentsline {section}{\numberline {15}Buckets}{32}{section.0.15}
-\contentsline {section}{\numberline {16}Using GIT labels}{32}{section.0.16}
+\contentsline {paragraph}{\nonumberline Reddit:}{32}{section*.31}
+\contentsline {section}{\numberline {15}Buckets}{33}{section.0.15}
+\contentsline {section}{\numberline {16}Using GIT labels}{34}{section.0.16}

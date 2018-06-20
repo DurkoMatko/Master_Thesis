@@ -4,7 +4,7 @@ Linking items and in general finding similarity among these already area-specifi
 \paragraph{Stack Overflow:}
 The average similarity between SO questions talking about particular issue and that particular issue body description is 0.316 without body preprocessing and 0.292 with body preprocessing.
 
-The distribution of similarities in buckets by increased by 0.05 can be seen in histogram in Figure 
+The distribution of similarities in buckets by increased by 0.05 can be seen in histogram in Figure \ref{fig:GitStackMatchesHistogram}
 
 \begin{figure}[H]%
     \centering
@@ -13,6 +13,33 @@ The distribution of similarities in buckets by increased by 0.05 can be seen in 
     \label{fig:GitStackMatchesHistogram}%
 \end{figure}
 
+For random SO questions, amount of comparisons to Git issues needed to be limited. If every SO question would be compared to every Git issue, time of computation would exceed timeframe of this thesis. Every SO question was therefore compared to 3 random git issues and resulting average similarity scores are in following figures.
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=8cm]{AureliaStackWithRandom3Bugs.jpg}
+    \caption{Histogram of Aurelia SO questions and random git issues. Average similarity was 0.244}%
+    \label{fig:AureliaStackWithRandom3Bugs}%
+\end{figure}
+
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[EmberJS average similarity - 0.247]{{\includegraphics[width=6cm]{EmberStackWithRandom3Bugs.jpg} }}%
+    \qquad
+    \subfloat[Bower average similarity - 0.217]{{\includegraphics[width=6cm]{BowerStackWithRandom3Bugs.jpg} }}%
+    \caption{EmberJS and Bower similarity histogram}%
+    \label{fig:BowerEmberWithRandom3Bugs}%
+\end{figure}
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[VueJS average similarity - 0.255]{{\includegraphics[width=6cm]{VueJSStackWithRandom3Bugs.jpg} }}%
+    \qquad
+    \subfloat[AngularJS average similarity - 0.258]{{\includegraphics[width=6cm]{AngularStackWithRandom3Bugs.jpg} }}%
+    \caption{VueJS and AngularJS similarity histogram}%
+    \label{fig:VueAngularWithRandom3Bugs}%
+\end{figure}
 
 
 Comparing Git bugs descriptions with SO questions talking about own project issues and general issues, similarity values are following \ref{table:StackOverflowNLTKsimilarity}. Same table but for Reddit discussions can be seen in \ref{table:RedditNLTKsimilarity}

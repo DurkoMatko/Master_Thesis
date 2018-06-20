@@ -13,6 +13,7 @@ import json
 from Nltk_Similarity_Checker.Nltk_Similarity_Checker import Nltk_Similarity_Checker
 import matplotlib.pyplot as plt
 import numpy as np
+import random
 
 
 reload(sys)
@@ -51,6 +52,7 @@ def getRedditDialogues(project):
 
 
 def getGitIssues(dbHandle,project):
+    if project == "angular": project = "angularjs"
     sql = "Select number,title,description from just_bugs where project='" + project + "'"
     # Execute the SQL command and fetch all the rows in a list of lists.
     dbHandle.execute(sql)
@@ -104,6 +106,25 @@ def getStackQuestionsAboutOwnIssues(dbHandle, project = None):
 
     return bugs_dict
 
+def getAllStackQuestions(dbHandle, project = None):
+    if project == "angular": project = "angularjs"
+    if project == None:
+        sql = "SELECT question_id, body, project FROM oss_issues.so_questions where body like '%/issues%' and body like CONCAT('%/',project,'/%')"
+    else:
+        sql = "SELECT question_id, body, project FROM oss_issues.so_questions where project like '%" + project + "%'"
+
+    dbHandle.execute(sql)
+    results = dbHandle.fetchall()
+
+    bugs_dict = dict()
+    for res in results:
+        body = unicode(res[1])
+        #body = preprocessStackBody(body)
+        # add tuple (nouns,description) and to dictionary - key is bug id
+        bugs_dict[int(res[0])] = (getNouns(body), body)
+
+    return bugs_dict
+
 
 def getNouns(text):
     # stopwords + punctuation set
@@ -119,20 +140,36 @@ def getNouns(text):
 def isNotNan(num):
 	return num == num
 
-def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker):
-	similaritySum = 0.0
-	combinations = 0
-	for (social_medium_id, social_medium_item) in social_medium_dict.iteritems():
-		for (git_id, git_issue) in bugs_dict.iteritems():
-			similarity = similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
-			if isNotNan(similarity):
-				similaritySum += similarity
-				combinations += 1
+def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker, limit, limitCount, project=None):
+	if limit==True:
+		similaritySum = 0.0
+		similarities = []
+		for (social_medium_id, social_medium_item) in social_medium_dict.iteritems():
+			i = 0
+			while i<limitCount:
+				git_id, git_issue = random.choice(list(bugs_dict.items()))
+				similarity = similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
+				if isNotNan(similarity):
+					similaritySum += similarity
+					similarities.append(similarity)
+				i += 1
 
+	else:
+		similaritySum = 0.0
+		similarities = []
+		for (social_medium_id, social_medium_item) in social_medium_dict.iteritems():
+			for (git_id, git_issue) in bugs_dict.iteritems():
+				similarity = similarityChecker.getSimilarity(social_medium_item[1], git_issue[1])
+				if isNotNan(similarity):
+					similaritySum += similarity
+					similarities.append(similarity)
+
+
+	plotHistogram(similarities, project)
 	print "Done"
 	print "SimilaritySum:" + str(similaritySum)
-	print "similarityAverage: " + str(float(float(similaritySum) / float(combinations)))
-	print "combinations:" + str(combinations)
+	print "similarityAverage: " + str(float(float(similaritySum) / float(len(similarities))))
+	print "combinations:" + str(len(similarities))
 
 
 #calculates similarity between Stack question and the issue its own issue it's talking about
@@ -195,14 +232,16 @@ def calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle, simila
 		similarities.append(similarity)
 
 	#plot histogram of similarity values
-	plt.hist(similarities,20)
-	plt.xlabel('Similarity')
-	plt.ylabel('Bugs count')
-	plt.title('Histogram of Git-Stack corresponding items similarities')
-	plt.grid(True)
-	plt.show()
+	plotHistogram(similarities, "All")
 	print 'Average similarity the matches is: ' + str(similaritySum / len(results))
 
+def plotHistogram(similarities, project):
+	plt.hist(similarities, 20)
+	plt.xlabel('Similarity')
+	plt.ylabel('Bugs count')
+	plt.title('Histogram of Git-Stack items similarities (' + project+ ')')
+	plt.grid(True)
+	plt.show()
 
 if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
@@ -210,15 +249,15 @@ if __name__ == '__main__':
 	nltk_similarity_checker = Nltk_Similarity_Checker()
 
 	stackGitPairs = dict();
-	stackGitPairs['django'] = 'django/django';
-	stackGitPairs['node.js'] = 'nodejs/node';
+	#stackGitPairs['node.js'] = 'nodejs/node';
+	#stackGitPairs['django'] = 'django/django';
 	stackGitPairs['angularjs'] = 'angular/angular';
-	stackGitPairs['bower'] = 'bower/bower';
-	stackGitPairs['gulp'] = 'gulpjs/gulp';
-	stackGitPairs['ruby-on-rails'] = 'rails/rails';
-	stackGitPairs['vue.js'] = 'vuejs/vue';
-	stackGitPairs['ember.js'] = 'emberjs/ember.js';
-	stackGitPairs['aurelia'] = 'aurelia/framework';
+	#stackGitPairs['bower'] = 'bower/bower';
+	#stackGitPairs['gulp'] = 'gulpjs/gulp';
+	#stackGitPairs['ruby-on-rails'] = 'rails/rails';
+	#stackGitPairs['vue.js'] = 'vuejs/vue';
+	#stackGitPairs['ember.js'] = 'emberjs/ember.js';
+	#stackGitPairs['aurelia'] = 'aurelia/framework';
 	#stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
 	#stackGitPairs['bitcoin'] = 'bitcoin/bitcoin';
 	#stackGitPairs['litecoin'] = 'litecoin/litecoin';
@@ -235,9 +274,11 @@ if __name__ == '__main__':
 	maxSimilarity = 0.0
 	for stackName, gitUrl in stackGitPairs.iteritems():
 		bugs_dict = getGitIssues(dbHandle=dbHandle, project=gitUrl.split('/')[0])
-		social_medium_dict = getStackQuestionsAboutOwnIssues(dbHandle=dbHandle, project=gitUrl)
+		#social_medium_dict = getStackQuestionsAboutOwnIssues(dbHandle=dbHandle, project=gitUrl)
+		social_medium_dict = getAllStackQuestions(dbHandle=dbHandle, project=gitUrl.split('/')[0])
 		print gitUrl
 		print "Number of bugs:" + str(len(bugs_dict))
 		print "Number of questions:" + str(len(social_medium_dict))
 
-		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
+		#calculates similarity between given stack and git items and plots histogram of these similarities
+		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker, limit=True, limitCount=2, project=gitUrl.split('/')[0])

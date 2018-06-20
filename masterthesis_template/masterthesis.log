@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  19 JUN 2018 22:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  20 JUN 2018 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -795,7 +795,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
  []
 
 ) (./similarityResults.tex [29]
-<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=506, 62
+<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=507, 62
 0.3175pt x 472.76625pt>
 File: img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg Graphi
 c file (type jpg)
@@ -805,51 +805,107 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/gitStackMatchesH
 istogram.jpg used on input line 11.
 (pdftex.def)             Requested size: 227.62204pt x 173.478pt.
 
-[30 <./img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg>]
+<img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg, id=508,
+ 596.2275pt x 464.73625pt>
+File: img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg Gra
+phic file (type jpg)
+
+<use img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg>
+Package pdftex.def Info: img/PairingItems/SimilarityHistograms/AureliaStackWith
+Random3Bugs.jpg used on input line 20.
+(pdftex.def)             Requested size: 227.62204pt x 177.4242pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30 <./img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg>]
+<img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg, id=515, 5
+99.23875pt x 457.71pt>
+File: img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg Graph
+ic file (type jpg)
+
+<use img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg>
+Package pdftex.def Info: img/PairingItems/SimilarityHistograms/EmberStackWithRa
+ndom3Bugs.jpg used on input line 28.
+(pdftex.def)             Requested size: 170.71652pt x 130.39284pt.
+
+<img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg, id=516, 5
+85.18625pt x 464.73625pt>
+File: img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg Graph
+ic file (type jpg)
+
+<use img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg>
+Package pdftex.def Info: img/PairingItems/SimilarityHistograms/BowerStackWithRa
+ndom3Bugs.jpg used on input line 30.
+(pdftex.def)             Requested size: 170.71652pt x 135.57846pt.
+
+<img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg, id=517, 6
+02.25pt x 457.71pt>
+File: img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg Graph
+ic file (type jpg)
+
+<use img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg>
+Package pdftex.def Info: img/PairingItems/SimilarityHistograms/VueJSStackWithRa
+ndom3Bugs.jpg used on input line 37.
+(pdftex.def)             Requested size: 170.71652pt x 129.74332pt.
+
+<img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg, id=518,
+ 608.2725pt x 456.70625pt>
+File: img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg Gra
+phic file (type jpg)
+
+<use img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg>
+Package pdftex.def Info: img/PairingItems/SimilarityHistograms/AngularStackWith
+Random3Bugs.jpg used on input line 39.
+(pdftex.def)             Requested size: 170.71652pt x 128.17653pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31 <./img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg> 
+<./img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg> <./img/
+PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg>] [32 <./img/Pa
+iringItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg> <./img/PairingIt
+ems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg>]
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipDisc
-ussion.jpg, id=521, 601.24625pt x 466.74374pt>
+ussion.jpg, id=543, 601.24625pt x 466.74374pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pDiscussion.jpg Graphic file (type jpg)
 
 <use img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationship
 Discussion.jpg>
 Package pdftex.def Info: img/PairingItems/LengthSimilarityRelationship/Similari
-tyLengthRelationshipDiscussion.jpg used on input line 57.
+tyLengthRelationshipDiscussion.jpg used on input line 84.
 (pdftex.def)             Requested size: 227.62204pt x 176.70212pt.
 
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipComm
-ent.jpg, id=522, 631.35875pt x 465.74pt>
+ent.jpg, id=544, 631.35875pt x 465.74pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pComment.jpg Graphic file (type jpg)
 
 <use img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationship
 Comment.jpg>
 Package pdftex.def Info: img/PairingItems/LengthSimilarityRelationship/Similari
-tyLengthRelationshipComment.jpg used on input line 64.
+tyLengthRelationshipComment.jpg used on input line 91.
 (pdftex.def)             Requested size: 227.62204pt x 167.915pt.
+) (./pairingBuckets.tex
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31 <./img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelations
-hipDiscussion.jpg>]) (./pairingBuckets.tex
-
-LaTeX Warning: Citation `dang2012rebucket' on page 32 undefined on input line 1
+LaTeX Warning: Citation `dang2012rebucket' on page 33 undefined on input line 1
 .
 
-) (./pairingGitLabels.tex)) [32 <./img/PairingItems/LengthSimilarityRelationshi
-p/SimilarityLengthRelationshipComment.jpg>] (./masterthesis.bbl
+) (./pairingGitLabels.tex [33 <./img/PairingItems/LengthSimilarityRelationship/
+SimilarityLengthRelationshipDiscussion.jpg> <./img/PairingItems/LengthSimilarit
+yRelationship/SimilarityLengthRelationshipComment.jpg>])) [34]
+(./masterthesis.bbl
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ” in font cmr10!
- [33
+ [35
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
- [34]
+ [36]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
-
-(./masterthesis.aux)
+ (./masterthesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `masterthesis.out' has not changed.
@@ -864,33 +920,30 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 12671 strings out of 493304
- 206849 string characters out of 6139872
- 403036 words of memory out of 5000000
- 15715 multiletter control sequences out of 15000+600000
+ 12710 strings out of 493304
+ 208766 string characters out of 6139872
+ 403522 words of memory out of 5000000
+ 15741 multiletter control sequences out of 15000+600000
  11799 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  54i,14n,63p,1150b,1780s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.caption.28} has been referenced but does n
-ot exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on masterthesis.pdf (38 pages, 989053 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on masterthesis.pdf (40 pages, 1212731 bytes).
 PDF statistics:
- 638 PDF objects out of 1000 (max. 8388607)
- 559 compressed objects within 6 object streams
- 208 named destinations out of 1000 (max. 500000)
- 303 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 659 PDF objects out of 1000 (max. 8388607)
+ 573 compressed objects within 6 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 328 words of extra memory for PDF output out of 10000 (max. 10000000)
 
