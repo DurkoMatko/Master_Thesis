@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  20 JUN 2018 21:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  22 JUN 2018 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,18 +688,24 @@ Overfull \hbox (55.50298pt too wide) in paragraph at lines 7--7
 aster/Hu%20and%20Liu%20Sentiment%20Lexicon| 
  []
 
-) (./languageProcessingTools.tex [17]) (./confusionMatrices.tex
+) (./languageProcessingTools.tex [17]
+<img/SentimentAnalysis/PythonMatlabR.jpg, id=377, 1174.3875pt x 615.29875pt>
+File: img/SentimentAnalysis/PythonMatlabR.jpg Graphic file (type jpg)
 
-LaTeX Warning: Citation `bradley1997use' on page 18 undefined on input line 16.
+<use img/SentimentAnalysis/PythonMatlabR.jpg>
+Package pdftex.def Info: img/SentimentAnalysis/PythonMatlabR.jpg used on input 
+line 12.
+(pdftex.def)             Requested size: 227.62204pt x 119.25514pt.
+) (./confusionMatrices.tex
+[18 <./img/SentimentAnalysis/PythonMatlabR.jpg>]
+
+LaTeX Warning: Citation `bradley1997use' on page 19 undefined on input line 16.
 
 
-[18]) (./dataForSentimentAnalysis.tex) (./crossCorrelationReleases.tex [19]
+[19]) (./dataForSentimentAnalysis.tex) (./crossCorrelationReleases.tex
 Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ¦ in font cmti10!
-
-Underfull \vbox (badness 4132) has occurred while \output is active []
-
  [20]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
@@ -710,7 +716,7 @@ File: lstlang2.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2013/08/26 1.5b listings language file
 )
-<img/CrossCorelation/Releases/NodeJS_before.jpg, id=401, 642.4pt x 521.95pt>
+<img/CrossCorelation/Releases/NodeJS_before.jpg, id=403, 642.4pt x 521.95pt>
 File: img/CrossCorelation/Releases/NodeJS_before.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_before.jpg>
@@ -718,18 +724,15 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_before.jpg used on
  input line 63.
 (pdftex.def)             Requested size: 170.71652pt x 138.70633pt.
 
-<img/CrossCorelation/Releases/NodeJS_after.jpg, id=402, 660.4675pt x 513.92pt>
+<img/CrossCorelation/Releases/NodeJS_after.jpg, id=404, 660.4675pt x 513.92pt>
 File: img/CrossCorelation/Releases/NodeJS_after.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_after.jpg>
 Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_after.jpg used on 
 input line 65.
 (pdftex.def)             Requested size: 170.71652pt x 132.8397pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [21]
-<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=420, 649.
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=422, 649.
 42625pt x 640.3925pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg Graphic 
 file (type jpg)
@@ -742,7 +745,7 @@ leases.jpg used on input line 74.
 Releases/NodeJS_after.jpg> <./img/CrossCorelation/Releases/highestCorrelationsP
 lotReleases.jpg>]
 <img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg, id=4
-30, 657.45625pt x 637.38126pt>
+32, 657.45625pt x 637.38126pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg 
 Graphic file (type jpg)
 
@@ -755,7 +758,7 @@ relationsPlotReleases_nonStat.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24]
-<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=463, 649.42625pt x
+<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=465, 649.42625pt x
  631.35875pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot.jpg Graphic file (typ
 e jpg)
@@ -764,7 +767,7 @@ Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot.jp
 g used on input line 56.
 (pdftex.def)             Requested size: 227.62204pt x 221.28716pt.
 
-<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=465, 658.4
+<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=467, 658.4
 6pt x 635.37375pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg Graphic f
 ile (type jpg)
@@ -795,7 +798,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
  []
 
 ) (./similarityResults.tex [29]
-<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=507, 62
+<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=509, 62
 0.3175pt x 472.76625pt>
 File: img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg Graphi
 c file (type jpg)
@@ -805,7 +808,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/gitStackMatchesH
 istogram.jpg used on input line 11.
 (pdftex.def)             Requested size: 227.62204pt x 173.478pt.
 
-<img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg, id=508,
+<img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg, id=510,
  596.2275pt x 464.73625pt>
 File: img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg Gra
 phic file (type jpg)
@@ -818,7 +821,7 @@ Random3Bugs.jpg used on input line 20.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30 <./img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg>]
-<img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg, id=515, 5
+<img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg, id=517, 5
 99.23875pt x 457.71pt>
 File: img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg Graph
 ic file (type jpg)
@@ -828,7 +831,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/EmberStackWithRa
 ndom3Bugs.jpg used on input line 28.
 (pdftex.def)             Requested size: 170.71652pt x 130.39284pt.
 
-<img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg, id=516, 5
+<img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg, id=518, 5
 85.18625pt x 464.73625pt>
 File: img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg Graph
 ic file (type jpg)
@@ -838,7 +841,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/BowerStackWithRa
 ndom3Bugs.jpg used on input line 30.
 (pdftex.def)             Requested size: 170.71652pt x 135.57846pt.
 
-<img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg, id=517, 6
+<img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg, id=519, 6
 02.25pt x 457.71pt>
 File: img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg Graph
 ic file (type jpg)
@@ -848,7 +851,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/VueJSStackWithRa
 ndom3Bugs.jpg used on input line 37.
 (pdftex.def)             Requested size: 170.71652pt x 129.74332pt.
 
-<img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg, id=518,
+<img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg, id=520,
  608.2725pt x 456.70625pt>
 File: img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg Gra
 phic file (type jpg)
@@ -866,7 +869,7 @@ PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg>] [32 <./img/Pa
 iringItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg> <./img/PairingIt
 ems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg>]
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipDisc
-ussion.jpg, id=543, 601.24625pt x 466.74374pt>
+ussion.jpg, id=545, 601.24625pt x 466.74374pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pDiscussion.jpg Graphic file (type jpg)
 
@@ -877,7 +880,7 @@ tyLengthRelationshipDiscussion.jpg used on input line 84.
 (pdftex.def)             Requested size: 227.62204pt x 176.70212pt.
 
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipComm
-ent.jpg, id=544, 631.35875pt x 465.74pt>
+ent.jpg, id=546, 631.35875pt x 465.74pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pComment.jpg Graphic file (type jpg)
 
@@ -909,7 +912,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `masterthesis.out' has not changed.
-(rerunfilecheck)             Checksum: DFDBA1C89EF133E92D77E116D77EC2C8;1910.
+(rerunfilecheck)             Checksum: EE3D7845211E266D24463A7D796F1810;1910.
 
 
 LaTeX Warning: There were undefined references.
@@ -920,10 +923,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 12710 strings out of 493304
- 208766 string characters out of 6139872
- 403522 words of memory out of 5000000
- 15741 multiletter control sequences out of 15000+600000
+ 12718 strings out of 493304
+ 209018 string characters out of 6139872
+ 404264 words of memory out of 5000000
+ 15747 multiletter control sequences out of 15000+600000
  11799 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  54i,14n,63p,1150b,1780s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -940,10 +943,10 @@ cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on masterthesis.pdf (40 pages, 1212731 bytes).
+Output written on masterthesis.pdf (40 pages, 1285326 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 573 compressed objects within 6 object streams
- 216 named destinations out of 1000 (max. 500000)
- 328 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 665 PDF objects out of 1000 (max. 8388607)
+ 578 compressed objects within 6 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 333 words of extra memory for PDF output out of 10000 (max. 10000000)
 

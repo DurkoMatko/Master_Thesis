@@ -4,16 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/gitMining/issues/getClosedIssues.py" line="34" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/similarityResults.tex" afterPath="$PROJECT_DIR$/masterthesis_template/similarityResults.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" afterPath="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" />
-    </list>
+    <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +17,8 @@
       <file leaf-file-name="nltk_similarity_Stack.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="247" column="36" lean-forward="true" selection-start-line="247" selection-start-column="36" selection-end-line="247" selection-end-column="36" />
+            <state relative-caret-position="107">
+              <caret line="245" column="16" lean-forward="false" selection-start-line="245" selection-start-column="16" selection-end-line="245" selection-end-column="16" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -408,13 +399,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1600" y="8" width="1600" height="904" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30451614" sideWeight="0.416875" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26131955" sideWeight="0.583125" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26131955" sideWeight="0.583125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32774192" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1031,8 +1021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="247" column="36" lean-forward="true" selection-start-line="247" selection-start-column="36" selection-end-line="247" selection-end-column="36" />
+        <state relative-caret-position="107">
+          <caret line="245" column="16" lean-forward="false" selection-start-line="245" selection-start-column="16" selection-end-line="245" selection-end-column="16" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
