@@ -542,8 +542,8 @@ def tuneModelParameters(corpus,labels,vectorizer):
         scores = ['accuracy']
         # Set the parameters by to combine
         SVC_parameters = [{'C': [1,10,100,1000],
-                             #'loss': ['hinge','squared_hinge'],
-                             #'multi_class': ['ovr','crammer_singer'],
+                             'loss': ['hinge','squared_hinge'],
+                             'multi_class': ['ovr','crammer_singer'],
                              'fit_intercept': [True,False]
                              }]
         MultiNB_parameters = [{'alpha': [1.0, 2.0, 5.0, 10.0],

@@ -5,45 +5,45 @@ The style file: unsrt.bst
 Database file #1: masterthesis.bib
 Warning--empty journal in mayfield2008social
 Warning--empty year in hyndman5forecast
-You've used 14 entries,
+You've used 20 entries,
             1791 wiz_defined-function locations,
-            536 strings with 5956 characters,
-and the built_in function-call counts, 3378 in all, are:
-= -- 315
-> -- 138
-< -- 3
-+ -- 52
-- -- 38
-* -- 225
-:= -- 528
-add.period$ -- 45
-call.type$ -- 14
-change.case$ -- 13
+            572 strings with 7063 characters,
+and the built_in function-call counts, 5409 in all, are:
+= -- 520
+> -- 209
+< -- 7
++ -- 78
+- -- 58
+* -- 350
+:= -- 807
+add.period$ -- 67
+call.type$ -- 20
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 158
-empty$ -- 328
-format.name$ -- 38
-if$ -- 760
+cite$ -- 22
+duplicate$ -- 260
+empty$ -- 525
+format.name$ -- 58
+if$ -- 1251
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 15
-newline$ -- 73
-num.names$ -- 14
-pop$ -- 41
+int.to.str$ -- 20
+missing$ -- 21
+newline$ -- 103
+num.names$ -- 20
+pop$ -- 67
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 73
+skip$ -- 135
 stack$ -- 0
-substring$ -- 224
-swap$ -- 41
-text.length$ -- 3
+substring$ -- 392
+swap$ -- 87
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 35
-width$ -- 16
-write$ -- 155
+while$ -- 56
+width$ -- 22
+write$ -- 225
 (There were 2 warnings)

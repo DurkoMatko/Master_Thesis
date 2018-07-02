@@ -1,10 +1,12 @@
-import os, csv, sys
+import os, csv, sys, re
 import matplotlib.pyplot as plt
 from matplotlib import pylab
 from dateutil import parser
 import nltk
 import numpy as np
 import pickle
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, classification_report
+from sklearn.model_selection import StratifiedKFold
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -15,6 +17,10 @@ def main(argv):
 
     #train naive bayes classifier on training data
     #trainClassifier()
+
+    #execute cross validation (for thesis text)
+    corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Sentiment140_testData')
+    execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels)
 
     #load naive bayes classifier from file
     classifier, word_features = loadClassifier()
@@ -82,6 +88,111 @@ def trainClassifier():
 
     print "Classifier trained and saved"
 
+def execute_crossValidation(fold_splits, corpus, labels):
+    kf = StratifiedKFold(n_splits=fold_splits)
+
+    #choose classifiers to evaluate
+    iter=1;
+
+    #performance metrics initialization
+    crossValidationAccuracy = []
+    crossValidationRecall = []
+    crossValidationPrecision = []
+    crossValidationFmeasure = []
+    confusionMatrix = np.zeros((2, 2))*1.0;  #confusion matrix
+
+    print "Starting n-fold training with number of folds:"+str(fold_splits)
+    for train_index, test_index in kf.split(corpus, labels):
+        #create arrays and corpuses according to current fold
+        X_train = [corpus[i] for i in train_index]
+        X_test = [corpus[i] for i in test_index]
+        y_train, y_test = labels[train_index], labels[test_index]
+
+        # Arrayify tweets
+        tweets = []
+        for idx, traintweet in enumerate(X_train):
+            words_filtered = [e.lower() for e in traintweet.split() if len(e) >= 3]
+            tweets.append((words_filtered, y_train[idx]))
+
+        word_features = get_word_features(get_words_in_tweets(tweets))
+        training_set = nltk.classify.apply_features(extract_features, tweets)
+        classifier = nltk.NaiveBayesClassifier.train(training_set)
+
+        #fit(train) models and check performance on testing part of data
+        result = []
+        for testtweet in X_test:
+            result.append(classifyAndAddNumericValue(classifier, testtweet))
+
+
+        crossValidationAccuracy.append(accuracy_score(y_test,result))
+        crossValidationRecall.append(recall_score(y_test, result))
+        crossValidationPrecision.append(precision_score(y_test, result))
+        crossValidationFmeasure.append(f1_score(y_test, result))
+        conf_matrix = confusion_matrix(y_test, result)
+        normalized_conf_matrix = np.divide(conf_matrix, len(result), dtype=float)
+        confusionMetrice = confusionMatrix + normalized_conf_matrix
+
+        print "Models succesfully trained, number of iteration:" + str(iter)
+
+        #iterator for logging messages
+        iter = iter+1
+
+    print str(fold_splits) + "-fold cross validation done, confusion matrices:"
+
+    print "Cross validation accuracy: ",
+    for item in crossValidationAccuracy: print item,
+    print "Cross validation accuracy average:" + str(sum(crossValidationAccuracy) / len(crossValidationAccuracy))
+    print "Cross validation precision: ",
+    for item in crossValidationPrecision: print item,
+    print "Cross validation precision average:" + str(
+        sum(crossValidationPrecision) / len(crossValidationPrecision))
+    print "Cross validation recall: ",
+    for item in crossValidationRecall: print item,
+    print "Cross validation accuracy average:" + str(
+        sum(crossValidationRecall) / len(crossValidationRecall))
+    print "Cross validation F measure: ",
+    for item in crossValidationFmeasure: print item,
+    print "Cross validation accuracy average:" + str(
+        sum(crossValidationFmeasure) / len(crossValidationFmeasure))
+
+    print "Cross validation confusion matrix:" + str(confusionMatrix/fold_splits)
+
+def make_Corpus_From_Tweets(root_dir):
+    print "Creating training corpus from training tweets"
+    mypath = os.path.dirname(__file__)
+    trainDataPath = os.path.join(mypath, root_dir)
+    trainDataFiles = [f for f in os.listdir(trainDataPath) if os.path.isfile(os.path.join(trainDataPath, f))]
+
+    corpus = []
+    #Sentiment140 contains 499 tweets
+    labels = np.zeros(359);
+    for file in trainDataFiles:
+        with open(os.path.join(mypath, root_dir+'/') + file) as trainingFile:
+            reader = csv.reader(trainingFile, delimiter=',')
+            iterator = -1;
+            a = 0
+            #for each tweet in file
+            for row in reader:
+                #if it's either positive or negative
+                if (row[0] == "0" or row[0] == "4"):
+                    #increase index because we're adding to corpus
+                    iterator = iterator + 1
+                    #add the tweet to corpus
+                    corpus.append(unicode(preprocess(row[5]), errors='ignore'))
+                    #add positive or negative label
+                    if (row[0] == "0"):
+                        labels[iterator] = 0
+                    elif (row[0] == "4"):
+                        labels[iterator] = 1
+
+        trainingFile.close()
+    return corpus,labels
+
+def preprocess(raw_text):
+    #remove hashtags, @references,
+    letters_only_text = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(#[A-Za-z0-9]+)|(\w+:\/\/\S+)"," ",raw_text).split())
+    return letters_only_text
+
 
 def getDatesAndScores2(classifier, reader):
     included_cols = [1, 4]
@@ -95,16 +206,13 @@ def getDatesAndScores2(classifier, reader):
     separator = ' '
 
     for row in reader:
-        if (row[4] == 'text'):
+        if (row[4] == 'text'):    #next(reader) ?
             continue;
 
         content = list(row[i] for i in included_cols)
 
         #assign numeric value to classified tweets
-        if (classifier.classify(extract_features(content[1].split())) == "positive"):
-            rowScore = 1
-        else:
-            rowScore = -1
+        rowScore = classifyAndAddNumericValue(classifier, content[1].split())
 
         date = parser.parse(row[1].split(separator, 1)[0]).date()
 
@@ -131,6 +239,13 @@ def getDatesAndScores2(classifier, reader):
 
     return averageScores.keys(), averageScores.values(), flooredAverageScores.keys(), flooredAverageScores.values()
 
+def classifyAndAddNumericValue(classifier, content):
+    output = classifier.classify(extract_features(content))
+    '''if (output == "positive"):
+        rowScore = 1
+    else:
+        rowScore = -1'''
+    return output
 
 def loadClassifier():
     f = open('NaiveBayesClassifier.pickle', 'rb')

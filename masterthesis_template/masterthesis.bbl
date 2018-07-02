@@ -56,10 +56,41 @@ Alec Go, Richa Bhayani, and Lei Huang.
 \newblock Twitter sentiment classification using distant supervision.
 \newblock {\em CS224N Project Report, Stanford}, 1(12), 2009.
 
+\bibitem{pang2004sentimental}
+Bo~Pang and Lillian Lee.
+\newblock A sentimental education: Sentiment analysis using subjectivity
+  summarization based on minimum cuts.
+\newblock In {\em Proceedings of the 42nd annual meeting on Association for
+  Computational Linguistics}, page 271. Association for Computational
+  Linguistics, 2004.
+
 \bibitem{warriner2013norms}
 Amy~Beth Warriner, Victor Kuperman, and Marc Brysbaert.
 \newblock Norms of valence, arousal, and dominance for 13,915 english lemmas.
 \newblock {\em Behavior research methods}, 45(4):1191--1207, 2013.
+
+\bibitem{bradley1997use}
+Andrew~P Bradley.
+\newblock The use of the area under the roc curve in the evaluation of machine
+  learning algorithms.
+\newblock {\em Pattern recognition}, 30(7):1145--1159, 1997.
+
+\bibitem{go2009twitter2}
+Alec Go, Lei Huang, and Richa Bhayani.
+\newblock Twitter sentiment analysis.
+\newblock {\em Entropy}, 17:252, 2009.
+
+\bibitem{agarwal2011sentiment}
+Apoorv Agarwal, Boyi Xie, Ilia Vovsha, Owen Rambow, and Rebecca Passonneau.
+\newblock Sentiment analysis of twitter data.
+\newblock In {\em Proceedings of the workshop on languages in social media},
+  pages 30--38. Association for Computational Linguistics, 2011.
+
+\bibitem{saif2012semantic}
+Hassan Saif, Yulan He, and Harith Alani.
+\newblock Semantic sentiment analysis of twitter.
+\newblock In {\em International semantic web conference}, pages 508--524.
+  Springer, 2012.
 
 \bibitem{hyndman5forecast}
 Rob~J Hyndman, George Athanasopoulos, Slava Razbash, Drew Schmidt, Zhenyu Zhou,
@@ -68,17 +99,23 @@ Rob~J Hyndman, George Athanasopoulos, Slava Razbash, Drew Schmidt, Zhenyu Zhou,
   2013.
 \newblock {\em R package version}, 5.
 
+\bibitem{lazar2014improving}
+Alina Lazar, Sarah Ritchey, and Bonita Sharif.
+\newblock Improving the accuracy of duplicate bug report detection using
+  textual similarity measures.
+\newblock In {\em Proceedings of the 11th Working Conference on Mining Software
+  Repositories}, pages 308--311. ACM, 2014.
+
+\bibitem{dang2012rebucket}
+Yingnong Dang, Rongxin Wu, Hongyu Zhang, Dongmei Zhang, and Peter Nobel.
+\newblock Rebucket: a method for clustering duplicate crash reports based on
+  call stack similarity.
+\newblock In {\em Software Engineering (ICSE), 2012 34th International
+  Conference on}, pages 1084--1093. IEEE, 2012.
+
 \bibitem{feller2002understanding}
 Joseph Feller, Brian Fitzgerald, et~al.
 \newblock {\em Understanding open source software development}.
 \newblock Addison-Wesley London, 2002.
-
-\bibitem{pang2004sentimental}
-Bo~Pang and Lillian Lee.
-\newblock A sentimental education: Sentiment analysis using subjectivity
-  summarization based on minimum cuts.
-\newblock In {\em Proceedings of the 42nd annual meeting on Association for
-  Computational Linguistics}, page 271. Association for Computational
-  Linguistics, 2004.
 
 \end{thebibliography}

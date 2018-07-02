@@ -20,21 +20,28 @@
 \contentsline {section}{\numberline {8}Language processing tools}{17}{section.0.8}
 \contentsline {section}{\numberline {9}Performance metrics}{18}{section.0.9}
 \contentsline {paragraph}{\nonumberline Terminology}{18}{section*.16}
-\contentsline {section}{\numberline {10}Data to analyze}{20}{section.0.10}
-\contentsline {section}{\numberline {11}Results}{20}{section.0.11}
-\contentsline {subsection}{\numberline {11.1}Performance}{20}{subsection.0.11.1}
-\contentsline {subsection}{\numberline {11.2}Cross-correlation between releases and sentiment change}{20}{subsection.0.11.2}
-\contentsline {paragraph}{\nonumberline Results interpretation:}{22}{section*.19}
-\contentsline {subsection}{\numberline {11.3}Commits count within releases}{23}{subsection.0.11.3}
-\contentsline {chapter}{\nonumberline Linking bug repositories and social media}{27}{chapter*.23}
-\contentsline {section}{\numberline {12}Aproaches}{27}{section.0.12}
-\contentsline {section}{\numberline {13}Available data}{28}{section.0.13}
-\contentsline {paragraph}{\nonumberline Git issue reports:}{28}{section*.24}
-\contentsline {paragraph}{\nonumberline Stack overflow questions:}{28}{section*.25}
-\contentsline {paragraph}{\nonumberline Reddit dialogues:}{29}{section*.26}
-\contentsline {section}{\numberline {14}Similarity results}{29}{section.0.14}
-\contentsline {subsection}{\numberline {14.1}NLTK}{30}{subsection.0.14.1}
-\contentsline {paragraph}{\nonumberline Stack Overflow:}{30}{section*.27}
-\contentsline {paragraph}{\nonumberline Reddit:}{32}{section*.32}
-\contentsline {section}{\numberline {15}Buckets}{33}{section.0.15}
-\contentsline {section}{\numberline {16}Using GIT labels}{34}{section.0.16}
+\contentsline {section}{\numberline {10}Classifier evaluation}{20}{section.0.10}
+\contentsline {paragraph}{\nonumberline Textblob:}{20}{section*.17}
+\contentsline {paragraph}{\nonumberline NLT:}{21}{section*.18}
+\contentsline {paragraph}{\nonumberline Sci-kit Learn}{22}{section*.19}
+\contentsline {paragraph}{\nonumberline Choosing classifiers}{22}{section*.20}
+\contentsline {paragraph}{\nonumberline Vectorizer and its optimizations}{22}{section*.22}
+\contentsline {paragraph}{\nonumberline Classifier optimizations}{24}{section*.23}
+\contentsline {paragraph}{\nonumberline Neutral Tweets}{26}{section*.24}
+\contentsline {section}{\numberline {11}Data to analyze}{27}{section.0.11}
+\contentsline {section}{\numberline {12}Results}{27}{section.0.12}
+\contentsline {subsection}{\numberline {12.1}Cross-correlation between releases and sentiment change}{27}{subsection.0.12.1}
+\contentsline {paragraph}{\nonumberline Results interpretation:}{29}{section*.27}
+\contentsline {subsection}{\numberline {12.2}Commits count within releases}{30}{subsection.0.12.2}
+\contentsline {chapter}{\nonumberline Linking bug repositories and social media}{35}{chapter*.31}
+\contentsline {section}{\numberline {13}Aproaches}{35}{section.0.13}
+\contentsline {section}{\numberline {14}Available data}{36}{section.0.14}
+\contentsline {paragraph}{\nonumberline Git issue reports:}{36}{section*.32}
+\contentsline {paragraph}{\nonumberline Stack overflow questions:}{36}{section*.33}
+\contentsline {paragraph}{\nonumberline Reddit dialogues:}{37}{section*.34}
+\contentsline {section}{\numberline {15}Similarity results}{37}{section.0.15}
+\contentsline {subsection}{\numberline {15.1}NLTK}{38}{subsection.0.15.1}
+\contentsline {paragraph}{\nonumberline Stack Overflow:}{38}{section*.35}
+\contentsline {paragraph}{\nonumberline Reddit:}{40}{section*.40}
+\contentsline {section}{\numberline {16}Buckets}{41}{section.0.16}
+\contentsline {section}{\numberline {17}Using GIT labels}{42}{section.0.17}
