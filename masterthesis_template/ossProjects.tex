@@ -54,6 +54,37 @@ After obtaining all tags, one more request for every one of those tags was neede
 
 I saved the release dates in simple text file, one per line. This code was later on changed (in subsection \ref{ssec:crossCorrelationCommits}) to include also number of commits per release.
 
+After executing this step, I had data needed to divide the frameworks into groups based on their releasing frequency. I ended up with 3 groups:
+\begin{itemize}
+\item{Seldom releasing frequency} - less than once per month
+\item{Medium releasing frequency} - between one and 3.5 times per month
+\item{Often releasing frequency} - on average more than 3.5 releases per month
+\end{itemize}
+
+Using these values as bounds for groups, projects were divided into their respective groups. Projects, release counts and average release frequency are in table \ref{table:releaseGroupsCalculation}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| p{2cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+ \hline
+\textbf{Group} & \textbf{ Project }& \textbf{Release count} & \textbf{ Duration }& \textbf{Frequency}\\
+ \hline
+  \multirow{4}{*}{Often}   & EmberJS & 266   & 76 & 3.5\\ 
+    & VueJS &  209 & 45 & 4.64 \\ 
+    & NodeJS & 440 & 100 & 4.4\\  
+    & Symfony & 291 & 76 & 3.82\\ \hline 
+  \multirow{4}{*}{Medium}   & AngularJS & 190   & 82 & 2.34\\ 
+    & CakePHP & 289 & 104 & 2.77\\ 
+    & Bower &  102 & 60 & 1.7\\   \hline 
+  \multirow{4}{*}{Seldom}   & Gulp & 16 & 25 & 0.64\\ 
+    & Yii Framework & 41 & 59 & 0.69\\ 
+    & Bootstrap &  42 & 72 & 0.58\\  \hline 
+\end{tabular}
+\caption{OSS projects grouped according to their releasing frequency}
+\label{table:releaseGroupsCalculation}
+\end{table}
+
+
 \subsection{Issues} \label{ssec:issuesMining}
 To get the project issues, I've used the endpoint \textit{issues}. It offers various parameters like state, labels, sort, direction or since date. I've decided to work just with closed issues and snippet where I'm sending the request can be seen in listing \ref{lst:issuesEndpoint}).
 

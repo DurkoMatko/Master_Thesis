@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  2 JUL 2018 20:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  9 JUL 2018 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,20 +665,31 @@ LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
  [12]
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 35.
+
+Overfull \hbox (11.63023pt too wide) in paragraph at lines 68--83
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1082) has occurred while \output is active []
+
  [13]
 <img/PairingItems/gitLabels/defaultLabels.jpg, id=324, 727.71875pt x 405.515pt>
 File: img/PairingItems/gitLabels/defaultLabels.jpg Graphic file (type jpg)
 <use img/PairingItems/gitLabels/defaultLabels.jpg>
 Package pdftex.def Info: img/PairingItems/gitLabels/defaultLabels.jpg used on i
-nput line 70.
+nput line 102.
 (pdftex.def)             Requested size: 227.62204pt x 126.84068pt.
-) [14 <./img/PairingItems/gitLabels/defaultLabels.jpg>] (./sentimentAnalysis.te
-x
-(./sentimentAnalysisHistory.tex [15
+
+Underfull \vbox (badness 3579) has occurred while \output is active []
+
+ [14])
+[15 <./img/PairingItems/gitLabels/defaultLabels.jpg>] [16
 
 
 ]
-<img/SentimentAnalysis/papersCountHistory.jpg, id=350, 452.69125pt x 296.10625p
+(./sentimentAnalysis.tex (./sentimentAnalysisHistory.tex [17]
+<img/SentimentAnalysis/papersCountHistory.jpg, id=360, 452.69125pt x 296.10625p
 t>
 File: img/SentimentAnalysis/papersCountHistory.jpg Graphic file (type jpg)
  <use img/SentimentAnalysis/papersCountHistory.jpg>
@@ -686,14 +697,14 @@ Package pdftex.def Info: img/SentimentAnalysis/papersCountHistory.jpg used on i
 nput line 7.
 (pdftex.def)             Requested size: 227.62204pt x 148.88863pt.
 ) (./trainingDatasets.tex
-[16 <./img/SentimentAnalysis/papersCountHistory.jpg>]
+[18 <./img/SentimentAnalysis/papersCountHistory.jpg>]
 Overfull \hbox (55.50298pt too wide) in paragraph at lines 7--7
 [][][]\OT1/cmr/m/n/9 https://github.com/woodrad/Twitter-Sentiment-Mining/tree/m
 aster/Hu%20and%20Liu%20Sentiment%20Lexicon| 
  []
 
-) (./languageProcessingTools.tex [17]
-<img/SentimentAnalysis/PythonMatlabR.jpg, id=377, 1174.3875pt x 615.29875pt>
+) (./languageProcessingTools.tex [19]
+<img/SentimentAnalysis/PythonMatlabR.jpg, id=387, 1174.3875pt x 615.29875pt>
 File: img/SentimentAnalysis/PythonMatlabR.jpg Graphic file (type jpg)
 
 <use img/SentimentAnalysis/PythonMatlabR.jpg>
@@ -701,16 +712,16 @@ Package pdftex.def Info: img/SentimentAnalysis/PythonMatlabR.jpg used on input
 line 12.
 (pdftex.def)             Requested size: 227.62204pt x 119.25514pt.
 ) (./confusionMatrices.tex
-[18 <./img/SentimentAnalysis/PythonMatlabR.jpg>] [19])
-(./classifierEvaluation.tex [20] [21]
-<img/SentimentAnalysis/scikitWorkflow.jpg, id=433, 762.85pt x 211.79124pt>
+[20 <./img/SentimentAnalysis/PythonMatlabR.jpg>] [21])
+(./classifierEvaluation.tex [22] [23]
+<img/SentimentAnalysis/scikitWorkflow.jpg, id=443, 762.85pt x 211.79124pt>
 File: img/SentimentAnalysis/scikitWorkflow.jpg Graphic file (type jpg)
 
 <use img/SentimentAnalysis/scikitWorkflow.jpg>
 Package pdftex.def Info: img/SentimentAnalysis/scikitWorkflow.jpg used on input
  line 81.
 (pdftex.def)             Requested size: 369.88582pt x 102.68954pt.
- [22 <./img/SentimentAnalysis/scikitWorkflow.jpg>]
+ [24 <./img/SentimentAnalysis/scikitWorkflow.jpg>]
 Missing character: There is no √ in font cmr10!
 Missing character: There is no Ø in font cmr10!
 Missing character: There is no ‚ in font cmr10!
@@ -737,7 +748,7 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
- [23]
+ [25]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -762,17 +773,35 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
- [24]
+ [26]
 Overfull \hbox (28.08301pt too wide) in paragraph at lines 158--175
  [][] 
  []
 
-[25]) (./dataForSentimentAnalysis.tex [26]) (./crossCorrelationReleases.tex
+[27]
+
+LaTeX Warning: Citation `kouloumpis2011twitter' on page 28 undefined on input l
+ine 205.
+
+[28]
+<img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg, id=544, 585.1862
+5pt x 355.3275pt>
+File: img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg Graphic file
+ (type jpg)
+
+<use img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg>
+Package pdftex.def Info: img/SentimentAnalysis/finalClassifierPerformanceBarCha
+rt.jpg used on input line 232.
+(pdftex.def)             Requested size: 398.33858pt x 241.87973pt.
+)
+(./dataForSentimentAnalysis.tex [29 <./img/SentimentAnalysis/finalClassifierPer
+formanceBarChart.jpg>]) (./resultsBeforeAfter.tex)
+(./crossCorrelationReleases.tex
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ¶ in font cmti10!
-
-[27] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+ [30]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -781,7 +810,7 @@ File: lstlang2.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2013/08/26 1.5b listings language file
 )
-<img/CrossCorelation/Releases/NodeJS_before.jpg, id=547, 642.4pt x 521.95pt>
+<img/CrossCorelation/Releases/NodeJS_before.jpg, id=567, 642.4pt x 521.95pt>
 File: img/CrossCorelation/Releases/NodeJS_before.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_before.jpg>
@@ -789,18 +818,15 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_before.jpg used on
  input line 63.
 (pdftex.def)             Requested size: 170.71652pt x 138.70633pt.
 
-<img/CrossCorelation/Releases/NodeJS_after.jpg, id=548, 660.4675pt x 513.92pt>
+<img/CrossCorelation/Releases/NodeJS_after.jpg, id=568, 660.4675pt x 513.92pt>
 File: img/CrossCorelation/Releases/NodeJS_after.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_after.jpg>
 Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_after.jpg used on 
 input line 65.
 (pdftex.def)             Requested size: 170.71652pt x 132.8397pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28]
-<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=564, 649.
+ [31]
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=584, 649.
 42625pt x 640.3925pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg Graphic 
 file (type jpg)
@@ -809,11 +835,11 @@ file (type jpg)
 Package pdftex.def Info: img/CrossCorelation/Releases/highestCorrelationsPlotRe
 leases.jpg used on input line 74.
 (pdftex.def)             Requested size: 227.62204pt x 224.45341pt.
- [29 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/
+ [32 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/
 Releases/NodeJS_after.jpg> <./img/CrossCorelation/Releases/highestCorrelationsP
 lotReleases.jpg>]
 <img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg, id=5
-74, 657.45625pt x 637.38126pt>
+94, 657.45625pt x 637.38126pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg 
 Graphic file (type jpg)
 
@@ -821,12 +847,12 @@ Graphic file (type jpg)
 Package pdftex.def Info: img/CrossCorelation/Releases/highestCorrelationsPlotRe
 leases_nonStat.jpg used on input line 94.
 (pdftex.def)             Requested size: 227.62204pt x 220.6651pt.
-) (./crossCorrelationCommits.tex [30 <./img/CrossCorelation/Releases/highestCor
+) (./crossCorrelationCommits.tex [33 <./img/CrossCorelation/Releases/highestCor
 relationsPlotReleases_nonStat.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=607, 649.42625pt x
+ [34]
+<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=628, 649.42625pt x
  631.35875pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot.jpg Graphic file (typ
 e jpg)
@@ -835,7 +861,7 @@ Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot.jp
 g used on input line 56.
 (pdftex.def)             Requested size: 227.62204pt x 221.28716pt.
 
-<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=609, 658.4
+<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=630, 658.4
 6pt x 635.37375pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg Graphic f
 ile (type jpg)
@@ -847,21 +873,21 @@ nStat.jpg used on input line 65.
 ))
 Underfull \vbox (badness 3907) has occurred while \output is active []
 
- [32 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg>] [33 <./img/Cr
-ossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg>] [34
+ [35 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg>] [36 <./img/Cr
+ossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg>] (./pairingBugs.tex
+(./pairingApproaches.tex [37
 
 
-] (./pairingBugs.tex
-(./pairingApproaches.tex [35]) (./pairingData.tex
+]) (./pairingData.tex
 Underfull \vbox (badness 3590) has occurred while \output is active []
 
- [36]
+ [38]
 Underfull \hbox (badness 10000) in paragraph at lines 67--68
 []\OT1/cmr/bx/n/10.95 Submissions
  []
 
-) (./similarityResults.tex [37]
-<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=658, 62
+) (./similarityResults.tex [39]
+<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=675, 62
 0.3175pt x 472.76625pt>
 File: img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg Graphi
 c file (type jpg)
@@ -871,7 +897,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/gitStackMatchesH
 istogram.jpg used on input line 11.
 (pdftex.def)             Requested size: 227.62204pt x 173.478pt.
 
-<img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg, id=659,
+<img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg, id=676,
  596.2275pt x 464.73625pt>
 File: img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg Gra
 phic file (type jpg)
@@ -883,8 +909,8 @@ Random3Bugs.jpg used on input line 20.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <./img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg>]
-<img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg, id=666, 5
+ [40 <./img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg>]
+<img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg, id=683, 5
 99.23875pt x 457.71pt>
 File: img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg Graph
 ic file (type jpg)
@@ -894,7 +920,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/EmberStackWithRa
 ndom3Bugs.jpg used on input line 28.
 (pdftex.def)             Requested size: 170.71652pt x 130.39284pt.
 
-<img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg, id=667, 5
+<img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg, id=684, 5
 85.18625pt x 464.73625pt>
 File: img/PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg Graph
 ic file (type jpg)
@@ -904,7 +930,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/BowerStackWithRa
 ndom3Bugs.jpg used on input line 30.
 (pdftex.def)             Requested size: 170.71652pt x 135.57846pt.
 
-<img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg, id=668, 6
+<img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg, id=685, 6
 02.25pt x 457.71pt>
 File: img/PairingItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg Graph
 ic file (type jpg)
@@ -914,7 +940,7 @@ Package pdftex.def Info: img/PairingItems/SimilarityHistograms/VueJSStackWithRa
 ndom3Bugs.jpg used on input line 37.
 (pdftex.def)             Requested size: 170.71652pt x 129.74332pt.
 
-<img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg, id=669,
+<img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg, id=686,
  608.2725pt x 456.70625pt>
 File: img/PairingItems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg Gra
 phic file (type jpg)
@@ -926,13 +952,13 @@ Random3Bugs.jpg used on input line 39.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg> 
+ [41 <./img/PairingItems/SimilarityHistograms/AureliaStackWithRandom3Bugs.jpg> 
 <./img/PairingItems/SimilarityHistograms/EmberStackWithRandom3Bugs.jpg> <./img/
-PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg>] [40 <./img/Pa
+PairingItems/SimilarityHistograms/BowerStackWithRandom3Bugs.jpg>] [42 <./img/Pa
 iringItems/SimilarityHistograms/VueJSStackWithRandom3Bugs.jpg> <./img/PairingIt
 ems/SimilarityHistograms/AngularStackWithRandom3Bugs.jpg>]
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipDisc
-ussion.jpg, id=694, 601.24625pt x 466.74374pt>
+ussion.jpg, id=710, 601.24625pt x 466.74374pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pDiscussion.jpg Graphic file (type jpg)
 
@@ -943,7 +969,7 @@ tyLengthRelationshipDiscussion.jpg used on input line 84.
 (pdftex.def)             Requested size: 227.62204pt x 176.70212pt.
 
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipComm
-ent.jpg, id=695, 631.35875pt x 465.74pt>
+ent.jpg, id=711, 631.35875pt x 465.74pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pComment.jpg Graphic file (type jpg)
 
@@ -952,32 +978,39 @@ Comment.jpg>
 Package pdftex.def Info: img/PairingItems/LengthSimilarityRelationship/Similari
 tyLengthRelationshipComment.jpg used on input line 91.
 (pdftex.def)             Requested size: 227.62204pt x 167.915pt.
-) (./pairingBuckets.tex) (./pairingGitLabels.tex [41 <./img/PairingItems/Length
+) (./pairingBuckets.tex) (./pairingGitLabels.tex [43 <./img/PairingItems/Length
 SimilarityRelationship/SimilarityLengthRelationshipDiscussion.jpg> <./img/Pairi
 ngItems/LengthSimilarityRelationship/SimilarityLengthRelationshipComment.jpg>])
-) [42] (./masterthesis.bbl
+) [44] (./masterthesis.bbl
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no î in font cmr10!
- [43
+ [45
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
- [44]
+ [46]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
  (./masterthesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
 Package rerunfilecheck Info: File `masterthesis.out' has not changed.
-(rerunfilecheck)             Checksum: EBAB3BC61E5F24A771799A7CF3578F77;1914.
+(rerunfilecheck)             Checksum: F91A59F0D3428C146220700C2ED6CE0D;1914.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 12932 strings out of 493304
- 212728 string characters out of 6139872
- 450308 words of memory out of 5000000
- 15850 multiletter control sequences out of 15000+600000
+ 12956 strings out of 493304
+ 213479 string characters out of 6139872
+ 451335 words of memory out of 5000000
+ 15864 multiletter control sequences out of 15000+600000
  11799 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  54i,14n,63p,1923b,1780s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -994,10 +1027,10 @@ cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on masterthesis.pdf (48 pages, 1344630 bytes).
+Output written on masterthesis.pdf (50 pages, 1384852 bytes).
 PDF statistics:
- 835 PDF objects out of 1000 (max. 8388607)
- 737 compressed objects within 8 object streams
- 320 named destinations out of 1000 (max. 500000)
- 338 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 854 PDF objects out of 1000 (max. 8388607)
+ 753 compressed objects within 8 object streams
+ 326 named destinations out of 1000 (max. 500000)
+ 343 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -20,10 +20,10 @@
 \BOOKMARK [1][-]{section.0.12}{Results}{chapter*.13}% 20
 \BOOKMARK [2][-]{subsection.0.12.1}{Cross-correlation between releases and sentiment change}{section.0.12}% 21
 \BOOKMARK [2][-]{subsection.0.12.2}{Commits count within releases}{section.0.12}% 22
-\BOOKMARK [0][-]{chapter*.31}{Linking bug repositories and social media}{}% 23
-\BOOKMARK [1][-]{section.0.13}{Aproaches}{chapter*.31}% 24
-\BOOKMARK [1][-]{section.0.14}{Available data}{chapter*.31}% 25
-\BOOKMARK [1][-]{section.0.15}{Similarity results}{chapter*.31}% 26
+\BOOKMARK [0][-]{chapter*.33}{Linking bug repositories and social media}{}% 23
+\BOOKMARK [1][-]{section.0.13}{Aproaches}{chapter*.33}% 24
+\BOOKMARK [1][-]{section.0.14}{Available data}{chapter*.33}% 25
+\BOOKMARK [1][-]{section.0.15}{Similarity results}{chapter*.33}% 26
 \BOOKMARK [2][-]{subsection.0.15.1}{NLTK}{section.0.15}% 27
-\BOOKMARK [1][-]{section.0.16}{Buckets}{chapter*.31}% 28
-\BOOKMARK [1][-]{section.0.17}{Using GIT labels}{chapter*.31}% 29
+\BOOKMARK [1][-]{section.0.16}{Buckets}{chapter*.33}% 28
+\BOOKMARK [1][-]{section.0.17}{Using GIT labels}{chapter*.33}% 29

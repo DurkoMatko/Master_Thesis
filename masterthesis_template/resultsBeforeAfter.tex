@@ -1,0 +1,25 @@
+First and the most simple analysis was to compare sentiment of tweets collected 3 days prior and post-release. Results are shown in table \ref{table:BeforeAfterReleaseSentiment}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
+ \hline
+\textbf{Project }& \textbf{Before}& \textbf{After}\\
+ \hline
+ NodeJS   & 0.707 & 0.709\\ \hline
+ EmberJS   & 0.719 & 0.719\\ \hline
+ VueJS   & 0.694 & 0.708\\ \hline 
+ Symfony & 0.73 & 0.729\\ \hline   
+ AngularJS   & 0.718 & 0.719\\ \hline
+ CakePhp & 0.71 & 0.702\\ \hline 
+ Bower   & 0.634 & 0.638\\ \hline 
+ Laravel & 0.683 & 0.696\\ \hline
+ Gulp & 0.608 & 0.573\\ \hline
+ Yii & 0.643 & 0.606\\ \hline
+ Bootstrap & 0.713 & 0.693\\ \hline
+\end{tabular}
+\caption{Average sentiment of tweets 3 days before and after releases}
+\label{table:BeforeAfterReleaseSentiment}
+\end{table}
+
+From the data shown in table is visible, that there is no big sentiment shift caused by releases on the small time frame. The biggest noticable pattern is 5\% decrease in sentiment of two of three seldom releasing projects. Also the third one (Bootstrap) showed the decrease in sentiment as well. Next step was to do the analysis on the bigger scale and see if sentiment changes with the amount of releases/commits per month.

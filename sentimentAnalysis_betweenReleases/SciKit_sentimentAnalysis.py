@@ -27,6 +27,8 @@ def main(argv):
     #corpus, labels = make_Corpus_From_Movies(root_dir='datasets/Movie_review_data')
     #corpus, labels = make_Corpus_From_Tweets(root_dir='datasets/Crypto_Labeled_Data')
     #corpus, labels = make_Corpus_From_AppReviews(root_dir='datasets/BadResults_senti_paper')
+    #corpus, labels = make_Corpus_From_SO_Dataset_PosNeg(root_dir='datasets/BadResults_senti_paper_SO')
+    #corpus, labels = make_Corpus_From_SO_Dataset_PosNegNeutral(root_dir='datasets/BadResults_senti_paper_SO')
 
     #find best performing vectorizer for feature extraction
     #tuneVectorizerParameters(corpus=corpus,labels=labels)
@@ -41,7 +43,7 @@ def main(argv):
 
     #train on movies, evaluate tweets
     #train1_test2(corpus2,labels2,corpus1,labels1,vectorizer)
-    execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
+    #execute_crossValidation(fold_splits=4, corpus=corpus, labels=labels, vectorizer=vectorizer)
     #model3 = create_Models(corpus=corpus,labels=labels,vectorizer=)
 
     f = open("trainedClassifier.pickle", 'rb')
@@ -186,6 +188,72 @@ def make_Corpus_From_AppReviews(root_dir):
         trainingFile.close()
     return testingCorpus,labels
 
+def make_Corpus_From_SO_Dataset_PosNeg(root_dir):
+    print "Creating training corpus from training SO data"
+    mypath = os.path.dirname(__file__)
+    trainDataPath = os.path.join(mypath, root_dir)
+    trainDataFiles = [f for f in os.listdir(trainDataPath) if os.path.isfile(os.path.join(trainDataPath, f))]
+
+    testingCorpus = []
+    #initialization of numpy array needed (316 reviews)
+    labels = np.zeros(309);
+    for file in trainDataFiles:
+        with open(os.path.join(mypath, root_dir+'/') + file) as trainingFile:
+            reader = csv.reader(trainingFile, delimiter=',')
+            iterator = -1;
+            #for each tweet in file
+            for row in reader:
+                if row[2]=="oracle" or row[1]=='0':
+                    continue
+
+                if row[2] == '-1':
+                    labels[iterator] = 0
+                    # increase index because we're adding to corpus
+                    iterator = iterator + 1
+                    # add the tweet to corpus
+                    testingCorpus.append(unicode(preprocess(row[1]), errors='ignore'))
+                elif row[2] == '1':
+                    labels[iterator] = 1
+                    # increase index because we're adding to corpus
+                    iterator = iterator + 1
+                    # add the tweet to corpus
+                    testingCorpus.append(unicode(preprocess(row[1]), errors='ignore'))
+
+        trainingFile.close()
+    return testingCorpus,labels
+
+def make_Corpus_From_SO_Dataset_PosNegNeutral(root_dir):
+    print "Creating training corpus from training SO data"
+    mypath = os.path.dirname(__file__)
+    trainDataPath = os.path.join(mypath, root_dir)
+    trainDataFiles = [f for f in os.listdir(trainDataPath) if os.path.isfile(os.path.join(trainDataPath, f))]
+
+    testingCorpus = []
+    #initialization of numpy array needed (316 reviews)
+    labels = np.zeros(1514);
+    for file in trainDataFiles:
+        with open(os.path.join(mypath, root_dir+'/') + file) as trainingFile:
+            reader = csv.reader(trainingFile, delimiter=',')
+            iterator = -1;
+            #for each tweet in file
+            for row in reader:
+                if row[2]=="oracle" or row[1]=='0':
+                    continue
+
+                # increase index because we're adding to corpus
+                iterator = iterator + 1
+                # add the tweet to corpus
+                testingCorpus.append(unicode(preprocess(row[1]), errors='ignore'))
+                if row[2] == '-1':
+                    labels[iterator] = -1
+                elif row[2] == '1':
+                    labels[iterator] = 1
+                else:
+                    labels[iterator] = 0
+
+
+        trainingFile.close()
+    return testingCorpus,labels
 
 def execute_crossValidation(fold_splits, corpus, labels, vectorizer):
     kf = StratifiedKFold(n_splits=fold_splits)

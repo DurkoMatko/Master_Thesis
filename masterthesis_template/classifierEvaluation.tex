@@ -220,8 +220,18 @@ In general, third neutral class in sentiment analysis is still causing big probl
 \label{table:negativeAccuracy}
 \end{table}
 
+\paragraph{Abstracting several classifiers under one custom classifier}:
 I later came up with an idea of abstracting all classification algorithms all under one custom classifier. My custom classifier is able to be trained in 3 modes ways - as a binary classifier, multiclass classifier or a classifier outputting a float confidence score of text being positive.
 This approach has of course both, advantages and disadvantages as well. Advantage for sure is that possibility of False positives or False Negatives is much lower as this requires 3 incorrect classifications to instead of 1. Trade-off for this is that the confidence score of being positive is in general lower because the possibility of at least one of 3 algorithms being wrong is (obviously) higher than if there is only one single classifier.
 
-All performance matrices of the final classifier are shown in table 
-	
+All performance matrices of the final classifier for various datasets are displayed in figure \ref{fig:finalClassifierPerformanceBarChart}
+
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=14cm]{finalClassifierPerformanceBarChart.jpg}
+    \caption{Final classifier performance for several datasets}%
+    \label{fig:finalClassifierPerformanceBarChart}%
+\end{figure}
+
+It's clear that the best results are achieved with movie or app reviews because these texts offer more features to draw the sentiment from because they are longer texts. We can also see that training datasets built from shorter texts (My twitter dataset or SO labeled dataset created and used in Bin Li's paper ) have worse performance, especially recall. I concluded that using Sentiment140 as a definitive training dataset is a good choice as its performance is just sligthly worse compared to reviews but it's still authentic Twitter data which I'm going to analyze the most.
