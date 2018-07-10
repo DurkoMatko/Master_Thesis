@@ -17,6 +17,8 @@ def main(argv):
 	oss_projects_git_ui_navigation['https://api.github.com/repos/laravel/laravel'] = "https://github.com/laravel/laravel/releases/tag/"
 	oss_projects_git_ui_navigation['https://api.github.com/repos/cakephp/cakephp'] = "https://github.com/cakephp/cakephp/releases/tag/"
 	oss_projects_git_ui_navigation['https://api.github.com/repos/symfony/symfony'] = "https://github.com/symfony/symfony/releases/tag/"
+	oss_projects_git_ui_navigation['https://api.github.com/repos/bower/bower'] = "https://github.com/bower/bower/releases/tag/"
+	oss_projects_git_ui_navigation['https://api.github.com/repos/gulpjs/gulp'] = "https://github.com/gulpjs/gulp/releases/tag/"
 
 
 
@@ -26,7 +28,7 @@ def main(argv):
 		#'https://api.github.com/repos/twbs/bootstrap',
 		#'https://api.github.com/repos/nodejs/node',
 		#'https://api.github.com/repos/bower/bower',
-		#'https://api.github.com/repos/gulpjs/gulp',
+		'https://api.github.com/repos/gulpjs/gulp',
 		#'https://api.github.com/repos/rails/rails',
 		#'https://api.github.com/repos/vuejs/vue',
 		#'https://api.github.com/repos/emberjs/ember.js',
@@ -37,7 +39,7 @@ def main(argv):
 		#'https://api.github.com/repos/dashpay/dash'
 		#'https://api.github.com/repos/litecoin-project/litecoin'
 		#'https://api.github.com/repos/monero-project/monero'
-		'https://api.github.com/repos/laravel/laravel'
+		#'https://api.github.com/repos/laravel/laravel'
 		#'https://api.github.com/repos/symfony/symfony'
 		#'https://api.github.com/repos/yiisoft/yii'
 		#'https://api.github.com/repos/cakephp/cakephp'

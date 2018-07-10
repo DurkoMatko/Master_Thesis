@@ -22,4 +22,11 @@ First and the most simple analysis was to compare sentiment of tweets collected 
 \label{table:BeforeAfterReleaseSentiment}
 \end{table}
 
-From the data shown in table is visible, that there is no big sentiment shift caused by releases on the small time frame. The biggest noticable pattern is 5\% decrease in sentiment of two of three seldom releasing projects. Also the third one (Bootstrap) showed the decrease in sentiment as well. Next step was to do the analysis on the bigger scale and see if sentiment changes with the amount of releases/commits per month.
+From the data shown in table is visible, that there is no big sentiment shift caused by releases on the small time frame. The biggest noticable pattern (nicely displayed in figure \ref{fig:sentimentChangeBeforeAfter}) is 4\% decrease in sentiment of seldom releasing projects. In groups which release often or normally, sentiment change was very small. One more thing to notice here is, that more often projects release, better the sentiment gets.
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=10cm]{sentimentChangeBeforeAfter.jpg}
+    \caption{Change in sentiment for all 3 OSS groups before/after release}%
+    \label{fig:sentimentChangeBeforeAfter}%
+\end{figure}

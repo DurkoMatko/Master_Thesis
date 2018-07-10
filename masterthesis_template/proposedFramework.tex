@@ -1,1 +1,27 @@
-proposedFramework
+The main goal of this thesis can be divided into 2 parts. I aimed to create a framework which could be potentially used as a base of tool used to recognize level of user satisfaction and its sudden changes. Second part of the framework should be able to find matching pairs of issues reported in bug tracking systems and their respective social media entries. Both parts of the framework utilize modern text processing approach, sentiment analysis concentrating more on machine learning approach while bug pairing utilizing topic modelling and text similarity principles.
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=14cm]{dataflow.png}
+    \caption{Brief sketch of dataflow in the proposed framework}%
+    \label{fig:frameworkDataflow}%
+\end{figure}
+
+As can be seen in figure \ref{fig:frameworkDataflow}, two final products of the framework are sentiment classifier and pairing algorithm. To get these, several steps need to be executed:
+\begin{enumerate}
+\item{\textbf{Getting the data} - there is no data science, machine learning or natural language processing without the data. That's why the very first step is to create a mechanism to easily mine data from various sources. Git mining is required to get information about OSS projects and is described in subsectoins \ref{ssec:gitReleaseDatesMining} and \ref{ssec:issuesMining} while Twitter, Reddit and SO were mined to provide data which are the target of analysis \ref{ssec:GettingData}.}
+\item{\textbf{Data preprocessing} - all textual information, especially those which originate on social media contain noise. To get rid of all this extra information, which might cause inaccuracies and faults, data preprocessing is a necessary step.}
+\item{\textbf{Finding a right training dataset} - since the performance of any ML algorithm is very tightly bound to the training data used, this step should not be neglected and be considered as important step as any other. It's described in the section \ref{sec:trainingDatasets}.}
+\item{\textbf{Choosing a tool/module/library as well as particular algorithm} - there are many algorithms used for classification but environment for their usage and best performance differs greatly. To choose a correct algorithm and find the best combination of parameter values is often a long process. Things don't get any easier when we take into account that there are not only many algorithms but they are actually also implemented in several programming languages and libraries. Inconsistencies between results of several SE modules were pointed out by Bin Li at al. in his paper How far can we go. My approach to problems and challenges of this step are described in great detail in sections \ref{sec:languageProcessingTools} and \ref{sec:classifierEvaluation}}
+\item{\textbf{Topic modeling and text similarity} - this is the crucial step for the second part of the framework. Once the data are downloaded from Git as well as from social media, the last step to do is to find the matches.   This part is described in chapter \ref{chap:pairingBugs}.}
+\end{enumerate}
+
+After all the steps are implemented, proposed framework will be completed. But that does not guarantee that the output data are easy to interpret. That's why one extra additional step is needed. Using some statistics and data science methods, I'm interpreting the results in subsections\ref{ssec:crossCorrelation} and \ref{ssec:crossCorrelationCommits}.
+
+Development of such framework targets following research questions:
+\begin{itemize}
+\item{\textbf{$RQ_{1}$}: Do the OSS projects which release more often get general better sentiment score on social media?}
+\item{\textbf{$RQ_{2}$}: Does a release have an immediate effect on sentiment?}
+\item{\textbf{$RQ_{3}$}: Is there a correlation between sentiment change and size of the release (number of commits) ?}
+\item{\textbf{$RQ_{4}$}: Is it possible to successfully pair social media entries to their respective bugs which they talk about?}
+\end{itemize}
