@@ -1,4 +1,34 @@
-When working with time series, we often want to determine whether one series causes changes in another. To find this relationship, measuring a cross-correlation and finding a lag is one way how to do it. Lag represents when change in one data series transfers to the other several periods later. 
+Monitoring sentiment change in regards to releases can be done in bigger scale as well. In this section, instead of using tweets from several days before and after release, I've used the data collected weekly and analysed their relationship with number of releases per month. In the figure \ref{fig:ReleasesSentiment3} are plotted sentiment difference from the average and the release count per month.
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[EmberJS]{{\includegraphics[width=6cm]{EmberReleasesSentiment.jpg} }}%
+    \qquad
+    \subfloat[Laravel]{{\includegraphics[width=6cm]{LaravelReleasesSentiment.jpg} }}%
+    \label{fig:ReleasesSentiment1}%
+\end{figure}
+
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[NodeJS]
+    {{\includegraphics[width=6cm]{NodeReleasesSentiment.jpg} }}%
+    \qquad
+    \subfloat[VueJS]{{\includegraphics[width=6cm]{VueReleasesSentiment.jpg} }}%
+    \label{fig:ReleasesSentiment2}%
+\end{figure}
+
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[CakePhp]{{\includegraphics[width=6cm]{CakeReleasesSentiment.jpg} }}%
+    \qquad
+    \subfloat[AngularJS]{{\includegraphics[width=6cm]{AngularReleasesSentiment.jpg} }}%
+        \caption{Sentiment difference from average and release counts per month}
+    \label{fig:ReleasesSentiment3}%
+\end{figure}
+
+Looking at linecharts can give us some feeling and intuition whether and what type of relation there is. When working with time series, we often want to determine whether one series causes changes in another or vice versa and also measure this relationship quantitatively. To find this relationship, measuring a cross-correlation and finding a lag is one way how to do it. Lag represents when change in one data series transfers to the other several periods later. 
 
 To ensure a cross-correlation calculation makes sense, first I have to determine, whether are the data stationary. A stationary time series is one whose properties do not depend on the time at which the series is observed\cite{hyndman5forecast}. More precisely, if y\textsubscript{t} is a stationary time series, then for all \textit{s}, the distribution of \textit{(y\textsubscript{t},…,y\textsubscript{t+s})} does not depend on \textit{t}.
 
@@ -76,6 +106,15 @@ Same procedure needed to be done with the "number of releases per month" data an
     \label{fig:highestCorrelationsPlotReleases}%
 \end{figure}
 
+I think there could be made a counter-point about whether the transformation to stationary data is really needed here, I've also included Figure \ref{fig:highestCorrelationsPlotReleases_nonStat} where are the results with the raw data.
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=8cm]{highestCorrelationsPlotReleases_nonStat.jpg}
+    \caption{Highest correlations for every OSS project (non-stationary)}%
+    \label{fig:highestCorrelationsPlotReleases_nonStat}%
+\end{figure}
+
 \paragraph{Results interpretation:}
 
 As we can there is no general pattern. Maximal project correlations happen to occupy 3 of 4 possible quadrants. Each quadrant represents a different relationship between number of releases and sentiment change.
@@ -86,12 +125,3 @@ As we can there is no general pattern. Maximal project correlations happen to oc
   \item \textbf{III. Quadrant}(Negative correlation + positive lag) - Increase of release count decreases a sentiment
   \item \textbf{IV. Quadrant}(Negative correlation + Negative lag) - Increase of sentiment decreases a release count
 \end{itemize}
-
-Also, in Figure \ref{fig:highestCorrelationsPlotReleases_nonStat} are the results without making the data series stationary. It's obvious that making the data stationary has a big impact on the results.
-
-\begin{figure}[H]%
-    \centering
-	\includegraphics[width=8cm]{highestCorrelationsPlotReleases_nonStat.jpg}
-    \caption{Highest correlations for every OSS project (non-stationary)}%
-    \label{fig:highestCorrelationsPlotReleases_nonStat}%
-\end{figure}

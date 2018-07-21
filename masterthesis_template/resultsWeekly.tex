@@ -1,25 +1,25 @@
 
-Next step was to do the analysis on the bigger scale and see if sentiment changes with the amount of releases/commits per month. For this, I'm going to use tweets collected with period one week. The classifier used is completely the same so there should not be big differences in the sentiment of the same projects. Results can be seen in table \ref{table:weeklyAverageTable} and figure \ref{fig:weeklyAverageBarchart}
+Next step was to do the analysis on the bigger scale and see if sentiment changes with the amount of releases/commits per month. For this, I'm going to use tweets collected with period one week. I've also added the sentiment of some projects' reddit discussions (keep in mind that classifier is trained on tweets, so this is not the best approach). The classifier used is completely the same so there should not be big differences in the sentiment of the same projects. Results can be seen in table \ref{table:weeklyAverageTable} and figure \ref{fig:weeklyAverageBarchart}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|}
+\begin{tabular}{ |p{3cm}|p{5cm}|p{5cm}}
  \hline
-\textbf{Project }& \textbf{Average sentiment}\\
+\textbf{Project }& \textbf{SO average sentiment} & \textbf{Twitter average sentiment}\\
  \hline
- NodeJS   & 0.697 \\ \hline
- EmberJS   & 0.709\\ \hline
- VueJS   & 0.715 \\ \hline 
- Symfony & 0.727 \\ \hline   
- AngularJS   & 0.727 \\ \hline
- CakePhp & 0.703 \\ \hline 
- Bower   & 0.641 \\ \hline 
- Laravel & 0.701 \\ \hline
- Gulp & 0.578 \\ \hline
- Yii & 0.658 \\ \hline
- Bootstrap & 0.713 \\ \hline
+ NodeJS   & 0.697   & 0.633 \\ \hline
+ EmberJS   & 0.709   & 0.69\\ \hline
+ VueJS   & 0.715   & 0.60\\ \hline 
+ Symfony & 0.727   & X\\ \hline   
+ AngularJS   & 0.727   & 0.618\\ \hline
+ CakePhp & 0.703  & X \\ \hline 
+ Bower   & 0.641   & No subreddit\\ \hline 
+ Laravel & 0.701   & X\\ \hline
+ Gulp & 0.578   & No subreddit\\ \hline
+ Yii & 0.658  & X \\ \hline
+ Bootstrap & 0.713  & 0.635\\ \hline
 \end{tabular}
-\caption{Average sentiment of tweets 3 days before and after releases}
+\caption{Average sentiment of tweets collected weekly}
 \label{table:weeklyAverageTable}
 \end{table}
 

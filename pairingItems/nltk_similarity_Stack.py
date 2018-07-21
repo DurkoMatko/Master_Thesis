@@ -14,6 +14,7 @@ from Nltk_Similarity_Checker.Nltk_Similarity_Checker import Nltk_Similarity_Chec
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+from mpl_toolkits.mplot3d import Axes3D
 
 
 reload(sys)
@@ -221,19 +222,39 @@ def calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle, simila
 	results = dbHandle.fetchall()
 
 	similarities = []
+	lengths_SO = []
+	lengths_Git = []
 	similaritySum = 0
 	for res in results:
 		if withBodyPreprocess:
-			similarity = similarityChecker.getSimilarity(preprocessStackBody(res[5]), res[6])
+			similarity = similarityChecker.getSimilarity(preprocessStackBody(res[5]), res[6])  #so_body, git_body
 		else:
 			similarity = similarityChecker.getSimilarity(res[5], res[6])
 
 		similaritySum += similarity
 		similarities.append(similarity)
+		lengths_SO.append(len(res[5]))
+		lengths_Git.append(len(res[6]))
 
 	#plot histogram of similarity values
 	plotHistogram(similarities, "All")
 	print 'Average similarity the matches is: ' + str(similaritySum / len(results))
+	print lengths_SO
+	print lengths_Git
+	print similarities
+	scatterPlotForStackGitSentiment(lengths_SO, lengths_Git, similarities)
+
+def scatterPlotForStackGitSentiment(lengths_SO, lengths_Git ,similarities):
+	fig = plt.figure()
+	ax = fig.add_subplot(111, projection='3d')
+	n = len(lengths_Git)
+	colors = np.random.randint(0, 10, size=n)
+	ax.scatter(lengths_SO, lengths_Git, similarities, c=colors, marker='o')
+	ax.set_xlabel('Length of StackOverflow bodies')
+	ax.set_ylabel('Length of Git bodies')
+	ax.set_zlabel('Similarity')
+	plt.show()
+
 
 def plotHistogram(similarities, project):
 	plt.hist(similarities, 20)
@@ -251,11 +272,11 @@ if __name__ == '__main__':
 	stackGitPairs = dict();
 	#stackGitPairs['node.js'] = 'nodejs/node';
 	#stackGitPairs['django'] = 'django/django';
-	stackGitPairs['angularjs'] = 'angular/angular';
+	#stackGitPairs['angularjs'] = 'angular/angular';
 	#stackGitPairs['bower'] = 'bower/bower';
 	#stackGitPairs['gulp'] = 'gulpjs/gulp';
 	#stackGitPairs['ruby-on-rails'] = 'rails/rails';
-	#stackGitPairs['vue.js'] = 'vuejs/vue';
+	stackGitPairs['vue.js'] = 'vuejs/vue';
 	#stackGitPairs['ember.js'] = 'emberjs/ember.js';
 	#stackGitPairs['aurelia'] = 'aurelia/framework';
 	#stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
@@ -265,9 +286,9 @@ if __name__ == '__main__':
 	# 'dash',    #no stack overflow tag
 	# 'bootstrap',   #no stack overflow tag
 
-	#	calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker, withBodyPreprocess=False)
+	#calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker, withBodyPreprocess=False)
 
-	#calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle=dbHandle, similarityChecker=nltk_similarity_checker, withBodyPreprocess=True)
+	calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle=dbHandle, similarityChecker=nltk_similarity_checker, withBodyPreprocess=True)
 
 	similaritySum = 0.0
 	combinations = 0

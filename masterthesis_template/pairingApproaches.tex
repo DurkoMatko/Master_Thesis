@@ -1,10 +1,52 @@
-There are many ways and approaches how to find out whether 2 texts are similar or not. Most of them are to some extent very similar as the general need says some textual features of need to be extracted and compared.
+There are many ways and approaches how to find out whether 2 texts share some common topic. Most of them are to some extent very similar as the general rule is to extract textual features and compare them using statistical approaches. Common way to do this is to transform documents into vectors (tf-idf) and then compute cosine similarity between them. Text transformations like Tf-idf and others are implemented in several Python packages.
 
-I've tried following algorithms:
+I've tried following:
 \begin{enumerate}
-\item Nouns extraction
 \item String similarity using NLTK
 \item String similarity using Gensim
+\item String similarity using Scikit-learn
 \item The textual properties, title and description
-are concatenated together and then used to numeric features using the simple TakeLab system. This approach was shown by Lazar, Ritchey and Sharif. \cite{lazar2014improving}
+are concatenated together and then used to numeric features using the simple TakeLab system. This approach was shown by Lazar, Ritchey and Sharif. \cite{lazar2014improving}.
 \end{enumerate}
+
+\paragraph{NLTK:}First step in calculating similarity was to tokenize the text. NLTK offers several types of tokenizers with various outputs. Text tokenization can operate on various levels and the structure of input has to be considered. As I'm comparing the whole documents and don't want to consider sentences as standalone objects, I've chosen to use \textit{nltk.tokenize.wordtokenize} method instead of e.g. \textit{nltk.tokenize.senttokenize}.
+
+Next step after the document is tokenized is to stem the words. Stemmers remove morphological affixes from words, leaving only the word stem. Once again as with tokenizers, there are several stemmers implemented within NLTK. After doing a short research I have come to conclusion that as far as I use the same stemmer for both, Git issues and SO/Reddit entries, it should not play any major role in results.
+
+Next step is getting rid of stop words. These usually refer to the most common words in a language, but there is no single universal list of stop words used by all natural language processing tools. The set of stop words defined for my NLTK version had a size of 153.
+
+Listing \ref{lst:nltkTextSimilarity} illustrates the implementation of the described similarity calculation procedure.
+
+\begin{lstlisting}[caption={Text similarity implementation with NLTK},label={lst:nltkTextSimilarity},language=Python]
+		tokens = word_tokenize(text)
+		words = [w.lower() for w in tokens]
+
+		porter = nltk.PorterStemmer()
+		stemmed_tokens = [porter.stem(t) for t in words]
+
+		# removing stop words
+		stop_words = set(stopwords.words('english'))
+		filtered_tokens = [w for w in stemmed_tokens if not w in stop_words]
+
+		# count words
+		count = nltk.defaultdict(int)
+		for word in filtered_tokens:
+			count[word] += 1
+		return count;
+\end{lstlisting}
+
+After the previous 3 steps are executed on both documents, 2 vectors from all words from both documents are created. Each documents then sets the counts of words it contains and a cosine similarity of these two "count vectors" is calculated. This similarity calculation is a basic similarity calculation and could definitely be optimized. For example, it doesn't analyse and consider role and position of word in a sentence (POS tagger would be required here). 
+
+\paragraph{Scikit-learn and TF-IDF:}My next similarity checker I've implemented was using Scikit-learn module and Tf-Idf vectorizer. Term Frequency–Inverse Document Frequency (TF–IDF) is similar to bag-of words approach but better. While bag of words only takes into consideration the frequency of words in a document TF-IDF reflects how important a word is for the particular document. For a word to have high tf-idf in a document, it must appear a lot of times in said document and must be absent in the other documents. It must be a signature word of the document.
+
+Term frequency represents how often is the word present in the said document. Simplest approach is the raw count. Other options include term frequency adjusted for document length, logarithmically scaled frequency or augmented frequency to handle bias towards longer documents.
+
+Listing shows my very simple implementation of TF-IDF similarity checker using Scikit-learn module.
+
+\begin{lstlisting}[caption={Text similarity implementation with Scikit using Tf-Idf model},label={lst:nltkTextSimilarity},language=Python]
+		def getSimilarity(self,text1, text2):
+		tfidf = self.vect.fit-transform([text1, text2])
+		return (tfidf * tfidf.T).A
+\end{lstlisting}
+
+	

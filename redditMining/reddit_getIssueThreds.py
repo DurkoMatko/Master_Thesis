@@ -20,7 +20,9 @@ def main(argv):
 						 client_secret='AxBo-tVOdpzL-XcxCx94j6hr-nU',
 						 user_agent='tutorialBotByMartinko',
 						 username='nitramdurcek',
-						 password='pipkoneviem')
+						 password='pipkoneviem',
+						 force_search_stack='cloudsearch'
+						 )
 
 	reddit.read_only = True
 
@@ -29,9 +31,10 @@ def main(argv):
 				  #'aureliajs',
 				  #'bootstrap',
 				  #'emberjs',
-				  'node',
+				  #'node',
 				  #'vuejs',
 				  #'django',
+					'cakephp'
 				  #'ethereum',
 				  #'litecoin',
 				  #'ripple',

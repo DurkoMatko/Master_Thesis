@@ -2,7 +2,7 @@ Linking items and in general finding similarity among these already area-specifi
 
 \subsection{NLTK}
 \paragraph{Stack Overflow:}
-The average similarity between SO questions talking about particular issue and that particular issue body description is 0.316 without body preprocessing and 0.292 with body preprocessing.
+The average similarity between SO questions talking about particular issue and that particular issue description is 0.316 without body preprocessing and 0.292 with body preprocessing.
 
 The distribution of similarities in buckets by increased by 0.05 can be seen in histogram in Figure \ref{fig:GitStackMatchesHistogram}
 
@@ -53,7 +53,7 @@ Comparing Git bugs descriptions with SO questions talking about own project issu
  NodeJS   & 0.265 & X\\ \hline
  Angular & 0.241 & X\\ \hline
  EmberJS & 0.282 & X\\ \hline 
- VueJS &   X & X\\ \hline
+ VueJS &   0.261 & X\\ \hline
 \end{tabular}
 \caption{NLTK similarity values for SO questions}
 \label{table:StackOverflowNLTKsimilarity}
@@ -70,7 +70,6 @@ Here I've calculated the similarity between the bug description and either parti
  \hline
  NodeJS   & 0.447 & 0.507\\ \hline 
  AngularJS & 0.306 & 0.57 \\ \hline 
- EmberJS & X & X\\ \hline
  VueJS &   0.359 & 0.380\\ \hline
 \end{tabular}
 \caption{Reddit NLTK similarity values}

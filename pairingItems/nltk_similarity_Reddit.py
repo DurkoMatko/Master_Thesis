@@ -12,6 +12,7 @@ from urllib2 import urlopen, Request
 import json
 import matplotlib.pyplot as plt
 from Nltk_Similarity_Checker.Nltk_Similarity_Checker import Nltk_Similarity_Checker
+from Scikit_TfIdf_Checker.Scikit_TfIdf_Checker import Scikit_TfIdf_Checker
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -248,7 +249,8 @@ if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 	[dbHandle, conn] = connectToDb()
 
-	nltk_similarity_checker = Nltk_Similarity_Checker()
+	chosenChecker = Nltk_Similarity_Checker()
+	#chosenChecker = Scikit_TfIdf_Checker()
 
 	stackGitPairs = dict();
 	#stackGitPairs['django'] = 'django/django';
@@ -269,10 +271,10 @@ if __name__ == '__main__':
 
 	redditGitPairs = dict();
 	# stackGitPairs['django'] = 'django/django';
-	redditGitPairs['nodejs'] = 'nodejs/node';
-	redditGitPairs['angularjs'] = 'angular/angular';
-	redditGitPairs['vuejs'] = 'vuejs/vue';
-	redditGitPairs['emberjs'] = 'emberjs/ember.js';
+	#redditGitPairs['nodejs'] = 'nodejs/node';
+	#redditGitPairs['angularjs'] = 'angular/angular';
+	#redditGitPairs['vuejs'] = 'vuejs/vue';
+	#redditGitPairs['emberjs'] = 'emberjs/ember.js';
 
 	for redditName, gitUrl in redditGitPairs.iteritems():
 		reddit_dict = getRedditDialogues(redditName)
@@ -285,5 +287,5 @@ if __name__ == '__main__':
 
 
 	#COMPARING SIMILARITY OF THE ISSUE COMMENT AND THE REST OF THE THREAD
-	#compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=nltk_similarity_checker)
+	compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=chosenChecker)
 	
