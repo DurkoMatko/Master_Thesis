@@ -41,14 +41,15 @@
 \contentsline {section}{\numberline {14}Aproaches}{41}{section.0.14}
 \contentsline {paragraph}{\nonumberline NLTK:}{42}{section*.40}
 \contentsline {paragraph}{\nonumberline Scikit-learn and TF-IDF:}{43}{section*.41}
+\contentsline {paragraph}{\nonumberline Stack Overflow questions preprocessing:}{43}{section*.42}
 \contentsline {section}{\numberline {15}Available data}{43}{section.0.15}
-\contentsline {paragraph}{\nonumberline Git issue reports:}{43}{section*.42}
-\contentsline {paragraph}{\nonumberline Stack overflow questions:}{44}{section*.43}
-\contentsline {paragraph}{\nonumberline Reddit dialogues:}{44}{section*.44}
+\contentsline {paragraph}{\nonumberline Git issue reports:}{43}{section*.43}
+\contentsline {paragraph}{\nonumberline Stack overflow questions:}{44}{section*.44}
+\contentsline {paragraph}{\nonumberline Reddit dialogues:}{44}{section*.45}
 \contentsline {section}{\numberline {16}Similarity results}{45}{section.0.16}
-\contentsline {subsection}{\numberline {16.1}NLTK}{45}{subsection.0.16.1}
-\contentsline {paragraph}{\nonumberline Stack Overflow:}{45}{section*.45}
-\contentsline {paragraph}{\nonumberline Reddit:}{47}{section*.50}
-\contentsline {section}{\numberline {17}Buckets}{48}{section.0.17}
+\contentsline {subsection}{\numberline {16.1}Stack Overflow}{45}{subsection.0.16.1}
+\contentsline {subsection}{\numberline {16.2}Reddit}{47}{subsection.0.16.2}
+\contentsline {section}{\numberline {17}Buckets}{49}{section.0.17}
 \contentsline {section}{\numberline {18}Using GIT labels}{49}{section.0.18}
-\contentsline {chapter}{\nonumberline Discussion}{51}{chapter*.53}
+\contentsline {chapter}{\nonumberline Discussion}{51}{chapter*.52}
+\contentsline {chapter}{\nonumberline Future work}{53}{chapter*.53}

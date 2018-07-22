@@ -219,8 +219,8 @@ def compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs,similarityChe
 					similarityDiscussionSum += similarity
 
 		print "Done " + redditName
-		#print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
-		#print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
+		print "similarityCommentAverage: " + str(float(float(similarityCommentSum) / float(similarityCount)))
+		print "similarityDiscussionAverage: " + str(float(float(similarityDiscussionSum) / float(similarityCount)))
 
 		similarityCommentSum = 0.0
 		similarityDiscussionSum = 0.0
@@ -249,8 +249,8 @@ if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 	[dbHandle, conn] = connectToDb()
 
-	chosenChecker = Nltk_Similarity_Checker()
-	#chosenChecker = Scikit_TfIdf_Checker()
+	#chosenChecker = Nltk_Similarity_Checker()
+	chosenChecker = Scikit_TfIdf_Checker()
 
 	stackGitPairs = dict();
 	#stackGitPairs['django'] = 'django/django';
@@ -270,11 +270,14 @@ if __name__ == '__main__':
 	# 'bootstrap',   #no stack overflow tag
 
 	redditGitPairs = dict();
-	# stackGitPairs['django'] = 'django/django';
-	#redditGitPairs['nodejs'] = 'nodejs/node';
-	#redditGitPairs['angularjs'] = 'angular/angular';
-	#redditGitPairs['vuejs'] = 'vuejs/vue';
+	redditGitPairs['nodejs'] = 'nodejs/node';
+	redditGitPairs['angularjs'] = 'angular/angular';
+	redditGitPairs['vuejs'] = 'vuejs/vue';
 	#redditGitPairs['emberjs'] = 'emberjs/ember.js';
+
+	#COMPARING SIMILARITY OF THE ISSUE COMMENT AND THE REST OF THE THREAD
+	compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=chosenChecker)
+
 
 	for redditName, gitUrl in redditGitPairs.iteritems():
 		reddit_dict = getRedditDialogues(redditName)
@@ -283,9 +286,5 @@ if __name__ == '__main__':
 		print "Number of bugs:" + str(len(bugs_dict))
 		print "Number of questions:" + str(len(reddit_dict))
 
-		#calculateAverageSimilarity(social_medium_dict=reddit_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker)
+		#calculateAverageSimilarity(social_medium_dict=reddit_dict, bugs_dict=bugs_dict, similarityChecker=chosenChecker)
 
-
-	#COMPARING SIMILARITY OF THE ISSUE COMMENT AND THE REST OF THE THREAD
-	compareSimilarityOfOwnIssue_CommentVsDiscussion(redditGitPairs=redditGitPairs, similarityChecker=chosenChecker)
-	

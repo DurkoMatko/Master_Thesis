@@ -1,3 +1,5 @@
+from itertools import chain
+
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import numpy as np
@@ -11,6 +13,7 @@ import re
 from urllib2 import urlopen, Request
 import json
 from Nltk_Similarity_Checker.Nltk_Similarity_Checker import Nltk_Similarity_Checker
+from Scikit_TfIdf_Checker.Scikit_TfIdf_Checker import Scikit_TfIdf_Checker
 import matplotlib.pyplot as plt
 import numpy as np
 import random
@@ -267,16 +270,19 @@ def plotHistogram(similarities, project):
 if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 	[dbHandle, conn] = connectToDb()
-	nltk_similarity_checker = Nltk_Similarity_Checker()
+	chosenChecker = Nltk_Similarity_Checker()
+	#chosenChecker = Scikit_TfIdf_Checker()
+
+	chosenChecker.getSimilarity("This is similarity test", "We are testing similarity")
 
 	stackGitPairs = dict();
 	#stackGitPairs['node.js'] = 'nodejs/node';
 	#stackGitPairs['django'] = 'django/django';
 	#stackGitPairs['angularjs'] = 'angular/angular';
-	#stackGitPairs['bower'] = 'bower/bower';
+	stackGitPairs['bower'] = 'bower/bower';
 	#stackGitPairs['gulp'] = 'gulpjs/gulp';
 	#stackGitPairs['ruby-on-rails'] = 'rails/rails';
-	stackGitPairs['vue.js'] = 'vuejs/vue';
+	#stackGitPairs['vue.js'] = 'vuejs/vue';
 	#stackGitPairs['ember.js'] = 'emberjs/ember.js';
 	#stackGitPairs['aurelia'] = 'aurelia/framework';
 	#stackGitPairs['ethereum'] = 'ethereum/go-ethereum';
@@ -288,7 +294,7 @@ if __name__ == '__main__':
 
 	#calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker, withBodyPreprocess=False)
 
-	calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle=dbHandle, similarityChecker=nltk_similarity_checker, withBodyPreprocess=True)
+	#calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle=dbHandle, similarityChecker=chosenChecker, withBodyPreprocess=True)
 
 	similaritySum = 0.0
 	combinations = 0
@@ -302,4 +308,4 @@ if __name__ == '__main__':
 		print "Number of questions:" + str(len(social_medium_dict))
 
 		#calculates similarity between given stack and git items and plots histogram of these similarities
-		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=nltk_similarity_checker, limit=True, limitCount=2, project=gitUrl.split('/')[0])
+		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=chosenChecker, limit=True, limitCount=20, project=gitUrl.split('/')[0])

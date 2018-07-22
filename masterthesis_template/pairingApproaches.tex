@@ -3,10 +3,8 @@ There are many ways and approaches how to find out whether 2 texts share some co
 I've tried following:
 \begin{enumerate}
 \item String similarity using NLTK
-\item String similarity using Gensim
 \item String similarity using Scikit-learn
-\item The textual properties, title and description
-are concatenated together and then used to numeric features using the simple TakeLab system. This approach was shown by Lazar, Ritchey and Sharif. \cite{lazar2014improving}.
+\item String similarity using Gensim
 \end{enumerate}
 
 \paragraph{NLTK:}First step in calculating similarity was to tokenize the text. NLTK offers several types of tokenizers with various outputs. Text tokenization can operate on various levels and the structure of input has to be considered. As I'm comparing the whole documents and don't want to consider sentences as standalone objects, I've chosen to use \textit{nltk.tokenize.wordtokenize} method instead of e.g. \textit{nltk.tokenize.senttokenize}.
@@ -45,8 +43,10 @@ Listing shows my very simple implementation of TF-IDF similarity checker using S
 
 \begin{lstlisting}[caption={Text similarity implementation with Scikit using Tf-Idf model},label={lst:nltkTextSimilarity},language=Python]
 		def getSimilarity(self,text1, text2):
-		tfidf = self.vect.fit-transform([text1, text2])
-		return (tfidf * tfidf.T).A
+			tfidf = self.vect.fit-transform([text1, text2])
+			return (tfidf * tfidf.T).A
 \end{lstlisting}
+
+\paragraph{Stack Overflow questions preprocessing:} Before running implemented similarity algorithms, I have decided to preprocess the stack questions and get rid of code snippets within \textit{\textless pre\textgreater\textless code\textgreater} tags and hypertext links.
 
 	
