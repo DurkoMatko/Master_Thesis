@@ -3,21 +3,22 @@ Next step was to do the analysis on the bigger scale and see if sentiment change
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ |p{3cm}|p{5cm}|p{5cm}}
+\begin{tabular}{ |p{2cm}|p{5.5cm}|p{5.5cm}|}
  \hline
-\textbf{Project }& \textbf{SO average sentiment} & \textbf{Twitter average sentiment}\\
+\textbf{Project }& \textbf{Twitter average sentiment} & \textbf{Reddit average sentiment}\\
  \hline
  NodeJS   & 0.697   & 0.633 \\ \hline
  EmberJS   & 0.709   & 0.69\\ \hline
  VueJS   & 0.715   & 0.60\\ \hline 
- Symfony & 0.727   & X\\ \hline   
+ Symfony & 0.727   & *\\ \hline   
  AngularJS   & 0.727   & 0.618\\ \hline
- CakePhp & 0.703  & X \\ \hline 
+ CakePhp & 0.703  & * \\ \hline 
  Bower   & 0.641   & No subreddit\\ \hline 
- Laravel & 0.701   & X\\ \hline
+ Laravel & 0.701   & *\\ \hline
  Gulp & 0.578   & No subreddit\\ \hline
- Yii & 0.658  & X \\ \hline
+ Yii & 0.658  & * \\ \hline
  Bootstrap & 0.713  & 0.635\\ \hline
+ \multicolumn{3}{l}{* Reddit changed its API and submissions endpoint is not supported anymore}
 \end{tabular}
 \caption{Average sentiment of tweets collected weekly}
 \label{table:weeklyAverageTable}

@@ -26,7 +26,7 @@ As mentioned earlier, accuracy is not the best metric to evaluate classifiers on
 \item Textblob sentiment analysis comes with already pre-trained classifier. Golden rule of any ML algorithm says that training data should always be as similar as possible to the actual data the model is intended to be used on (and Textblob classifiers are not trained on the tweets about open source web development frameworks).
 \end{itemize}
 
-\paragraph{NLT:} After getting discouraging results with Textblob, I've decided to implement my own classifier from the ground up using Natural Language Toolkit Python module. After reading several forum discussions, I've decided to use Naive Bayes classifier as people claimed it to have the best performance for sentiment recognition of short texts like tweets. I've evaluated it using k-fold cross-validation with k-value of 4. In every iteration, new instance of Naive Bayes was trained on the 25\% of preprocessed Sentiment140 tweets and evaluated on the rest 75\%. Core of the whole training and cross-evaluation is demonstrated in the listing \ref{lst:nltTrainingCode} and \ref{lst:nltTrainingCodeHelperMethods}
+\paragraph{NLT:} After getting discouraging results with Textblob, I've decided to implement my own classifier from the ground up using Natural Language Toolkit Python module. After reading several forum discussions, I've decided to use Naive Bayes classifier as people repeatedly claimed it to have the best performance for sentiment recognition of short texts like tweets. I've evaluated it using k-fold cross-validation with k-value of 4. In every iteration, new instance of Naive Bayes was trained on the 25\% of preprocessed Sentiment140 tweets and evaluated on the rest 75\%. Core of the whole training and cross-evaluation is demonstrated in the listing \ref{lst:nltTrainingCode} and \ref{lst:nltTrainingCodeHelperMethods}
 
 \begin{lstlisting}[caption={Feature extraction and NLT classifier training},label={lst:nltTrainingCode},language=Python]
     word_features = get_word_features(get_words_in_tweets(tweets))
@@ -58,7 +58,7 @@ s something not right. As written earlier, recall 100\% very likely means the cl
 
 \begin{table}[H]
 \centering
-\begin{tabular}{ |p{3cm}||p{3cm}|}
+\begin{tabular}{ |p{3cm}|p{3cm}|}
  \hline
 \textbf{ Metric }& \textbf{Acore}\\
  \hline

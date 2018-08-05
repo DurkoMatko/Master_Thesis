@@ -156,6 +156,8 @@ def calculateAverageSimilarity(social_medium_dict,bugs_dict, similarityChecker, 
 				if isNotNan(similarity):
 					similaritySum += similarity
 					similarities.append(similarity)
+				if len(similarities)==100:
+					print similarities
 				i += 1
 
 	else:
@@ -247,6 +249,36 @@ def calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle, simila
 	print similarities
 	scatterPlotForStackGitSentiment(lengths_SO, lengths_Git, similarities)
 
+#benchmarking function - calculates similarity of matches + always one more random pair (to see the similarity match thresholds accuracy for the thesis text
+def calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle, similarityChecker, withBodyPreprocess):
+	sql = "SELECT * FROM oss_issues.git_so_matches"
+	dbHandle.execute(sql)
+	results = dbHandle.fetchall()
+
+	similarities = []
+	lengths_SO = []
+	lengths_Git = []
+	similaritySum = 0
+	for res in results:
+		if withBodyPreprocess:
+			similarity = similarityChecker.getSimilarity(preprocessStackBody(res[5]), res[6])  #so_body, git_body
+		else:
+			similarity = similarityChecker.getSimilarity(res[5], res[6])
+
+		similaritySum += similarity
+		similarities.append(similarity)
+		lengths_SO.append(len(res[5]))
+		lengths_Git.append(len(res[6]))
+
+	#plot histogram of similarity values
+	plotHistogram(similarities, "All")
+	print 'Average similarity the matches is: ' + str(similaritySum / len(results))
+	print lengths_SO
+	print lengths_Git
+	print similarities
+	scatterPlotForStackGitSentiment(lengths_SO, lengths_Git, similarities)
+
+
 def scatterPlotForStackGitSentiment(lengths_SO, lengths_Git ,similarities):
 	fig = plt.figure()
 	ax = fig.add_subplot(111, projection='3d')
@@ -308,4 +340,4 @@ if __name__ == '__main__':
 		print "Number of questions:" + str(len(social_medium_dict))
 
 		#calculates similarity between given stack and git items and plots histogram of these similarities
-		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=chosenChecker, limit=True, limitCount=20, project=gitUrl.split('/')[0])
+		calculateAverageSimilarity(social_medium_dict=social_medium_dict, bugs_dict=bugs_dict, similarityChecker=chosenChecker, limit=True, limitCount=100, project=gitUrl.split('/')[0])
