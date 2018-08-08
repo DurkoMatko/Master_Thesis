@@ -1,9 +1,29 @@
-Linking items and in general finding similarity among these already area-specific texts proved to be a problematic task. To test my algorithm I've decided to compare 89 SO questions with its matching Git issue and one more random git issue of the project. Results 
+Linking items and in general finding similarity among these already area-specific texts proved to be a problematic task. To test my algorithm I've decided to compare 89 SO questions with its matching Git issue and 4x one random git issue of the project. Results are plotted in figure \ref{fig:MatchesVsRandom}
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=15cm]{MatchesVsRandom.jpg}
+    \caption{Similarity distribution of 89 matches and four data series of 89 random pairs}%
+    \label{fig:MatchesVsRandom}%
+\end{figure}
 
 
+Results very clearly show that there is a particular similarity score, which is very hard to pass for two unrelated items. This score is obviously not constant and it depends on implementation of the similarity calculation. For my algorithm used in figure \ref{fig:MatchesVsRandom}, the threshold is 0.4 or 0.5. Choosing the value of threshold would also depend on the  desired characteristics of a classifier and the prioritized metric. For example if a precision would be more important than recall, the ideal threshold would be 0.7 as it's the value which is never passed by any non-matching pair. The detailed table with the values for a figure \ref{fig:MatchesVsRandom} can be seen in appendix.
+
+I've executed the same steps using the Tf-Idf approach and although the values are different (as expected), they follow the same pattern. Figure \ref{fig:MatchesVsRandom_TfIdf} demonstrates these results and detailed values can again be found in appendix.
+
+\begin{figure}[H]%
+    \centering
+	\includegraphics[width=15cm]{MatchesVsRandom_TfIdf.jpg}
+    \caption{Similarity distribution of 89 matches and four data series of 89 random pairs}%
+    \label{fig:MatchesVsRandom_TfIdf}%
+\end{figure}
 
 
-Although I wasn't successful to such extent that the output are Git-StackOverflow or Git-Reddit pairs, I've pointed out some interesting results and data relationships.
+Despite clearly seeing possible threshold values, an algorithm which would label all the pairs above this threshold as matches would not achieve great performance metrics. The problem is that the real-world ratio between matching and non-matching pairs rises exponentially with every new item on any side (Git issue, SO question). Using such classifier for all the data would result in big number of False Positives.
+
+
+Although I wasn't successful to such extent that the output are Git-StackOverflow or Git-Reddit True Posiive pairs, I've pointed out some interesting results and data relationships.
 
 \subsection{Stack Overflow}
 The average similarity between SO questions talking about particular issue and that particular issue (using NLTK approach) description is 0.316 without body preprocessing and 0.292 with body preprocessing.

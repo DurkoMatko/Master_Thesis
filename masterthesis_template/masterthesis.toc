@@ -47,9 +47,8 @@
 \contentsline {paragraph}{\nonumberline Stack overflow questions:}{44}{section*.45}
 \contentsline {paragraph}{\nonumberline Reddit dialogues:}{45}{section*.46}
 \contentsline {section}{\numberline {16}Similarity results}{45}{section.0.16}
-\contentsline {subsection}{\numberline {16.1}Stack Overflow}{45}{subsection.0.16.1}
-\contentsline {subsection}{\numberline {16.2}Reddit}{48}{subsection.0.16.2}
-\contentsline {section}{\numberline {17}Buckets}{49}{section.0.17}
-\contentsline {section}{\numberline {18}Using GIT labels}{49}{section.0.18}
-\contentsline {chapter}{\nonumberline Results and Discussion}{51}{chapter*.53}
-\contentsline {chapter}{\nonumberline Future work}{53}{chapter*.54}
+\contentsline {subsection}{\numberline {16.1}Stack Overflow}{47}{subsection.0.16.1}
+\contentsline {subsection}{\numberline {16.2}Reddit}{50}{subsection.0.16.2}
+\contentsline {section}{\numberline {17}Using GIT labels}{51}{section.0.17}
+\contentsline {chapter}{\nonumberline Results and Discussion}{53}{chapter*.55}
+\contentsline {chapter}{\nonumberline Future work}{55}{chapter*.56}

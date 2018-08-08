@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitEmails.ods" afterPath="$PROJECT_DIR$/GitEmails.ods" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/AngularReleasesSentiment.jpg" afterPath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/AngularReleasesSentiment.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/CakeReleasesSentiment.jpg" afterPath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/CakeReleasesSentiment.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/EmberReleasesSentiment.jpg" afterPath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/EmberReleasesSentiment.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/LaravelReleasesSentiment.jpg" afterPath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/LaravelReleasesSentiment.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/NodeReleasesSentiment.jpg" afterPath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/NodeReleasesSentiment.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/VueReleasesSentiment.jpg" afterPath="$PROJECT_DIR$/masterthesis_template/img/SentimentAnalysis/VueReleasesSentiment.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pairingresults.ods" afterPath="$PROJECT_DIR$/Pairingresults.ods" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/socialMedia.tex" afterPath="$PROJECT_DIR$/masterthesis_template/socialMedia.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/classifierEvaluation.tex" afterPath="$PROJECT_DIR$/masterthesis_template/classifierEvaluation.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/crossCorrelationReleases.tex" afterPath="$PROJECT_DIR$/masterthesis_template/crossCorrelationReleases.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/discussion.tex" afterPath="$PROJECT_DIR$/masterthesis_template/discussion.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.out" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/pairingApproaches.tex" afterPath="$PROJECT_DIR$/masterthesis_template/pairingApproaches.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/proposedFramework.log" afterPath="$PROJECT_DIR$/masterthesis_template/proposedFramework.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/proposedFramework.tex" afterPath="$PROJECT_DIR$/masterthesis_template/proposedFramework.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/resultsWeekly.tex" afterPath="$PROJECT_DIR$/masterthesis_template/resultsWeekly.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/pairingBugs.tex" afterPath="$PROJECT_DIR$/masterthesis_template/pairingBugs.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/similarityResults.tex" afterPath="$PROJECT_DIR$/masterthesis_template/similarityResults.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" afterPath="$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py" />
     </list>
@@ -44,8 +30,8 @@
       <file leaf-file-name="nltk_similarity_Stack.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="277" column="8" lean-forward="false" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="8" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -92,8 +78,8 @@
       <find>prepr</find>
       <find>preproc</find>
       <find>plot</find>
-      <find>calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData</find>
       <find>calculateAverageSimilarity</find>
+      <find>calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,8 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,6 +198,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,7 +365,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1591" y="36" width="1602" height="912" extended-state="6" />
+    <frame x="1591" y="36" width="1537" height="912" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -390,7 +376,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32774192" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23713355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -642,6 +628,11 @@
           <line>159</line>
           <option name="timeStamp" value="480" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py</url>
+          <line>277</line>
+          <option name="timeStamp" value="482" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -655,7 +646,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="481" />
+      <option name="time" value="483" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -995,8 +986,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="277" column="8" lean-forward="false" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="8" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>

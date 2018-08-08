@@ -302,8 +302,8 @@ def plotHistogram(similarities, project):
 if __name__ == '__main__':
 	gitToken = "1b86fc5a9b316652471f6b124dcafb91d405ad0f"
 	[dbHandle, conn] = connectToDb()
-	chosenChecker = Nltk_Similarity_Checker()
-	#chosenChecker = Scikit_TfIdf_Checker()
+	#chosenChecker = Nltk_Similarity_Checker()
+	chosenChecker = Scikit_TfIdf_Checker()
 
 	chosenChecker.getSimilarity("This is similarity test", "We are testing similarity")
 
@@ -326,7 +326,7 @@ if __name__ == '__main__':
 
 	#calcSimilarityBetweenIssueStackQuestionAndItsIssue(dbHandle=dbHandle, stackGitPairs=stackGitPairs, gitToken=gitToken, similarityChecker=nltk_similarity_checker, withBodyPreprocess=False)
 
-	#calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle=dbHandle, similarityChecker=chosenChecker, withBodyPreprocess=True)
+	calcSimilarityBetweenIssueStackQuestionAndItsIssue_MoreData(dbHandle=dbHandle, similarityChecker=chosenChecker, withBodyPreprocess=True)
 
 	similaritySum = 0.0
 	combinations = 0
