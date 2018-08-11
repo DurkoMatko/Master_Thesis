@@ -55,6 +55,6 @@ Listing \ref{lst:scikitkTextSimilarity} shows my very simple implementation of T
 			return (tfidf * tfidf.T).A
 \end{lstlisting}
 
-\paragraph{Stack Overflow questions preprocessing:} Before running implemented similarity algorithms, I have decided to preprocess the stack questions and get rid of code snippets within \textit{\textless pre\textgreater\textless code\textgreater} tags and hypertext links.
+\paragraph{Stack Overflow questions preprocessing:} Before running implemented similarity algorithms, I have decided to preprocess the stack questions and get rid of code snippets within \textit{\textless pre\textgreater\textless code\textgreater} tags and hypertext links. Especially snippets could potentially effect (increase) the similarity score.
 
 	

@@ -1,4 +1,4 @@
-Linking items and in general finding similarity among these already area-specific texts proved to be a problematic task. To test my algorithm I've decided to compare 89 SO questions with its matching Git issue and 4x one random git issue of the project. Results are plotted in figure \ref{fig:MatchesVsRandom}
+Linking items and in general finding similarity among these already area-specific texts proved to be a problematic task. To test my algorithm I've decided to compare 89 SO questions with its matching Git issue and 4x one random git issue of the project. Results are plotted in figure \ref{fig:MatchesVsRandom}.\\
 
 \begin{figure}[H]%
     \centering
@@ -7,9 +7,8 @@ Linking items and in general finding similarity among these already area-specifi
     \label{fig:MatchesVsRandom}%
 \end{figure}
 
-
-Results very clearly show that there is a particular similarity score, which is very hard to pass for two unrelated items. This score is obviously not constant and it depends on implementation of the similarity calculation. For my algorithm used in figure \ref{fig:MatchesVsRandom}, the threshold is 0.4 or 0.5. Choosing the value of threshold would also depend on the  desired characteristics of a classifier and the prioritized metric. For example if a precision would be more important than recall, the ideal threshold would be 0.7 as it's the value which is never passed by any non-matching pair. The detailed table with the values for a figure \ref{fig:MatchesVsRandom} can be seen in appendix.
-
+Results very clearly show that there is a particular similarity score, which is very hard to pass for two unrelated items. This score is obviously not constant and it depends on implementation of the similarity calculation. For my NLTK BoW algorithm used in figure \ref{fig:MatchesVsRandom}, the threshold is 0.4 or 0.5. Choosing the value of threshold would also depend on the  desired characteristics of a classifier and the prioritized metric. For example if a precision would be more important than recall, the ideal threshold would be 0.7 as it's the value which has never been passed by any of 356 non-matching pairs. The detailed table with the values for a figure \ref{fig:MatchesVsRandom} can be seen in appendix.\\
+\\
 I've executed the same steps using the Tf-Idf approach and although the values are different (as expected), they follow the same pattern. Figure \ref{fig:MatchesVsRandom_TfIdf} demonstrates these results and detailed values can again be found in appendix.
 
 \begin{figure}[H]%
@@ -19,14 +18,12 @@ I've executed the same steps using the Tf-Idf approach and although the values a
     \label{fig:MatchesVsRandom_TfIdf}%
 \end{figure}
 
-
-Despite clearly seeing possible threshold values, an algorithm which would label all the pairs above this threshold as matches would not achieve great performance metrics. The problem is that the real-world ratio between matching and non-matching pairs rises exponentially with every new item on any side (Git issue, SO question). Using such classifier for all the data would result in big number of False Positives.
-
-
-Although I wasn't successful to such extent that the output are Git-StackOverflow or Git-Reddit True Posiive pairs, I've pointed out some interesting results and data relationships.
+Despite clearly seeing possible threshold values, an algorithm which would label all the pairs above this threshold as matches would achieve very bad recall around 30\%. On the other side, precision would be 100\%. The potential problem is that the real-world ratio between matching and non-matching pairs rises exponentially with every new item on any side (Git issue, SO question). Testing the algorithm on bigger amount of data in the future could answer the question whether the threshold around 0.3 really proves as a unbreakable resistance for unrelated Git-SO pairs.\\
+\\
+Although I wasn't successful to such extent that the output are Git-StackOverflow or Git-Reddit True Positive pairs, I've pointed out some interesting results and data relationships.
 
 \subsection{Stack Overflow}
-The average similarity between SO questions talking about particular issue and that particular issue (using NLTK approach) description is 0.316 without body preprocessing and 0.292 with body preprocessing.
+The average similarity (using NLTK approach) between SO questions talking about particular issue and that particular issue description is 0.316 without body preprocessing and 0.292 with body preprocessing.
 
 The distribution of similarities in buckets by increased by 0.05 can be seen in histogram in Figure \ref{fig:GitStackMatchesHistogram}
 
@@ -37,7 +34,7 @@ The distribution of similarities in buckets by increased by 0.05 can be seen in 
     \label{fig:GitStackMatchesHistogram}%
 \end{figure}
 
-For random SO questions, amount of comparisons to Git issues needed to be limited. If every SO question would be compared to every Git issue, time of computation would exceed timeframe of this thesis. Every SO question was therefore compared to 20 random git issues and resulting average similarity scores are in following figures.
+For random SO questions, amount of comparisons to Git issues needed to be limited. If every SO question would be compared to every Git issue, time of computation would exceed timeframe of this thesis. Every SO question was therefore compared to 20 random Git issues and resulting average similarity scores are in following figures.
 
 \begin{figure}[H]%
     \centering
@@ -65,7 +62,7 @@ For random SO questions, amount of comparisons to Git issues needed to be limite
 \end{figure}
 
 
-Table \ref{table:StackOverflowNLTKsimilarity} illustrates results of comparing Git bugs descriptions with SO questions talking about own project issues and general issues. From values displayed, it's apparent that the difference between matches and random pairs is not very big. This is probably because all the texts about a particular project are already very specific and similar in their nature anyway.
+Table \ref{table:StackOverflowNLTKsimilarity} illustrates results of comparing Git bugs descriptions with SO questions talking about the same project issues and general issues. From values displayed, it's apparent that the difference between matches and random pairs is not very big. This is probably because all the texts about a particular project are already very specific and similar in their nature anyway.
 
 \begin{table}[H]
 \centering
@@ -82,7 +79,7 @@ Table \ref{table:StackOverflowNLTKsimilarity} illustrates results of comparing G
 \label{table:StackOverflowNLTKsimilarity}
 \end{table}
 
-\subsection{Reddit}Here I've calculated the similarity between the bug description and either particular comment in the reddit discussion which mentioned the bug or the whole discussion itself. Using NLTK BOW approach, average similarity score for all considered projects (NodeJS, AngularJS, VueJS and EmberJS) was 0.481 for the whole discussion and 0.368 for the comment itself. Scikit If-Idf values were 0.263 and 0.207 respectively. Detailed scores for each project can be found in table \ref{table:RedditNLTKsimilarity} for NLTK implementation and  table for \ref{table:RedditSCIKITsimilarity}. Subreddit for EmberJS didn't reference any of its own bugs.
+\subsection{Reddit}Here I've calculated the similarity between the bug description and either particular comment in the reddit discussion which mentioned the bug or the whole discussion itself. Using NLTK BoW approach, average similarity score for all considered projects (NodeJS, AngularJS, VueJS and EmberJS) was 0.481 for the whole discussion and 0.368 for the comment itself. Scikit If-Idf values were 0.263 and 0.207 respectively. Detailed scores for each project can be found in table \ref{table:RedditNLTKsimilarity} for NLTK implementation and  table for \ref{table:RedditSCIKITsimilarity}. Subreddit for EmberJS didn't reference any of its own bugs.
 
 \begin{table}[H]
 \centering
