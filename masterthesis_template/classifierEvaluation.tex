@@ -203,10 +203,9 @@ Another thing I tried to increase the accuracy of the classifiers was preprocess
 
 \paragraph{Neutral Tweets}: At this point, after all the tuning, optimizing and cross-validation, I could finally run my analyzer on the testdata also provided by Sentiment140. Compared to the training data which contain just positive and negative tweets, test file contains also neutral ones. Obviously, this is a problem, since my classifiers are not familiar with the concept of neutral tweets. In current state, accuracy on a test set with neutral tweets is just 58.4\% whereas on the same test set with excluded neutral tweets, accuracy was more than 81\% - which is expected because it's basically the same set just with different tweets which has also been used	 during cross-validation. 
 
-In general, third neutral class in sentiment analysis is still causing big problems. E.g Go, Huang and Bhayani \cite{go2009twitter2} considered any tweet without an emoticon to be part of the neutral class, which they themselves admitted to be a flawed approach. Kouloumpi at al. \cite{kouloumpis2011twitter} trained their classifier just on hashtags and emoticons and also had to build their own neutral training dataset.  Agarwal at al \cite{agarwal2011sentiment} annotated their own training dataset to contain neutral tweets and achieved very nice accuracy of 60\% which is much higher than the base line of 33\%. Although it is a nice result, they had training data which contained neutral data. Saif et al. \cite{saif2012semantic} as well as Go, Huang and Bhayani \cite{go2009twitter} in their second article that year just stated that identifying neutral tweets is part of their future work plan.  Afer realizing that doing a tree way analysis rather than just binary or qualitative (output is a score value) analysis is worth a separate thesis I have decided to train my classifier for only weighted qualitative output in interval from 0 to 1, where 1 is the most positive. Just out of curiosity, I've     defined confidence thresholds for positive and negative tweets. Everything which would be between these 2 threshold levels could be considered a neutral tweet. I manually tried several values and accuracy scores from these measuments are recorded in table \ref{table:negativeAccuracy}. I've achieved accuracy just 7\% above the baseline at most, so the lack of optimization for neutral tweets classification is obvious.
-
-
-\begin{table}[H]
+In general, third neutral class in sentiment analysis is still causing big problems. E.g Go, Huang and Bhayani \cite{go2009twitter2} considered any tweet without an emoticon to be part of the neutral class, which they themselves admitted to be a flawed approach. Kouloumpi at al. \cite{kouloumpis2011twitter} trained their classifier just on hashtags and emoticons and also had to build their own neutral training dataset.  Agarwal at al \cite{agarwal2011sentiment} annotated their own training dataset to contain neutral tweets and achieved very nice accuracy of 60\% which is much higher than the base line of 33\%. Although it is a nice result, they had training data which contained neutral data. Saif et al. \cite{saif2012semantic} as well as Go, Huang and Bhayani \cite{go2009twitter} in their second article that year just stated that identifying neutral tweets is part of their future work plan.  Afer realizing that doing a tree way analysis rather than just binary or qualitative (output is a score value) analysis is worth a separate thesis I have decided to train my classifier for only weighted qualitative output in interval from 0 to 1, where 1 is the most positive. Just out of curiosity, I've     defined confidence thresholds for positive and negative tweets. Everything which would be between these 2 threshold levels could be considered a neutral tweet. I manually tried several values and accuracy scores from these measuments are recorded in table \ref{table:negativeAccuracy}. I've achieved accuracy just 7\% above the baseline at most, so the lack of optimization for neutral tweets classification is obvious.\\
+\\
+\begin{table}
 \centering
 \begin{tabular}{|p{4cm}|p{4cm}|p{3cm}|}
  \hline
@@ -221,14 +220,14 @@ In general, third neutral class in sentiment analysis is still causing big probl
 \label{table:negativeAccuracy}
 \end{table}
 
-\paragraph{Abstracting several classifiers under one custom classifier}:
+\textbf{Abstracting several classifiers under one custom classifier}:
 I later came up with an idea of abstracting all classification algorithms all under one custom classifier. My custom classifier is able to be trained in 3 modes - as a binary classifier, multiclass classifier or a classifier outputting a float confidence score of text being positive.
-This approach has of course both, advantages and disadvantages as well. Advantage for sure is that possibility of False positives or False Negatives is much lower as this requires 3 incorrect classifications to instead of 1. Trade-off for this is that the confidence score of being positive is in general lower because the possibility of at least one of 3 algorithms being wrong is (obviously) higher than if there is only one single classifier.
+This approach has of course both, advantages and disadvantages as well. Advantage for sure is that possibility of False positives or False Negatives is much lower as this requires 3 incorrect classifications to instead of 1. Trade-off for this is that the confidence score of being positive is in general lower because the possibility of at least one of 3 algorithms being wrong is (obviously) higher than if there is only one single classifier.\\
 
-All performance matrices of the final classifier for various datasets are displayed in figure \ref{fig:finalClassifierPerformanceBarChart}
+All performance matrices of the final classifier for various datasets are displayed in figure \ref{fig:finalClassifierPerformanceBarChart}.
+\\
 
-
-\begin{figure}[H]%
+\begin{figure}%
     \centering
 	\includegraphics[width=14cm]{finalClassifierPerformanceBarChart.jpg}
     \caption{Final classifier performance for several datasets}%

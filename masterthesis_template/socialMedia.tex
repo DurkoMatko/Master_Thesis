@@ -61,12 +61,21 @@ I got historical twitter data by looping all projects and their release dates an
 
 
 \begin{lstlisting}[caption={Creating command to get Tweets about a project version on release dates},label={lst:onReleaseDatesScript},language=Python]
-miningConsoleCommand = "python Exporter.py --querysearch '" + frameworkName + " AND " + version + "' --since " + str(releaseDate) + " --until " + str(afterRelease) + " --output='" + frameworkName + "_" + str(releaseDate) + ".csv" + "'"
+miningConsoleCommand = "python Exporter.py 
+				--querysearch '" + frameworkName + " AND " + version + "' 
+				--since " + str(releaseDate) + " 
+				--until " + str(afterRelease) + " 
+				--output='" + frameworkName + "_" + str(releaseDate) + ".csv" + "'"
 \end{lstlisting}
 
 
 \begin{lstlisting}[caption={Creating command to get Tweets about a project version in particular time interval around release date},label={lst:beforeAfterReleaseDatesScript},language=Python]
-miningConsoleCommand = "python Exporter.py --querysearch '" + frameworkName + "' --since " + str(fromDate) + " --until " + str(toDate)  + " --lang " + "en" + " --maxtweets " + str(TWEETS_PER_RELEASE) + " --output='" + frameworkName + ".csv" + "'"
+miningConsoleCommand = "python Exporter.py 
+				--querysearch '" + frameworkName + "' 
+				--since " + str(fromDate) + " 
+				--until " + str(toDate)  + " --lang " + "en" + " 
+				--maxtweets " + str(TWEETS_PER_RELEASE) + " 
+				--output='" + frameworkName + ".csv" + "'"
 \end{lstlisting}
 
 
@@ -79,7 +88,13 @@ Despite that reddit doesn't offer big amount of user data in OSS projects subred
 Class Reddit provides a convenient way how to access Reddit API. Instance of this class can be seen as a gateway to interact with API through PRAW. To instantiate this class, user first has to register his application. This gives user unique \textit{useragent} key which identifies the application. This is so that if a program misbehaves for some reason, it can be more easily identified, rather than look like a browser. All mandatory arguments are shown in Listing \ref{lst:redditClassInstance}.
 
 \begin{lstlisting}[caption={Instantiating Reddit class object},label={lst:redditClassInstance},language=Python]
-reddit = praw.Reddit(clientid='CLIENTID',clientsecret="CLIENTSECRET", password='PASSWORD',useragent='USERAGENT',username='USERNAME')
+reddit = praw.Reddit(
+							clientid='CLIENTID',
+							clientsecret="CLIENTSECRET", 				
+							password='PASSWORD',
+							useragent='USERAGENT',
+							username='USERNAME'
+							)
 \end{lstlisting}
 
 After connection to Api is successful, senting requests with PRAW is straightforward. To get the submissions from a particular subreddit in a specific time interval, just a basic loop shown in Listing \ref{lst:redditSubmissionsLoop} is enough.
@@ -111,4 +126,4 @@ To extract the questions about the OSS projects of my interest I once again used
          )
 \end{lstlisting}
 
-Stack Exchange is limited on 30 requests per second. Therefore the logic needed to be implemented to avoid a penalization for violating this throttle. At first I intended to use the type “posts” which returns both, questions and answers, but later I've realized how huge amount of data SO contains.  The average count of questions using one of the examined projects names as a tag was around 150 000. Because of this, I had to find out how to filter just the questions with higher probability of talking about bugs. Since the questions on SO do not have any labels which I could use to my advantage like I did with Git issues, I decided to keep just the questions which mention a word “bug”. This still left me with considerable big dataset of X AAAAAAAAA questions to work with. Out of all properties of questions retrieved from questions endpoint, I decided to store and further work just with several of them – mainly its title and body since these two provide most of the semantic meaning.
+Stack Exchange is limited on 30 requests per second. Therefore the logic needed to be implemented to avoid a penalization for violating this throttle. At first I intended to use the type “posts” which returns both, questions and answers, but later I've realized how huge amount of data SO contains.  The average count of questions using one of the examined projects names as a tag was around 150 000. Because of this, I had to find out how to filter just the questions with higher probability of talking about bugs. Since the questions on SO do not have any labels which I could use to my advantage like I did with Git issues, I decided to keep just the questions which mention a word “bug”. This still left me with considerable big dataset of 8143 questions to work with. Out of all properties of questions retrieved from questions endpoint, I decided to store and further work just with several of them – mainly its title and body since these two provide most of the semantic meaning.

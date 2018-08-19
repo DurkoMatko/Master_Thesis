@@ -28,10 +28,10 @@ Monitoring sentiment change in regards to releases can be done in bigger scale a
     \label{fig:ReleasesSentiment3}%
 \end{figure}
 
-Looking at linecharts can give us some feeling and intuition whether and what type of relation there is. When working with time series, we often want to determine whether one series causes changes in another or vice versa and also measure this relationship quantitatively. To find this relationship, measuring a cross-correlation and finding a lag is one way how to do it. Lag represents when change in one data series transfers to the other several periods later. 
-
-To ensure a cross-correlation calculation makes sense, first I have to determine, whether are the data stationary. A stationary time series is one whose properties do not depend on the time at which the series is observed\cite{hyndman5forecast}. More precisely, if y\textsubscript{t} is a stationary time series, then for all \textit{s}, the distribution of \textit{(y\textsubscript{t},…,y\textsubscript{t+s})} does not depend on \textit{t}.
-
+Looking at linecharts can give us some feeling and intuition whether and what type of relation there is. When working with time series, we often want to determine whether one series causes changes in another or vice versa and also measure this relationship quantitatively. To find this relationship, measuring a cross-correlation and finding a lag is one way how to do it. Lag represents when change in one data series transfers to the other several periods later. \\
+\\
+To ensure a cross-correlation calculation makes sense, first I have to determine, whether are the data stationary. A stationary time series is one whose properties do not depend on the time at which the series is observed\cite{hyndman5forecast}. More precisely, if y\textsubscript{t} is a stationary time series, then for all \textit{s}, the distribution of \textit{(y\textsubscript{t},…,y\textsubscript{t+s})} does not depend on \textit{t}.\\
+\\
 To determine whether my data are stationary, I've used the Dickey-Fuller test method of tseries package in R. Results can be seen in the table \ref{table:stationarity_table_sentiment} and \ref{table:stationarity_table_release_count} 
 
 \begin{table}[H]

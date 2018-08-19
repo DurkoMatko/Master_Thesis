@@ -265,20 +265,5 @@
   pages={52--56},
   year={2010},
   organization={ACM}
-},
-@inproceedings{jalbert2008automated,
-  title={Automated duplicate detection for bug tracking systems},
-  author={Jalbert, Nicholas and Weimer, Westley},
-  booktitle={Dependable Systems and Networks With FTCS and DCC, 2008. DSN 2008. IEEE International Conference on},
-  pages={52--61},
-  year={2008},
-  organization={IEEE}
-},
-@inproceedings{runeson2007detection,
-  title={Detection of duplicate defect reports using natural language processing},
-  author={Runeson, Per and Alexandersson, Magnus and Nyholm, Oskar},
-  booktitle={Proceedings of the 29th international conference on Software Engineering},
-  pages={499--510},
-  year={2007},
-  organization={IEEE Computer Society}
 }
+
