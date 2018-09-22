@@ -1,18 +1,15 @@
-There are many ways and approaches how to find out whether 2 texts share some common topic. Most of them are to some extent very similar as the general rule is to extract textual features and compare them using statistical approaches. Common way to do this is to transform documents into vectors (tf-idf) and then compute cosine similarity between them. Text transformations like Tf-idf and others are implemented in several Python packages.
-
-I've tried following:
+There are many ways and approaches how to find out whether 2 texts share some common topic. Most of them are to some extent very similar as the general rule is to extract textual features and compare them using statistical approaches. Common way to do this is to transform documents into vectors (TF-IDF) and then compute cosine similarity between them. These text transformations are implemented in several Python packages.\\
+\\
+I have tried following:
 \begin{enumerate}
 \item String similarity using NLTK
 \item String similarity using Scikit-learn
 \item String similarity using Gensim
 \end{enumerate}
 
-\paragraph{NLTK:}First step in calculating similarity was to tokenize the text. NLTK offers several types of tokenizers with various outputs. Text tokenization can operate on various levels and the structure of input has to be considered. As I'm comparing the whole documents and don't want to consider sentences as standalone objects, I've chosen to use \textit{nltk.tokenize.wordtokenize} method instead of e.g. \textit{nltk.tokenize.senttokenize}.
-
-Next step after the document is tokenized is to stem the words. Stemmers remove morphological affixes from words, leaving only the word stem. Once again as with tokenizers, there are several stemmers implemented within NLTK. After doing a short research I have come to conclusion that as far as I use the same stemmer for both, Git issues and SO/Reddit entries, it should not play any major role in results.
-
-Next step is getting rid of stop words. These usually refer to the most common words in a language, but there is no single universal list of stop words used by all natural language processing tools. The set of stop words defined for my NLTK version had a size of 153.
-
+\paragraph{NLTK:}First step in calculating similarity was to tokenize the text. NLTK offers several types of tokenizers with various outputs. Text tokenization can operate on various levels and the structure of input has to be considered. As I am comparing the whole documents and do not want to consider sentences as standalone objects, I have chosen to use \textit{nltk.tokenize.wordtokenize} method instead of e.g. \textit{nltk.tokenize.senttokenize}.\\
+Next step after the document is tokenized is to stem the words. Stemmers remove morphological affixes from words, leaving only the word stem. Once again as with tokenizers, there are several stemmers implemented within NLTK. After doing a short research I have come to conclusion that as far as I use the same stemmer for both, Git issues and SO/Reddit entries, it should not play any major role in results.\\
+Next step is getting rid of stop words. These usually refer to the most common words in a language, but there is no single universal list of stop words used by all natural language processing tools. The set of stop words defined for my NLTK version had a size of 153.\\
 Listing \ref{lst:nltkTextSimilarity} illustrates the implementation of the described similarity calculation procedure.
 
 \begin{lstlisting}[caption={Text similarity implementation with NLTK},label={lst:nltkTextSimilarity},language=Python]
@@ -33,20 +30,19 @@ Listing \ref{lst:nltkTextSimilarity} illustrates the implementation of the descr
 		return count;
 \end{lstlisting}
 
-After the previous 3 steps are executed on both documents, 2 vectors from all words from both documents are created. Each documents then sets the counts of words it contains and a cosine similarity of these two "count vectors" is calculated. This similarity calculation is a basic similarity calculation and could definitely be optimized. For example, it doesn't analyse and consider role and position of word in a sentence (POS tagger would be required here). 
+After the previous 3 steps are executed on both documents, 2 vectors from all words from both documents are created. Each documents then sets the counts of words it contains and a cosine similarity of these two "count vectors" is calculated. This similarity calculation is a basic similarity calculation and could definitely be optimized. For example, it does not analyse and consider role and position of word in a sentence (POS tagger would be required here). 
 
-\paragraph{Scikit-learn and TF-IDF:}My next similarity checker I've implemented was using Scikit-learn module and Tf-Idf vectorizer. Term Frequency – Inverse Document Frequency (TF–IDF) is also based on bag of words (BoG). While BoG only takes into consideration the frequency of words in a document TF-IDF reflects how important a word is for the particular document. For a word to have high tf-idf in a document, it must appear a lot of times in said document and must be absent in the other documents. It must be a signature word of the document.
-
+\paragraph{Scikit-learn and TF-IDF:}There are several ways to assess the importance of each feature by attaching a certain weight in the text. The most
+popular ones are: feature frequency (FF), Term Frequency Inverse Document Frequency (TF-IDF), and feature presence
+(FP) \cite{haddi2013role}. My next similarity checker I have implemented was using Scikit-learn module and TF-IDF vectorizer. While BoG only takes into consideration the frequency of words in a document TF-IDF reflects how important a word is for the particular document. For a word to have high TF-IDF in a document, it must appear a lot of times in said document and must be absent in the other documents. It must be a signature word of the document.\\
+\\
 Term frequency represents how often is the word present in the said document. Simplest approach is the raw count.
 \[ tf_{count}(t,d) = f(t,d) \]
 Other options include term frequency adjusted for document length, logarithmically scaled frequency or augmented frequency to handle bias towards longer documents.\\
-Inverse document frequency is a counterweight factor which 
-diminished importance of terms that appear in the set very often in the document set and therefore increases the weight of terms that occur rarely.
+Inverse document frequency is a counterweight factor which diminished importance of terms that appear in the set very often in the document set and therefore increases the weight of terms that occur rarely.
 \[ idf(t) = log \frac{N}{df(t)} \]
-
 The final weighing scheme combines term frequency and inverse document frequency.
 \[ tfidf(t,d) = tf(td) x idf(t)		\]
-
 Listing \ref{lst:scikitkTextSimilarity} shows my very simple implementation of TF-IDF similarity checker using Scikit-learn module.
 
 \begin{lstlisting}[caption={Text similarity implementation with Scikit using Tf-Idf model},label={lst:scikitkTextSimilarity},language=Python]
@@ -55,6 +51,6 @@ Listing \ref{lst:scikitkTextSimilarity} shows my very simple implementation of T
 			return (tfidf * tfidf.T).A
 \end{lstlisting}
 
-\paragraph{Stack Overflow questions preprocessing:} Before running implemented similarity algorithms, I have decided to preprocess the stack questions and get rid of code snippets within \textit{\textless pre\textgreater\textless code\textgreater} tags and hypertext links. Especially snippets could potentially effect (increase) the similarity score.
+\paragraph{Stack Overflow questions preprocessing:}  Online texts contain usually lots of noise and uninformative parts such as HTML tags, scripts and advertisements \cite{haddi2013role}. Before running implemented similarity algorithms, I have decided to preprocess the stack questions and get rid of code snippets within \textit{\textless pre\textgreater\textless code\textgreater} tags and hypertext links. Especially snippets could potentially effect (increase) the similarity score if kept in the text.
 
 	

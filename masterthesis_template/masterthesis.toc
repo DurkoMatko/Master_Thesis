@@ -1,54 +1,54 @@
-\contentsline {chapter}{\nonumberline Introduction}{1}{chapter*.4}
-\contentsline {section}{\numberline {1}Motivation}{1}{section.0.1}
-\contentsline {chapter}{\nonumberline Proposed framework}{3}{chapter*.5}
-\contentsline {chapter}{\nonumberline Related work}{5}{chapter*.7}
-\contentsline {chapter}{\nonumberline Social Media}{7}{chapter*.8}
-\contentsline {section}{\numberline {2}Potential of social media data mining}{7}{section.0.2}
-\contentsline {section}{\numberline {3}Data}{8}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Getting data}{8}{subsection.0.3.1}
-\contentsline {paragraph}{\nonumberline Twitter:}{8}{section*.9}
-\contentsline {paragraph}{\nonumberline Facebook:}{10}{section*.11}
-\contentsline {paragraph}{\nonumberline Reddit:}{10}{section*.12}
-\contentsline {paragraph}{\nonumberline Stack overflow:}{11}{section*.13}
-\contentsline {chapter}{\nonumberline Open-source projects}{13}{chapter*.14}
-\contentsline {section}{\numberline {4}History of Open-Source Software}{13}{section.0.4}
-\contentsline {section}{\numberline {5}Choosing projects of interest}{13}{section.0.5}
-\contentsline {section}{\numberline {6}Github mining}{14}{section.0.6}
-\contentsline {subsection}{\numberline {6.1}Release dates}{14}{subsection.0.6.1}
-\contentsline {subsection}{\numberline {6.2}Issues}{16}{subsection.0.6.2}
-\contentsline {chapter}{\nonumberline Sentiment analysis}{19}{chapter*.16}
-\contentsline {section}{\numberline {7}History}{20}{section.0.7}
-\contentsline {section}{\numberline {8}Training datasets}{20}{section.0.8}
-\contentsline {section}{\numberline {9}Language processing tools}{21}{section.0.9}
-\contentsline {section}{\numberline {10}Performance metrics}{22}{section.0.10}
-\contentsline {paragraph}{\nonumberline Terminology}{22}{section*.19}
-\contentsline {section}{\numberline {11}Classifier evaluation}{24}{section.0.11}
-\contentsline {paragraph}{\nonumberline Textblob:}{24}{section*.20}
-\contentsline {paragraph}{\nonumberline NLT:}{25}{section*.21}
-\contentsline {paragraph}{\nonumberline Sci-kit Learn}{26}{section*.22}
-\contentsline {paragraph}{\nonumberline Choosing classifiers}{26}{section*.23}
-\contentsline {paragraph}{\nonumberline Vectorizer and its optimizations}{27}{section*.25}
-\contentsline {paragraph}{\nonumberline Classifier optimizations}{28}{section*.26}
-\contentsline {paragraph}{\nonumberline Neutral Tweets}{30}{section*.27}
-\contentsline {section}{\numberline {12}Data to analyze}{32}{section.0.12}
-\contentsline {section}{\numberline {13}Results}{32}{section.0.13}
-\contentsline {subsection}{\numberline {13.1}Results for weekly collected data}{32}{subsection.0.13.1}
-\contentsline {subsection}{\numberline {13.2}Immediate sentiment change with releases}{34}{subsection.0.13.2}
-\contentsline {subsection}{\numberline {13.3}Cross-correlation between releases and sentiment change}{35}{subsection.0.13.3}
-\contentsline {paragraph}{\nonumberline Results interpretation:}{39}{section*.37}
-\contentsline {subsection}{\numberline {13.4}Commits count within releases}{39}{subsection.0.13.4}
-\contentsline {chapter}{\nonumberline Linking bug repositories and social media}{43}{chapter*.40}
-\contentsline {section}{\numberline {14}Aproaches}{43}{section.0.14}
-\contentsline {paragraph}{\nonumberline NLTK:}{44}{section*.41}
-\contentsline {paragraph}{\nonumberline Scikit-learn and TF-IDF:}{44}{section*.42}
-\contentsline {paragraph}{\nonumberline Stack Overflow questions preprocessing:}{45}{section*.43}
-\contentsline {section}{\numberline {15}Available data}{45}{section.0.15}
-\contentsline {paragraph}{\nonumberline Git issue reports:}{45}{section*.44}
-\contentsline {paragraph}{\nonumberline Stack overflow questions:}{46}{section*.45}
-\contentsline {paragraph}{\nonumberline Reddit dialogues:}{47}{section*.46}
-\contentsline {section}{\numberline {16}Similarity results}{47}{section.0.16}
-\contentsline {subsection}{\numberline {16.1}Stack Overflow}{49}{subsection.0.16.1}
-\contentsline {subsection}{\numberline {16.2}Reddit}{52}{subsection.0.16.2}
-\contentsline {section}{\numberline {17}Using GIT labels}{53}{section.0.17}
-\contentsline {chapter}{\nonumberline Answers and Discussion}{55}{chapter*.55}
-\contentsline {chapter}{\nonumberline Future work}{57}{chapter*.56}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1}Motivation}{2}{section.1.1}
+\contentsline {chapter}{\numberline {2}Proposed framework}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Related work}{6}{chapter.3}
+\contentsline {chapter}{\numberline {4}Social Media}{8}{chapter.4}
+\contentsline {section}{\numberline {1}Potential of social media data mining}{8}{section.4.1}
+\contentsline {section}{\numberline {2}Data}{9}{section.4.2}
+\contentsline {subsection}{\numberline {2.1}Getting data}{9}{subsection.4.2.1}
+\contentsline {paragraph}{Twitter:}{9}{section*.4}
+\contentsline {paragraph}{Facebook:}{11}{section*.6}
+\contentsline {paragraph}{Reddit:}{11}{section*.7}
+\contentsline {paragraph}{Stack overflow:}{12}{section*.8}
+\contentsline {chapter}{\numberline {5}Open-source projects}{14}{chapter.5}
+\contentsline {section}{\numberline {1}History of Open-Source Software}{14}{section.5.1}
+\contentsline {section}{\numberline {2}Choosing projects of interest}{15}{section.5.2}
+\contentsline {section}{\numberline {3}Github mining}{15}{section.5.3}
+\contentsline {subsection}{\numberline {3.1}Release dates}{16}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {3.2}Issues}{17}{subsection.5.3.2}
+\contentsline {chapter}{\numberline {6}Sentiment analysis}{19}{chapter.6}
+\contentsline {section}{\numberline {1}History}{20}{section.6.1}
+\contentsline {section}{\numberline {2}Training datasets}{20}{section.6.2}
+\contentsline {section}{\numberline {3}Language processing tools}{22}{section.6.3}
+\contentsline {section}{\numberline {4}Performance metrics}{23}{section.6.4}
+\contentsline {paragraph}{Terminology}{23}{section*.12}
+\contentsline {section}{\numberline {5}Classifier evaluation}{25}{section.6.5}
+\contentsline {paragraph}{Textblob:}{25}{section*.13}
+\contentsline {paragraph}{NLT:}{26}{section*.14}
+\contentsline {paragraph}{Sci-kit Learn}{27}{section*.15}
+\contentsline {paragraph}{Choosing classifiers}{27}{section*.16}
+\contentsline {paragraph}{Vectorizer and its optimizations:}{28}{section*.18}
+\contentsline {paragraph}{Classifier optimizations}{29}{section*.19}
+\contentsline {paragraph}{Neutral Tweets}{31}{section*.20}
+\contentsline {section}{\numberline {6}Data to analyze}{33}{section.6.6}
+\contentsline {section}{\numberline {7}Results}{33}{section.6.7}
+\contentsline {subsection}{\numberline {7.1}Results for weekly collected data}{33}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {7.2}Immediate sentiment change with releases}{35}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {7.3}Cross-correlation between releases and sentiment change}{36}{subsection.6.7.3}
+\contentsline {paragraph}{Results interpretation:}{39}{section*.30}
+\contentsline {subsection}{\numberline {7.4}Commits count within releases}{40}{subsection.6.7.4}
+\contentsline {chapter}{\numberline {7}Linking bug repositories and social media}{43}{chapter.7}
+\contentsline {section}{\numberline {1}Aproaches}{43}{section.7.1}
+\contentsline {paragraph}{NLTK:}{44}{section*.33}
+\contentsline {paragraph}{Scikit-learn and TF-IDF:}{45}{section*.34}
+\contentsline {paragraph}{Stack Overflow questions preprocessing:}{46}{section*.35}
+\contentsline {section}{\numberline {2}Available data}{46}{section.7.2}
+\contentsline {paragraph}{Git issue reports:}{46}{section*.36}
+\contentsline {paragraph}{Stack overflow questions:}{46}{section*.37}
+\contentsline {paragraph}{Reddit dialogues:}{47}{section*.38}
+\contentsline {section}{\numberline {3}Similarity results}{47}{section.7.3}
+\contentsline {subsection}{\numberline {3.1}Stack Overflow}{49}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {3.2}Reddit}{52}{subsection.7.3.2}
+\contentsline {section}{\numberline {4}Using GIT labels}{53}{section.7.4}
+\contentsline {chapter}{\numberline {8}Answers and Discussion}{54}{chapter.8}
+\contentsline {chapter}{\numberline {9}Future work}{57}{chapter.9}

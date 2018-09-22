@@ -5,8 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c91a1629-2581-4490-9521-a6862743b9bc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.~lock.Pairingresults.ods#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pairingresults.ods" afterPath="$PROJECT_DIR$/Pairingresults.ods" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.synctex.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/socialMedia.tex" afterPath="$PROJECT_DIR$/masterthesis_template/socialMedia.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/classifierEvaluation.log" afterPath="$PROJECT_DIR$/masterthesis_template/classifierEvaluation.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/classifierEvaluation.tex" afterPath="$PROJECT_DIR$/masterthesis_template/classifierEvaluation.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/confusionMatrices.tex" afterPath="$PROJECT_DIR$/masterthesis_template/confusionMatrices.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/crossCorrelationCommits.tex" afterPath="$PROJECT_DIR$/masterthesis_template/crossCorrelationCommits.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/crossCorrelationReleases.tex" afterPath="$PROJECT_DIR$/masterthesis_template/crossCorrelationReleases.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/dataForSentimentAnalysis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/dataForSentimentAnalysis.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/discussion.tex" afterPath="$PROJECT_DIR$/masterthesis_template/discussion.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/futureWork.tex" afterPath="$PROJECT_DIR$/masterthesis_template/futureWork.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/introduction.tex" afterPath="$PROJECT_DIR$/masterthesis_template/introduction.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.bbl" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.bbl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.bib" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.bib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.blg" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.blg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.out" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" afterPath="$PROJECT_DIR$/masterthesis_template/masterthesis.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/ossProjects.tex" afterPath="$PROJECT_DIR$/masterthesis_template/ossProjects.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/pairingApproaches.tex" afterPath="$PROJECT_DIR$/masterthesis_template/pairingApproaches.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/pairingBugs.tex" afterPath="$PROJECT_DIR$/masterthesis_template/pairingBugs.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/pairingData.tex" afterPath="$PROJECT_DIR$/masterthesis_template/pairingData.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/pairingGitLabels.tex" afterPath="$PROJECT_DIR$/masterthesis_template/pairingGitLabels.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/proposedFramework.log" afterPath="$PROJECT_DIR$/masterthesis_template/proposedFramework.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/proposedFramework.tex" afterPath="$PROJECT_DIR$/masterthesis_template/proposedFramework.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/relatedWork.tex" afterPath="$PROJECT_DIR$/masterthesis_template/relatedWork.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/resultsBeforeAfter.tex" afterPath="$PROJECT_DIR$/masterthesis_template/resultsBeforeAfter.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/resultsWeekly.tex" afterPath="$PROJECT_DIR$/masterthesis_template/resultsWeekly.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" afterPath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysis.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysisHistory.tex" afterPath="$PROJECT_DIR$/masterthesis_template/sentimentAnalysisHistory.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/similarityResults.tex" afterPath="$PROJECT_DIR$/masterthesis_template/similarityResults.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/socialMedia.log" afterPath="$PROJECT_DIR$/masterthesis_template/socialMedia.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/titlepage.log" afterPath="$PROJECT_DIR$/masterthesis_template/titlepage.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterthesis_template/trainingDatasets.tex" afterPath="$PROJECT_DIR$/masterthesis_template/trainingDatasets.tex" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +55,8 @@
       <file leaf-file-name="nltk_similarity_Stack.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="277" column="8" lean-forward="false" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="282" column="15" lean-forward="false" selection-start-line="282" selection-start-column="15" selection-end-line="282" selection-end-column="15" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -156,7 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,6 +224,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -976,8 +1011,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pairingItems/nltk_similarity_Stack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="277" column="8" lean-forward="false" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="282" column="15" lean-forward="false" selection-start-line="282" selection-start-column="15" selection-end-line="282" selection-end-column="15" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>

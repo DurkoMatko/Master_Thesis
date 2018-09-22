@@ -1,5 +1,5 @@
 \paragraph{Git issue reports:}
-Using the approach described in the section \ref{ssec:issuesMining}, I've downloaded 96,651 issue reports from Git while 25,978 of those labeled as bug or similar. If I would use all the data, the calculations would take too much time. That's the reason why I've decided not to work with all the data and rather just picked several projects of interest. The bug counts among this projects is displayed in the table \ref{table:gitProjectIssuesDistribution}.
+Using the approach described in the section \ref{ssec:issuesMining}, I have downloaded 96,651 issue reports from Git while 25,978 of those labeled as bug or similar. If I would use all the data, the calculations would take too much time. That is the reason why I decided not to work with all the data and rather just picked several projects of interest. The bug counts among this projects is displayed in the Table \ref{table:gitProjectIssuesDistribution}.
 
 
 \begin{table}[H]
@@ -20,7 +20,7 @@ Using the approach described in the section \ref{ssec:issuesMining}, I've downlo
 \end{table}
 
 \paragraph{Stack overflow questions:}
-SO mining has been described in section \ref{ssec:GettingData} and I've downloaded 5,847 questions. There are thousand questions for AngularJS, NodeJS, Bower, Ruby on Rails and VueJS each and EmberJS has only 847 questions. Downside is, that despite having a lot of questions, it doesn't necessarily mean that each and every one of them talks about some known bug. Actually, opposite is true as out of all those questions only very tiny percentage does (can be seen in table \ref{table:SObugQuestionsDistribution}). Because the projects I worked with till now had just so few questions linked to its own issues, I had to increase the number of bugs in the dataset. Since StackApi is limited to 10 thousand requests per day, I've decided to from opposite end and crawled through all closed git issues of projects and checked if there's a SO question linked to them. If that was the case I've saved both, git issue and SO question and that way increased the size of my dataset (can be seen in table \ref{table:additionalSObugQuestionsDistribution})
+SO mining has been described in Section \ref{ssec:GettingData} and I have downloaded 5,847 questions. There are thousand questions for AngularJS, NodeJS, Bower, Ruby on Rails and VueJS each and EmberJS has only 847 questions. Downside is, that despite having a lot of questions, it does not necessarily mean that each and every one of them talks about some known bug. Actually, opposite is true as out of all those questions only very tiny percentage does (can be seen in Table \ref{table:SObugQuestionsDistribution}). Because the projects I worked with till now had just so few questions linked to its own issues, I had to increase the number of bugs in the dataset. Since StackApi is limited to 10 thousand requests per day, I decided to from opposite end and crawled through all closed git issues of projects and checked if there is a SO question linked to them. If that was the case I have saved both, git issue and SO question and that way increased the size of my dataset (can be seen in Table \ref{table:additionalSObugQuestionsDistribution})
 
 \begin{table}[H]
 \centering
@@ -57,7 +57,7 @@ SO mining has been described in section \ref{ssec:GettingData} and I've download
 \label{table:additionalSObugQuestionsDistribution}
 \end{table}
 
-\paragraph{Reddit dialogues:}Reddit subreddits mining has been described in the same subsection as SO mining. After I have learnt that there is too much data online, with Reddit I downloaded only submissions with any Git issue link (not necessarily own issue). Results of this process are shown in the table \ref{table:redditDiscussionsDistribution}.
+\paragraph{Reddit dialogues:}Reddit subreddits mining has been described in the same subsection as SO mining. After I have learnt that there is too much data online, with Reddit I downloaded only submissions with any Git issue link (not necessarily own issue). Results of this process are shown in the Table \ref{table:redditDiscussionsDistribution}.
 
 
 \begin{table}[H]

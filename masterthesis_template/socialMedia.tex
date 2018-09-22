@@ -28,7 +28,7 @@ When talking about sentiment analysis of social media, analysis of Twitter data 
     \label{fig:papersWordcloudHistory}%
 \end{figure}
 
-To get the data from Twitter,  I first tried to use the Twitter API but I very early got to know that Twitter is well aware of the worth of their data. They don't provide tweets older than 2 weeks what basically made their API inapplicable for my purposes. The only way how to get historical Twitter data is actually:
+To get the data from Twitter,  I first tried to use the Twitter API but I very early got to know that Twitter is well aware of the worth of their data. They do not provide tweets older than 2 weeks what basically made their API inapplicable for my purposes. The only way how to get historical Twitter data is actually:
 
 \begin{itemize}
   \item collect them over time
@@ -36,11 +36,10 @@ To get the data from Twitter,  I first tried to use the Twitter API but I very e
   \item buy them from other companies who collect Twitter dumps over time
 \end{itemize}
 
-Therefore to obtain my data, I had to use the Twitter Search Api. To do this I used the project (https://github.com/Jefferson-Henrique/GetOldTweets-python) which provides an extra layer on top of Search Api and simplifies working with it. Using this technique, I managed to get the significant amount of data needed for all my tasks in this thesis.
-
+Therefore to obtain my data, I had to use the Twitter Search Api. To do this I used the GetOldTweets\footnote{https://github.com/Jefferson-Henrique/GetOldTweets-python} repository from Jefferson-Henrique which provides an extra layer on top of Search Api and simplifies working with it. Using this technique, I managed to get the significant amount of data needed for all my tasks in this thesis.\\
 This repository offers following collection of search parameters which can be used to filter specific tweets according:
 \begin{itemize}
-  \item setUsername - twitter account without "@"
+  \item setUsername - Twitter account without "@"
   \item setSince - lower date bound with format "yyyy-mm-dd"
   \item setUntil - upper date bound with format "yyyy-mm-dd"
   \item setQuerySearch - search text to be matched
@@ -51,7 +50,7 @@ This repository offers following collection of search parameters which can be us
 \end{itemize}
 
 
-I got historical twitter data by looping all projects and their release dates and requested data: 
+I got historical Twitter data by looping all projects and their release dates and requested data: 
 
 \begin{itemize}
   \item on the release dates (Listing \ref{lst:onReleaseDatesScript})
@@ -62,8 +61,7 @@ I got historical twitter data by looping all projects and their release dates an
 
 \begin{lstlisting}[caption={Creating command to get Tweets about a project version on release dates},label={lst:onReleaseDatesScript},language=Python]
 miningConsoleCommand = "python Exporter.py 
-				--querysearch '" + frameworkName + " AND " + version + "' 
-				--since " + str(releaseDate) + " 
+				--querysearch '" + frameworkName + " AND " + version + "'    --since " + str(releaseDate) + " 
 				--until " + str(afterRelease) + " 
 				--output='" + frameworkName + "_" + str(releaseDate) + ".csv" + "'"
 \end{lstlisting}
@@ -80,13 +78,12 @@ miningConsoleCommand = "python Exporter.py
 
 
 \paragraph{Facebook:}
-I originally planned to use Facebook statuses as a big part of analyzed data. Sadly, this was not possible since Facebook Graph API doesn't allow post searching feature. There was this option till early 2014 with Facebook API 1.x versions but since Graph API has been introduced, there's no way how to make Facebook application send requests to 1.x versions of API. At first, application created before 2014 were still working on top of the early Api versions and it has been maintained but over time, all the applications were migrated to 2.x Api versions. There's currently no public way how to freely get the Facebook posts data. The other types provided by the Api are for example user, page, event, group or place.
+I originally planned to use Facebook statuses as a big part of analyzed data. Sadly, this was not possible since Facebook Graph API does not allow post searching feature. There was this option till early 2014 with Facebook API 1.x versions but since Graph API has been introduced, there is no way how to make Facebook application send requests to 1.x versions of API. At first, application created before 2014 were still working on top of the early Api versions and it has been maintained but over time, all the applications were migrated to 2.x Api versions. There is currently no public way how to freely get the Facebook posts data. The other types provided by the Api are for example user, page, event, group or place.
 
 \paragraph{Reddit:}
-Despite that reddit doesn't offer big amount of user data in OSS projects subreddits, I thought getting and working with Reddit could increase the variety of users and the data which I will be working with. To get the data I used Python Reddit API Wrapper (PRAW) used to directly work with Reddit Api via HTTP requests.
-
+Despite that reddit does not offer big amount of user data in OSS projects subreddits, I thought getting and working with Reddit could increase the variety of users and the data which I will be working with. To get the data I used Python Reddit API Wrapper (PRAW) used to directly work with Reddit Api via HTTP requests.\\
 Class Reddit provides a convenient way how to access Reddit API. Instance of this class can be seen as a gateway to interact with API through PRAW. To instantiate this class, user first has to register his application. This gives user unique \textit{useragent} key which identifies the application. This is so that if a program misbehaves for some reason, it can be more easily identified, rather than look like a browser. All mandatory arguments are shown in Listing \ref{lst:redditClassInstance}.
-
+\newpage
 \begin{lstlisting}[caption={Instantiating Reddit class object},label={lst:redditClassInstance},language=Python]
 reddit = praw.Reddit(
 							clientid='CLIENTID',
@@ -99,13 +96,12 @@ reddit = praw.Reddit(
 
 After connection to Api is successful, senting requests with PRAW is straightforward. To get the submissions from a particular subreddit in a specific time interval, just a basic loop shown in Listing \ref{lst:redditSubmissionsLoop} is enough.
 
-\begin{lstlisting}[caption={Getting posts from subreddit},label={lst:redditSubmissionsLoop},language=Python]
+\begin{lstlisting}[caption={Getting posts from subreddit *},label={lst:redditSubmissionsLoop},language=Python]
 for submission in reddit.subreddit(redditName).submissions(FROM, TO)):
 \end{lstlisting}
-
+\textit{*During the writing of this thesis, new Reddit API deprecated the submission class and all endpoints using this class.}\\
+\\
 Each post (submission) contains among other information also array-like member variable of all comments. Simply concatenating all those gives the whole textual representation of the discussion.
-
-\textit{*During the writing of this thesis, new Reddit API deprecated the described approach and submission class.}
 
 
 \paragraph{Stack overflow:}
@@ -126,4 +122,4 @@ To extract the questions about the OSS projects of my interest I once again used
          )
 \end{lstlisting}
 
-Stack Exchange is limited on 30 requests per second. Therefore the logic needed to be implemented to avoid a penalization for violating this throttle. At first I intended to use the type “posts” which returns both, questions and answers, but later I've realized how huge amount of data SO contains.  The average count of questions using one of the examined projects names as a tag was around 150 000. Because of this, I had to find out how to filter just the questions with higher probability of talking about bugs. Since the questions on SO do not have any labels which I could use to my advantage like I did with Git issues, I decided to keep just the questions which mention a word “bug”. This still left me with considerable big dataset of 8143 questions to work with. Out of all properties of questions retrieved from questions endpoint, I decided to store and further work just with several of them – mainly its title and body since these two provide most of the semantic meaning.
+At first I intended to use the type “posts” which returns both, questions and answers, but later I have realized how huge amount of data SO contains.  The average count of questions using one of the examined projects names as a tag was around 150 000. Because of this, I had to find out how to filter just the questions with higher probability of talking about bugs. Since the questions on SO do not have any labels which I could use to my advantage like I did with Git issues, I decided to keep just the questions which mention a word “bug”. This still left me with considerable big dataset of 8143 questions to work with. Out of all properties of questions retrieved from questions endpoint, I decided to store and further work just with several of them – mainly its title and body since these two provide most of the semantic meaning.

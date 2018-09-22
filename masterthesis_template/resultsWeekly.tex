@@ -1,5 +1,4 @@
-
-Next step was to do the analysis on the bigger scale and see if sentiment changes with the amount of releases/commits per month. For this, I'm going to use tweets collected with period one week. I've also added the sentiment of some projects' reddit discussions (keep in mind that classifier is trained on tweets, so this is not the best approach). The classifier used is completely the same so there should not be big differences in the sentiment of the same projects. Results can be seen in table \ref{table:weeklyAverageTable} and figure \ref{fig:weeklyAverageBarchart}
+First and the most simple analysis was to compare sentiment of tweets collected with period one week. I have also added the sentiment of some projects' Reddit discussions (keep in mind that classifier is trained on tweets, so this is not the best approach). Results can be seen in Table \ref{table:weeklyAverageTable} and Figure \ref{fig:weeklyAverageBarchart}
 
 \begin{table}[H]
 \centering
@@ -32,4 +31,4 @@ Next step was to do the analysis on the bigger scale and see if sentiment change
     \label{fig:weeklyAverageBarchart}%
 \end{figure}
 
-In both of previous analysis, I've used the simplest aggregation operation which is average. Replacing this one with median, modus or some more advanced aggregations could potentially yield different results but because each group is represented just by 3 or 4 OSS projects, losing any data would actually be a significant part of the overall analysed dataset. Using more projects could be potentially a part of future work.
+In both of previous analysis, I have used the simplest aggregation operation which is average. Replacing this one with median, modus or some more advanced aggregations could potentially yield different results but because each group is represented just by 3 or 4 OSS projects, losing any data would actually be a significant part of the overall analysed dataset. Using more projects could be potentially a part of future work.

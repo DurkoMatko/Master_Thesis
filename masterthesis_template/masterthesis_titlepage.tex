@@ -56,8 +56,8 @@
 \usepackage{multirow}
 
 %because of my name
-%\usepackage[slovak]{babel}
-%\usepackage[utf8]{inputenc}
+\usepackage[slovak]{babel}
+\usepackage[utf8]{inputenc}
 
 \graphicspath{
  {img/}
@@ -76,7 +76,7 @@
 
 % define medatata
 \def\MTitle{Sentiment analysis and linking of social media with open-source software repositories}
-\def\MAuthor{Martin Durcek}
+\def\MAuthor{Martin Ďurček}
 \def\MKeywords{Keyword 1 \sep Keyword 2\sep Keyword 3\sep Keyword 4}
 \def\MOrg{Universit{\"a}t Innsbruck}
 \def\MDate{\today}
@@ -89,65 +89,6 @@
  
  
 \begin{document}
-%\input{titlepage}% + scrbook needs to be selected for documenttype
-\includepdf[pages=-]{masterthesis_titlepage.pdf}
-\cleardoublepage
-
-% to exclude abstract from ToC
-{\renewcommand{\addtocontents}[2]{}
-\chapter*{}
-\input{abstract}
-}% Not included in ToC
-
-\tableofcontents 
-\cleardoublepage
-\pagenumbering{arabic}
-\pagestyle{plain} 
-
-\chapter{Introduction}
-\label{chp:introduction}
-\input{introduction}
- 
- 
-\chapter{Proposed framework}
-\label{chap:proposedFramework}
-\input{proposedFramework}
-
-\chapter{Related work}
-\label{chap:relatedWork}
-\input{relatedWork}
-
-\chapter{Social Media}
-\label{chap:socialMedia}
-\input{socialMedia}
-
-
-\chapter{Open-source projects}
-\label{chap:ossProjects}
-\input{ossProjects}
-
-
-\chapter{Sentiment analysis}
-\label{chap:sentimentAnalysis}
-\input{sentimentAnalysis}
-
-\chapter{Linking bug repositories and social media}
-\label{chap:pairingBugs}
-\input{pairingBugs}
-
-\chapter{Answers and Discussion}
-\label{chap:discussion}
-\input{discussion}
-
-\chapter{Future work}
-\label{chap:futureWork}
-\input{futureWork}
-
-\includepdf[pages=-]{GoogleFormResults2.pdf}
-
-\newpage
-\nocite{*}
-\bibliographystyle{unsrt}
-\bibliography{masterthesis}
+\input{titlepage}% + scrbook needs to be selected for documenttype
 
 \end{document}

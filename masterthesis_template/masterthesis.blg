@@ -3,49 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: masterthesis.aux
 The style file: unsrt.bst
 Database file #1: masterthesis.bib
-Warning--I didn't find a database entry for "go2009twitter2"
 Warning--can't use both volume and number fields in pak2010twitter
 Warning--empty journal in mayfield2008social
 Warning--empty year in hyndman5forecast
-You've used 35 entries,
+You've used 40 entries,
             1791 wiz_defined-function locations,
-            652 strings with 9966 characters,
-and the built_in function-call counts, 10243 in all, are:
-= -- 1004
-> -- 364
-< -- 20
-+ -- 135
-- -- 100
-* -- 614
-:= -- 1452
-add.period$ -- 121
-call.type$ -- 35
-change.case$ -- 33
+            674 strings with 10776 characters,
+and the built_in function-call counts, 11874 in all, are:
+= -- 1166
+> -- 422
+< -- 24
++ -- 156
+- -- 116
+* -- 712
+:= -- 1676
+add.period$ -- 138
+call.type$ -- 40
+change.case$ -- 38
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 525
-empty$ -- 1014
-format.name$ -- 100
-if$ -- 2445
+cite$ -- 43
+duplicate$ -- 608
+empty$ -- 1171
+format.name$ -- 116
+if$ -- 2837
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 37
-newline$ -- 178
-num.names$ -- 35
-pop$ -- 148
+int.to.str$ -- 40
+missing$ -- 42
+newline$ -- 203
+num.names$ -- 40
+pop$ -- 167
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 301
+skip$ -- 356
 stack$ -- 0
-substring$ -- 732
-swap$ -- 210
-text.length$ -- 20
+substring$ -- 864
+swap$ -- 248
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 108
-width$ -- 37
-write$ -- 398
-(There were 4 warnings)
+while$ -- 125
+width$ -- 42
+write$ -- 456
+(There were 3 warnings)

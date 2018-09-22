@@ -102,6 +102,25 @@ Nicholas Jalbert and Westley Weimer.
 \newblock In {\em Dependable Systems and Networks With FTCS and DCC, 2008. DSN
   2008. IEEE International Conference on}, pages 52--61. IEEE, 2008.
 
+\bibitem{ramos2003using}
+Juan Ramos et~al.
+\newblock Using tf-idf to determine word relevance in document queries.
+\newblock In {\em Proceedings of the first instructional conference on machine
+  learning}, volume 242, pages 133--142, 2003.
+
+\bibitem{lan2005comprehensive}
+Man Lan, Chew-Lim Tan, Hwee-Boon Low, and Sam-Yuan Sung.
+\newblock A comprehensive comparative study on term weighting schemes for text
+  categorization with support vector machines.
+\newblock In {\em Special interest tracks and posters of the 14th international
+  conference on World Wide Web}, pages 1032--1033. ACM, 2005.
+
+\bibitem{gamon2005pulse}
+Michael Gamon, Anthony Aue, Simon Corston-Oliver, and Eric Ringger.
+\newblock Pulse: Mining customer opinions from free text.
+\newblock In {\em international symposium on intelligent data analysis}, pages
+  121--132. Springer, 2005.
+
 \bibitem{kwak2010twitter}
 Haewoon Kwak, Changhyun Lee, Hosung Park, and Sue Moon.
 \newblock What is twitter, a social network or a news media?
@@ -177,12 +196,22 @@ Andrew~P Bradley.
   learning algorithms.
 \newblock {\em Pattern recognition}, 30(7):1145--1159, 1997.
 
+\bibitem{go2009twitter2}
+Alec Go, Lei Huang, and Richa Bhayani.
+\newblock Twitter sentiment analysis.
+\newblock {\em Entropy}, 17:252, 2009.
+
 \bibitem{hyndman5forecast}
 Rob~J Hyndman, George Athanasopoulos, Slava Razbash, Drew Schmidt, Zhenyu Zhou,
   Yousaf Khan, Christoph Bergmeir, and Earo Wang.
 \newblock forecast: Forecasting functions for time series and linear models,
   2013.
 \newblock {\em R package version}, 5.
+
+\bibitem{haddi2013role}
+Emma Haddi, Xiaohui Liu, and Yong Shi.
+\newblock The role of text pre-processing in sentiment analysis.
+\newblock {\em Procedia Computer Science}, 17:26--32, 2013.
 
 \bibitem{feller2002understanding}
 Joseph Feller, Brian Fitzgerald, et~al.
