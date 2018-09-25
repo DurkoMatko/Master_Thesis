@@ -13,7 +13,7 @@
 \contentsline {chapter}{\numberline {5}Open-source projects}{14}{chapter.5}
 \contentsline {section}{\numberline {1}History of Open-Source Software}{14}{section.5.1}
 \contentsline {section}{\numberline {2}Choosing projects of interest}{15}{section.5.2}
-\contentsline {section}{\numberline {3}Github mining}{15}{section.5.3}
+\contentsline {section}{\numberline {3}GitHub mining}{15}{section.5.3}
 \contentsline {subsection}{\numberline {3.1}Release dates}{16}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {3.2}Issues}{17}{subsection.5.3.2}
 \contentsline {chapter}{\numberline {6}Sentiment analysis}{19}{chapter.6}
@@ -41,7 +41,7 @@
 \contentsline {section}{\numberline {1}Aproaches}{43}{section.7.1}
 \contentsline {paragraph}{NLTK:}{44}{section*.33}
 \contentsline {paragraph}{Scikit-learn and TF-IDF:}{45}{section*.34}
-\contentsline {paragraph}{Stack Overflow questions preprocessing:}{46}{section*.35}
+\contentsline {paragraph}{Stack Overflow questions preprocessing:}{45}{section*.35}
 \contentsline {section}{\numberline {2}Available data}{46}{section.7.2}
 \contentsline {paragraph}{Git issue reports:}{46}{section*.36}
 \contentsline {paragraph}{Stack overflow questions:}{46}{section*.37}

@@ -1,4 +1,4 @@
-In recent years, there has been a substantial increase in interest of open source projects. Open source software is typically developed by community of people interested in the particular area who do not necessarily know each other. These communities are usually web-based.The open-source phenomenon raises many interesting questions. Its pro-ponents regard it as a paradigmatic change whereby the economics of private goods, built on the scarcity of resources, is replaced by the economics of public goods, where scarcity is not an issue. \cite{alexander2002working} There are many projects which are on top of their game and yet still being open source. For example, Apache, a free server program is often a go-to decision when for a web server implementation and in 2002 it was used on 56\% of web servers worldwide \cite{lerner2001open}.
+In recent years, there has been a substantial increase in interest of open source projects. Open source software is typically developed by community of people interested in the particular area who do not necessarily know each other. These communities are usually web-based.The open-source phenomenon raises many interesting questions. Its proponents regard it as a paradigmatic change whereby the economics of private goods, built on the scarcity of resources, is replaced by the economics of public goods, where scarcity is not an issue. \cite{alexander2002working} There are many projects which are on top of their game and yet still being open source. For example, Apache, a free server program is often a go-to decision when for a web server implementation and in 2002 it was used on 56\% of web servers worldwide \cite{lerner2001open}.
 
 \section{History of Open-Source Software}
 When talking about open source, most people immediately think of Linux. But there's so much more than than. The origin of open-source software can be traced back to the 1950s and 1960s, when software was sold together with hardware, and macros and utilities were freely exchanged in user forums. \cite{alexander2002working} In late 1983, GNU project has been announced and the next year a Free Software Foundation has been founded - both by an MIT employee Richard M. Stallman. All software written and released under Free Software Foundation had zero licences. The Linux kernel was released as freely modifiable source code in 1991 and like Unix, it attracted attention from many volunteer programmers. Another big milestone was a year 1998 when Netscape released a source code for Mozilla. In 1999 it was obvious that more and more corporate money will be invested into open source space as IBM announced their support for Linux by investing \$1 billion in its development.
@@ -13,22 +13,22 @@ There are loads of OSS projects nowadays and it turned out to be pretty interest
 \end{itemize}
 
 After considering these three points, I ended up choosing several open source web development frameworks as my projects of interest. \\
-Projects of my choice are NodeJS, AngularJS, EmberJS, VueJS for frontend technologies and Laravel, Symfony and CakePhp for backend PHP technologies. Some frameworks like  React, Meteor or Django have been left out because of their misleading names  would require lot of additional work to filter out data unrelated to the actual frameworks. For example, when tested Django framework, most of the twitter data referred to movie "Django Unchained".
+Projects of my choice are NodeJS, AngularJS, EmberJS, VueJS for front-end technologies and Laravel, Symfony and CakePhp for backend PHP technologies. Some frameworks like  React, Meteor or Django have been left out because of their misleading names  would require lot of additional work to filter out data unrelated to the actual frameworks. For example, when tested Django framework, most of the twitter data referred to movie "Django Unchained".
 
-\section{Github mining}
-Github as a most-popular version control system is often a go-to choice for many OSS projects. With over 10 million repositories, it is becoming one of the most important source of software artifacts on the Internet \cite{russell2013mining}. Git providing valuable information and insight into projects happened to be the case in this thesis.\\
-Thanks to Github Rest API v3\footnote{https://developer.github.com/v3/?} is data mining with Github very easy and straightforward. To send request to this API, OAuth2 token needs to be present in the request header. There are several ways how to acquire this token. I have decided to register an OAuth2 App under my GitHub account and that way I got constant token. Another way is to request a token programmatically, but I though it would be an unnecessary overhead. OAuth2 apps can be registered under \textit{Account settings \textgreater Developer settings \textgreater Personal access tokens \textgreater Generate new token}.
+\section{GitHub mining}
+GitHub as a most-popular version control system is often a go-to choice for many OSS projects. With over 10 million repositories, it is becoming one of the most important source of software artifacts on the Internet \cite{russell2013mining}. Git providing valuable information and insight into projects happened to be the case in this thesis.\\
+Thanks to GitHub Rest API v3\footnote{https://developer.github.com/v3/?} is data mining with GitHub very easy and straightforward. To send request to this API, OAuth2 token needs to be present in the request header. There are several ways how to acquire this token. I have decided to register an OAuth2 App under my GitHub account and that way I got constant token. Another way is to request a token programmatically, but I though it would be an unnecessary overhead. OAuth2 applications can be registered under \textit{Account settings \textgreater Developer settings \textgreater Personal access tokens \textgreater Generate new token}.
 \subsection{Release dates} \label{ssec:gitReleaseDatesMining}
 To get the project release dates, I've sent one request to the endpoint \textit{git/refs/tags} (Listing \ref{lst:gitTagsEndpoint})
 
-\begin{lstlisting}[caption={Requesting all project tags git api tags endpoint},label={lst:gitTagsEndpoint},language=Python]
+\begin{lstlisting}[caption={Requesting all project tags git API tags endpoint},label={lst:gitTagsEndpoint},language=Python]
 request = Request(projectUri + "/git/refs/tags")
 request.add_header('Authorization', 'token \%s' \% token)
 project = urlopen(request).read()
 tags = json.loads(project)
 \end{lstlisting}
 
-To get the release dates, after obtaining all tags, one more request for every one of them was needed (Listing \ref{lst:gitTagsEndpoint2}). Path to release date field within response body as json is tag \textgreater  object \textgreater  url \textgreater  Send new request \textgreater  author \textgreater  date.
+To get the release dates, after obtaining all tags, one more request for every one of them was needed (Listing \ref{lst:gitTagsEndpoint2}). Path to release date field within response body as JSON is tag \textgreater  object \textgreater  url \textgreater  Send new request \textgreater  author \textgreater  date.
 
 \begin{lstlisting}[caption={Requesting tag details and accessing release date},label={lst:gitTagsEndpoint2},language=Python]
 	for tag in tags:
@@ -57,7 +57,7 @@ After executing this step, I had data needed to divide the frameworks into group
 \item{Often releasing frequency} - on average more than 3.5 releases per month
 \end{itemize}
 
-Using these values as bounds for groups, projects were divided into their respective groups. Projects, release counts and average release frequency are in Table \ref{table:releaseGroupsCalculation}
+Using these values as bounds for groups, projects were divided into their respective groups. Projects, release counts and average release frequency are in Table \ref{table:releaseGroupsCalculation}.
 
 \begin{table}[H]
 \centering
@@ -98,7 +98,7 @@ During my later work, I have realized the amount of issues is just too big and b
     \label{fig:defaultLabels}%
 \end{figure}
 
-From there I have chosen the label \textit{bug}. Then I have checked all custom tags of all repositories and chosen just those which were semantically similar to bug. All chosen labels can be seen in the Table \ref{table:allGitBugLabels}
+From there I have chosen the label \textit{bug}. Then I have checked all custom tags of all repositories and chosen just those which were semantically similar to bug. All chosen labels can be seen in the Table \ref{table:allGitBugLabels}.
 
 
 \begin{table}[H]

@@ -1,10 +1,9 @@
-There are many ways and approaches how to find out whether 2 texts share some common topic. Most of them are to some extent very similar as the general rule is to extract textual features and compare them using statistical approaches. Common way to do this is to transform documents into vectors (TF-IDF) and then compute cosine similarity between them. These text transformations are implemented in several Python packages.\\
+There are many ways and approaches how to find out whether 2 texts share some common topic. Most of them are to some extent very similar as the general rule is to extract textual features and compare them using statistical approaches. Common way to do this is to transform documents into vectors and then compute cosine similarity between them. These text transformations are implemented in several Python packages.\\
 \\
 I have tried following:
 \begin{enumerate}
 \item String similarity using NLTK
 \item String similarity using Scikit-learn
-\item String similarity using Gensim
 \end{enumerate}
 
 \paragraph{NLTK:}First step in calculating similarity was to tokenize the text. NLTK offers several types of tokenizers with various outputs. Text tokenization can operate on various levels and the structure of input has to be considered. As I am comparing the whole documents and do not want to consider sentences as standalone objects, I have chosen to use \textit{nltk.tokenize.wordtokenize} method instead of e.g. \textit{nltk.tokenize.senttokenize}.\\

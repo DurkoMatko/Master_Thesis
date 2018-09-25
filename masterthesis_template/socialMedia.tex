@@ -1,4 +1,4 @@
-Social media is a term referring to online communication channels meant for social interaction, content-sharing and collaboration. Over time, this term became widely used, its exact definition somewhat blurred and if really wanted, most of the today's websites could be labeled as social media. In context of this thesis,  I refer to social media in its “original” meaning. To be considered a social media platform, most of following features usually need to be fulfilled:
+Social media is a term referring to online communication channels meant for social interaction, content-sharing and collaboration. Over time, this term became widely used, its exact definition somewhat blurred and if really wanted, most of the today's websites could be labeled as social media. In context of this thesis,  I refer to social media in its original meaning. To be considered a social media platform, most of following features usually need to be fulfilled:
 
 \begin{itemize}
   \item \textbf{User accounts} - platform allows users to create and run their own accounts that they can log into. These are online representations of their owners and serve as a too to reach and interact with other users.
@@ -11,7 +11,7 @@ Even if a platform fulfills these requirements, it doesn't necessarily have to b
 
 \section{Potential of social media data mining}
 Social media are changing the way that information is passed across societies and around the world.\cite{mayfield2008social}
-Among many other potentials of social media, there is a huge amount of data generated on daily basis. These data carry lots of real world data and if used correctly, can offer deep insight into almost any area. The process of analyzing these data and searching for repetitive reoccurring patterns with goal of predicting future trends is also called social media mining. Successful mining can not only save money and time spent on getting the data in more traditional way like surveys but can also provide crucial factor in planning or decision making of businesses. Although internet is one big hole and contains lot of false facts and desinformation, there is indication that social networks tend to favour
+Among many other potentials of social media, there is a huge amount of data generated on daily basis. These data carry lots of real world data and if used correctly, can offer deep insight into almost any area. The process of analysing these data and searching for repetitive reoccurring patterns with goal of predicting future trends is also called social media mining. Successful mining can not only save money and time spent on getting the data in more traditional way like surveys but can also provide crucial factor in planning or decision making of businesses. Although internet is one big hole and contains lot of false facts and disinformation, there is indication that social networks tend to favour
 valid information over rumours.\cite{castillo2011information} 
 
 \section{Data}
@@ -36,7 +36,7 @@ To get the data from Twitter,  I first tried to use the Twitter API but I very e
   \item buy them from other companies who collect Twitter dumps over time
 \end{itemize}
 
-Therefore to obtain my data, I had to use the Twitter Search Api. To do this I used the GetOldTweets\footnote{https://github.com/Jefferson-Henrique/GetOldTweets-python} repository from Jefferson-Henrique which provides an extra layer on top of Search Api and simplifies working with it. Using this technique, I managed to get the significant amount of data needed for all my tasks in this thesis.\\
+Therefore to obtain my data, I had to use the Twitter Search API. To do this I used the GetOldTweets\footnote{https://github.com/Jefferson-Henrique/GetOldTweets-python} repository from Jefferson-Henrique which provides an extra layer on top of Search API and simplifies working with it. Using this technique, I managed to get the significant amount of data needed for all my tasks in this thesis.\\
 This repository offers following collection of search parameters which can be used to filter specific tweets according:
 \begin{itemize}
   \item setUsername - Twitter account without "@"
@@ -78,10 +78,10 @@ miningConsoleCommand = "python Exporter.py
 
 
 \paragraph{Facebook:}
-I originally planned to use Facebook statuses as a big part of analyzed data. Sadly, this was not possible since Facebook Graph API does not allow post searching feature. There was this option till early 2014 with Facebook API 1.x versions but since Graph API has been introduced, there is no way how to make Facebook application send requests to 1.x versions of API. At first, application created before 2014 were still working on top of the early Api versions and it has been maintained but over time, all the applications were migrated to 2.x Api versions. There is currently no public way how to freely get the Facebook posts data. The other types provided by the Api are for example user, page, event, group or place.
+I originally planned to use Facebook statuses as a big part of analyzed data. Sadly, this was not possible since Facebook Graph API does not allow post searching feature. There was this option till early 2014 with Facebook API 1.x versions but since Graph API has been introduced, there is no way how to make Facebook application send requests to 1.x versions of API. At first, application created before 2014 were still working on top of the early API versions and it has been maintained but over time, all the applications were migrated to 2.x API versions. There is currently no public way how to freely get the Facebook posts data. The other types provided by the API are for example user, page, event, group or place.
 
 \paragraph{Reddit:}
-Despite that reddit does not offer big amount of user data in OSS projects subreddits, I thought getting and working with Reddit could increase the variety of users and the data which I will be working with. To get the data I used Python Reddit API Wrapper (PRAW) used to directly work with Reddit Api via HTTP requests.\\
+Despite that Reddit does not offer big amount of user data in OSS projects subreddits, I thought getting and working with Reddit could increase the variety of users and the data which I will be working with. To get the data I used Python Reddit API Wrapper (PRAW) used to directly work with Reddit API via HTTP requests.\\
 Class Reddit provides a convenient way how to access Reddit API. Instance of this class can be seen as a gateway to interact with API through PRAW. To instantiate this class, user first has to register his application. This gives user unique \textit{useragent} key which identifies the application. This is so that if a program misbehaves for some reason, it can be more easily identified, rather than look like a browser. All mandatory arguments are shown in Listing \ref{lst:redditClassInstance}.
 \newpage
 \begin{lstlisting}[caption={Instantiating Reddit class object},label={lst:redditClassInstance},language=Python]
@@ -94,7 +94,7 @@ reddit = praw.Reddit(
 							)
 \end{lstlisting}
 
-After connection to Api is successful, senting requests with PRAW is straightforward. To get the submissions from a particular subreddit in a specific time interval, just a basic loop shown in Listing \ref{lst:redditSubmissionsLoop} is enough.
+After connection to API is successful, sending requests with PRAW is straightforward. To get the submissions from a particular subreddit in a specific time interval, just a basic loop shown in Listing \ref{lst:redditSubmissionsLoop} is enough.
 
 \begin{lstlisting}[caption={Getting posts from subreddit *},label={lst:redditSubmissionsLoop},language=Python]
 for submission in reddit.subreddit(redditName).submissions(FROM, TO)):
@@ -105,7 +105,7 @@ Each post (submission) contains among other information also array-like member v
 
 
 \paragraph{Stack overflow:}
-To extract the questions about the OSS projects of my interest I once again used provided Api. Python module called StackApi offers a way how to communicate with various Stack Exchange Api endpoints - answers, badges, comments, posts, questions, tags and users. To initiate communication with StackAPi, one needs only to specify Stack webpage and choose an endpoint, tag, time interval and if needed also some other non-mandatory parameters. Afterwards, calling \textit{fetch} method starts returning questions. Snippet of how I got the data can be seen in Listing \ref{lst:stacktQuestionsLoop}
+To extract the questions about the OSS projects of my interest I once again used provided API. Python module called StackApi offers a way how to communicate with various Stack Exchange API endpoints - answers, badges, comments, posts, questions, tags and users. To initiate communication with StackAPi, one needs only to specify Stack webpage and choose an endpoint, tag, time interval and if needed also some other non-mandatory parameters. Afterwards, calling \textit{fetch} method starts returning questions. Snippet of how I got the data can be seen in Listing \ref{lst:stacktQuestionsLoop}.
 
 \begin{lstlisting}[caption={Getting Stackoverflow questions with StackApi},label={lst:stacktQuestionsLoop},language=Python]
 	SITE = StackAPI('stackoverflow')
@@ -122,4 +122,4 @@ To extract the questions about the OSS projects of my interest I once again used
          )
 \end{lstlisting}
 
-At first I intended to use the type “posts” which returns both, questions and answers, but later I have realized how huge amount of data SO contains.  The average count of questions using one of the examined projects names as a tag was around 150 000. Because of this, I had to find out how to filter just the questions with higher probability of talking about bugs. Since the questions on SO do not have any labels which I could use to my advantage like I did with Git issues, I decided to keep just the questions which mention a word “bug”. This still left me with considerable big dataset of 8143 questions to work with. Out of all properties of questions retrieved from questions endpoint, I decided to store and further work just with several of them – mainly its title and body since these two provide most of the semantic meaning.
+At first I intended to use the class Posts, which returns both, questions and answers, but later I have realized how huge amount of data SO contains.  The average count of questions using one of the examined projects names as a tag was around 150 000. Because of this, I had to find out how to filter just the questions with higher probability of talking about bugs. Since the questions on SO do not have any labels which I could use to my advantage like I did with Git issues, I decided to keep just the questions which mention a word “bug”. This still left me with considerable big dataset of 8143 questions to work with. Out of all properties of questions retrieved from questions endpoint, I decided to store and further work just with several of them – mainly its title and body since these two provide most of the semantic meaning.
