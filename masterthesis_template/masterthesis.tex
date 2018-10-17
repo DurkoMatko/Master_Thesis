@@ -86,7 +86,8 @@
 
 \usepackage{calc}
 \newlength\foo
- 
+
+\renewcommand\thesection{\thechapter.\arabic{section}}
  
 \begin{document}
 %\input{titlepage}% + scrbook needs to be selected for documenttype
@@ -108,8 +109,7 @@
 \label{chp:introduction}
 \input{introduction}
  
- 
-\chapter{Proposed framework}
+\chapter{Goal and proposed framework}
 \label{chap:proposedFramework}
 \input{proposedFramework}
 
@@ -122,7 +122,7 @@
 \input{socialMedia}
 
 
-\chapter{Open-source projects}
+\chapter{Open Source Projects Analysis}
 \label{chap:ossProjects}
 \input{ossProjects}
 
@@ -143,7 +143,7 @@
 \label{chap:futureWork}
 \input{futureWork}
 
-\includepdf[pages=-]{GoogleFormResults2.pdf}
+\includepdf[pages=-]{GoogleFormResults3.pdf}
 
 \newpage
 \nocite{*}

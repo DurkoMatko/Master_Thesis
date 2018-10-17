@@ -6,45 +6,45 @@ Database file #1: masterthesis.bib
 Warning--can't use both volume and number fields in pak2010twitter
 Warning--empty journal in mayfield2008social
 Warning--empty year in hyndman5forecast
-You've used 40 entries,
+You've used 46 entries,
             1791 wiz_defined-function locations,
-            674 strings with 10776 characters,
-and the built_in function-call counts, 11874 in all, are:
-= -- 1166
-> -- 422
-< -- 24
-+ -- 156
-- -- 116
-* -- 712
-:= -- 1676
-add.period$ -- 138
-call.type$ -- 40
-change.case$ -- 38
+            707 strings with 12093 characters,
+and the built_in function-call counts, 13965 in all, are:
+= -- 1372
+> -- 502
+< -- 28
++ -- 185
+- -- 139
+* -- 849
+:= -- 1967
+add.period$ -- 160
+call.type$ -- 46
+change.case$ -- 44
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 608
-empty$ -- 1171
-format.name$ -- 116
-if$ -- 2837
+cite$ -- 49
+duplicate$ -- 708
+empty$ -- 1372
+format.name$ -- 139
+if$ -- 3337
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 42
-newline$ -- 203
-num.names$ -- 40
-pop$ -- 167
+int.to.str$ -- 46
+missing$ -- 48
+newline$ -- 233
+num.names$ -- 46
+pop$ -- 193
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 356
+skip$ -- 416
 stack$ -- 0
-substring$ -- 864
-swap$ -- 248
-text.length$ -- 24
+substring$ -- 1042
+swap$ -- 292
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 125
-width$ -- 42
-write$ -- 456
+while$ -- 146
+width$ -- 48
+write$ -- 526
 (There were 3 warnings)

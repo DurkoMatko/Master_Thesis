@@ -1,7 +1,11 @@
-In recent years, there has been a substantial increase in interest of open source projects. Open source software is typically developed by community of people interested in the particular area who do not necessarily know each other. These communities are usually web-based.The open-source phenomenon raises many interesting questions. Its proponents regard it as a paradigmatic change whereby the economics of private goods, built on the scarcity of resources, is replaced by the economics of public goods, where scarcity is not an issue. \cite{alexander2002working} There are many projects which are on top of their game and yet still being open source. For example, Apache, a free server program is often a go-to decision when for a web server implementation and in 2002 it was used on 56\% of web servers worldwide \cite{lerner2001open}.
+In recent years, there has been a substantial increase in interest of open source projects. Open source software is typically developed by community of people interested in the particular area who do not necessarily know each other. These communities are usually web-based. Open-source phenomenon raises many interesting questions. Its proponents regard it as a paradigmatic change whereby the economics of private goods, built on the scarcity of resources, is replaced by the economics of public goods, where scarcity is not an issue. \cite{alexander2002working} There are many projects which are on top of their game and yet still being open source. For example, Apache, a free server program is often a go-to decision when web server implementation is needed. In 2002 it was used on 56\% of web servers worldwide \cite{lerner2001open}.
 
 \section{History of Open-Source Software}
 When talking about open source, most people immediately think of Linux. But there's so much more than than. The origin of open-source software can be traced back to the 1950s and 1960s, when software was sold together with hardware, and macros and utilities were freely exchanged in user forums. \cite{alexander2002working} In late 1983, GNU project has been announced and the next year a Free Software Foundation has been founded - both by an MIT employee Richard M. Stallman. All software written and released under Free Software Foundation had zero licences. The Linux kernel was released as freely modifiable source code in 1991 and like Unix, it attracted attention from many volunteer programmers. Another big milestone was a year 1998 when Netscape released a source code for Mozilla. In 1999 it was obvious that more and more corporate money will be invested into open source space as IBM announced their support for Linux by investing \$1 billion in its development.
+
+\section{Types of Open-Source Software analysis}
+Open-Source space is very interesting space to analyse. Not only because it was not that long ago, when a thought of decentralized team working on software for free seemed unlikely and now it is a common scenario, but also because of its nature. It does not hide anything and therefore all the data for the deeper analysis of requirements needed to success are up there for grabs. 
+To determine whether an OSS project is thriving and sustainable, various analysis types can be done. The most obvious metric to look at is code activity and release history. This can be easily investigated by looking at projects' revision control system and pattern of contributions. Number of contributions usually differs as projects go through cycles of releases and cooldown periods. It's also hard to generalize between projects as they all have different approach towards releasing frequency. This is exactly the topic I'm studying in chapters \ref{ssec:crossCorrelation} and \ref{ssec:crossCorrelationCommits}.  Another important and also easier to interpret aspect is user community developed around the project/framework. Just a straightforward use of search engine statistics can show how popular various repositories are. This next point is little bit counter-intuitive, but healthy project should also have a reasonable number of known issues as it shows there is a real community behind the project using it. Therefore are bug tracking systems great source of information as well. Last but not least indicator and area to analyse project's success is the ecosystem as a whole. Seeing consultancy and customisation services or and companies that bundle the software with other products as part of solutions is a strong indicator the project is doing well.
 
 \section{Choosing projects of interest}
 There are loads of OSS projects nowadays and it turned out to be pretty interesting process to choose the best ones for my thesis. To make sure chosen projects fit into my work and fit  all my needs I defined several requirements which needed to be fulfilled at least to some extent:
@@ -17,7 +21,7 @@ Projects of my choice are NodeJS, AngularJS, EmberJS, VueJS for front-end techno
 
 \section{GitHub mining}
 GitHub as a most-popular version control system is often a go-to choice for many OSS projects. With over 10 million repositories, it is becoming one of the most important source of software artifacts on the Internet \cite{russell2013mining}. Git providing valuable information and insight into projects happened to be the case in this thesis.\\
-Thanks to GitHub Rest API v3\footnote{https://developer.github.com/v3/?} is data mining with GitHub very easy and straightforward. To send request to this API, OAuth2 token needs to be present in the request header. There are several ways how to acquire this token. I have decided to register an OAuth2 App under my GitHub account and that way I got constant token. Another way is to request a token programmatically, but I though it would be an unnecessary overhead. OAuth2 applications can be registered under \textit{Account settings \textgreater Developer settings \textgreater Personal access tokens \textgreater Generate new token}.
+Thanks to GitHub Rest API v3\footnote{https://developer.github.com/v3/?} is data mining with GitHub very easy and straightforward. To send request to this API, OAuth2 token needs to be present in the request header. There are several ways how to acquire this token. I have decided to register an OAuth2 App under my GitHub account and that way I got constant token. Another way is to request a token programmatically, but I thought it would be an unnecessary overhead. OAuth2 applications can be registered under \textit{Account settings \textgreater Developer settings \textgreater Personal access tokens \textgreater Generate new token}.
 \subsection{Release dates} \label{ssec:gitReleaseDatesMining}
 To get the project release dates, I've sent one request to the endpoint \textit{git/refs/tags} (Listing \ref{lst:gitTagsEndpoint})
 
@@ -29,7 +33,7 @@ tags = json.loads(project)
 \end{lstlisting}
 
 To get the release dates, after obtaining all tags, one more request for every one of them was needed (Listing \ref{lst:gitTagsEndpoint2}). Path to release date field within response body as JSON is tag \textgreater  object \textgreater  url \textgreater  Send new request \textgreater  author \textgreater  date.
-
+\newpage
 \begin{lstlisting}[caption={Requesting tag details and accessing release date},label={lst:gitTagsEndpoint2},language=Python]
 	for tag in tags:
 		version = tag['ref']
@@ -50,7 +54,7 @@ To get the release dates, after obtaining all tags, one more request for every o
 
 I saved the release dates in simple text file, one per line. This code was later on changed (in subsection \ref{ssec:crossCorrelationCommits}) to include also number of commits per release.
 
-After executing this step, I had data needed to divide the frameworks into groups based on their releasing frequency. I ended up with 3 groups:
+After executing this step, I needed to divide frameworks into groups based on their releasing frequency. I ended up with 3 groups:
 \begin{itemize}
 \item{Seldom releasing frequency} - less than once per month
 \item{Medium releasing frequency} - between one and 3.5 times per month
@@ -88,7 +92,7 @@ To get the project issues, I have used the endpoint \textit{issues}. It offers v
 request = Request(projectUri + '/issues?state=closed&perpage=100&page=' + str(pageNum))
 \end{lstlisting}
 
-It is also worth noting here that GitHub's REST API v3 considers every pull request an issue so I had to identify and filter them out using their \textit{pullRequest} key.\\
+It is also worth noting here that GitHub's REST API v3 considers every pull request an issue so I had to identify and filter them out using their \textit{pullRequest} key. I'm saving all the data API provides but later work only with bug description and title.\\
 During my later work, I have realized the amount of issues is just too big and broad and not every issue is a bug or even remotely similar to bug. That was when I have decided to filter the issues and keep only real bugs. For this I have used Git labels. Labels on GitHub help organize and prioritize work. They can be applied to issues and pull requests to signify priority, category, or any other information you find useful. There are two types of labels - default and custom. GitHub provides default ones in every new repository. All default labels can be seen in Table \ref{fig:defaultLabels} and can be used to create a standard workflow in a repository:
 
 \begin{figure}[H]%

@@ -12,6 +12,13 @@ Jason~T Tsay, Laura Dabbish, and James Herbsleb.
 \newblock In {\em Proceedings of the ACM 2012 conference on computer supported
   cooperative work companion}, pages 223--226. ACM, 2012.
 
+\bibitem{jarczyk2014github}
+Oskar Jarczyk, B{\l}a{\.z}ej Gruszka, Szymon Jaroszewicz, Leszek Bukowski, and
+  Adam Wierzbicki.
+\newblock Github projects. quality analysis of open-source software.
+\newblock In {\em International Conference on Social Informatics}, pages
+  80--94. Springer, 2014.
+
 \bibitem{takhteyev2010investigating}
 Yuri Takhteyev and Andrew Hilts.
 \newblock Investigating the geography of open source software through github.
@@ -36,6 +43,19 @@ Emitza Guzman, David Az{\'o}car, and Yang Li.
 \newblock In {\em Proceedings of the 11th Working Conference on Mining Software
   Repositories}, pages 352--355. ACM, 2014.
 
+\bibitem{christley2007analysis}
+Scott Christley and Greg Madey.
+\newblock Analysis of activity in the open source software development
+  community.
+\newblock In {\em System Sciences, 2007. HICSS 2007. 40th Annual Hawaii
+  International Conference on}, pages 166b--166b. IEEE, 2007.
+
+\bibitem{rosenthal2017semeval}
+Sara Rosenthal, Noura Farra, and Preslav Nakov.
+\newblock Semeval-2017 task 4: Sentiment analysis in twitter.
+\newblock In {\em Proceedings of the 11th International Workshop on Semantic
+  Evaluation (SemEval-2017)}, pages 502--518, 2017.
+
 \bibitem{agarwal2011sentiment}
 Apoorv Agarwal, Boyi Xie, Ilia Vovsha, Owen Rambow, and Rebecca Passonneau.
 \newblock Sentiment analysis of twitter data.
@@ -52,24 +72,35 @@ Alexander Pak and Patrick Paroubek.
 \newblock Twitter as a corpus for sentiment analysis and opinion mining.
 \newblock In {\em LREc}, volume~10, pages 1320--1326, 2010.
 
+\bibitem{go2009twitter}
+Alec Go, Richa Bhayani, and Lei Huang.
+\newblock Twitter sentiment classification using distant supervision.
+\newblock {\em CS224N Project Report, Stanford}, 1(12), 2009.
+
 \bibitem{saif2012semantic}
 Hassan Saif, Yulan He, and Harith Alani.
 \newblock Semantic sentiment analysis of twitter.
 \newblock In {\em International semantic web conference}, pages 508--524.
   Springer, 2012.
 
-\bibitem{nakov2016semeval}
-Preslav Nakov, Alan Ritter, Sara Rosenthal, Fabrizio Sebastiani, and Veselin
-  Stoyanov.
-\newblock Semeval-2016 task 4: Sentiment analysis in twitter.
-\newblock In {\em Proceedings of the 10th international workshop on semantic
-  evaluation (semeval-2016)}, pages 1--18, 2016.
+\bibitem{hogenboom2013exploiting}
+Alexander Hogenboom, Daniella Bal, Flavius Frasincar, Malissa Bal, Franciska
+  de~Jong, and Uzay Kaymak.
+\newblock Exploiting emoticons in sentiment analysis.
+\newblock In {\em Proceedings of the 28th annual ACM symposium on applied
+  computing}, pages 703--710. ACM, 2013.
 
-\bibitem{rosenthal2017semeval}
-Sara Rosenthal, Noura Farra, and Preslav Nakov.
-\newblock Semeval-2017 task 4: Sentiment analysis in twitter.
-\newblock In {\em Proceedings of the 11th International Workshop on Semantic
-  Evaluation (SemEval-2017)}, pages 502--518, 2017.
+\bibitem{novak2015sentiment}
+Petra~Kralj Novak, Jasmina Smailovi{\'c}, Borut Sluban, and Igor Mozeti{\v{c}}.
+\newblock Sentiment of emojis.
+\newblock {\em PloS one}, 10(12):e0144296, 2015.
+
+\bibitem{bachmann2010missing}
+Adrian Bachmann, Christian Bird, Foyzur Rahman, Premkumar Devanbu, and Abraham
+  Bernstein.
+\newblock The missing links: bugs and bug-fix commits.
+\newblock In {\em Proceedings of the eighteenth ACM SIGSOFT international
+  symposium on Foundations of software engineering}, pages 97--106. ACM, 2010.
 
 \bibitem{anvik2005coping}
 John Anvik, Lyndon Hiew, and Gail~C Murphy.
@@ -102,18 +133,24 @@ Nicholas Jalbert and Westley Weimer.
 \newblock In {\em Dependable Systems and Networks With FTCS and DCC, 2008. DSN
   2008. IEEE International Conference on}, pages 52--61. IEEE, 2008.
 
-\bibitem{ramos2003using}
-Juan Ramos et~al.
-\newblock Using tf-idf to determine word relevance in document queries.
-\newblock In {\em Proceedings of the first instructional conference on machine
-  learning}, volume 242, pages 133--142, 2003.
-
 \bibitem{lan2005comprehensive}
 Man Lan, Chew-Lim Tan, Hwee-Boon Low, and Sam-Yuan Sung.
 \newblock A comprehensive comparative study on term weighting schemes for text
   categorization with support vector machines.
 \newblock In {\em Special interest tracks and posters of the 14th international
   conference on World Wide Web}, pages 1032--1033. ACM, 2005.
+
+\bibitem{dietterich1998approximate}
+Thomas~G Dietterich.
+\newblock Approximate statistical tests for comparing supervised classification
+  learning algorithms.
+\newblock {\em Neural computation}, 10(7):1895--1923, 1998.
+
+\bibitem{ramos2003using}
+Juan Ramos et~al.
+\newblock Using tf-idf to determine word relevance in document queries.
+\newblock In {\em Proceedings of the first instructional conference on machine
+  learning}, volume 242, pages 133--142, 2003.
 
 \bibitem{gamon2005pulse}
 Michael Gamon, Anthony Aue, Simon Corston-Oliver, and Eric Ringger.
@@ -171,11 +208,6 @@ SB~Kotsiantis, D~Kanellopoulos, and PE~Pintelas.
 JA~Richmond.
 \newblock Spies in ancient greece.
 \newblock {\em Greece \& Rome}, 45(1):1--18, 1998.
-
-\bibitem{go2009twitter}
-Alec Go, Richa Bhayani, and Lei Huang.
-\newblock Twitter sentiment classification using distant supervision.
-\newblock {\em CS224N Project Report, Stanford}, 1(12), 2009.
 
 \bibitem{pang2004sentimental}
 Bo~Pang and Lillian Lee.
@@ -236,5 +268,12 @@ Alina Lazar, Sarah Ritchey, and Bonita Sharif.
   textual similarity measures.
 \newblock In {\em Proceedings of the 11th Working Conference on Mining Software
   Repositories}, pages 308--311. ACM, 2014.
+
+\bibitem{nakov2016semeval}
+Preslav Nakov, Alan Ritter, Sara Rosenthal, Fabrizio Sebastiani, and Veselin
+  Stoyanov.
+\newblock Semeval-2016 task 4: Sentiment analysis in twitter.
+\newblock In {\em Proceedings of the 10th international workshop on semantic
+  evaluation (semeval-2016)}, pages 1--18, 2016.
 
 \end{thebibliography}

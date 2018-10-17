@@ -1,4 +1,7 @@
-The main goal of this thesis can be divided into 2 parts. I aimed to create a framework which could be potentially used as a base of tool used to recognize level of user satisfaction and its sudden changes. Second part of the framework should be able to find matching pairs of issues reported in bug tracking systems and their respective social media entries. Both parts of the framework use various text processing methods, sentiment analysis concentrating more on machine learning while bug linking utilizes topic modelling and text similarity concepts.\\
+Despite Open-Source Software being popular, widely used and implemented in production, there's no definite consent regarding the ideal and most favoured release frequency and size. Some projects release several times per month while the others only once per quarter or even less. Also releases differ in size, number of commits and fixed issues they address. My goal is to explore some potential hidden patterns which could be generalized and used in the future release planning and policy in Open-Source space.\\
+Another issue and not only with Open-Source projects are bugs and finding workarounds and temporary solutions for them. We all know the scenario when a correct code doesn't function properly. We head to Stack Overflow or Reddit and start to look for similar problems. If lucky enough, we find a question with a solution presented in the comment section. But that's not always the case. Especially questions about faults caused by library/framework bugs have often empty and not really helpful comment sections because there should not be such problem in the first place. Such situations can eat up a lot of developers' time and kill productivity. Therefore I hoped to create an algorithm which could link corresponding GitHub and Stack Overflow items and make these frustrating situations easier.
+
+This thesis is divided into 2 parts. I aimed to create a framework which could be potentially used as a base of tool used to recognize level of user satisfaction and its sudden changes. Second part of the framework should be able to find and link pairs of issues reported in bug tracking systems and their respective social media entries. Both parts of the framework use various text processing methods, sentiment analysis concentrating more on machine learning while bug linking utilizes topic modelling and text similarity concepts.\\
 \begin{figure}%
     \centering
 	\includegraphics[width=15cm]{dataflow_final_yed.jpg}
@@ -15,8 +18,8 @@ As can be seen in Figure \ref{fig:frameworkDataflow}, two final products of the 
 \end{enumerate}
 After all the steps are implemented, proposed framework will be completed. But that does not guarantee that the output data are easy to interpret. That's why one extra additional step is needed. Using some statistics and data science methods, I am interpreting the results in Subsection \ref{ssec:crossCorrelation} and Subsection \ref{ssec:crossCorrelationCommits}.
 
-
-This framework targets following research questions:
+\newpage
+\textbf{This framework targets following research questions:}
 \begin{itemize}
 \item{\textbf{$RQ_{1}$}: Do the OSS projects which release more often get general better sentiment score on social media?}
 \item{\textbf{$RQ_{2}$}: Does a release have an immediate effect on sentiment?}

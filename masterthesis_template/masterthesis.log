@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.5.8)  25 SEP 2018 08:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.10.12)  17 OCT 2018 22:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,20 +369,20 @@ LaTeX Warning: Unused global option(s):
 (./masterthesis.aux)
 \openout1 = `masterthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -419,60 +419,60 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \Ref on input line 91.
-Package hyperref Info: Link coloring OFF on input line 91.
-LaTeX Info: Redefining \ref on input line 91.
-LaTeX Info: Redefining \pageref on input line 91.
-LaTeX Info: Redefining \nameref on input line 91.
+LaTeX Info: Redefining \Ref on input line 92.
+Package hyperref Info: Link coloring OFF on input line 92.
+LaTeX Info: Redefining \ref on input line 92.
+LaTeX Info: Redefining \pageref on input line 92.
+LaTeX Info: Redefining \nameref on input line 92.
 
 (./masterthesis.out) (./masterthesis.out)
 \@outlinefile=\write3
 \openout3 = `masterthesis.out'.
 
-LaTeX Info: Redefining \Ref on input line 91.
+LaTeX Info: Redefining \Ref on input line 92.
 \c@lstlisting=\count129
 
-<masterthesis_titlepage.pdf, id=144, 597.50829pt x 845.0471pt>
+<masterthesis_titlepage.pdf, id=148, 597.50829pt x 845.0471pt>
 File: masterthesis_titlepage.pdf Graphic file (type pdf)
 
 <use masterthesis_titlepage.pdf>
-Package pdftex.def Info: masterthesis_titlepage.pdf used on input line 93.
+Package pdftex.def Info: masterthesis_titlepage.pdf used on input line 94.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: masterthesis_titlepage.pdf Graphic file (type pdf)
  <use masterthesis_titlepage.pdf>
-Package pdftex.def Info: masterthesis_titlepage.pdf used on input line 93.
+Package pdftex.def Info: masterthesis_titlepage.pdf used on input line 94.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
-<masterthesis_titlepage.pdf, id=147, page=1, 597.50829pt x 845.0471pt>
+<masterthesis_titlepage.pdf, id=151, page=1, 597.50829pt x 845.0471pt>
 File: masterthesis_titlepage.pdf Graphic file (type pdf)
 
 <use masterthesis_titlepage.pdf, page 1>
 Package pdftex.def Info: masterthesis_titlepage.pdf, page1 used on input line 9
-3.
+4.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: masterthesis_titlepage.pdf Graphic file (type pdf)
 
 <use masterthesis_titlepage.pdf, page 1>
 Package pdftex.def Info: masterthesis_titlepage.pdf, page1 used on input line 9
-3.
+4.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: masterthesis_titlepage.pdf Graphic file (type pdf)
 
 <use masterthesis_titlepage.pdf, page 1>
 Package pdftex.def Info: masterthesis_titlepage.pdf, page1 used on input line 9
-3.
+4.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: masterthesis_titlepage.pdf Graphic file (type pdf)
 
 <use masterthesis_titlepage.pdf, page 1>
 Package pdftex.def Info: masterthesis_titlepage.pdf, page1 used on input line 9
-3.
+4.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: masterthesis_titlepage.pdf Graphic file (type pdf)
 
 <use masterthesis_titlepage.pdf, page 1>
 Package pdftex.def Info: masterthesis_titlepage.pdf, page1 used on input line 9
-3.
+4.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [1
 
@@ -515,7 +515,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--7
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 
+l.111 
        [1
 
 
@@ -524,18 +524,18 @@ l.110
 <to be read again> 
                    \relax 
 l.112 \chapter
-              {Proposed framework} [2]
+              {Goal and proposed framework} [2]
 Chapter 2.
 (./proposedFramework.tex
-<img/Framework/dataflow_final_yed.jpg, id=237, 520.94624pt x 574.145pt>
+<img/Framework/dataflow_final_yed.jpg, id=242, 520.94624pt x 574.145pt>
 File: img/Framework/dataflow_final_yed.jpg Graphic file (type jpg)
 
 <use img/Framework/dataflow_final_yed.jpg>
 Package pdftex.def Info: img/Framework/dataflow_final_yed.jpg used on input lin
-e 4.
+e 7.
 (pdftex.def)             Requested size: 426.79134pt x 470.38144pt.
 
-Overfull \hbox (66.79134pt too wide) in paragraph at lines 4--5
+Overfull \hbox (66.79134pt too wide) in paragraph at lines 7--8
  [][] 
  []
 
@@ -543,27 +543,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 \item{
-           \textbf{Topic modeling and text similarity} - this is the crucial...
-[3
+l.12 \begin{enumerate}
+                       [3
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 \item{
-           \textbf{Topic modeling and text similarity} - this is the crucial...
-[4 <./img/Framework/dataflow_final_yed.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
+l.12 \begin{enumerate}
+                       [4 <./img/Framework/dataflow_final_yed.jpg>] [5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
-) [5]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+) [6]
 Chapter 3.
-(./relatedWork.tex)
+(./relatedWork.tex
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+)
 Underfull \hbox (badness 10000) in paragraph at lines 1--119
 
  []
@@ -583,11 +585,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--119
 
  []
 
-[6
+[7
 
-] [7]
+] [8] [9] [10]
 Chapter 4.
-(./socialMedia.tex [8
+(./socialMedia.tex [11
 
 ]
 Missing character: There is no ‚ in font cmr10!
@@ -597,17 +599,17 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-<img/SentimentAnalysis/papersWordcloudHistory.jpg, id=327, 251.94125pt x 269.00
+<img/SentimentAnalysis/papersWordcloudHistory.jpg, id=364, 251.94125pt x 269.00
 5pt>
 File: img/SentimentAnalysis/papersWordcloudHistory.jpg Graphic file (type jpg)
  <use img/SentimentAnalysis/papersWordcloudHistory.jpg>
 Package pdftex.def Info: img/SentimentAnalysis/papersWordcloudHistory.jpg used 
 on input line 26.
 (pdftex.def)             Requested size: 227.62204pt x 243.03812pt.
- [9 <./img/SentimentAnalysis/papersWordcloudHistory.jpg>]
+ [12 <./img/SentimentAnalysis/papersWordcloudHistory.jpg>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 62.
- [10] [11]
+ [13] [14]
 Underfull \hbox (badness 10000) in paragraph at lines 102--105
 
  []
@@ -621,37 +623,37 @@ Missing character: There is no ù in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
-) [12] [13]
+) [15] [16]
 Chapter 5.
-(./ossProjects.tex [14
+(./ossProjects.tex [17
 
-]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 20.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+] [18]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 20.
- [15]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 24.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 31.
-
-Overfull \hbox (1.59935pt too wide) in paragraph at lines 64--79
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 35.
+ [19]
+Overfull \hbox (1.59935pt too wide) in paragraph at lines 68--83
  [][] 
  []
 
-[16]
-<img/PairingItems/gitLabels/defaultLabels.jpg, id=452, 727.71875pt x 405.515pt>
+[20]
+<img/PairingItems/gitLabels/defaultLabels.jpg, id=493, 727.71875pt x 405.515pt>
 File: img/PairingItems/gitLabels/defaultLabels.jpg Graphic file (type jpg)
 <use img/PairingItems/gitLabels/defaultLabels.jpg>
 Package pdftex.def Info: img/PairingItems/gitLabels/defaultLabels.jpg used on i
-nput line 96.
+nput line 100.
 (pdftex.def)             Requested size: 312.9803pt x 174.41135pt.
- [17]) [18 <./img/PairingItems/gitLabels/defaultLabels.jpg>]
+) [21 <./img/PairingItems/gitLabels/defaultLabels.jpg>] [22]
 Chapter 6.
-(./sentimentAnalysis.tex [19
+(./sentimentAnalysis.tex [23
 
 ]
 Overfull \hbox (4.51381pt too wide) in paragraph at lines 8--9
@@ -660,7 +662,7 @@ s charts, graphs,
  []
 
 (./sentimentAnalysisHistory.tex
-<img/SentimentAnalysis/papersCountHistory.jpg, id=480, 452.69125pt x 296.10625p
+<img/SentimentAnalysis/papersCountHistory.jpg, id=522, 452.69125pt x 296.10625p
 t>
 File: img/SentimentAnalysis/papersCountHistory.jpg Graphic file (type jpg)
  <use img/SentimentAnalysis/papersCountHistory.jpg>
@@ -668,22 +670,22 @@ Package pdftex.def Info: img/SentimentAnalysis/papersCountHistory.jpg used on i
 nput line 7.
 (pdftex.def)             Requested size: 227.62204pt x 148.88863pt.
 ) (./trainingDatasets.tex
-[20 <./img/SentimentAnalysis/papersCountHistory.jpg>]
+[24 <./img/SentimentAnalysis/papersCountHistory.jpg>]
 Overfull \hbox (121.15851pt too wide) in paragraph at lines 6--6
 [][][]\OT1/cmr/m/n/9 https://github.com/woodrad/Twitter-Sentiment-Mining/tree/m
 aster/Hu%20and%20Liu%20Sentiment%20Lexicon| 
  []
 
-[21]) (./languageProcessingTools.tex
-<img/SentimentAnalysis/PythonMatlabR.jpg, id=512, 1174.3875pt x 615.29875pt>
+[25]) (./languageProcessingTools.tex
+<img/SentimentAnalysis/PythonMatlabR.jpg, id=552, 1174.3875pt x 615.29875pt>
 File: img/SentimentAnalysis/PythonMatlabR.jpg Graphic file (type jpg)
 
 <use img/SentimentAnalysis/PythonMatlabR.jpg>
 Package pdftex.def Info: img/SentimentAnalysis/PythonMatlabR.jpg used on input 
 line 12.
 (pdftex.def)             Requested size: 284.52756pt x 149.07362pt.
-) [22] (./confusionMatrices.tex
-[23 <./img/SentimentAnalysis/PythonMatlabR.jpg>]
+) [26] (./confusionMatrices.tex
+[27 <./img/SentimentAnalysis/PythonMatlabR.jpg>]
 Overfull \hbox (17.43306pt too wide) in paragraph at lines 20--30
 [][]
  []
@@ -693,14 +695,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--30
 
  []
 
-[24]) (./classifierEvaluation.tex
+[28]) (./classifierEvaluation.tex
 Overfull \hbox (0.33754pt too wide) in paragraph at lines 4--17
  []\OT1/cmr/bx/n/10.95 Textblob:[] \OT1/cmr/m/n/10.95 As a first op-tion, I ex-
 e-cuted the anal-y-sis with Python TextBlob.
  []
 
-[25] [26]
-<img/SentimentAnalysis/scikitWorkflow.jpg, id=569, 762.85pt x 211.79124pt>
+[29] [30]
+<img/SentimentAnalysis/scikitWorkflow.jpg, id=610, 762.85pt x 211.79124pt>
 File: img/SentimentAnalysis/scikitWorkflow.jpg Graphic file (type jpg)
 
 <use img/SentimentAnalysis/scikitWorkflow.jpg>
@@ -712,11 +714,6 @@ Overfull \hbox (9.88582pt too wide) in paragraph at lines 73--74
  [][] 
  []
 
-Missing character: There is no √ in font cmr10!
-Missing character: There is no Ø in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -728,7 +725,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--88
 
  []
 
-[27 <./img/SentimentAnalysis/scikitWorkflow.jpg>] [28]
+[31 <./img/SentimentAnalysis/scikitWorkflow.jpg>] [32]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -758,7 +755,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
-[29]
+[33]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -786,7 +783,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--176
 
  []
 
-[30]
+[34]
 Overfull \hbox (3.20668pt too wide) in paragraph at lines 179--192
  [][] 
  []
@@ -801,7 +798,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 197--213
 
  []
 
-[31]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
@@ -812,7 +809,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--221
  []
 
 
-<img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg, id=669, 585.1862
+<img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg, id=709, 585.1862
 5pt x 355.3275pt>
 File: img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg Graphic file
  (type jpg)
@@ -821,23 +818,23 @@ File: img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg Graphic file
 Package pdftex.def Info: img/SentimentAnalysis/finalClassifierPerformanceBarCha
 rt.jpg used on input line 224.
 (pdftex.def)             Requested size: 256.0748pt x 155.49333pt.
-) [32 <./img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg>]
+) [36 <./img/SentimentAnalysis/finalClassifierPerformanceBarChart.jpg>]
 (./dataForSentimentAnalysis.tex) (./resultsWeekly.tex
 Overfull \hbox (45.88579pt too wide) in paragraph at lines 5--22
  [][] 
  []
 
-[33]
-<img/SentimentAnalysis/weeklyAverageBarchart.jpg, id=687, 578.16pt x 333.245pt>
+[37]
+<img/SentimentAnalysis/weeklyAverageBarchart.jpg, id=726, 578.16pt x 333.245pt>
 File: img/SentimentAnalysis/weeklyAverageBarchart.jpg Graphic file (type jpg)
 <use img/SentimentAnalysis/weeklyAverageBarchart.jpg>
 Package pdftex.def Info: img/SentimentAnalysis/weeklyAverageBarchart.jpg used o
 n input line 29.
 (pdftex.def)             Requested size: 312.9803pt x 180.39708pt.
 )
-(./resultsBeforeAfter.tex [34 <./img/SentimentAnalysis/weeklyAverageBarchart.jp
+(./resultsBeforeAfter.tex [38 <./img/SentimentAnalysis/weeklyAverageBarchart.jp
 g>]
-<img/SentimentAnalysis/sentimentChangeBeforeAfter.jpg, id=694, 578.16pt x 344.2
+<img/SentimentAnalysis/sentimentChangeBeforeAfter.jpg, id=733, 578.16pt x 344.2
 8625pt>
 File: img/SentimentAnalysis/sentimentChangeBeforeAfter.jpg Graphic file (type j
 pg)
@@ -846,9 +843,14 @@ Package pdftex.def Info: img/SentimentAnalysis/sentimentChangeBeforeAfter.jpg u
 sed on input line 29.
 (pdftex.def)             Requested size: 284.52756pt x 169.43195pt.
 )
-(./crossCorrelationReleases.tex [35 <./img/SentimentAnalysis/sentimentChangeBef
+Overfull \hbox (9.0278pt too wide) in paragraph at lines 40--40
+[]\OT1/cmr/bx/n/12 Cross-correlation be-tween re-leases and sen-ti-ment change 
+
+ []
+
+(./crossCorrelationReleases.tex [39 <./img/SentimentAnalysis/sentimentChangeBef
 oreAfter.jpg>]
-<img/SentimentAnalysis/EmberReleasesSentiment.jpg, id=704, 356.33125pt x 253.94
+<img/SentimentAnalysis/EmberReleasesSentiment.jpg, id=744, 356.33125pt x 253.94
 875pt>
 File: img/SentimentAnalysis/EmberReleasesSentiment.jpg Graphic file (type jpg)
  <use img/SentimentAnalysis/EmberReleasesSentiment.jpg>
@@ -856,7 +858,7 @@ Package pdftex.def Info: img/SentimentAnalysis/EmberReleasesSentiment.jpg used
 on input line 5.
 (pdftex.def)             Requested size: 156.48718pt x 113.81088pt.
 
-<img/SentimentAnalysis/LaravelReleasesSentiment.jpg, id=705, 351.3125pt x 254.9
+<img/SentimentAnalysis/LaravelReleasesSentiment.jpg, id=745, 351.3125pt x 254.9
 525pt>
 File: img/SentimentAnalysis/LaravelReleasesSentiment.jpg Graphic file (type jpg
 )
@@ -865,7 +867,7 @@ Package pdftex.def Info: img/SentimentAnalysis/LaravelReleasesSentiment.jpg use
 d on input line 7.
 (pdftex.def)             Requested size: 156.4917pt x 113.81334pt.
 
-<img/SentimentAnalysis/NodeReleasesSentiment.jpg, id=706, 359.3425pt x 261.9787
+<img/SentimentAnalysis/NodeReleasesSentiment.jpg, id=746, 359.3425pt x 261.9787
 4pt>
 File: img/SentimentAnalysis/NodeReleasesSentiment.jpg Graphic file (type jpg)
  <use img/SentimentAnalysis/NodeReleasesSentiment.jpg>
@@ -873,7 +875,7 @@ Package pdftex.def Info: img/SentimentAnalysis/NodeReleasesSentiment.jpg used o
 n input line 15.
 (pdftex.def)             Requested size: 156.49365pt x 113.80792pt.
 
-<img/SentimentAnalysis/VueReleasesSentiment.jpg, id=707, 410.53375pt x 254.9525
+<img/SentimentAnalysis/VueReleasesSentiment.jpg, id=747, 410.53375pt x 254.9525
 pt>
 File: img/SentimentAnalysis/VueReleasesSentiment.jpg Graphic file (type jpg)
  <use img/SentimentAnalysis/VueReleasesSentiment.jpg>
@@ -881,7 +883,7 @@ Package pdftex.def Info: img/SentimentAnalysis/VueReleasesSentiment.jpg used on
  input line 17.
 (pdftex.def)             Requested size: 156.48679pt x 113.81334pt.
 
-<img/SentimentAnalysis/CakeReleasesSentiment.jpg, id=708, 352.31625pt x 253.948
+<img/SentimentAnalysis/CakeReleasesSentiment.jpg, id=748, 352.31625pt x 253.948
 75pt>
 File: img/SentimentAnalysis/CakeReleasesSentiment.jpg Graphic file (type jpg)
  <use img/SentimentAnalysis/CakeReleasesSentiment.jpg>
@@ -889,7 +891,7 @@ Package pdftex.def Info: img/SentimentAnalysis/CakeReleasesSentiment.jpg used o
 n input line 24.
 (pdftex.def)             Requested size: 156.48724pt x 113.81088pt.
 
-<img/SentimentAnalysis/AngularReleasesSentiment.jpg, id=709, 395.4775pt x 257.9
+<img/SentimentAnalysis/AngularReleasesSentiment.jpg, id=749, 395.4775pt x 257.9
 6375pt>
 File: img/SentimentAnalysis/AngularReleasesSentiment.jpg Graphic file (type jpg
 )
@@ -910,11 +912,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--36
 
  []
 
-[36 <./img/SentimentAnalysis/EmberReleasesSentiment.jpg> <./img/SentimentAnalys
+[40 <./img/SentimentAnalysis/EmberReleasesSentiment.jpg> <./img/SentimentAnalys
 is/LaravelReleasesSentiment.jpg> <./img/SentimentAnalysis/NodeReleasesSentiment
 .jpg> <./img/SentimentAnalysis/VueReleasesSentiment.jpg> <./img/SentimentAnalys
 is/CakeReleasesSentiment.jpg> <./img/SentimentAnalysis/AngularReleasesSentiment
-.jpg>] [37] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+.jpg>] [41] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -926,7 +928,7 @@ File: lstlang3.sty 2013/08/26 1.5b listings language file
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 80.
 
-<img/CrossCorelation/Releases/NodeJS_before.jpg, id=736, 642.4pt x 521.95pt>
+<img/CrossCorelation/Releases/NodeJS_before.jpg, id=776, 642.4pt x 521.95pt>
 File: img/CrossCorelation/Releases/NodeJS_before.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_before.jpg>
@@ -934,7 +936,7 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_before.jpg used on
  input line 92.
 (pdftex.def)             Requested size: 156.49014pt x 127.14217pt.
 
-<img/CrossCorelation/Releases/NodeJS_after.jpg, id=737, 660.4675pt x 513.92pt>
+<img/CrossCorelation/Releases/NodeJS_after.jpg, id=777, 660.4675pt x 513.92pt>
 File: img/CrossCorelation/Releases/NodeJS_after.jpg Graphic file (type jpg)
 
 <use img/CrossCorelation/Releases/NodeJS_after.jpg>
@@ -942,7 +944,7 @@ Package pdftex.def Info: img/CrossCorelation/Releases/NodeJS_after.jpg used on
 input line 94.
 (pdftex.def)             Requested size: 156.49014pt x 121.76712pt.
 
-<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=739, 649.
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg, id=779, 649.
 42625pt x 640.3925pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg Graphic 
 file (type jpg)
@@ -956,10 +958,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--104
 
  []
 
-[38 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/R
+[42 <./img/CrossCorelation/Releases/NodeJS_before.jpg> <./img/CrossCorelation/R
 eleases/NodeJS_after.jpg>]
-<img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg, id=7
-59, 657.45625pt x 637.38126pt>
+<img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg, id=8
+00, 657.45625pt x 637.38126pt>
 File: img/CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg 
 Graphic file (type jpg)
 
@@ -968,7 +970,7 @@ Package pdftex.def Info: img/CrossCorelation/Releases/highestCorrelationsPlotRe
 leases_nonStat.jpg used on input line 109.
 (pdftex.def)             Requested size: 227.62204pt x 220.6651pt.
 
-[39 <./img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg> <./img
+[43 <./img/CrossCorelation/Releases/highestCorrelationsPlotReleases.jpg> <./img
 /CrossCorelation/Releases/highestCorrelationsPlotReleases_nonStat.jpg>])
 (./crossCorrelationCommits.tex
 Underfull \hbox (badness 10000) in paragraph at lines 23--28
@@ -980,8 +982,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--28
 
  []
 
-[40]
-<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=794, 649.42625pt x
+[44]
+<img/CrossCorelation/Commits/highestCorrelationsPlot.jpg, id=833, 649.42625pt x
  631.35875pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot.jpg Graphic file (typ
 e jpg)
@@ -990,8 +992,8 @@ Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot.jp
 g used on input line 53.
 (pdftex.def)             Requested size: 227.62204pt x 221.28716pt.
 
-[41]
-<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=802, 658.4
+[45]
+<img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg, id=842, 658.4
 6pt x 635.37375pt>
 File: img/CrossCorelation/Commits/highestCorrelationsPlot_nonStat.jpg Graphic f
 ile (type jpg)
@@ -1001,7 +1003,7 @@ Package pdftex.def Info: img/CrossCorelation/Commits/highestCorrelationsPlot_no
 nStat.jpg used on input line 62.
 (pdftex.def)             Requested size: 227.62204pt x 219.64046pt.
 ))
-[42 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg> <./img/CrossCor
+[46 <./img/CrossCorelation/Commits/highestCorrelationsPlot.jpg> <./img/CrossCor
 elation/Commits/highestCorrelationsPlot_nonStat.jpg>]
 Chapter 7.
 (./pairingBugs.tex (./pairingApproaches.tex
@@ -1009,14 +1011,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--4
 
  []
 
-[43
+[47
 
-] [44]
+] [48]
 Underfull \hbox (badness 10000) in paragraph at lines 34--39
 
  []
 
-) (./pairingData.tex [45] [46]
+) (./pairingData.tex [49] [50]
 Underfull \hbox (badness 10000) in paragraph at lines 67--68
 []\OT1/cmr/bx/n/10.95 Submissions
  []
@@ -1026,7 +1028,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-<img/PairingItems/MatchesVsRandom.jpg, id=868, 569.12625pt x 326.21875pt>
+<img/PairingItems/MatchesVsRandom.jpg, id=907, 569.12625pt x 326.21875pt>
 File: img/PairingItems/MatchesVsRandom.jpg Graphic file (type jpg)
 
 <use img/PairingItems/MatchesVsRandom.jpg>
@@ -1038,13 +1040,13 @@ Overfull \hbox (66.79134pt too wide) in paragraph at lines 5--6
  [][] 
  []
 
-[47]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
  []
 
 
-<img/PairingItems/MatchesVsRandom_TfIdf.jpg, id=879, 571.13374pt x 315.1775pt>
+<img/PairingItems/MatchesVsRandom_TfIdf.jpg, id=919, 571.13374pt x 315.1775pt>
 File: img/PairingItems/MatchesVsRandom_TfIdf.jpg Graphic file (type jpg)
 
 <use img/PairingItems/MatchesVsRandom_TfIdf.jpg>
@@ -1056,123 +1058,123 @@ Overfull \hbox (66.79134pt too wide) in paragraph at lines 15--16
  [][] 
  []
 
-[48 <./img/PairingItems/MatchesVsRandom.jpg>]
+[52 <./img/PairingItems/MatchesVsRandom.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 20--23
 
  []
 
 
-<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=886, 62
+<img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg, id=926, 62
 0.3175pt x 472.76625pt>
 File: img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg Graphi
 c file (type jpg)
 
 <use img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg>
 Package pdftex.def Info: img/PairingItems/SimilarityHistograms/gitStackMatchesH
-istogram.jpg used on input line 29.
+istogram.jpg used on input line 30.
 (pdftex.def)             Requested size: 227.62204pt x 173.478pt.
 
-[49 <./img/PairingItems/MatchesVsRandom_TfIdf.jpg>]
-<img/PairingItems/SimilarityHistograms/AureliaStackWithRandom20Bugs.jpg, id=892
+[53 <./img/PairingItems/MatchesVsRandom_TfIdf.jpg>]
+<img/PairingItems/SimilarityHistograms/AureliaStackWithRandom20Bugs.jpg, id=932
 , 611.28375pt x 462.72874pt>
 File: img/PairingItems/SimilarityHistograms/AureliaStackWithRandom20Bugs.jpg Gr
 aphic file (type jpg)
 
 <use img/PairingItems/SimilarityHistograms/AureliaStackWithRandom20Bugs.jpg>
 Package pdftex.def Info: img/PairingItems/SimilarityHistograms/AureliaStackWith
-Random20Bugs.jpg used on input line 38.
+Random20Bugs.jpg used on input line 39.
 (pdftex.def)             Requested size: 227.62204pt x 172.30135pt.
 
-<img/PairingItems/SimilarityHistograms/EmberStackWithRandom20Bugs.jpg, id=893, 
+<img/PairingItems/SimilarityHistograms/EmberStackWithRandom20Bugs.jpg, id=933, 
 612.2875pt x 459.7175pt>
 File: img/PairingItems/SimilarityHistograms/EmberStackWithRandom20Bugs.jpg Grap
 hic file (type jpg)
 
 <use img/PairingItems/SimilarityHistograms/EmberStackWithRandom20Bugs.jpg>
 Package pdftex.def Info: img/PairingItems/SimilarityHistograms/EmberStackWithRa
-ndom20Bugs.jpg used on input line 45.
+ndom20Bugs.jpg used on input line 46.
 (pdftex.def)             Requested size: 156.49014pt x 117.49648pt.
 
-<img/PairingItems/SimilarityHistograms/BowerStackWithRandom20Bugs.jpg, id=894, 
+<img/PairingItems/SimilarityHistograms/BowerStackWithRandom20Bugs.jpg, id=934, 
 611.28375pt x 449.68pt>
 File: img/PairingItems/SimilarityHistograms/BowerStackWithRandom20Bugs.jpg Grap
 hic file (type jpg)
 
 <use img/PairingItems/SimilarityHistograms/BowerStackWithRandom20Bugs.jpg>
 Package pdftex.def Info: img/PairingItems/SimilarityHistograms/BowerStackWithRa
-ndom20Bugs.jpg used on input line 47.
+ndom20Bugs.jpg used on input line 48.
 (pdftex.def)             Requested size: 156.49014pt x 115.1163pt.
 
-[50 <./img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg> <./i
+[54 <./img/PairingItems/SimilarityHistograms/gitStackMatchesHistogram.jpg> <./i
 mg/PairingItems/SimilarityHistograms/AureliaStackWithRandom20Bugs.jpg>]
-<img/PairingItems/SimilarityHistograms/VueJSStackWithRandom20Bugs.jpg, id=900, 
+<img/PairingItems/SimilarityHistograms/VueJSStackWithRandom20Bugs.jpg, id=940, 
 602.25pt x 456.70625pt>
 File: img/PairingItems/SimilarityHistograms/VueJSStackWithRandom20Bugs.jpg Grap
 hic file (type jpg)
 
 <use img/PairingItems/SimilarityHistograms/VueJSStackWithRandom20Bugs.jpg>
 Package pdftex.def Info: img/PairingItems/SimilarityHistograms/VueJSStackWithRa
-ndom20Bugs.jpg used on input line 54.
+ndom20Bugs.jpg used on input line 55.
 (pdftex.def)             Requested size: 156.49014pt x 118.67113pt.
 
-<img/PairingItems/SimilarityHistograms/AngularStackWithRandom20Bugs.jpg, id=901
+<img/PairingItems/SimilarityHistograms/AngularStackWithRandom20Bugs.jpg, id=941
 , 606.265pt x 462.72874pt>
 File: img/PairingItems/SimilarityHistograms/AngularStackWithRandom20Bugs.jpg Gr
 aphic file (type jpg)
 
 <use img/PairingItems/SimilarityHistograms/AngularStackWithRandom20Bugs.jpg>
 Package pdftex.def Info: img/PairingItems/SimilarityHistograms/AngularStackWith
-Random20Bugs.jpg used on input line 56.
+Random20Bugs.jpg used on input line 57.
 (pdftex.def)             Requested size: 156.49014pt x 119.43817pt.
 
-Overfull \hbox (47.8858pt too wide) in paragraph at lines 66--75
+Overfull \hbox (47.8858pt too wide) in paragraph at lines 67--76
  [][] 
  []
 
-[51 <./img/PairingItems/SimilarityHistograms/EmberStackWithRandom20Bugs.jpg> <.
+[55 <./img/PairingItems/SimilarityHistograms/EmberStackWithRandom20Bugs.jpg> <.
 /img/PairingItems/SimilarityHistograms/BowerStackWithRandom20Bugs.jpg> <./img/P
 airingItems/SimilarityHistograms/VueJSStackWithRandom20Bugs.jpg> <./img/Pairing
 Items/SimilarityHistograms/AngularStackWithRandom20Bugs.jpg>]
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipDisc
-ussion.jpg, id=920, 601.24625pt x 466.74374pt>
+ussion.jpg, id=958, 601.24625pt x 466.74374pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pDiscussion.jpg Graphic file (type jpg)
 
 <use img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationship
 Discussion.jpg>
 Package pdftex.def Info: img/PairingItems/LengthSimilarityRelationship/Similari
-tyLengthRelationshipDiscussion.jpg used on input line 113.
+tyLengthRelationshipDiscussion.jpg used on input line 114.
 (pdftex.def)             Requested size: 156.49014pt x 121.4787pt.
 
 <img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshipComm
-ent.jpg, id=921, 631.35875pt x 465.74pt>
+ent.jpg, id=959, 631.35875pt x 465.74pt>
 File: img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationshi
 pComment.jpg Graphic file (type jpg)
 
 <use img/PairingItems/LengthSimilarityRelationship/SimilarityLengthRelationship
 Comment.jpg>
 Package pdftex.def Info: img/PairingItems/LengthSimilarityRelationship/Similari
-tyLengthRelationshipComment.jpg used on input line 115.
+tyLengthRelationshipComment.jpg used on input line 116.
 (pdftex.def)             Requested size: 156.49014pt x 115.43979pt.
- [52]
+ [56]
 <img/PairingItems/LengthSimilarityRelationship/GitStackSimilarityWeightedScatte
-r.jpg, id=930, 1191.45125pt x 666.49pt>
+r.jpg, id=968, 1191.45125pt x 666.49pt>
 File: img/PairingItems/LengthSimilarityRelationship/GitStackSimilarityWeightedS
 catter.jpg Graphic file (type jpg)
 
 <use img/PairingItems/LengthSimilarityRelationship/GitStackSimilarityWeightedSc
 atter.jpg>
 Package pdftex.def Info: img/PairingItems/LengthSimilarityRelationship/GitStack
-SimilarityWeightedScatter.jpg used on input line 122.
+SimilarityWeightedScatter.jpg used on input line 123.
 (pdftex.def)             Requested size: 284.52756pt x 159.15746pt.
-) (./pairingGitLabels.tex)) [53 <./img/PairingItems/LengthSimilarityRelationshi
+) (./pairingGitLabels.tex)) [57 <./img/PairingItems/LengthSimilarityRelationshi
 p/SimilarityLengthRelationshipDiscussion.jpg> <./img/PairingItems/LengthSimilar
 ityRelationship/SimilarityLengthRelationshipComment.jpg> <./img/PairingItems/Le
 ngthSimilarityRelationship/GitStackSimilarityWeightedScatter.jpg>]
 Chapter 8.
-(./discussion.tex [54
+(./discussion.tex [58
 
-] [55]) [56]
+] [59]) [60]
 Chapter 9.
 (./futureWork.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--6
@@ -1184,7 +1186,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--6
 
  []
 
-<img/FutureWork/bitcoinSentiment.jpg, id=955, 1335.99126pt x 689.57625pt>
+<img/FutureWork/bitcoinSentiment.jpg, id=996, 1335.99126pt x 689.57625pt>
 File: img/FutureWork/bitcoinSentiment.jpg Graphic file (type jpg)
 
 <use img/FutureWork/bitcoinSentiment.jpg>
@@ -1196,285 +1198,214 @@ Overfull \hbox (38.33858pt too wide) in paragraph at lines 9--10
  [][] 
  []
 
-[57
+[61
 
-] <img/FutureWork/toreador.jpg, id=963, 887.315pt x 493.845pt>
-File: img/FutureWork/toreador.jpg Graphic file (type jpg)
+] <img/FutureWork/toreador4.jpg, id=1003, 658.46pt x 152.57pt>
+File: img/FutureWork/toreador4.jpg Graphic file (type jpg)
 
-<use img/FutureWork/toreador.jpg>
-Package pdftex.def Info: img/FutureWork/toreador.jpg used on input line 18.
-(pdftex.def)             Requested size: 398.33858pt x 221.69318pt.
+<use img/FutureWork/toreador4.jpg>
+Package pdftex.def Info: img/FutureWork/toreador4.jpg used on input line 18.
+(pdftex.def)             Requested size: 398.33858pt x 92.2993pt.
 
 Overfull \hbox (38.33858pt too wide) in paragraph at lines 18--19
  [][] 
  []
 
-) [58 <./img/FutureWork/bitcoinSentiment.jpg>]
+) <GoogleFormResults3.pdf, id=1004, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=969, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf>
+Package pdftex.def Info: GoogleFormResults3.pdf used on input line 146.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf>
+Package pdftex.def Info: GoogleFormResults3.pdf used on input line 146.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+ [62 <./img/FutureWork/bitcoinSentiment.jpg> <./img/FutureWork/toreador4.jpg>]
+<GoogleFormResults3.pdf, id=1012, page=1, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf>
-Package pdftex.def Info: GoogleFormResults2.pdf used on input line 146.
-(pdftex.def)             Requested size: 255.95561pt x 454.69763pt.
+<use GoogleFormResults3.pdf, page 1>
+Package pdftex.def Info: GoogleFormResults3.pdf, page1 used on input line 146.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 1>
+Package pdftex.def Info: GoogleFormResults3.pdf, page1 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
+<use GoogleFormResults3.pdf, page 1>
+Package pdftex.def Info: GoogleFormResults3.pdf, page1 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 1>
+Package pdftex.def Info: GoogleFormResults3.pdf, page1 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-<use GoogleFormResults2.pdf>
-Package pdftex.def Info: GoogleFormResults2.pdf used on input line 146.
-(pdftex.def)             Requested size: 255.95561pt x 454.69763pt.
+<use GoogleFormResults3.pdf, page 1>
+Package pdftex.def Info: GoogleFormResults3.pdf, page1 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [63 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1062, page=2, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
+<use GoogleFormResults3.pdf, page 2>
+Package pdftex.def Info: GoogleFormResults3.pdf, page2 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 2>
+Package pdftex.def Info: GoogleFormResults3.pdf, page2 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-[59 <./img/FutureWork/toreador.jpg>]
+<use GoogleFormResults3.pdf, page 2>
+Package pdftex.def Info: GoogleFormResults3.pdf, page2 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [64 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1068, page=3, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=976, page=1, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 3>
+Package pdftex.def Info: GoogleFormResults3.pdf, page3 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 3>
+Package pdftex.def Info: GoogleFormResults3.pdf, page3 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 1>
-Package pdftex.def Info: GoogleFormResults2.pdf, page1 used on input line 146.
-(pdftex.def)             Requested size: 255.95561pt x 454.69763pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 1>
-Package pdftex.def Info: GoogleFormResults2.pdf, page1 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 3>
+Package pdftex.def Info: GoogleFormResults3.pdf, page3 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [65 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1074, page=4, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 1>
-Package pdftex.def Info: GoogleFormResults2.pdf, page1 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 1>
-Package pdftex.def Info: GoogleFormResults2.pdf, page1 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 4>
+Package pdftex.def Info: GoogleFormResults3.pdf, page4 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 4>
+Package pdftex.def Info: GoogleFormResults3.pdf, page4 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 1>
-Package pdftex.def Info: GoogleFormResults2.pdf, page1 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [60 <./GoogleFormResults2.pdf>]
+<use GoogleFormResults3.pdf, page 4>
+Package pdftex.def Info: GoogleFormResults3.pdf, page4 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [66 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1080, page=5, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1032, page=2, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 5>
+Package pdftex.def Info: GoogleFormResults3.pdf, page5 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 5>
+Package pdftex.def Info: GoogleFormResults3.pdf, page5 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 2>
-Package pdftex.def Info: GoogleFormResults2.pdf, page2 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 2>
-Package pdftex.def Info: GoogleFormResults2.pdf, page2 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 5>
+Package pdftex.def Info: GoogleFormResults3.pdf, page5 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [67 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1086, page=6, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 2>
-Package pdftex.def Info: GoogleFormResults2.pdf, page2 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [61 <./GoogleFormResults2.pdf>]
+<use GoogleFormResults3.pdf, page 6>
+Package pdftex.def Info: GoogleFormResults3.pdf, page6 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 6>
+Package pdftex.def Info: GoogleFormResults3.pdf, page6 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1038, page=3, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 6>
+Package pdftex.def Info: GoogleFormResults3.pdf, page6 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [68 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1092, page=7, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 3>
-Package pdftex.def Info: GoogleFormResults2.pdf, page3 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 3>
-Package pdftex.def Info: GoogleFormResults2.pdf, page3 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 7>
+Package pdftex.def Info: GoogleFormResults3.pdf, page7 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 7>
+Package pdftex.def Info: GoogleFormResults3.pdf, page7 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 3>
-Package pdftex.def Info: GoogleFormResults2.pdf, page3 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [62 <./GoogleFormResults2.pdf>]
+<use GoogleFormResults3.pdf, page 7>
+Package pdftex.def Info: GoogleFormResults3.pdf, page7 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [69 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1099, page=8, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1044, page=4, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 8>
+Package pdftex.def Info: GoogleFormResults3.pdf, page8 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 8>
+Package pdftex.def Info: GoogleFormResults3.pdf, page8 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 4>
-Package pdftex.def Info: GoogleFormResults2.pdf, page4 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 4>
-Package pdftex.def Info: GoogleFormResults2.pdf, page4 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 8>
+Package pdftex.def Info: GoogleFormResults3.pdf, page8 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [70 <./GoogleFormResults3.pdf>]
+<GoogleFormResults3.pdf, id=1105, page=9, 597.23125pt x 845.1575pt>
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-<use GoogleFormResults2.pdf, page 4>
-Package pdftex.def Info: GoogleFormResults2.pdf, page4 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [63 <./GoogleFormResults2.pdf>]
+<use GoogleFormResults3.pdf, page 9>
+Package pdftex.def Info: GoogleFormResults3.pdf, page9 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
+ <use GoogleFormResults3.pdf, page 9>
+Package pdftex.def Info: GoogleFormResults3.pdf, page9 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: GoogleFormResults3.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1052, page=5, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
+<use GoogleFormResults3.pdf, page 9>
+Package pdftex.def Info: GoogleFormResults3.pdf, page9 used on input line 146.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [71 <./GoogleFormResults3.pdf>]
+(./masterthesis.bbl [72
 
-<use GoogleFormResults2.pdf, page 5>
-Package pdftex.def Info: GoogleFormResults2.pdf, page5 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 5>
-Package pdftex.def Info: GoogleFormResults2.pdf, page5 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 5>
-Package pdftex.def Info: GoogleFormResults2.pdf, page5 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [64 <./GoogleFormResults2.pdf>]
-
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1058, page=6, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 6>
-Package pdftex.def Info: GoogleFormResults2.pdf, page6 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 6>
-Package pdftex.def Info: GoogleFormResults2.pdf, page6 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 6>
-Package pdftex.def Info: GoogleFormResults2.pdf, page6 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [65 <./GoogleFormResults2.pdf>]
-
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1064, page=7, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 7>
-Package pdftex.def Info: GoogleFormResults2.pdf, page7 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 7>
-Package pdftex.def Info: GoogleFormResults2.pdf, page7 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 7>
-Package pdftex.def Info: GoogleFormResults2.pdf, page7 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [66 <./GoogleFormResults2.pdf>]
-
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1070, page=8, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 8>
-Package pdftex.def Info: GoogleFormResults2.pdf, page8 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 8>
-Package pdftex.def Info: GoogleFormResults2.pdf, page8 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 8>
-Package pdftex.def Info: GoogleFormResults2.pdf, page8 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [67 <./GoogleFormResults2.pdf>]
-
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1076, page=9, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 9>
-Package pdftex.def Info: GoogleFormResults2.pdf, page9 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 9>
-Package pdftex.def Info: GoogleFormResults2.pdf, page9 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 9>
-Package pdftex.def Info: GoogleFormResults2.pdf, page9 used on input line 146.
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [68 <./GoogleFormResults2.pdf>]
-
-pdfTeX warning: pdflatex (file ./GoogleFormResults2.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<GoogleFormResults2.pdf, id=1082, page=10, 255.95625pt x 454.69875pt>
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 10>
-Package pdftex.def Info: GoogleFormResults2.pdf, page10 used on input line 146.
-
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
- <use GoogleFormResults2.pdf, page 10>
-Package pdftex.def Info: GoogleFormResults2.pdf, page10 used on input line 146.
-
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
-File: GoogleFormResults2.pdf Graphic file (type pdf)
-
-<use GoogleFormResults2.pdf, page 10>
-Package pdftex.def Info: GoogleFormResults2.pdf, page10 used on input line 146.
-
-(pdftex.def)             Requested size: 476.41737pt x 846.34148pt.
- [69 <./GoogleFormResults2.pdf>]
-(./masterthesis.bbl [70
-
-] [71]
+] [73]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no î in font cmr10!
- [72]
-Underfull \hbox (badness 1009) in paragraph at lines 205--210
+ [74]
+Underfull \hbox (badness 1009) in paragraph at lines 237--242
 []\OT1/cmr/m/n/10.95 Rob J Hyn-d-man, George Athana-sopou-los, Slava Razbash, D
 rew
  []
 
-)
+[75])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
- [73]
+ [76]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
  (./masterthesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
-
-
-Package rerunfilecheck Warning: File `masterthesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `masterthesis.out':
-(rerunfilecheck)             Before: F77B654CBB079D45EF1DB5E07E8D2D05;2266
-(rerunfilecheck)             After:  CFB2CBE78C2E2453A2DAB60181C8825A;2266.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `masterthesis.out' has not changed.
+(rerunfilecheck)             Checksum: 74C91A3F5F6C4D147A945FAA4ABCF45E;2370.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
  ) 
 Here is how much of TeX's memory you used:
- 12390 strings out of 493304
- 203717 string characters out of 6139872
- 517137 words of memory out of 5000000
- 15166 multiletter control sequences out of 15000+600000
+ 12410 strings out of 493304
+ 204082 string characters out of 6139870
+ 517629 words of memory out of 5000000
+ 15176 multiletter control sequences out of 15000+600000
  10719 words of font info for 37 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 44i,18n,47p,1740b,1796s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,18n,47p,4165b,1796s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -1488,10 +1419,10 @@ m/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on masterthesis.pdf (77 pages, 2717481 bytes).
+Output written on masterthesis.pdf (80 pages, 2803704 bytes).
 PDF statistics:
- 1249 PDF objects out of 1440 (max. 8388607)
- 1065 compressed objects within 11 object streams
- 434 named destinations out of 1000 (max. 500000)
- 536 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1281 PDF objects out of 1440 (max. 8388607)
+ 1088 compressed objects within 11 object streams
+ 444 named destinations out of 1000 (max. 500000)
+ 539 words of extra memory for PDF output out of 10000 (max. 10000000)
 

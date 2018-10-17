@@ -1,35 +1,36 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 2
-\BOOKMARK [0][-]{chapter.2}{Proposed framework}{}% 3
+\BOOKMARK [0][-]{chapter.2}{Goal and proposed framework}{}% 3
 \BOOKMARK [0][-]{chapter.3}{Related work}{}% 4
 \BOOKMARK [0][-]{chapter.4}{Social Media}{}% 5
 \BOOKMARK [1][-]{section.4.1}{Potential of social media data mining}{chapter.4}% 6
 \BOOKMARK [1][-]{section.4.2}{Data}{chapter.4}% 7
 \BOOKMARK [2][-]{subsection.4.2.1}{Getting data}{section.4.2}% 8
-\BOOKMARK [0][-]{chapter.5}{Open-source projects}{}% 9
+\BOOKMARK [0][-]{chapter.5}{Open Source Projects Analysis}{}% 9
 \BOOKMARK [1][-]{section.5.1}{History of Open-Source Software}{chapter.5}% 10
-\BOOKMARK [1][-]{section.5.2}{Choosing projects of interest}{chapter.5}% 11
-\BOOKMARK [1][-]{section.5.3}{GitHub mining}{chapter.5}% 12
-\BOOKMARK [2][-]{subsection.5.3.1}{Release dates}{section.5.3}% 13
-\BOOKMARK [2][-]{subsection.5.3.2}{Issues}{section.5.3}% 14
-\BOOKMARK [0][-]{chapter.6}{Sentiment analysis}{}% 15
-\BOOKMARK [1][-]{section.6.1}{History}{chapter.6}% 16
-\BOOKMARK [1][-]{section.6.2}{Training datasets}{chapter.6}% 17
-\BOOKMARK [1][-]{section.6.3}{Language processing tools}{chapter.6}% 18
-\BOOKMARK [1][-]{section.6.4}{Performance metrics}{chapter.6}% 19
-\BOOKMARK [1][-]{section.6.5}{Classifier evaluation}{chapter.6}% 20
-\BOOKMARK [1][-]{section.6.6}{Data to analyze}{chapter.6}% 21
-\BOOKMARK [1][-]{section.6.7}{Results}{chapter.6}% 22
-\BOOKMARK [2][-]{subsection.6.7.1}{Results for weekly collected data}{section.6.7}% 23
-\BOOKMARK [2][-]{subsection.6.7.2}{Immediate sentiment change with releases}{section.6.7}% 24
-\BOOKMARK [2][-]{subsection.6.7.3}{Cross-correlation between releases and sentiment change}{section.6.7}% 25
-\BOOKMARK [2][-]{subsection.6.7.4}{Commits count within releases}{section.6.7}% 26
-\BOOKMARK [0][-]{chapter.7}{Linking bug repositories and social media}{}% 27
-\BOOKMARK [1][-]{section.7.1}{Aproaches}{chapter.7}% 28
-\BOOKMARK [1][-]{section.7.2}{Available data}{chapter.7}% 29
-\BOOKMARK [1][-]{section.7.3}{Similarity results}{chapter.7}% 30
-\BOOKMARK [2][-]{subsection.7.3.1}{Stack Overflow}{section.7.3}% 31
-\BOOKMARK [2][-]{subsection.7.3.2}{Reddit}{section.7.3}% 32
-\BOOKMARK [1][-]{section.7.4}{Using GIT labels}{chapter.7}% 33
-\BOOKMARK [0][-]{chapter.8}{Answers and Discussion}{}% 34
-\BOOKMARK [0][-]{chapter.9}{Future work}{}% 35
+\BOOKMARK [1][-]{section.5.2}{Types of Open-Source Software analysis}{chapter.5}% 11
+\BOOKMARK [1][-]{section.5.3}{Choosing projects of interest}{chapter.5}% 12
+\BOOKMARK [1][-]{section.5.4}{GitHub mining}{chapter.5}% 13
+\BOOKMARK [2][-]{subsection.5.4.1}{Release dates}{section.5.4}% 14
+\BOOKMARK [2][-]{subsection.5.4.2}{Issues}{section.5.4}% 15
+\BOOKMARK [0][-]{chapter.6}{Sentiment analysis}{}% 16
+\BOOKMARK [1][-]{section.6.1}{History}{chapter.6}% 17
+\BOOKMARK [1][-]{section.6.2}{Training datasets}{chapter.6}% 18
+\BOOKMARK [1][-]{section.6.3}{Language processing tools}{chapter.6}% 19
+\BOOKMARK [1][-]{section.6.4}{Performance metrics}{chapter.6}% 20
+\BOOKMARK [1][-]{section.6.5}{Classifier evaluation}{chapter.6}% 21
+\BOOKMARK [1][-]{section.6.6}{Data to analyze}{chapter.6}% 22
+\BOOKMARK [1][-]{section.6.7}{Results}{chapter.6}% 23
+\BOOKMARK [2][-]{subsection.6.7.1}{Results for weekly collected data}{section.6.7}% 24
+\BOOKMARK [2][-]{subsection.6.7.2}{Immediate sentiment change with releases}{section.6.7}% 25
+\BOOKMARK [2][-]{subsection.6.7.3}{Cross-correlation between releases and sentiment change}{section.6.7}% 26
+\BOOKMARK [2][-]{subsection.6.7.4}{Commits count within releases}{section.6.7}% 27
+\BOOKMARK [0][-]{chapter.7}{Linking bug repositories and social media}{}% 28
+\BOOKMARK [1][-]{section.7.1}{Approaches}{chapter.7}% 29
+\BOOKMARK [1][-]{section.7.2}{Available data}{chapter.7}% 30
+\BOOKMARK [1][-]{section.7.3}{Similarity results}{chapter.7}% 31
+\BOOKMARK [2][-]{subsection.7.3.1}{Stack Overflow}{section.7.3}% 32
+\BOOKMARK [2][-]{subsection.7.3.2}{Reddit}{section.7.3}% 33
+\BOOKMARK [1][-]{section.7.4}{Using GIT labels}{chapter.7}% 34
+\BOOKMARK [0][-]{chapter.8}{Answers and Discussion}{}% 35
+\BOOKMARK [0][-]{chapter.9}{Future work}{}% 36

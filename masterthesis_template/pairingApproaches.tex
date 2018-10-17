@@ -1,4 +1,4 @@
-There are many ways and approaches how to find out whether 2 texts share some common topic. Most of them are to some extent very similar as the general rule is to extract textual features and compare them using statistical approaches. Common way to do this is to transform documents into vectors and then compute cosine similarity between them. These text transformations are implemented in several Python packages.\\
+There are many ways and approaches to find out whether 2 texts share some common topic. Most of them are to some extent very similar as the general rule is to extract textual features and compare them using statistical approaches. Common way to do this is to transform documents into vectors and then compute cosine similarity between them. These text transformations are implemented in several Python packages.\\
 \\
 I have tried following:
 \begin{enumerate}
@@ -50,6 +50,6 @@ Listing \ref{lst:scikitkTextSimilarity} shows my very simple implementation of T
 			return (tfidf * tfidf.T).A
 \end{lstlisting}
 
-\paragraph{Stack Overflow questions preprocessing:}  Online texts contain usually lots of noise and uninformative parts such as HTML tags, scripts and advertisements \cite{haddi2013role}. Before running implemented similarity algorithms, I have decided to preprocess the stack questions and get rid of code snippets within \textit{\textless pre\textgreater\textless code\textgreater} tags and hypertext links. Especially snippets could potentially effect (increase) the similarity score if kept in the text.
+\paragraph{Stack Overflow questions preprocessing:}  Online texts usually contain lot of noise and uninformative parts such as HTML tags, scripts and advertisements \cite{haddi2013role}. Before running implemented similarity algorithms, I have decided to preprocess the stack questions and get rid of code snippets within \textit{\textless pre\textgreater\textless code\textgreater} tags and hypertext links. Especially snippets could potentially effect (increase) the similarity score if kept in the text.
 
 	

@@ -98,6 +98,14 @@
   number={12},
   year={2009}
 },
+@article{go2009twitter2,
+  title={Twitter sentiment analysis},
+  author={Go, Alec and Huang, Lei and Bhayani, Richa},
+  journal={Entropy},
+  volume={17},
+  pages={252},
+  year={2009}
+}
 @article{	,
   title={Twitter sentiment analysis},
   author={Go, Alec and Huang, Lei and Bhayani, Richa},
@@ -314,4 +322,46 @@
   pages={121--132},
   year={2005},
   organization={Springer}
+},
+@inproceedings{christley2007analysis,
+  title={Analysis of activity in the open source software development community},
+  author={Christley, Scott and Madey, Greg},
+  booktitle={System Sciences, 2007. HICSS 2007. 40th Annual Hawaii International Conference on},
+  pages={166b--166b},
+  year={2007},
+  organization={IEEE}
+},
+@inproceedings{jarczyk2014github,
+  title={Github projects. quality analysis of open-source software},
+  author={Jarczyk, Oskar and Gruszka, B{\l}a{\.z}ej and Jaroszewicz, Szymon and Bukowski, Leszek and Wierzbicki, Adam},
+  booktitle={International Conference on Social Informatics},
+  pages={80--94},
+  year={2014},
+  organization={Springer}
+},
+@inproceedings{hogenboom2013exploiting,
+  title={Exploiting emoticons in sentiment analysis},
+  author={Hogenboom, Alexander and Bal, Daniella and Frasincar, Flavius and Bal, Malissa and de Jong, Franciska and Kaymak, Uzay},
+  booktitle={Proceedings of the 28th annual ACM symposium on applied computing},
+  pages={703--710},
+  year={2013},
+  organization={ACM}
+},
+@article{novak2015sentiment,
+  title={Sentiment of emojis},
+  author={Novak, Petra Kralj and Smailovi{\'c}, Jasmina and Sluban, Borut and Mozeti{\v{c}}, Igor},
+  journal={PloS one},
+  volume={10},
+  number={12},
+  pages={e0144296},
+  year={2015},
+  publisher={Public Library of Science}
+},
+@inproceedings{bachmann2010missing,
+  title={The missing links: bugs and bug-fix commits},
+  author={Bachmann, Adrian and Bird, Christian and Rahman, Foyzur and Devanbu, Premkumar and Bernstein, Abraham},
+  booktitle={Proceedings of the eighteenth ACM SIGSOFT international symposium on Foundations of software engineering},
+  pages={97--106},
+  year={2010},
+  organization={ACM}
 }

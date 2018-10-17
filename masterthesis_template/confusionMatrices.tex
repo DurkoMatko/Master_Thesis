@@ -1,6 +1,6 @@
 \paragraph{Terminology} Before diving into talk about the metrics, there are 4 crucial terms which need to be explained:
 \begin{itemize}
-\item \textbf{Tue Positives (TP)} - instances correctly labeled as positive
+\item \textbf{True Positives (TP)} - instances correctly labeled as positive
 \item \textbf{True Negatives (TN)}- instances correctly labeled as negative
 \item \textbf{False Positives (FP)} - instances incorrectly labeled as positive
 \item \textbf{False Negatives (FN)}- instances incorrectly labeled as negative
@@ -31,12 +31,12 @@ Here are some of the most often used metrics used to evaluate classification alg
 \label{table:Confusion_matrix_general}
 \end{table}
 
-\item \textbf{Precision} - Precision can be seen as a representation of a classifiers exactness. A low precision can also indicate a large number of False Positives. If the precision is high, it says that there is a high probability of positive label being True Positive. It cannot be tricked but it also hides a lot.
+\item \textbf{Precision} - Precision can be seen as a representation of a classifier;s exactness. A low precision can also indicate a large number of False Positives. If the precision is high, it says that there is a high probability of positive label being True Positive. It cannot be tricked but it also hides a lot.
 \[ Precision = \frac{TP}{TP + FP}\]
 \item \textbf{Recall} - also called \textit{sensitivity} or the \textit{True Positive Rate}, it is a number of True Positives divided by the number of True Positives and the number of False Negatives. In other words, it is a ratio of how many of all positive instances have been identified. Recall can be tricked (labeling all as majority class) but if used next to precision, it gives extra information
 \[ Recall = \frac{TP}{TP + FN}\]
 \end{itemize}
-Nice example to demonstrate difference between precision and recall is the concept of Indian Jurisprudence, where "100 culprits may let go free but no innocent should be punished". If we let go so many culprits in order to ensure no innocent is punished, recall will be pretty low, but precision very high. There are cases when we want to maximize recall and situation when we want to maximize precision. As with most concepts in data science, there is a trade-off in the metrics we choose to prioritize. In my case, none of these two has higher importance and in such scenarios F1 score offers a compromise between the two.
+Nice example to demonstrate difference between precision and recall is the concept of Indian Jurisprudence, where "100 culprits may be let go free but no innocent should be punished". If we let go so many culprits in order to ensure no innocent is punished, recall will be pretty low, but precision very high. There are cases when we want to maximize recall and situation when we want to maximize precision. As with most concepts in data science, there is a trade-off in the metrics we choose to prioritize. In my case, none of these two has higher importance and in such scenarios F1 score offers a compromise between the two.
 \begin{itemize}
 \item \textbf{F1 score} - as already mentioned, precision hides some facts and recall can be tricked. To give the full story, they need to be used together. That is what F1 measure (F measure) is for. It is the harmonic average of the precision and recall, where its best value is at 1.
 \[ F = 2 * \frac{precision * recall}{precision + recall}\]
