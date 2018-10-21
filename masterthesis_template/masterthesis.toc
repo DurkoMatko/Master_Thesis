@@ -52,4 +52,10 @@
 \contentsline {subsection}{\numberline {7.3.2}Reddit}{56}{subsection.7.3.2}
 \contentsline {section}{\numberline {7.4}Using GIT labels}{57}{section.7.4}
 \contentsline {chapter}{\numberline {8}Answers and Discussion}{58}{chapter.8}
-\contentsline {chapter}{\numberline {9}Future work}{61}{chapter.9}
+\contentsline {section}{\numberline {8.1}Research questions}{58}{section.8.1}
+\contentsline {section}{\numberline {8.2}Discussion}{58}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Release frequency and sentiment ($RQ_{1}$)}{58}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Release effect on sentiment ($RQ_{2}$)}{59}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Relation between release and sentiment ($RQ_{3}$)}{59}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}Links between social media and version-control or bug-tracking system ($RQ_{4}$)}{60}{subsection.8.2.4}
+\contentsline {chapter}{\numberline {9}Future work}{62}{chapter.9}

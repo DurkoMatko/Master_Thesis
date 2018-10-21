@@ -33,4 +33,10 @@
 \BOOKMARK [2][-]{subsection.7.3.2}{Reddit}{section.7.3}% 33
 \BOOKMARK [1][-]{section.7.4}{Using GIT labels}{chapter.7}% 34
 \BOOKMARK [0][-]{chapter.8}{Answers and Discussion}{}% 35
-\BOOKMARK [0][-]{chapter.9}{Future work}{}% 36
+\BOOKMARK [1][-]{section.8.1}{Research questions}{chapter.8}% 36
+\BOOKMARK [1][-]{section.8.2}{Discussion}{chapter.8}% 37
+\BOOKMARK [2][-]{subsection.8.2.1}{Release frequency and sentiment \(RQ1\)}{section.8.2}% 38
+\BOOKMARK [2][-]{subsection.8.2.2}{Release effect on sentiment \(RQ2\)}{section.8.2}% 39
+\BOOKMARK [2][-]{subsection.8.2.3}{Relation between release and sentiment \(RQ3\)}{section.8.2}% 40
+\BOOKMARK [2][-]{subsection.8.2.4}{Links between social media and version-control or bug-tracking system \(RQ4\)}{section.8.2}% 41
+\BOOKMARK [0][-]{chapter.9}{Future work}{}% 42
